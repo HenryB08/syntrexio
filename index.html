@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syntrex — AI Automation Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Syntrex">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get In Touch</a>
+  <button class="nav-mobile-btn" onclick="toggleMenu()">&#9776;</button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">AI Automation Agency</div>
+    <h1>We build AI systems that <span>eliminate busywork</span> and grow your business.</h1>
+    <p class="hero-sub">Custom automation tools and AI-powered systems built for any business, anywhere. No tech knowledge required. Just results.</p>
+    <div class="hero-buttons">
+      <a href="services.html" class="btn-primary">What We Build</a>
+      <a href="contact.html" class="btn-ghost">Talk To Us</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="banner.png" alt="Syntrex" class="hero-banner-img">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">24<span>/7</span></div>
+    <div class="stat-label">Systems that run without you</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">48<span>hr</span></div>
+    <div class="stat-label">From call to working prototype</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100<span>%</span></div>
+    <div class="stat-label">Custom-built for your workflow</div>
+  </div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-eyebrow">What We Build</div>
+    <div class="section-header-row">
+      <h2>AI systems for every type of business.</h2>
+      <a href="services.html" class="link-arrow">See all services →</a>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-num">01</div>
+        <div class="card-title">AI Chatbots</div>
+        <div class="card-desc">Qualify leads, answer questions, and book appointments 24/7 — deployed to your website with no maintenance needed.</div>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">02</div>
+        <div class="card-title">Workflow Automation</div>
+        <div class="card-desc">Automate your most repetitive tasks end-to-end — follow-ups, invoicing, data entry, lead routing, and more.</div>
+      </div>
+      <div class="card reveal">
+        <div class="card-num">03</div>
+        <div class="card-title">Custom AI Tools</div>
+        <div class="card-desc">Purpose-built internal tools for your team — proposal generators, quote builders, intake forms that work in seconds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-eyebrow center">Trusted By</div>
+    <p class="clients-sub">We've built real systems for real companies across a range of industries.</p>
+    <div class="client-logos">
+      <div class="client-logo-item">
+        <img src="halt-logo.png" alt="HALT! Fire">
+      </div>
+      <div class="client-logo-item">
+        <img src="wavers-logo.png" alt="Doughbrik's Wavers">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-eyebrow">How It Works</div>
+    <h2>From problem to working system — fast.</h2>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery Call</div>
+        <div class="step-desc">30 minutes to understand your business and identify the biggest bottlenecks costing you time and money.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-title">We Build It</div>
+        <div class="step-desc">A custom solution tailored to your exact workflow — usually delivered within 48 hours.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-title">You Review It</div>
+        <div class="step-desc">Test it, give feedback, and we refine until it's exactly right. No technical knowledge needed.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-title">It Runs For You</div>
+        <div class="step-desc">Deployed and live. Your team is trained in under an hour. Ongoing support included.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to stop doing things manually?</h2>
+    <p>Let's talk about what we can automate for you. No pressure, no pitch — just a straight conversation.</p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="logo.png" alt="Syntrex" class="footer-logo">
+      <p class="footer-tagline">AI automation built for every business.</p>
+    </div>
+    <div class="footer-links-group">
+      <span class="footer-col-label">Company</span>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links-group">
+      <span class="footer-col-label">Contact</span>
+      <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Syntrex. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
