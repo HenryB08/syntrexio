@@ -22,7 +22,7 @@ body{background:var(--w);color:var(--nv);font-family:"Manrope",sans-serif;overfl
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:100px;padding:0 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);box-shadow:0 2px 30px rgba(8,21,46,.08);}
 .nl{display:flex;align-items:center;cursor:pointer;}
-.nl img{height:160px;width:auto;display:block;object-fit:contain;}
+.nl img{height:200px;width:auto;display:block;object-fit:contain;}
 .nls{display:flex;gap:38px;list-style:none;align-items:center;}
 .nls a{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gr);text-decoration:none;transition:color .2s;cursor:pointer;position:relative;padding-bottom:3px;}
 .nls a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--bl);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
@@ -925,9 +925,8 @@ async function fsub(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
-  // Find the success div right after this form
-  const success = form.nextElementSibling;
-
+  const successDivs = document.querySelectorAll('.fss');
+  
   btn.textContent = 'Sending...';
   btn.disabled = true;
   btn.style.opacity = '0.7';
@@ -943,14 +942,16 @@ async function fsub(e) {
 
     if (res.ok) {
       form.style.display = 'none';
-      success.style.display = 'flex';
-      success.style.flexDirection = 'column';
-      success.style.alignItems = 'center';
-      success.style.padding = '60px 40px';
-      success.style.textAlign = 'center';
-      success.style.background = '#fff';
-      success.style.border = '1px solid var(--brd)';
-      success.style.gap = '12px';
+      // Show the success div that is a sibling of this form's parent container
+      const wrapper = form.closest('.ctlay') || form.parentElement;
+      const allFss = wrapper.querySelectorAll ? wrapper.querySelectorAll('.fss') : [];
+      if (allFss.length > 0) {
+        allFss[0].style.cssText = 'display:flex;flex-direction:column;align-items:center;padding:60px 40px;text-align:center;background:#fff;border:1px solid #dde3f0;gap:16px;margin-top:6px;';
+      } else {
+        // fallback - replace form content
+        form.innerHTML = '<div style="text-align:center;padding:40px;"><div style="font-size:56px;margin-bottom:16px;">✅</div><div style="font-weight:800;font-size:22px;color:#08152e;margin-bottom:8px;">Message sent!</div><div style="color:#6b7a99;font-size:15px;">We will be in touch within 24 hours.</div></div>';
+        form.style.display = 'block';
+      }
     } else {
       btn.textContent = 'Send Message';
       btn.disabled = false;
