@@ -359,6 +359,31 @@ footer{background:var(--nv2);}
   position: relative;
   z-index: 2;
 }
+
+.hero-rotating {
+  display: inline;
+  position: relative;
+}
+.hero-phrase {
+  display: none;
+  animation: fadePhrase .6s ease;
+}
+.hero-phrase.active {
+  display: inline;
+}
+@keyframes fadePhrase {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#scroll-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#1a6fff,#4d94ff);z-index:9999;transition:width .1s linear;}
+#particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.particle{position:absolute;border-radius:50%;background:rgba(26,111,255,.5);animation:floatUp linear infinite;}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:1;}90%{opacity:.4;}100%{transform:translateY(-100px) scale(1);opacity:0;}}
+.typed-cursor{display:inline-block;width:2px;height:.9em;background:#1a6fff;margin-left:2px;vertical-align:middle;animation:blink .7s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.card{transition:transform .25s ease,box-shadow .25s ease;}
+.card:hover{box-shadow:0 0 0 2px #1a6fff,0 20px 50px rgba(26,111,255,.2);}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2B6PPH47QK"></script>
@@ -431,8 +456,8 @@ footer{background:var(--nv2);}
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge au d1"><div class="badge-dot"></div>AI Automation Agency</div>
-      <h1 class="au d2">We build AI systems that <em>eliminate busywork</em> and grow your business.</h1>
-      <p class="hero-sub au d3">Custom automation tools and AI-powered systems built for any business, anywhere in the world. No tech knowledge required. Just results.</p>
+      <h1 class="au d2">If AI can do it, <em><span class="hero-rotating"><span class="hero-phrase active" data-phrase="we build it">we build it</span><span class="hero-phrase" data-phrase="we automate it">we automate it</span><span class="hero-phrase" data-phrase="we deploy it">we deploy it</span><span class="hero-phrase" data-phrase="we grow it">we grow it</span><span class="hero-phrase" data-phrase="we strategize it">we strategize it</span><span class="hero-phrase" data-phrase="we plan it">we plan it</span></span></em> for your business.</h1>
+      <p class="hero-sub au d3">Automation. Strategy. Growth systems. Custom AI tools. We handle every layer of AI for your business so you can focus on what matters.</p>
       <div class="hero-btns au d4">
         <a onclick="sp('services')" class="btn bb">What We Build</a>
         <a onclick="sp('contact')" class="btn bg">Talk To Us</a>
@@ -470,10 +495,68 @@ footer{background:var(--nv2);}
         <div class="card rev"><div class="card-top-line"></div><div class="card-n">04</div><div class="card-t">Lead Generation</div><div class="card-d">AI powered pipelines that capture, score, and follow up with leads automatically. Your team only talks to people ready to buy.</div><div class="card-arr">Learn more →</div></div>
         <div class="card rev"><div class="card-top-line"></div><div class="card-n">05</div><div class="card-t">AI Content Systems</div><div class="card-d">Automated pipelines that draft emails, posts, proposals, and reports in your brand voice. Consistently and at scale.</div><div class="card-arr">Learn more →</div></div>
         <div class="card rev"><div class="card-top-line"></div><div class="card-n">06</div><div class="card-t">System Integration</div><div class="card-d">Connect your existing tools so everything runs automatically. CRM, calendar, email, forms. Nothing falls through the cracks.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">07</div><div class="card-t">AI Strategy & Consulting</div><div class="card-d">We audit your operations, find the highest value opportunities, and give you a clear roadmap. Know exactly where AI fits and what to build first.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">08</div><div class="card-t">Growth System Design</div><div class="card-d">End to end growth systems built on AI covering lead capture, nurturing, conversion, and retention. All running automatically around the clock.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">09</div><div class="card-t">AI Business Planning</div><div class="card-d">Custom AI tools that generate business plans, financial projections, and strategic documents automatically using your real business data.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">10</div><div class="card-t">Automated Proposal Systems</div><div class="card-d">Professional branded proposals generated in under a minute. Enter job details and a complete proposal comes out ready to send.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">11</div><div class="card-t">Client Onboarding Automation</div><div class="card-d">Automate your entire onboarding process from signed contract to kickoff. Welcome emails, intake forms, document collection, and scheduling handled automatically.</div><div class="card-arr">Learn more →</div></div>
+        <div class="card rev"><div class="card-top-line"></div><div class="card-n">12</div><div class="card-t">Reporting & Analytics Systems</div><div class="card-d">Custom AI dashboards and automated reports that pull data from across your business and surface the insights that matter. No more manual spreadsheets.</div><div class="card-arr">Learn more →</div></div>
       </div>
     </div>
   </section>
 
+  <!-- AI INDUSTRY STATS -->
+  <section style="background:var(--nv);padding:100px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 width%3D%2760%27 height%3D%2760%27%3E%3Cpath d%3D%27M30 0 L60 30 L30 60 L0 30 Z%27 stroke%3D%27rgba(255%2C255%2C255%2C0.04)%27 stroke-width%3D%271%27 fill%3D%27none%27%2F%3E%3C%2Fsvg%3E');background-size:60px 60px;pointer-events:none;"></div>
+    <div class="con" style="position:relative;z-index:1;">
+      <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Why AI Now</div>
+      <h2 style="color:#fff;margin-bottom:16px;">The businesses using AI are winning. <span style="color:#1a6fff;">By a lot.</span></h2>
+      <p style="color:rgba(255,255,255,.5);font-size:16px;max-width:600px;margin-bottom:60px;line-height:1.75;">These are not predictions. This is what is happening right now in businesses that have already made the switch.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);">
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">40<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Productivity Increase</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Businesses using AI automation report up to 40% higher productivity across their teams on average.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">3<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">x</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Faster Lead Response</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Companies with AI powered follow up respond to leads 3x faster, converting significantly more inquiries into paying clients.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">60<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Cost Reduction</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Automating repetitive tasks reduces operational costs by up to 60% for small and mid size businesses within the first year.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">80<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Of Businesses Will Use AI</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">By 2026 over 80% of businesses will have adopted some form of AI automation. The ones who move first win the most.</div>
+        </div>
+      </div>
+      <div style="margin-top:1px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-top:none;padding:20px 32px;display:flex;gap:40px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">$15.7T</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Projected value AI will<br>add to the global economy</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">6.5hr</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Average hours saved per<br>employee per week with AI</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">2.5x</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Revenue growth for AI<br>first businesses vs competitors</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">91%</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Of companies say AI gives<br>them a competitive advantage</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="numbers-strip">
     <div class="numbers-inner">
       <div class="num-item rev"><div class="num-n">24<span>/7</span></div><div class="num-l">Systems that run without you</div></div>
@@ -492,7 +575,8 @@ footer{background:var(--nv2);}
         <div class="step rev"><div class="step-n">03</div><div class="step-t">You Review It</div><div class="step-d">Test it, give feedback, and we refine until it's exactly right. No technical knowledge required on your end.</div></div>
         <div class="step rev"><div class="step-n">04</div><div class="step-t">It Runs For You</div><div class="step-d">Deployed and live. Your team trained in under an hour. Ongoing support and improvements included.</div></div>
       </div>
-    </div>
+    
+      </div>
   </section>
 
   <!-- CASE STUDIES -->
@@ -732,8 +816,66 @@ footer{background:var(--nv2);}
     <div class="svi rev"><div class="svn">04</div><div class="svb"><h3>Lead Generation Systems</h3><p>AI powered pipelines that capture, score, and follow up with leads automatically. Your sales team only spends time talking to people who are ready to buy.</p><ul class="svbl"><li>Lead capture and scoring</li><li>Automated follow up sequences</li><li>Pipeline reporting dashboards</li><li>Full CRM integration</li></ul></div></div>
     <div class="svi rev"><div class="svn">05</div><div class="svb"><h3>AI Content Systems</h3><p>Automated pipelines that draft emails, posts, proposals, and reports in your brand voice consistently and at scale. You review, you send. That's it.</p><ul class="svbl"><li>Email drafting automation</li><li>Social content pipelines</li><li>Brand voice AI configuration</li><li>Batch content generation</li></ul></div></div>
     <div class="svi rev"><div class="svn">06</div><div class="svb"><h3>System Integration</h3><p>We connect your existing tools so they communicate automatically. CRM, calendar, email, forms, databases. No more copy pasting between platforms.</p><ul class="svbl"><li>CRM and calendar sync</li><li>Form to database automation</li><li>Multi platform data routing</li><li>Custom API connections</li></ul></div></div>
+    <div class="svi rev"><div class="svn">07</div><div class="svb"><h3>AI Strategy & Consulting</h3><p>We audit your entire operation, identify the highest value automation opportunities, and build you a clear implementation roadmap. Know exactly where AI fits and what to build first.</p><ul class="svbl"><li>Full business operations audit</li><li>Automation opportunity mapping</li><li>Priority roadmap and action plan</li><li>Ongoing strategic guidance</li></ul></div></div>
+    <div class="svi rev"><div class="svn">08</div><div class="svb"><h3>Growth System Design</h3><p>End to end growth systems powered by AI covering lead capture, nurturing, conversion, and retention. Designed around your business model and built to scale as you grow.</p><ul class="svbl"><li>Full funnel design and build</li><li>Lead nurture automation</li><li>Conversion optimization tools</li><li>Retention and reactivation systems</li></ul></div></div>
+    <div class="svi rev"><div class="svn">09</div><div class="svb"><h3>AI Business Planning</h3><p>Custom AI tools that generate business plans, financial projections, competitive analyses, and strategic documents automatically using your real business data. Professional outputs in minutes.</p><ul class="svbl"><li>Business plan generators</li><li>Financial projection tools</li><li>Market analysis automation</li><li>Strategic document builders</li></ul></div></div>
+    <div class="svi rev"><div class="svn">10</div><div class="svb"><h3>Automated Proposal Systems</h3><p>Stop writing proposals manually. We build custom generators that produce professional branded proposals in under a minute. Enter the job details and a complete document comes out ready to send.</p><ul class="svbl"><li>Branded proposal templates</li><li>Auto-populated from job data</li><li>Delivered in seconds not hours</li><li>Works for any industry</li></ul></div></div>
+    <div class="svi rev"><div class="svn">11</div><div class="svb"><h3>Client Onboarding Automation</h3><p>Automate your entire client onboarding process from signed contract to first deliverable. Welcome emails, intake forms, document collection, and kickoff scheduling all handled automatically.</p><ul class="svbl"><li>Automated welcome sequences</li><li>Digital intake and document collection</li><li>Calendar and kickoff scheduling</li><li>Progress tracking and notifications</li></ul></div></div>
+    <div class="svi rev"><div class="svn">12</div><div class="svb"><h3>Reporting & Analytics Systems</h3><p>Custom AI dashboards and automated reporting tools that pull data from across your business and surface the insights that actually matter. No more manual spreadsheet building.</p><ul class="svbl"><li>Automated weekly and monthly reports</li><li>Custom KPI dashboards</li><li>Multi source data aggregation</li><li>Scheduled delivery to your inbox</li></ul></div></div>
   </div></div></section>
-  <div class="numbers-strip"><div class="numbers-inner"><div class="num-item"><div class="num-n">6</div><div class="num-l">Core service offerings</div></div><div class="num-item"><div class="num-n">48<span>hr</span></div><div class="num-l">From call to prototype</div></div><div class="num-item"><div class="num-n">24<span>/7</span></div><div class="num-l">Systems run without you</div></div><div class="num-item"><div class="num-n">0</div><div class="num-l">Tech knowledge required</div></div></div></div>
+  <!-- AI INDUSTRY STATS -->
+  <section style="background:var(--nv);padding:100px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 width%3D%2760%27 height%3D%2760%27%3E%3Cpath d%3D%27M30 0 L60 30 L30 60 L0 30 Z%27 stroke%3D%27rgba(255%2C255%2C255%2C0.04)%27 stroke-width%3D%271%27 fill%3D%27none%27%2F%3E%3C%2Fsvg%3E');background-size:60px 60px;pointer-events:none;"></div>
+    <div class="con" style="position:relative;z-index:1;">
+      <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Why AI Now</div>
+      <h2 style="color:#fff;margin-bottom:16px;">The businesses using AI are winning. <span style="color:#1a6fff;">By a lot.</span></h2>
+      <p style="color:rgba(255,255,255,.5);font-size:16px;max-width:600px;margin-bottom:60px;line-height:1.75;">These are not predictions. This is what is happening right now in businesses that have already made the switch.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);">
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">40<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Productivity Increase</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Businesses using AI automation report up to 40% higher productivity across their teams on average.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">3<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">x</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Faster Lead Response</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Companies with AI powered follow up respond to leads 3x faster, converting significantly more inquiries into paying clients.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">60<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Cost Reduction</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Automating repetitive tasks reduces operational costs by up to 60% for small and mid size businesses within the first year.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);padding:40px 32px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:52px;letter-spacing:-3px;color:#1a6fff;line-height:1;margin-bottom:8px;">80<span style="font-size:24px;font-weight:400;color:rgba(255,255,255,.4);">%</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Of Businesses Will Use AI</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">By 2026 over 80% of businesses will have adopted some form of AI automation. The ones who move first win the most.</div>
+        </div>
+      </div>
+      <div style="margin-top:1px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-top:none;padding:20px 32px;display:flex;gap:40px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">$15.7T</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Projected value AI will<br>add to the global economy</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">6.5hr</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Average hours saved per<br>employee per week with AI</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">2.5x</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Revenue growth for AI<br>first businesses vs competitors</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08);"></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="ai-stat-n" style="font-weight:800;font-size:28px;letter-spacing:-1px;color:#1a6fff;">91%</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;">Of companies say AI gives<br>them a competitive advantage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="numbers-strip"><div class="numbers-inner"><div class="num-item"><div class="num-n">12</div><div class="num-l">Core service offerings</div></div><div class="num-item"><div class="num-n">48<span>hr</span></div><div class="num-l">From call to prototype</div></div><div class="num-item"><div class="num-n">24<span>/7</span></div><div class="num-l">Systems run without you</div></div><div class="num-item"><div class="num-n">0</div><div class="num-l">Tech knowledge required</div></div></div></div>
   <footer>
   <div class="ft-main">
     <div class="ft-inner">
@@ -1034,6 +1176,88 @@ async function fsub(e) {
     alert('Something went wrong. Please email henry@syntrexio.com directly.');
   }
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Scroll progress bar
+  window.addEventListener('scroll', function() {
+    var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    var bar = document.getElementById('scroll-bar');
+    if (bar) bar.style.width = scrolled + '%';
+  });
+
+  // Floating particles
+  var container = document.getElementById('particles');
+  if (container) {
+    for (var i = 0; i < 25; i++) {
+      var p = document.createElement('div');
+      p.className = 'particle';
+      var size = Math.random() * 4 + 2;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      p.style.opacity = Math.random() * 0.4 + 0.1;
+      container.appendChild(p);
+    }
+  }
+
+  // Number counter on scroll
+  function animateCounters() {
+    var nums = document.querySelectorAll('.num-n, .ai-stat-n');
+    nums.forEach(function(el) {
+      if (el.dataset.animated) return;
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.dataset.animated = '1';
+        var text = el.innerText;
+        var match = text.match(/^(\d+)/);
+        if (!match) return;
+        var target = parseInt(match[1]);
+        var suffix = text.slice(match[1].length);
+        var current = 0;
+        var step = Math.ceil(target / 40);
+        var interval = setInterval(function() {
+          current = Math.min(current + step, target);
+          el.innerText = current + suffix;
+          if (current >= target) clearInterval(interval);
+        }, 30);
+      }
+    });
+  }
+  window.addEventListener('scroll', animateCounters);
+  animateCounters();
+
+  // Typing effect — only on home page hero
+  setTimeout(function() {
+    var el = document.querySelector('.hero-sub');
+    if (!el || el.dataset.typed) return;
+    el.dataset.typed = '1';
+    var text = el.innerText;
+    el.innerText = '';
+    var cursor = document.createElement('span');
+    cursor.className = 'typed-cursor';
+    el.appendChild(cursor);
+    var idx = 0;
+    function type() {
+      if (idx < text.length) {
+        var node = document.createTextNode(text[idx]);
+        el.insertBefore(node, cursor);
+        idx++;
+        setTimeout(type, 22);
+      } else {
+        setTimeout(function() { cursor.style.display = 'none'; }, 2000);
+      }
+    }
+    type();
+  }, 600);
+
+});
+
 window.addEventListener('load',()=>{
   setTimeout(()=>ir('home'),100);
   setTimeout(()=>{
@@ -1070,6 +1294,10 @@ SERVICES (exactly as listed on website):
 4. Lead Generation Systems: AI pipelines that capture, score, and follow up with leads automatically
 5. AI Content Systems: automated pipelines that draft emails, posts, and proposals in brand voice
 6. System Integration: connect CRM, calendar, email, and forms so they communicate automatically
+7. AI Strategy and Consulting: audit business, find automation opportunities, build implementation roadmap
+8. Growth System Design: end to end AI powered growth systems for lead capture, nurturing, conversion, and retention
+9. AI Business Planning Tools: generate business plans, financial projections, and strategic documents automatically
+10. Automated Proposal Systems: professional proposals generated in under a minute
 
 HOW IT WORKS (4 steps):
 1. Get In Touch: email henry@syntrexio.com
@@ -1144,6 +1372,106 @@ async function callClaude(userMessage) {
   chatHistory.push({ role: "assistant", content: reply });
   return reply;
 }
+
+
+const phrases = [
+  'we build it',
+  'we automate it',
+  'we deploy it',
+  'we grow it',
+  'we strategize it',
+  'we plan it'
+];
+let phraseIdx = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const phraseEls = document.querySelectorAll('.hero-phrase');
+  setInterval(() => {
+    phraseEls.forEach(el => el.classList.remove('active'));
+    phraseIdx = (phraseIdx + 1) % phrases.length;
+    phraseEls.forEach(el => {
+      if (el.dataset.phrase === phrases[phraseIdx]) el.classList.add('active');
+    });
+  }, 3000);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Scroll progress bar
+  window.addEventListener('scroll', function() {
+    var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    var bar = document.getElementById('scroll-bar');
+    if (bar) bar.style.width = scrolled + '%';
+  });
+
+  // Floating particles
+  var container = document.getElementById('particles');
+  if (container) {
+    for (var i = 0; i < 25; i++) {
+      var p = document.createElement('div');
+      p.className = 'particle';
+      var size = Math.random() * 4 + 2;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      p.style.opacity = Math.random() * 0.4 + 0.1;
+      container.appendChild(p);
+    }
+  }
+
+  // Number counter on scroll
+  function animateCounters() {
+    var nums = document.querySelectorAll('.num-n, .ai-stat-n');
+    nums.forEach(function(el) {
+      if (el.dataset.animated) return;
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.dataset.animated = '1';
+        var text = el.innerText;
+        var match = text.match(/^(\d+)/);
+        if (!match) return;
+        var target = parseInt(match[1]);
+        var suffix = text.slice(match[1].length);
+        var current = 0;
+        var step = Math.ceil(target / 40);
+        var interval = setInterval(function() {
+          current = Math.min(current + step, target);
+          el.innerText = current + suffix;
+          if (current >= target) clearInterval(interval);
+        }, 30);
+      }
+    });
+  }
+  window.addEventListener('scroll', animateCounters);
+  animateCounters();
+
+  // Typing effect — only on home page hero
+  setTimeout(function() {
+    var el = document.querySelector('.hero-sub');
+    if (!el || el.dataset.typed) return;
+    el.dataset.typed = '1';
+    var text = el.innerText;
+    el.innerText = '';
+    var cursor = document.createElement('span');
+    cursor.className = 'typed-cursor';
+    el.appendChild(cursor);
+    var idx = 0;
+    function type() {
+      if (idx < text.length) {
+        var node = document.createTextNode(text[idx]);
+        el.insertBefore(node, cursor);
+        idx++;
+        setTimeout(type, 22);
+      } else {
+        setTimeout(function() { cursor.style.display = 'none'; }, 2000);
+      }
+    }
+    type();
+  }, 600);
+
+});
 
 window.addEventListener('load',()=>{
   setTimeout(()=>ir('home'),100);
