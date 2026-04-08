@@ -33,7 +33,7 @@ body{background:var(--w);color:var(--nv);font-family:"Manrope",sans-serif;overfl
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:100px;padding:0 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);box-shadow:0 2px 30px rgba(8,21,46,.08);}
 .nl{display:flex;align-items:center;cursor:pointer;}
-.nl img{height:64px;width:auto;display:block;object-fit:contain;}
+.nl img{height:200px;width:auto;display:block;object-fit:contain;}
 .nls{display:flex;gap:38px;list-style:none;align-items:center;}
 .nls a{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gr);text-decoration:none;transition:color .2s;cursor:pointer;position:relative;padding-bottom:3px;}
 .nls a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--bl);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
@@ -90,9 +90,9 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bo
 .trusted-inner{max-width:1180px;margin:0 auto;padding:0 60px;display:flex;align-items:center;justify-content:center;gap:80px;flex-wrap:wrap;position:relative;z-index:1;}
 .trusted-lbl{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap;}
 .trusted-div{display:none;}.tlogo:last-child{border-right:none;}
-.trusted-logos{display:flex;align-items:center;gap:80px;flex-wrap:wrap;}
+.trusted-logos{display:flex;align-items:center;gap:60px;flex-wrap:wrap;}
 .tlogo{display:flex;align-items:center;height:160px;transition:opacity .2s;}
-.tlogo img{max-height:140px;max-width:340px;width:auto;display:block;object-fit:contain;}
+.tlogo img{max-height:200px;max-width:400px;width:auto;display:block;object-fit:contain;}
 
 /* BUILD SECTION */
 .build-sec{padding:120px 0;background:var(--w);position:relative;overflow:hidden;}
@@ -357,7 +357,7 @@ footer{background:var(--nv2);}
 @media(max-width:768px){
   /* Nav */
   nav{padding:0 16px;height:70px;}
-  .nl img{height:50px;}
+  .nl img{height:140px;}
   .nls,.nc{display:none;}
   .mb{display:block;}
   #mm a{padding:18px 20px;font-size:13px;}
