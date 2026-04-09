@@ -482,6 +482,23 @@ footer{background:var(--nv2);}
 
   /* Buttons full width on mobile forms */
   .cf .btn{width:100%;text-align:center;}
+
+  /* Projects page */
+  #p-projects .sp .con > div { padding: 40px 0 !important; }
+  #p-projects [style*="grid-template-columns:1fr 1fr;gap:60px"],
+  #p-projects [style*="grid-template-columns:1fr 1fr;gap:24px"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  #p-projects [style*="grid-template-columns:1fr 1fr;gap:24px"] > div:first-child {
+    order: 1;
+  }
+  #p-projects h2 { font-size: 28px !important; }
+  #p-projects [style*="display:flex;align-items:flex-start;justify-content:space-between"] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
 }
 
 /* ===== SMALL MOBILE ===== */
@@ -993,7 +1010,7 @@ nav {
   <a onclick="sp('services');tmob()">Services</a>
   <a onclick="sp('pricing');tmob()">Pricing</a>
   <a onclick="sp('faq');tmob()">FAQ</a>
-  <a onclick="sp('projects');tmob()">Work</a>
+  <a onclick="sp('projects');tmob()">Projects</a>
   <a onclick="sp('about');tmob()">About</a>
   <a onclick="sp('contact');tmob()">Contact</a>
   <a onclick="sp('legal');tmob()">Legal</a>
@@ -2010,8 +2027,16 @@ Henry Bello: Founder and CEO, henry@syntrexio.com
 Sofia Weeden: CFO (Chief Financial Officer), sofia@syntrexio.com
 Alexander Ohmer: Head of Operations, alexander@syntrexio.com
 
+PARTNERS:
+Kinetix Technology Group (kinetixtechnologygroup.com): Technology brokerage company. When their clients need AI automation, custom systems, or workflow tools, they refer that work to Syntrex to build and deliver. Listed on the website as "Often Referred By".
+
+PROJECTS (visible on the Projects page):
+1. HALT! Fire Website Redesign: Full ground-up redesign of haltfire.com. Goal is a faster, more conversion-focused site. Status: In Progress.
+2. HALT! Fire Dispatch Newsletter: Designed and wrote the HALT! Retail Dispatch — a professional email newsletter targeting retail buyers and distributors. Covers product education, media coverage, and retail data. Ongoing project.
+
 CURRENT PROJECTS:
-HALT! Fire Dispatch Newsletter: professional email newsletter designed and written for HALT! Fire covering industry news and company updates.
+1. HALT! Fire Dispatch Newsletter: Professional email newsletter targeting retail buyers and distributors. Covers product education, media coverage, retail data. Ongoing.
+2. HALT! Fire Website Redesign: Full ground-up website redesign currently in progress.
 
 GUARANTEE: Syntrex LLC stands behind every system built from day one.
 
@@ -2520,6 +2545,3 @@ async function sendMsg() {
   <div style="background:var(--nv);padding:80px 0;text-align:center;"><div class="con" style="display:flex;flex-direction:column;align-items:center;gap:16px;"><h2 style="color:#fff;">Still have a question?</h2><p style="color:rgba(255,255,255,.6);font-size:16px;max-width:480px;line-height:1.7;">We're happy to answer anything before you commit to a single dollar.</p><a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Talk To Us</a></div></div>
 </div></body>
 </html>
-
-
-
