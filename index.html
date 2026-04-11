@@ -224,7 +224,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 .lval:hover{background:var(--blb2);border-left-color:var(--bl);}
 .lval-l{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bl);margin-bottom:7px;}
 .lval-t{font-weight:600;font-size:15px;color:var(--nv);line-height:1.4;}
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);border-radius:20px;overflow:hidden;}
 .ind{background:#fff;padding:22px 24px;font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--grd);transition:all .2s;border-left:2px solid transparent;}
 .ind:hover{background:var(--blb2);color:var(--bl);border-left-color:var(--bl);}
 
@@ -250,29 +250,29 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 .fss{display:none;margin-top:6px;}
 
 /* FOOTER */
-footer{background:var(--nv2);}
-.ft-main{padding:72px 0 56px;border-bottom:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;}
-.ft-main::before{content:'';position:absolute;inset:0;}
-.ft-inner{max-width:1180px;margin:0 auto;padding:0 60px;display:grid;grid-template-columns:1.5fr 2fr;gap:80px;position:relative;z-index:1;}
-.ft-brand{display:flex;flex-direction:column;}
-.ft-logo{height:120px;width:auto;display:block;margin-bottom:20px;object-fit:contain;}
-.ft-tag{font-size:14px;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:22px;}
-.ft-email-link{font-family:"Exo 2",sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(255,255,255,.65);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:3px;width:fit-content;transition:color .2s;}
-.ft-email-link:hover{color:#fff;}
-.ft-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-.ft-col{display:flex;flex-direction:column;gap:11px;}
-.ft-col-hd{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:8px;}
-.ft-col a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;line-height:1.4;}.ft-col a:hover{color:#fff;}
-.ft-col span{font-size:13px;color:rgba(255,255,255,.28);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .ft-banner-strip{position:relative;overflow:hidden;height:260px;}
 .ft-banner-img{display:none;}
 .ft-banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.55) 70%,rgba(8,21,46,.75)),center/cover no-repeat;display:flex;align-items:center;}
 .ft-banner-text{padding:0 60px;}
 .ft-banner-text h3{font-weight:800;font-size:30px;letter-spacing:-1px;color:#fff;margin-bottom:10px;}
 .ft-banner-text p{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:28px;}
-.ft-bottom{padding:22px 0;}
-.ft-bottom-inner{max-width:1180px;margin:0 auto;padding:0 60px;display:flex;align-items:center;justify-content:space-between;}
-.ft-bottom-inner span{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;}
+
+
+
 
 
 #chat-bubble{
@@ -553,11 +553,11 @@ footer{background:var(--nv2);}
   .syn-robot{width:180px !important;height:180px !important;}
 
   /* Footer */
-  .ft-inner{grid-template-columns:1fr !important;gap:32px;padding:0 18px;}
-  .ft-cols{grid-template-columns:1fr 1fr !important;gap:24px;}
-  .ft-bottom-inner{padding:0 18px;flex-direction:column;gap:6px;text-align:center;}
-  .ft-logo{height:80px !important;}
-  .ft-main{padding:48px 0 40px !important;}
+
+
+
+
+
   .ft-banner-strip{height:220px !important;border-radius:0 !important;}
   .ft-banner-text h3{font-size:22px !important;}
   .ft-banner-text p{font-size:14px !important;margin-bottom:20px !important;}
@@ -1392,6 +1392,18 @@ video{-webkit-playsinline:1;}
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-10px);}
 }
+
+@media(max-width:768px){
+  .ft-mobile-wrap{flex-direction:column !important;gap:24px !important;}
+  .ft-mobile-wrap > div:last-child{text-align:left !important;}
+}
+
+@media(max-width:768px){
+  footer [style*="padding:0 60px"]{padding:0 20px !important;}
+  footer [style*="padding:40px 0"]{padding:28px 0 0 !important;}
+  footer [style*="padding:18px 60px"]{padding:14px 20px !important;}
+  footer [style*="text-align:right"]{text-align:left !important;}
+}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2B6PPH47QK"></script>
@@ -1820,68 +1832,35 @@ video{-webkit-playsinline:1;}
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -1981,68 +1960,35 @@ video{-webkit-playsinline:1;}
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -2061,7 +2007,7 @@ video{-webkit-playsinline:1;}
             <h2 style="font-size:36px;margin-bottom:16px;">HALT! Fire<br>Website Redesign</h2>
             <p style="font-size:15px;color:var(--gr);line-height:1.8;">A full ground-up redesign of the HALT! Fire website. The goal is a faster, more conversion-focused experience that better communicates the product story and drives both consumer and retail sales.</p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);min-width:200px;">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);border-radius:16px;min-width:200px;">
             <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:4px;">Project Details</div>
             <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Client:</span> HALT! Fire</div>
             <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Type:</span> Full Redesign</div>
@@ -2071,11 +2017,11 @@ video{-webkit-playsinline:1;}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <div>
             <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(220,80,80,.9);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:rgba(220,80,80,.9);display:inline-block;"></span>Current Live Site</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d52454ef-57f9-0709-6dba-1b8b5e6e37fb.png" alt="HALT! Fire current website" style="width:100%;display:block;"></div>
+            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d52454ef-57f9-0709-6dba-1b8b5e6e37fb.png" alt="HALT! Fire current website" style="width:100%;display:block;"></div>
           </div>
           <div>
             <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--bl);display:inline-block;"></span>Syntrex Redesign</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d9c35404-a97d-d69f-2986-bca2e5b912bf.png" alt="HALT! Fire redesign" style="width:100%;display:block;"></div>
+            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d9c35404-a97d-d69f-2986-bca2e5b912bf.png" alt="HALT! Fire redesign" style="width:100%;display:block;"></div>
           </div>
         </div>
       </div>
@@ -2096,10 +2042,10 @@ video{-webkit-playsinline:1;}
             <a href="https://www.haltfire.com/" target="_blank" rel="noopener" style="font-family:'Exo 2',sans-serif;font-size:11px;color:var(--bl);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Visit haltfire.com →</a>
           </div>
           <div>
-            <div style="position:relative;border:1px solid var(--brd);overflow:hidden;background:#111;">
+            <div style="position:relative;border:1px solid var(--brd);overflow:hidden;background:#111;border-radius:16px;">
               <img id="nl-img" src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a89f1b2-e5e1-2b08-6c29-d933263d4b50.png" alt="Newsletter" style="width:100%;display:block;transition:opacity .15s;">
-              <button onclick="nlPrev()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8249;</button>
-              <button onclick="nlNext()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8250;</button>
+              <button onclick="nlPrev()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);border-radius:50%;background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8249;</button>
+              <button onclick="nlNext()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);border-radius:50%;background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8250;</button>
               <div id="nl-counter" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);color:#fff;font-family:'Exo 2',sans-serif;font-size:10px;padding:4px 14px;border-radius:20px;letter-spacing:1px;">1 / 5</div>
             </div>
             <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;" id="nl-dots">
@@ -2171,68 +2117,35 @@ video{-webkit-playsinline:1;}
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -2362,68 +2275,35 @@ video{-webkit-playsinline:1;}
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -2485,68 +2365,35 @@ video{-webkit-playsinline:1;}
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -3477,68 +3324,35 @@ async function sendMsg() {
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
@@ -3652,68 +3466,35 @@ async function sendMsg() {
 </section>
 
 <footer>
-  <div class="ft-main">
-    <div class="ft-inner">
-      <div class="ft-brand">
-        
-        <p class="ft-tag">AI solutions & digital services built for every business,<br>anywhere in the world.</p>
-        <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:10px;text-transform:uppercase;">513 Main Street · Windermere, FL 34786</div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:20px;">
-  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
   </a>
-  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
   </a>
-  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
   </a>
-</div>
-      </div>
-      <div class="ft-cols" style="gap:60px;">
-        <div class="ft-col">
-          <div class="ft-col-hd">Company</div>
-          <a onclick="sp('home')" style="cursor:pointer;">Home</a>
-          <a onclick="sp('services')" style="cursor:pointer;">Services</a>
-          <a onclick="sp('pricing')" style="cursor:pointer;">Pricing</a>
-          <a onclick="sp('about')" style="cursor:pointer;">About</a>
-          <a onclick="sp('contact')" style="cursor:pointer;">Contact</a>
-          <a onclick="sp('legal')" style="cursor:pointer;">Legal</a>
-          
         </div>
-        
-        <div class="ft-col">
-          <div class="ft-col-hd">Contact</div>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
-          <a>Response within 24 hours</a>
-          <a>Serving businesses worldwide</a>
-        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-  </div>
-  <div class="ft-banner-strip">
-    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png" alt="Syntrex" class="ft-banner-img">
-    <div class="ft-banner-overlay" style="background-image:linear-gradient(90deg,rgba(8,21,46,.92) 30%,rgba(8,21,46,.5) 100%),url('https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f08b1c9f-7553-e0fc-7250-2d94de50275e.png');background-size:cover;background-position:center;">
-      <div class="ft-banner-text">
-        <h3>Ready to build your system?</h3>
-        <p>Any business. Any size. Anywhere in the world.</p>
-        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Get In Touch</a>
-      </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
     </div>
   </div>
-  <div class="ft-bottom">
-    <div class="ft-bottom-inner">
-      <span>© 2026 Syntrex. All rights reserved.</span>
-      <span>AI Solutions & Digital Services</span>
-    </div>
-  </div>
-
-
-
 </footer>
 </div>
 
