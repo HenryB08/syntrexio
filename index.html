@@ -205,7 +205,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 
 /* SERVICES FULL */
 .svl{display:flex;flex-direction:column;gap:1px;background:var(--brd);border:1px solid var(--brd);}
-.svi{background:#fff;padding:52px 56px;display:grid;grid-template-columns:90px 1fr;gap:40px;align-items:start;transition:all .22s;border-left:4px solid transparent;border-radius:18px;}
+.svi{background:#fff;padding:44px 48px;display:grid;grid-template-columns:80px 1fr;gap:36px;align-items:start;transition:all .22s;border-left:4px solid transparent;border-radius:18px;}
 .svi:hover{background:var(--blb2);border-left-color:var(--bl);}
 .svn{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:2px;color:var(--bl);padding-top:5px;}
 .svb h3{margin-bottom:14px;}
@@ -1404,6 +1404,154 @@ video{-webkit-playsinline:1;}
   footer [style*="padding:18px 60px"]{padding:14px 20px !important;}
   footer [style*="text-align:right"]{text-align:left !important;}
 }
+
+/* Gradient text effect - blues */
+.grad-text{
+  background:linear-gradient(135deg,#00c6ff 0%,#1a6fff 50%,#0038a8 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  display:inline;
+}
+.grad-text-2{
+  background:linear-gradient(135deg,#38bdf8 0%,#1a6fff 60%,#1252cc 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  display:inline;
+}
+
+.hero-phrase.active{
+  background:linear-gradient(135deg,#00c6ff 0%,#1a6fff 55%,#0038a8 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* 3D Floating Service Icons */
+.card-icon{
+  width:56px;height:56px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;font-size:28px;
+  position:relative;
+  animation:iconFloat 4s ease-in-out infinite;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+  flex-shrink:0;
+}
+.card-icon::after{
+  content:'';position:absolute;
+  bottom:-8px;left:50%;transform:translateX(-50%);
+  width:70%;height:8px;
+  background:rgba(0,0,0,.12);
+  border-radius:50%;
+  filter:blur(4px);
+  animation:iconShadow 4s ease-in-out infinite;
+}
+@keyframes iconFloat{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+}
+@keyframes iconShadow{
+  0%,100%{transform:translateX(-50%) scaleX(1);opacity:.4;}
+  50%{transform:translateX(-50%) scaleX(.7);opacity:.2;}
+}
+.card-icon svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,.2));}
+.card:nth-child(1) .card-icon{background:linear-gradient(135deg,#667eea,#764ba2);animation-delay:0s;}
+.card:nth-child(2) .card-icon{background:linear-gradient(135deg,#11998e,#38ef7d);animation-delay:.4s;}
+.card:nth-child(3) .card-icon{background:linear-gradient(135deg,#f093fb,#f5576c);animation-delay:.8s;}
+.card:nth-child(4) .card-icon{background:linear-gradient(135deg,#4facfe,#00f2fe);animation-delay:1.2s;}
+.card:nth-child(5) .card-icon{background:linear-gradient(135deg,#fa709a,#fee140);animation-delay:1.6s;}
+.card:nth-child(6) .card-icon{background:linear-gradient(135deg,#30cfd0,#667eea);animation-delay:2s;}
+.card:nth-child(7) .card-icon{background:linear-gradient(135deg,#a18cd1,#fbc2eb);animation-delay:2.4s;}
+.card:nth-child(8) .card-icon{background:linear-gradient(135deg,#ffecd2,#fcb69f);animation-delay:2.8s;}
+.card:nth-child(9) .card-icon{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);animation-delay:3.2s;}
+.card:nth-child(10) .card-icon{background:linear-gradient(135deg,#fd7043,#ff8a65);animation-delay:0.2s;}
+.card:nth-child(11) .card-icon{background:linear-gradient(135deg,#26c6da,#00acc1);animation-delay:0.6s;}
+.card:nth-child(12) .card-icon{background:linear-gradient(135deg,#43e97b,#38f9d7);animation-delay:3.3s;}
+.card:nth-child(13) .card-icon{background:linear-gradient(135deg,#0f9b8e,#1a6fff);animation-delay:3.5999999999999996s;}
+.card:nth-child(14) .card-icon{background:linear-gradient(135deg,#4facfe,#00f2fe);animation-delay:3.9s;}
+.card:nth-child(15) .card-icon{background:linear-gradient(135deg,#f7971e,#ffd200);animation-delay:4.2s;}
+
+.svi-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  animation:iconFloat 4s ease-in-out infinite;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  position:relative;
+}
+.svi-icon::after{
+  content:'';position:absolute;
+  bottom:-8px;left:50%;transform:translateX(-50%);
+  width:65%;height:8px;
+  background:rgba(0,0,0,.15);
+  border-radius:50%;filter:blur(4px);
+  animation:iconShadow 4s ease-in-out infinite;
+}
+.svl .svi:nth-child(1) .svi-icon{background:linear-gradient(135deg,#667eea,#764ba2);animation-delay:0.0s;}
+.svl .svi:nth-child(2) .svi-icon{background:linear-gradient(135deg,#11998e,#38ef7d);animation-delay:0.25s;}
+.svl .svi:nth-child(3) .svi-icon{background:linear-gradient(135deg,#f093fb,#f5576c);animation-delay:0.5s;}
+.svl .svi:nth-child(4) .svi-icon{background:linear-gradient(135deg,#4facfe,#00f2fe);animation-delay:0.75s;}
+.svl .svi:nth-child(5) .svi-icon{background:linear-gradient(135deg,#fa709a,#fee140);animation-delay:1.0s;}
+.svl .svi:nth-child(6) .svi-icon{background:linear-gradient(135deg,#30cfd0,#667eea);animation-delay:1.25s;}
+.svl .svi:nth-child(7) .svi-icon{background:linear-gradient(135deg,#a18cd1,#fbc2eb);animation-delay:1.5s;}
+.svl .svi:nth-child(8) .svi-icon{background:linear-gradient(135deg,#ffecd2,#fcb69f);animation-delay:1.75s;}
+.svl .svi:nth-child(9) .svi-icon{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);animation-delay:2.0s;}
+.svl .svi:nth-child(10) .svi-icon{background:linear-gradient(135deg,#fd7043,#ff8a65);animation-delay:2.25s;}
+.svl .svi:nth-child(11) .svi-icon{background:linear-gradient(135deg,#26c6da,#00acc1);animation-delay:2.5s;}
+.svl .svi:nth-child(12) .svi-icon{background:linear-gradient(135deg,#43e97b,#38f9d7);animation-delay:2.75s;}
+.svl .svi:nth-child(13) .svi-icon{background:linear-gradient(135deg,#0f9b8e,#1a6fff);animation-delay:3.0s;}
+.svl .svi:nth-child(14) .svi-icon{background:linear-gradient(135deg,#4facfe,#00f2fe);animation-delay:3.25s;}
+.svl .svi:nth-child(15) .svi-icon{background:linear-gradient(135deg,#f7971e,#ffd200);animation-delay:3.5s;}
+
+.svn-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
+
+/* Serif italic accent text */
+.serif-accent{
+  font-family:'Georgia','Times New Roman',serif;
+  font-style:italic;
+  font-weight:400;
+  color:#fff;
+  position:relative;
+  display:inline-block;
+}
+.serif-accent::after{
+  content:'';
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:100%;
+  height:4px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q50 2 100 7 Q150 12 198 5' stroke='%231a6fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+
+.serif-accent-dark{
+  font-family:'Georgia','Times New Roman',serif;
+  font-style:italic;
+  font-weight:400;
+  color:var(--nv);
+  position:relative;
+  display:inline-block;
+}
+.serif-accent-dark::after{
+  content:'';
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:100%;
+  height:4px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q50 2 100 7 Q150 12 198 5' stroke='%231a6fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+
+.svb{display:flex;flex-direction:column;}
+.svb .svi-icon{margin-bottom:20px;align-self:flex-start;}
+
+.svb .svi-icon{width:56px;height:56px;border-radius:14px;}
+.svb .svi-icon::after{display:none;}
+
+.svi-left{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.svi-left .svn{padding-top:0;text-align:center;}
+.svi .svi-icon{width:56px;height:56px;border-radius:14px;}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2B6PPH47QK"></script>
@@ -1522,13 +1670,7 @@ video{-webkit-playsinline:1;}
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
-      </div>
-      <div class="ticker-set">
-        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
-        <div class="ticker-sep"></div>
-        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
-        <div class="ticker-sep"></div>
-        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
       </div>
       <div class="ticker-set">
@@ -1538,6 +1680,8 @@ video{-webkit-playsinline:1;}
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
       </div>
       <div class="ticker-set">
         <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
@@ -1545,6 +1689,18 @@ video{-webkit-playsinline:1;}
         <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
       </div>
     </div></div>
@@ -1559,7 +1715,7 @@ video{-webkit-playsinline:1;}
     <div class="con mob-stack-flex" style="display:flex;align-items:center;gap:60px;position:relative;z-index:1;">
       <div style="flex:1;min-width:0;">
         <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;">Meet Your AI Advisor</div>
-        <h2 style="font-size:52px;font-weight:800;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:20px;">Say hello to <span style="color:var(--bl);">SYN.</span></h2>
+        <h2 style="font-size:52px;font-weight:800;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:20px;">Say <span class="serif-accent">hello</span> to <span class="grad-text">SYN.</span></h2>
         <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,.6);max-width:480px;margin-bottom:32px;">SYN is Syntrex's AI advisor — always online, always ready to answer your questions about what we build, how it works, and what it costs. No wait time. No sales pressure. Just straight answers.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;">
           <button onclick="toggleChat()" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#fff;background:var(--bl);padding:14px 28px;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(26,111,255,.4);transition:all .2s;border-radius:50px;" onmouseover="this.style.background='var(--bld)'" onmouseout="this.style.background='var(--bl)'">Chat With SYN</button>
@@ -1583,25 +1739,25 @@ video{-webkit-playsinline:1;}
   <section class="build-sec">
     <div class="con">
       <div class="build-intro">
-        <div><div class="ey">What We Build</div><h2>AI systems for every type of business.</h2></div>
+        <div><div class="ey">What We Build</div><h2>AI systems for <span class="grad-text">every type</span> of business.</h2></div>
         <div class="build-intro-right"><p>We don't sell subscriptions or templates. Every system is built from scratch around how your business actually operates, handed over ready to run from day one.</p><a onclick="sp('services')" class="btn bg" style="cursor:pointer;">See All Services</a></div>
       </div>
       <div class="cards">
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">01</div><div class="card-t">Website Design & Development</div><div class="card-d">Custom professional websites built from scratch. Fast, mobile ready, and designed to convert visitors into clients. No templates. Built specifically for your brand.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">02</div><div class="card-t">AI Chatbots</div><div class="card-d">Qualify leads, answer questions, and book appointments 24/7. Deployed to your website with zero maintenance needed on your end.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">03</div><div class="card-t">AI Content & Social Media</div><div class="card-d">Blog posts, social captions, emails, ads, and scheduled posts across every platform — all generated in your brand voice and delivered consistently without the agency price tag.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">04</div><div class="card-t">Lead Generation</div><div class="card-d">AI powered pipelines that capture, score, and follow up with leads automatically. Your team only talks to people ready to buy.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">05</div><div class="card-t">Workflow Automation</div><div class="card-d">Automate your most time consuming tasks end to end. Follow ups, invoicing, data entry, lead routing, and anything in between.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">06</div><div class="card-t">Custom AI Tools</div><div class="card-d">Purpose built internal tools for your team. Proposal generators, quote builders, intake forms that save hours every single week.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">07</div><div class="card-t">Brand & Digital Presence</div><div class="card-d">Full digital presence buildout for new businesses — website, social profiles, email setup, content strategy, and AI systems all built and launched together.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">08</div><div class="card-t">System Integration</div><div class="card-d">Connect your existing tools so everything runs automatically. Calendar, email, forms, and your core systems stay in sync. Nothing falls through the cracks.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">09</div><div class="card-t">Growth System Design</div><div class="card-d">End to end growth systems built on AI covering lead capture, nurturing, conversion, and retention. All running automatically around the clock.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">10</div><div class="card-t">AI Content Systems</div><div class="card-d">Automated pipelines that draft emails, posts, proposals, and reports in your brand voice. Consistently and at scale.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">11</div><div class="card-t">Automated Proposal Systems</div><div class="card-d">Professional branded proposals generated in under a minute. Enter job details and a complete proposal comes out ready to send.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">12</div><div class="card-t">Client Onboarding Automation</div><div class="card-d">Automate your entire onboarding process from signed contract to kickoff. Welcome emails, intake forms, document collection, and scheduling handled automatically.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">13</div><div class="card-t">AI Strategy & Consulting</div><div class="card-d">We audit your operations, find the highest value opportunities, and give you a clear roadmap. Know exactly where AI fits and what to build first.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">14</div><div class="card-t">Reporting & Analytics Systems</div><div class="card-d">Custom AI dashboards and automated reports that pull data from across your business and surface the insights that matter. No more manual spreadsheets.</div><div class="card-arr">See full service →</div></div>
-        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-n">15</div><div class="card-t">AI Business Planning</div><div class="card-d">Custom AI tools that generate business plans, financial projections, and strategic documents automatically using your real business data.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="3" fill="white" fill-opacity="0.9"/><rect x="4" y="5" width="16" height="10" rx="1" fill="white" fill-opacity="0.3"/><path d="M8 21h8M12 17v4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="card-n">01</div><div class="card-t">Website Design & Development</div><div class="card-d">Custom professional websites built from scratch. Fast, mobile ready, and designed to convert visitors into clients. No templates. Built specifically for your brand.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="white" fill-opacity="0.9"/><circle cx="8" cy="10" r="1.5" fill="white" fill-opacity="0.5"/><circle cx="12" cy="10" r="1.5" fill="white" fill-opacity="0.5"/><circle cx="16" cy="10" r="1.5" fill="white" fill-opacity="0.5"/></svg></div><div class="card-n">02</div><div class="card-t">AI Chatbots</div><div class="card-d">Qualify leads, answer questions, and book appointments 24/7. Deployed to your website with zero maintenance needed on your end.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z" fill="white" fill-opacity="0.9"/></svg></div><div class="card-n">03</div><div class="card-t">AI Content & Social Media</div><div class="card-d">Blog posts, social captions, emails, ads, and scheduled posts across every platform — all generated in your brand voice and delivered consistently without the agency price tag.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.9" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke="white" stroke-opacity="0.7" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="white"/></svg></div><div class="card-n">04</div><div class="card-t">Lead Generation</div><div class="card-d">AI powered pipelines that capture, score, and follow up with leads automatically. Your team only talks to people ready to buy.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" fill="white" fill-opacity="0.95"/></svg></div><div class="card-n">05</div><div class="card-t">Workflow Automation</div><div class="card-d">Automate your most time consuming tasks end to end. Follow ups, invoicing, data entry, lead routing, and anything in between.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" fill="white" fill-opacity="0.3"/><rect x="7" y="7" width="10" height="10" rx="2" fill="white" fill-opacity="0.8"/><line x1="4" y1="9" x2="2" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="15" x2="2" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="9" x2="22" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="15" x2="22" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="4" x2="9" y2="2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="15" y1="4" x2="15" y2="2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="card-n">06</div><div class="card-t">Custom AI Tools</div><div class="card-d">Purpose built internal tools for your team. Proposal generators, quote builders, intake forms that save hours every single week.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 7 6 7 12C7 14.2 8.3 16.1 10 17.3V20H14V17.3C15.7 16.1 17 14.2 17 12C17 6 12 2 12 2Z" fill="white" fill-opacity="0.9"/><path d="M10 20H14V22H10V20Z" fill="white" fill-opacity="0.6"/><circle cx="12" cy="11" r="2" fill="white" fill-opacity="0.4"/></svg></div><div class="card-n">07</div><div class="card-t">Brand & Digital Presence</div><div class="card-d">Full digital presence buildout for new businesses — website, social profiles, email setup, content strategy, and AI systems all built and launched together.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="card-n">08</div><div class="card-t">System Integration</div><div class="card-d">Connect your existing tools so everything runs automatically. Calendar, email, forms, and your core systems stay in sync. Nothing falls through the cracks.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 7 22 7 22 13" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="card-n">09</div><div class="card-t">Growth System Design</div><div class="card-d">End to end growth systems built on AI covering lead capture, nurturing, conversion, and retention. All running automatically around the clock.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" fill="white" fill-opacity="0.9"/><path d="M4 6v4c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/><path d="M4 10v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/></svg></div><div class="card-n">10</div><div class="card-t">AI Content Systems</div><div class="card-d">Automated pipelines that draft emails, posts, proposals, and reports in your brand voice. Consistently and at scale.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="white" fill-opacity="0.8"/><polyline points="14 2 14 8 20 8" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/><line x1="9" y1="13" x2="15" y2="13" stroke="white" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="17" x2="12" y2="17" stroke="white" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/></svg></div><div class="card-n">11</div><div class="card-t">Automated Proposal Systems</div><div class="card-d">Professional branded proposals generated in under a minute. Enter job details and a complete proposal comes out ready to send.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" fill="white" fill-opacity="0.9"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/><polyline points="16 11 18 13 22 9" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="card-n">12</div><div class="card-t">Client Onboarding Automation</div><div class="card-d">Automate your entire onboarding process from signed contract to kickoff. Welcome emails, intake forms, document collection, and scheduling handled automatically.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" fill="white" fill-opacity="0.3" stroke="white" stroke-opacity="0.9" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="white" fill-opacity="0.9"/></svg></div><div class="card-n">13</div><div class="card-t">AI Strategy & Consulting</div><div class="card-d">We audit your operations, find the highest value opportunities, and give you a clear roadmap. Know exactly where AI fits and what to build first.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="9" rx="1" fill="white" fill-opacity="0.7"/><rect x="10" y="6" width="4" height="15" rx="1" fill="white" fill-opacity="0.9"/><rect x="17" y="9" width="4" height="12" rx="1" fill="white" fill-opacity="0.8"/><line x1="3" y1="3" x2="21" y2="3" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/></svg></div><div class="card-n">14</div><div class="card-t">Reporting & Analytics Systems</div><div class="card-d">Custom AI dashboards and automated reports that pull data from across your business and surface the insights that matter. No more manual spreadsheets.</div><div class="card-arr">See full service →</div></div>
+        <div class="card rev" onclick="sp('services')" style="cursor:pointer;"><div class="card-top-line"></div><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="white" fill-opacity="0.9"/><path d="M2 17l10 5 10-5" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/><path d="M2 12l10 5 10-5" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/></svg></div><div class="card-n">15</div><div class="card-t">AI Business Planning</div><div class="card-d">Custom AI tools that generate business plans, financial projections, and strategic documents automatically using your real business data.</div><div class="card-arr">See full service →</div></div>
       </div>
     </div>
   </section>
@@ -1814,7 +1970,7 @@ video{-webkit-playsinline:1;}
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> <span class="serif-accent">anytime.</span></h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -1866,23 +2022,23 @@ video{-webkit-playsinline:1;}
 
 <!-- SERVICES -->
 <div id="p-services" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Services</div><h1>Everything we build,<br>built for you.</h1><p class="pghs">We don't sell subscriptions or templates. We build custom AI systems that fit exactly how your business operates, handed over ready to run from day one.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Services</div><h1>Everything we <span class="serif-accent">build,</span><br>built <span class="grad-text">for you.</span></h1><p class="pghs">We don't sell subscriptions or templates. We build custom AI systems that fit exactly how your business operates, handed over ready to run from day one.</p></div></section>
   <section class="sp"><div class="con"><div class="svl">
-    <div class="svi rev"><div class="svn">01</div><div class="svb"><h3>Website Design & Development</h3><p>Custom professional websites built from scratch. Fast, mobile ready, and designed to convert visitors into clients. No templates, no page builders. Built specifically for your brand and business goals.</p><ul class="svbl"><li>Full custom design and development</li><li>Mobile responsive and fast loading</li><li>SEO optimized from day one</li><li>Delivered in days not months</li></ul></div></div>
-    <div class="svi rev"><div class="svn">02</div><div class="svb"><h3>AI Chatbots</h3><p>A custom chatbot that qualifies leads, answers common questions, and books appointments around the clock. Your prospects get an instant response at 2am. You wake up to a full calendar.</p><ul class="svbl"><li>Lead qualification and routing</li><li>Appointment booking integration</li><li>FAQ and support automation</li><li>Works on any website platform</li></ul></div></div>
-    <div class="svi rev"><div class="svn">03</div><div class="svb"><h3>AI Content & Social Media</h3><p>Blog posts, social captions, email newsletters, ad copy, and scheduled posts across every platform — all generated in your brand voice using AI and delivered consistently. Professional content at a fraction of the agency cost.</p><ul class="svbl"><li>Blog posts and long form articles</li><li>Social media captions and scheduled posts</li><li>Email newsletters and sequences</li><li>Ad copy and landing page content</li></ul></div></div>
-    <div class="svi rev"><div class="svn">04</div><div class="svb"><h3>Lead Generation Systems</h3><p>AI powered pipelines that capture, score, and follow up with leads automatically. Your sales team only spends time talking to people who are ready to buy.</p><ul class="svbl"><li>Lead capture and scoring</li><li>Automated follow up sequences</li><li>Pipeline reporting dashboards</li><li>Full system integration</li></ul></div></div>
-    <div class="svi rev"><div class="svn">05</div><div class="svb"><h3>Workflow Automation</h3><p>We map your most time consuming manual tasks and build automation that handles them end to end so your team can focus on work that actually requires a human.</p><ul class="svbl"><li>Follow up email sequences</li><li>Invoice and proposal generation</li><li>Data entry elimination</li><li>Automated lead routing and follow ups</li></ul></div></div>
-    <div class="svi rev"><div class="svn">06</div><div class="svb"><h3>Custom AI Tools</h3><p>Internal tools your team actually uses, built specifically around how your business works. Generate proposals, quotes, intake forms, or reports in seconds instead of 30 minutes.</p><ul class="svbl"><li>Proposal and quote generators</li><li>Client intake automation</li><li>Custom report builders</li><li>Any workflow tool you need</li></ul></div></div>
-    <div class="svi rev"><div class="svn">07</div><div class="svb"><h3>Brand & Digital Presence</h3><p>Full digital presence buildout for new and growing businesses. Website, social profiles, email setup, content strategy, and AI systems all built and launched together as one complete package.</p><ul class="svbl"><li>Complete website build</li><li>Social profile setup and branding</li><li>Professional email configuration</li><li>AI content and automation included</li></ul></div></div>
-    <div class="svi rev"><div class="svn">08</div><div class="svb"><h3>System Integration</h3><p>We connect your existing tools so they communicate automatically. Calendar, email, forms, databases, and internal systems all stay aligned. No more copy pasting between platforms.</p><ul class="svbl"><li>Calendar and system sync</li><li>Form to database automation</li><li>Multi platform data routing</li><li>Custom API connections</li></ul></div></div>
-    <div class="svi rev"><div class="svn">09</div><div class="svb"><h3>Growth System Design</h3><p>End to end growth systems powered by AI covering lead capture, nurturing, conversion, and retention. Designed around your business model and built to scale as you grow.</p><ul class="svbl"><li>Full funnel design and build</li><li>Lead nurture automation</li><li>Conversion optimization tools</li><li>Retention and reactivation systems</li></ul></div></div>
-    <div class="svi rev"><div class="svn">10</div><div class="svb"><h3>AI Content Systems</h3><p>Automated pipelines that draft emails, posts, proposals, and reports in your brand voice consistently and at scale. You review, you send. That's it.</p><ul class="svbl"><li>Email drafting automation</li><li>Social content pipelines</li><li>Brand voice AI configuration</li><li>Batch content generation</li></ul></div></div>
-    <div class="svi rev"><div class="svn">11</div><div class="svb"><h3>Automated Proposal Systems</h3><p>Stop writing proposals manually. We build custom generators that produce professional branded proposals in under a minute. Enter the job details and a complete document comes out ready to send.</p><ul class="svbl"><li>Branded proposal templates</li><li>Auto-populated from job data</li><li>Delivered in seconds not hours</li><li>Works for any industry</li></ul></div></div>
-    <div class="svi rev"><div class="svn">12</div><div class="svb"><h3>Client Onboarding Automation</h3><p>Automate your entire client onboarding process from signed contract to first deliverable. Welcome emails, intake forms, document collection, and kickoff scheduling all handled automatically.</p><ul class="svbl"><li>Automated welcome sequences</li><li>Digital intake and document collection</li><li>Calendar and kickoff scheduling</li><li>Progress tracking and notifications</li></ul></div></div>
-    <div class="svi rev"><div class="svn">13</div><div class="svb"><h3>AI Strategy & Consulting</h3><p>We audit your entire operation, identify the highest value automation opportunities, and build you a clear implementation roadmap. Know exactly where AI fits and what to build first.</p><ul class="svbl"><li>Full business operations audit</li><li>Automation opportunity mapping</li><li>Priority roadmap and action plan</li><li>Ongoing strategic guidance</li></ul></div></div>
-    <div class="svi rev"><div class="svn">14</div><div class="svb"><h3>Reporting & Analytics Systems</h3><p>Custom AI dashboards and automated reporting tools that pull data from across your business and surface the insights that actually matter. No more manual spreadsheet building.</p><ul class="svbl"><li>Automated weekly and monthly reports</li><li>Custom KPI dashboards</li><li>Multi source data aggregation</li><li>Scheduled delivery to your inbox</li></ul></div></div>
-    <div class="svi rev"><div class="svn">15</div><div class="svb"><h3>AI Business Planning</h3><p>Custom AI tools that generate business plans, financial projections, competitive analyses, and strategic documents automatically using your real business data. Professional outputs in minutes.</p><ul class="svbl"><li>Business plan generators</li><li>Financial projection tools</li><li>Market analysis automation</li><li>Strategic document builders</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="3" fill="white" fill-opacity="0.9"/><rect x="4" y="5" width="16" height="10" rx="1" fill="white" fill-opacity="0.3"/><path d="M8 21h8M12 17v4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="svn">01</div></div><div class="svb"><h3>Website Design & Development</h3><p>Custom professional websites built from scratch. Fast, mobile ready, and designed to convert visitors into clients. No templates, no page builders. Built specifically for your brand and business goals.</p><ul class="svbl"><li>Full custom design and development</li><li>Mobile responsive and fast loading</li><li>SEO optimized from day one</li><li>Delivered in days not months</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="white" fill-opacity="0.9"/><circle cx="8" cy="10" r="1.5" fill="rgba(0,0,0,0.3)"/><circle cx="12" cy="10" r="1.5" fill="rgba(0,0,0,0.3)"/><circle cx="16" cy="10" r="1.5" fill="rgba(0,0,0,0.3)"/></svg></div><div class="svn">02</div></div><div class="svb"><h3>AI Chatbots</h3><p>A custom chatbot that qualifies leads, answers common questions, and books appointments around the clock. Your prospects get an instant response at 2am. You wake up to a full calendar.</p><ul class="svbl"><li>Lead qualification and routing</li><li>Appointment booking integration</li><li>FAQ and support automation</li><li>Works on any website platform</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z" fill="white" fill-opacity="0.9"/></svg></div><div class="svn">03</div></div><div class="svb"><h3>AI Content & Social Media</h3><p>Blog posts, social captions, email newsletters, ad copy, and scheduled posts across every platform — all generated in your brand voice using AI and delivered consistently. Professional content at a fraction of the agency cost.</p><ul class="svbl"><li>Blog posts and long form articles</li><li>Social media captions and scheduled posts</li><li>Email newsletters and sequences</li><li>Ad copy and landing page content</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.9" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke="white" stroke-opacity="0.7" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="white"/></svg></div><div class="svn">04</div></div><div class="svb"><h3>Lead Generation Systems</h3><p>AI powered pipelines that capture, score, and follow up with leads automatically. Your sales team only spends time talking to people who are ready to buy.</p><ul class="svbl"><li>Lead capture and scoring</li><li>Automated follow up sequences</li><li>Pipeline reporting dashboards</li><li>Full system integration</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" fill="white" fill-opacity="0.95"/></svg></div><div class="svn">05</div></div><div class="svb"><h3>Workflow Automation</h3><p>We map your most time consuming manual tasks and build automation that handles them end to end so your team can focus on work that actually requires a human.</p><ul class="svbl"><li>Follow up email sequences</li><li>Invoice and proposal generation</li><li>Data entry elimination</li><li>Automated lead routing and follow ups</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" fill="white" fill-opacity="0.3"/><rect x="7" y="7" width="10" height="10" rx="2" fill="white" fill-opacity="0.8"/><line x1="4" y1="9" x2="2" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="4" y1="15" x2="2" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="9" x2="22" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="15" x2="22" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="svn">06</div></div><div class="svb"><h3>Custom AI Tools</h3><p>Internal tools your team actually uses, built specifically around how your business works. Generate proposals, quotes, intake forms, or reports in seconds instead of 30 minutes.</p><ul class="svbl"><li>Proposal and quote generators</li><li>Client intake automation</li><li>Custom report builders</li><li>Any workflow tool you need</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 7 6 7 12C7 14.2 8.3 16.1 10 17.3V20H14V17.3C15.7 16.1 17 14.2 17 12C17 6 12 2 12 2Z" fill="white" fill-opacity="0.9"/><path d="M10 20H14V22H10V20Z" fill="white" fill-opacity="0.6"/><circle cx="12" cy="11" r="2" fill="white" fill-opacity="0.4"/></svg></div><div class="svn">07</div></div><div class="svb"><h3>Brand & Digital Presence</h3><p>Full digital presence buildout for new and growing businesses. Website, social profiles, email setup, content strategy, and AI systems all built and launched together as one complete package.</p><ul class="svbl"><li>Complete website build</li><li>Social profile setup and branding</li><li>Professional email configuration</li><li>AI content and automation included</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="svn">08</div></div><div class="svb"><h3>System Integration</h3><p>We connect your existing tools so they communicate automatically. Calendar, email, forms, databases, and internal systems all stay aligned. No more copy pasting between platforms.</p><ul class="svbl"><li>Calendar and system sync</li><li>Form to database automation</li><li>Multi platform data routing</li><li>Custom API connections</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 7 22 7 22 13" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="svn">09</div></div><div class="svb"><h3>Growth System Design</h3><p>End to end growth systems powered by AI covering lead capture, nurturing, conversion, and retention. Designed around your business model and built to scale as you grow.</p><ul class="svbl"><li>Full funnel design and build</li><li>Lead nurture automation</li><li>Conversion optimization tools</li><li>Retention and reactivation systems</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" fill="white" fill-opacity="0.9"/><path d="M4 6v4c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/><path d="M4 10v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/></svg></div><div class="svn">10</div></div><div class="svb"><h3>AI Content Systems</h3><p>Automated pipelines that draft emails, posts, proposals, and reports in your brand voice consistently and at scale. You review, you send. That's it.</p><ul class="svbl"><li>Email drafting automation</li><li>Social content pipelines</li><li>Brand voice AI configuration</li><li>Batch content generation</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="white" fill-opacity="0.8"/><polyline points="14 2 14 8 20 8" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/><line x1="9" y1="13" x2="15" y2="13" stroke="white" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="17" x2="12" y2="17" stroke="white" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round"/></svg></div><div class="svn">11</div></div><div class="svb"><h3>Automated Proposal Systems</h3><p>Stop writing proposals manually. We build custom generators that produce professional branded proposals in under a minute. Enter the job details and a complete document comes out ready to send.</p><ul class="svbl"><li>Branded proposal templates</li><li>Auto-populated from job data</li><li>Delivered in seconds not hours</li><li>Works for any industry</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" fill="white" fill-opacity="0.9"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/><polyline points="16 11 18 13 22 9" stroke="white" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="svn">12</div></div><div class="svb"><h3>Client Onboarding Automation</h3><p>Automate your entire client onboarding process from signed contract to first deliverable. Welcome emails, intake forms, document collection, and kickoff scheduling all handled automatically.</p><ul class="svbl"><li>Automated welcome sequences</li><li>Digital intake and document collection</li><li>Calendar and kickoff scheduling</li><li>Progress tracking and notifications</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" fill="white" fill-opacity="0.3" stroke="white" stroke-opacity="0.9" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="white" fill-opacity="0.9"/></svg></div><div class="svn">13</div></div><div class="svb"><h3>AI Strategy & Consulting</h3><p>We audit your entire operation, identify the highest value automation opportunities, and build you a clear implementation roadmap. Know exactly where AI fits and what to build first.</p><ul class="svbl"><li>Full business operations audit</li><li>Automation opportunity mapping</li><li>Priority roadmap and action plan</li><li>Ongoing strategic guidance</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="9" rx="1" fill="white" fill-opacity="0.7"/><rect x="10" y="6" width="4" height="15" rx="1" fill="white" fill-opacity="0.9"/><rect x="17" y="9" width="4" height="12" rx="1" fill="white" fill-opacity="0.8"/></svg></div><div class="svn">14</div></div><div class="svb"><h3>Reporting & Analytics Systems</h3><p>Custom AI dashboards and automated reporting tools that pull data from across your business and surface the insights that actually matter. No more manual spreadsheet building.</p><ul class="svbl"><li>Automated weekly and monthly reports</li><li>Custom KPI dashboards</li><li>Multi source data aggregation</li><li>Scheduled delivery to your inbox</li></ul></div></div>
+    <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="white" fill-opacity="0.9"/><path d="M2 17l10 5 10-5" stroke="white" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/><path d="M2 12l10 5 10-5" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/></svg></div><div class="svn">15</div></div><div class="svb"><h3>AI Business Planning</h3><p>Custom AI tools that generate business plans, financial projections, competitive analyses, and strategic documents automatically using your real business data. Professional outputs in minutes.</p><ul class="svbl"><li>Business plan generators</li><li>Financial projection tools</li><li>Market analysis automation</li><li>Strategic document builders</li></ul></div></div>
   </div></div></section>
   <!-- AI INDUSTRY STATS -->
   <section style="background:var(--nv);padding:100px 0;position:relative;overflow:hidden;">
@@ -1942,7 +2098,7 @@ video{-webkit-playsinline:1;}
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -1994,17 +2150,44 @@ video{-webkit-playsinline:1;}
 
 <!-- PROJECTS PAGE -->
 <div id="p-projects" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Our Work</div><h1>Projects &amp;<br>Case Studies.</h1><p class="pghs">Real work built for real businesses. Every project delivered from scratch, custom to the client.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Our Work</div><h1><span class="serif-accent">Projects</span> &amp;<br><span class="grad-text">Case Studies.</span></h1><p class="pghs">Real work built for real businesses. Every project delivered from scratch, custom to the client.</p></div></section>
 
   <section class="sp" style="background:var(--w);">
     <div class="con">
 
-      <!-- PROJECT 1: HALT Website Redesign -->
+      <!-- PROJECT 1: Karlo Financial Website -->
+      <div style="padding:60px 0;border-bottom:1px solid var(--brd);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap;">
+          <div style="max-width:560px;">
+            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">Project 01</div>
+            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">Karlo Financial<br>Website Redesign</h2>
+            <p style="font-size:15px;color:var(--gr);line-height:1.8;">A full redesign of karlofinancial.com — an independent insurance and financial services agency partnering with 50+ carriers. The goal is a modern, trust-building site that clearly communicates their life insurance, annuity, IUL, and retirement planning services, and converts more visitors into consultations.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);border-radius:16px;">
+            <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:6px;">Project Details</div>
+            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Client:</span> Karlo Financial</div>
+            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Type:</span> Full Redesign</div>
+            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Status:</span> <span style="color:var(--bl);font-weight:600;">In Progress</span></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div>
+            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:12px;">● Current Live Site</div>
+            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8520c9d9-0fda-3f32-150a-4238ce1173ad.png" alt="Karlo Financial current site" style="width:100%;display:block;"></div>
+          </div>
+          <div>
+            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">● Syntrex Redesign</div>
+            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/dd9b64e5-52b9-60a1-479b-01da343244ad.png" alt="Karlo Financial Syntrex redesign" style="width:100%;display:block;"></div>
+          </div>
+        </div>
+      </div>
+
+<!-- PROJECT 2: HALT Website Redesign -->
       <div style="padding:60px 0;border-bottom:1px solid var(--brd);">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap;">
           <div style="max-width:560px;">
             <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">In Progress · Website Redesign</div>
-            <h2 style="font-size:36px;margin-bottom:16px;">HALT! Fire<br>Website Redesign</h2>
+            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">HALT! Fire<br>Website Redesign</h2>
             <p style="font-size:15px;color:var(--gr);line-height:1.8;">A full ground-up redesign of the HALT! Fire website. The goal is a faster, more conversion-focused experience that better communicates the product story and drives both consumer and retail sales.</p>
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);border-radius:16px;min-width:200px;">
@@ -2026,12 +2209,12 @@ video{-webkit-playsinline:1;}
         </div>
       </div>
 
-      <!-- PROJECT 2: HALT Newsletter with Carousel -->
+      <!-- PROJECT 3: HALT Newsletter -->
       <div style="padding:60px 0;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
           <div>
             <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">Ongoing · Email Marketing</div>
-            <h2 style="font-size:36px;margin-bottom:16px;">HALT! Fire<br>Dispatch Newsletter</h2>
+            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">HALT! Fire<br>Dispatch Newsletter</h2>
             <p style="font-size:15px;color:var(--gr);line-height:1.8;margin-bottom:24px;">Designed and wrote the HALT! Retail Dispatch — a professional email newsletter targeting retail buyers and distributors. Built to drive shelf placement, educate the trade, and keep HALT! top of mind across their retail network.</p>
             <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
               <div style="font-size:14px;color:var(--grd);padding-left:14px;border-left:2px solid var(--bl);">Professional copywriting and design</div>
@@ -2087,10 +2270,11 @@ video{-webkit-playsinline:1;}
   function nlPrev() { nlGo((nlCur-1+nlImgs.length) % nlImgs.length); }
   </script>
 
-  <div style="background:var(--nv);padding:80px 0;text-align:center;position:relative;overflow:hidden;">
+
+        <div style="background:var(--nv);padding:80px 0;text-align:center;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;"></div>
     <div class="con" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
-      <h2 style="color:#fff;">Want results like these?</h2>
+      <h2 style="color:#fff;">Want <span class="serif-accent">results</span> <span class="grad-text">like these?</span></h2>
       <p style="color:rgba(255,255,255,.6);font-size:16px;max-width:480px;line-height:1.7;font-family:Manrope,sans-serif;">Every project is built from scratch around your business. Let's talk about what we can build for you.</p>
       <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Start a Project</a>
     </div>
@@ -2099,7 +2283,7 @@ video{-webkit-playsinline:1;}
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -2151,7 +2335,7 @@ video{-webkit-playsinline:1;}
 
 <!-- ABOUT -->
 <div id="p-about" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>About</div><h1>Built lean.<br>Built to deliver.</h1><p class="pghs">Syntrex isn't a bloated agency with a 6-month timeline. We're a specialized digital solutions studio — custom websites, AI systems, and growth strategy — that moves fast and builds things that work from day one.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>About</div><h1>Built <span class="serif-accent">lean.</span><br>Built to <span class="grad-text">deliver.</span></h1><p class="pghs">Syntrex isn't a bloated agency with a 6-month timeline. We're a specialized digital solutions studio — custom websites, AI systems, and growth strategy — that moves fast and builds things that work from day one.</p></div></section>
   <section class="sp"><div class="con"><div class="a2c">
     <div class="atx">
       <div class="ey">Our Story</div>
@@ -2178,13 +2362,7 @@ video{-webkit-playsinline:1;}
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
-      </div>
-      <div class="ticker-set">
-        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
-        <div class="ticker-sep"></div>
-        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
-        <div class="ticker-sep"></div>
-        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
       </div>
       <div class="ticker-set">
@@ -2194,6 +2372,8 @@ video{-webkit-playsinline:1;}
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
       </div>
       <div class="ticker-set">
         <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
@@ -2201,6 +2381,18 @@ video{-webkit-playsinline:1;}
         <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
         <div class="ticker-sep"></div>
         <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
         <div class="ticker-sep"></div>
       </div>
     </div></div>
@@ -2208,14 +2400,14 @@ video{-webkit-playsinline:1;}
   <section class="sp"  <section class="sp" style="background:var(--off);position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;"></div>
     <div class="con" style="position:relative;z-index:1;">
-      <div style="text-align:center;margin-bottom:60px;"><div class="ey eyc">Industries We Serve</div><h2>We work with every kind of business.</h2><p style="color:var(--gr);font-size:15px;margin-top:14px;">If you have repetitive work and a team, we can build something that helps.</p></div>
+      <div style="text-align:center;margin-bottom:60px;"><div class="ey eyc">Industries We Serve</div><h2>We work with <span class="grad-text">every kind</span> of <span class="serif-accent-dark">business.</span></h2><p style="color:var(--gr);font-size:15px;margin-top:14px;">If you have repetitive work and a team, we can build something that helps.</p></div>
       <div class="ind-grid"><div class="ind">Real Estate</div><div class="ind">Healthcare</div><div class="ind">Contracting</div><div class="ind">Insurance</div><div class="ind">Retail and E-Commerce</div><div class="ind">Hospitality</div><div class="ind">Legal</div><div class="ind">Finance</div><div class="ind">Consumer Brands</div><div class="ind">Manufacturing</div><div class="ind">Professional Services</div><div class="ind">And More</div></div>
     </div>
 
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey">Our Team</div>
-      <h2 style="margin-bottom:40px;">The people behind Syntrex LLC.</h2>
+      <h2 style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);">
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Founder & CEO</div>
@@ -2257,7 +2449,7 @@ video{-webkit-playsinline:1;}
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -2309,11 +2501,11 @@ video{-webkit-playsinline:1;}
 
 <!-- CONTACT -->
 <div id="p-contact" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Contact</div><h1>Let's build something<br>that works for you.</h1><p class="pghs">Tell us what you need — a new website, an AI system, or a full digital overhaul. We'll map out exactly what we'd build and what it would cost. No pressure, no sales pitch.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Contact</div><h1>Let's build <span class="serif-accent">something</span><br>that works <span class="grad-text">for you.</span></h1><p class="pghs">Tell us what you need — a new website, an AI system, or a full digital overhaul. We'll map out exactly what we'd build and what it would cost. No pressure, no sales pitch.</p></div></section>
   <section class="sp"><div class="con"><div class="ctlay">
     <div class="cti">
       <div class="ey">Get In Touch</div>
-      <h3>Start with a message.</h3>
+      <h3>Start with <span class="serif-accent" style="color:var(--nv);">a message.</span></h3>
       <p>Send us a message describing your business and what you'd like to improve. We'll respond within 24 hours with a clear idea of what we'd build and what it would cost.</p>
       <div class="cdts">
         <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="cdil">Direct Email</div><div class="cdiv"><a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a></div></div></div>
@@ -2347,7 +2539,7 @@ video{-webkit-playsinline:1;}
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -3232,7 +3424,7 @@ async function sendMsg() {
 
 <!-- PRICING PAGE -->
 <div id="p-pricing" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Pricing</div><h1>Priced for your needs.</h1><p class="pghs">Every business is different. Every project gets a custom quote. No surprises, no hidden fees.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Pricing</div><h1>Priced for <span class="serif-accent grad-text-combo">your</span> <span class="grad-text">needs.</span></h1><p class="pghs">Every business is different. Every project gets a custom quote. No surprises, no hidden fees.</p></div></section>
   <section class="sp" style="background:var(--w);">
     <div class="con">
       <div class="ey">How We Price</div>
@@ -3306,7 +3498,7 @@ async function sendMsg() {
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
@@ -3358,7 +3550,7 @@ async function sendMsg() {
 
 <!-- LEGAL PAGE -->
 <div id="p-legal" class="page">
-  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Legal</div><h1>Legal Documents</h1><p class="pghs">Syntrex LLC operates with full legal protection for both our clients and our business. All projects are governed by the following agreements.</p></div></section>
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Legal</div><h1>Legal <span class="grad-text">Documents</span></h1><p class="pghs">Syntrex LLC operates with full legal protection for both our clients and our business. All projects are governed by the following agreements.</p></div></section>
 
   <section class="sp" style="background:var(--w);">
     <div class="con">
@@ -3448,7 +3640,7 @@ async function sendMsg() {
   <div class="syn-inner">
     <div class="syn-left">
       <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span>SYN</span> anytime.</h2>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
         <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
