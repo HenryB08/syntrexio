@@ -2279,7 +2279,7 @@ video{-webkit-playsinline:1;}
     </div>
   </section>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   (function(){
     var NOTION_KEY = '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';
     var DB_ID      = 'b3c8856fa91d4d66ae4894e63bc62d69';
@@ -2358,7 +2358,7 @@ video{-webkit-playsinline:1;}
           renderCards(pages);
         })
         .catch(function(err){
-          console.error('Notion fetch failed:', err);
+          // Silently fall back to static cards
           // Fallback to known projects
           renderCards([
             {properties:{Title:{title:[{plain_text:'Karlo Financial — Website Redesign'}]},'Service Type':{select:{name:'Website Redesign'}},'Key Metric':{rich_text:[{plain_text:'Full redesign of karlofinancial.com — modernizing a 50+ carrier insurance agency to convert more visitors into consultations'}]},'Preview Image':{rich_text:[{plain_text:'https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/dd9b64e5-52b9-60a1-479b-01da343244ad.png'}]},Featured:{checkbox:true}}},
@@ -2531,28 +2531,28 @@ video{-webkit-playsinline:1;}
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a610ea7-18a7-6a40-7a07-1d37e2c0fed3.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Henry Bello"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Henry Bello</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Founded Syntrex LLC out of Windermere, Florida. Built AI systems for HALT! Fire and Doughbrik's Wavers before launching Syntrex to bring that work to businesses everywhere.</p>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
+          <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">CFO — Chief Financial Officer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5809e182-245f-9c8f-1d03-e1a4ca80da0c.png" style="width:140%;height:140%;object-fit:cover;margin-left:-22%;margin-top:-8%;" alt="Sofia Weeden"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Sofia Weeden</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Oversees the financial health of Syntrex LLC. Manages budgeting, pricing strategy, invoicing, and financial planning to ensure every project is delivered profitably and every client relationship is built on a solid foundation.</p>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
+          <a href="mailto:sofia@syntrexio.com" style="color:inherit;">sofia@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Head of Operations</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f73b6268-5065-c6e8-6fe5-91f800aedbcf.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Alexander Ohmer"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Alexander Ohmer</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Keeps Syntrex running smoothly behind the scenes. Manages project coordination, client delivery timelines, and internal processes so every build gets to the client on time and exactly as promised.</p>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
+          <a href="mailto:alexander@syntrexio.com" style="color:inherit;">alexander@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Director of Marketing & Social Media</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/2e332ad2-85de-2338-8e32-e5ea06a7154b.png" style="width:150%;height:150%;object-fit:cover;margin-left:-25%;margin-top:-10%;" alt="Ciana Bello"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Ciana Bello</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Drives the brand voice and growth strategy behind Syntrex. From content and social media to campaigns and client outreach, Ciana makes sure the right people find Syntrex — and understand exactly why it's different.</p>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
+          <a href="mailto:ciana@syntrexio.com" style="color:inherit;">ciana@syntrexio.com</a>
         </div>
       </div>
     </div>
@@ -2701,28 +2701,28 @@ video{-webkit-playsinline:1;}
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a610ea7-18a7-6a40-7a07-1d37e2c0fed3.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Henry Bello"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Henry Bello</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Founded Syntrex LLC out of Windermere, Florida. Built AI systems for HALT! Fire and Doughbrik's Wavers before launching Syntrex to bring that work to businesses everywhere.</p>
-          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
+          <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">CFO — Chief Financial Officer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5809e182-245f-9c8f-1d03-e1a4ca80da0c.png" style="width:140%;height:140%;object-fit:cover;margin-left:-22%;margin-top:-8%;" alt="Sofia Weeden"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Sofia Weeden</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Oversees the financial health of Syntrex LLC. Manages budgeting, pricing strategy, invoicing, and financial planning to ensure every project is delivered profitably and every client relationship is built on a solid foundation.</p>
-          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
+          <a href="mailto:sofia@syntrexio.com" style="color:inherit;">sofia@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Head of Operations</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f73b6268-5065-c6e8-6fe5-91f800aedbcf.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Alexander Ohmer"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Alexander Ohmer</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Keeps Syntrex running smoothly behind the scenes. Manages project coordination, client delivery timelines, and internal processes so every build gets to the client on time and exactly as promised.</p>
-          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
+          <a href="mailto:alexander@syntrexio.com" style="color:inherit;">alexander@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Director of Marketing & Social Media</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/2e332ad2-85de-2338-8e32-e5ea06a7154b.png" style="width:150%;height:150%;object-fit:cover;margin-left:-25%;margin-top:-10%;" alt="Ciana Bello"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Ciana Bello</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Drives the brand voice and growth strategy behind Syntrex. From content and social media to campaigns and client outreach, Ciana makes sure the right people find Syntrex — and understand exactly why it's different.</p>
-          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
+          <a href="mailto:ciana@syntrexio.com" style="color:inherit;">ciana@syntrexio.com</a>
         </div>
       </div>
     </div>
@@ -2796,7 +2796,7 @@ video{-webkit-playsinline:1;}
       <h3>Start with <span class="serif-accent" style="color:var(--nv);">a message.</span></h3>
       <p>Send us a message describing your business and what you'd like to improve. We'll respond within 24 hours with a clear idea of what we'd build and what it would cost.</p>
       <div class="cdts">
-        <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="cdil">Direct Email</div><div class="cdiv"><a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a></div></div></div>
+        <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="cdil">Direct Email</div><div class="cdiv"><a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a></div></div></div>
         <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cdil">Response Time</div><div class="cdiv">Within 24 hours, guaranteed</div></div></div>
         <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cdil">Service Area</div><div class="cdiv">Worldwide. Any business, anywhere.</div></div></div>
         <div class="cdit"><div class="cdic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div><div><div class="cdil">First Prototype</div><div class="cdiv">Delivered within 48 hours of first contact</div></div></div>
@@ -2815,7 +2815,7 @@ video{-webkit-playsinline:1;}
   <div style="font-size:64px;line-height:1;margin-bottom:12px;">✅</div>
   <div style="font-weight:800;font-size:24px;color:var(--nv);font-family:'Manrope',sans-serif;letter-spacing:-1px;margin-bottom:8px;">Message sent!</div>
   <div style="color:var(--gr);font-size:15px;line-height:1.7;text-align:center;max-width:320px;font-family:'Manrope',sans-serif;">We received your message and will get back to you at your email within 24 hours.</div>
-  <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
+  <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
 </div>
     </form>
   </div></div></section>
@@ -2877,7 +2877,7 @@ video{-webkit-playsinline:1;}
 </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function sp(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('act'));document.querySelectorAll('.nls a').forEach(a=>a.classList.remove('act'));const pg=document.getElementById('p-'+id);if(pg)pg.classList.add('act');const n=document.getElementById('n-'+id);if(n)n.classList.add('act');window.scrollTo(0,0);setTimeout(()=>{ir(id);if(window._initPghStars&&window._pghInited&&pg)pg.querySelectorAll('canvas.pgh-stars').forEach(c=>{if(!window._pghInited.has(c)){window._pghInited.add(c);window._initPghStars(c);}});},80);}
 function tmob(){const m=document.getElementById('mm');m.style.display=m.style.display==='flex'?'none':'flex';}
 function ir(id){const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),(i%4)*90);});},{threshold:0.08});document.querySelectorAll('#p-'+id+' .rev').forEach(el=>{el.classList.remove('on');obs.observe(el);});}
@@ -3626,7 +3626,7 @@ async function sendMsg() {
     ctx.clearRect(0, 0, W, H);
 
     // Draw nebula clouds
-    if (nebulaOffscreen) ctx.drawImage(nebulaOffscreen, 0, 0);
+    if (nebulaOffscreen && nebulaOffscreen.width > 0 && nebulaOffscreen.height > 0) ctx.drawImage(nebulaOffscreen, 0, 0);
 
     // Shooting stars
     for (let i = shooters.length - 1; i >= 0; i--) {
@@ -3905,7 +3905,7 @@ async function sendMsg() {
         </div>
         <div>
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;">Contact</div>
-          <div style="font-size:14px;color:var(--gr);line-height:1.75;"><a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a><br>syntrexio.com<br>Response within 24 hours</div>
+          <div style="font-size:14px;color:var(--gr);line-height:1.75;"><a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a><br>syntrexio.com<br>Response within 24 hours</div>
         </div>
       </div>
 
@@ -3970,90 +3970,4 @@ async function sendMsg() {
         <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
       </div>
     </div>
-    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
-      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
-    </div>
-  </div>
-</footer>
-</div>
-
-
-<script>
-// Mobile video autoplay fix
-(function(){
-  function tryPlayAll() {
-    document.querySelectorAll('video').forEach(function(v) {
-      if (v.paused) {
-        v.muted = true;
-        var p = v.play();
-        if (p && p.catch) p.catch(function(){});
-      }
-    });
-  }
-  // Try on load
-  if (document.readyState === 'complete') { tryPlayAll(); }
-  else { window.addEventListener('load', tryPlayAll); }
-  // Try on first touch (iOS unlock)
-  document.addEventListener('touchstart', tryPlayAll, { once: true, passive: true });
-  // Try on first click
-  document.addEventListener('click', tryPlayAll, { once: true });
-  // Re-try when pages switch (for hidden page videos)
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) tryPlayAll();
-  });
-  // Observe page div visibility changes
-  if (window.MutationObserver) {
-    var obs = new MutationObserver(function(muts) {
-      muts.forEach(function(m) {
-        if (m.type === 'attributes' && m.attributeName === 'class') {
-          var el = m.target;
-          if (el.classList.contains('act')) {
-            setTimeout(function() {
-              el.querySelectorAll('video').forEach(function(v) {
-                v.muted = true;
-                var p = v.play();
-                if (p && p.catch) p.catch(function(){});
-              });
-            }, 100);
-          }
-        }
-      });
-    });
-    document.querySelectorAll('.page').forEach(function(page) {
-      obs.observe(page, { attributes: true });
-    });
-  }
-})();
-</script>
-
-
-<script>
-// Video load error fallback for mobile
-document.querySelectorAll('video').forEach(function(v) {
-  v.addEventListener('error', function() {
-    v.style.display = 'none';
-    // Show sibling or nearby img fallback
-    var container = v.parentElement;
-    if (container) {
-      var img = container.querySelector('img');
-      if (img) img.style.display = 'block';
-    }
-  });
-  // Also handle stalled/no data on mobile
-  v.addEventListener('stalled', function() {
-    v.load();
-    setTimeout(function() {
-      v.muted = true;
-      var p = v.play();
-      if (p && p.catch) p.catch(function(){});
-    }, 500);
-  });
-  v.addEventListener('emptied', function() {
-    v.load();
-  });
-});
-</script>
-
-</body>
-</html>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justif
