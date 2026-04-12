@@ -2155,126 +2155,240 @@ video{-webkit-playsinline:1;}
 <div id="p-projects" class="page">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Our Work</div><h1><span class="serif-accent">Projects</span> &amp;<br><span class="grad-text">Case Studies.</span></h1><p class="pghs">Real work built for real businesses. Every project delivered from scratch, custom to the client.</p></div></section>
 
-  <section class="sp" style="background:var(--w);">
+
+<!-- CASE STUDIES — live from Notion -->
+  <style>
+    .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .cs-card{background:#fff;border:1px solid var(--brd);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+    .cs-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(26,111,255,.12);border-color:rgba(26,111,255,.25);}
+    .cs-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--off);}
+    .cs-card-img-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0c1a38 0%,#1a3a6b 100%);display:flex;align-items:center;justify-content:center;}
+    .cs-card-img-placeholder svg{opacity:.18;}
+    .cs-card-body{padding:28px 28px 24px;display:flex;flex-direction:column;flex:1;}
+    .cs-badge{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:10px;}
+    .cs-card-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.3px;color:var(--nv);margin-bottom:10px;line-height:1.3;}
+    .cs-metric{font-size:13px;color:var(--gr);line-height:1.6;flex:1;margin-bottom:20px;}
+    .cs-cta{font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bl);text-decoration:none;display:flex;align-items:center;gap:6px;transition:gap .2s;}
+    .cs-cta:hover{gap:10px;}
+    .cs-skeleton{background:linear-gradient(90deg,var(--off) 25%,#e8edf8 50%,var(--off) 75%);background-size:200% 100%;animation:cs-shimmer 1.4s infinite;border-radius:6px;}
+    @keyframes cs-shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+    #cs-coming{background:var(--off);border:1px solid var(--brd);border-radius:14px;padding:48px 40px;text-align:center;margin-top:32px;}
+    @media(max-width:1024px){.cs-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.cs-grid{grid-template-columns:1fr;}}
+  
+/* ===== ADDITIONAL MOBILE FIXES ===== */
+@media(max-width:768px){
+  /* svi-left: stack icon + number vertically, center aligned */
+  .svi-left{
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding-top:4px;
+  }
+  .svi .svi-icon{
+    width:48px !important;
+    height:48px !important;
+    border-radius:12px !important;
+    animation:none !important; /* reduce motion on mobile */
+  }
+  .svi .svi-icon::after{ display:none; }
+
+  /* Service cards: icon smaller on mobile */
+  .card-icon{
+    width:44px !important;
+    height:44px !important;
+    border-radius:12px !important;
+    margin-bottom:14px !important;
+    animation:none !important; /* save battery */
+  }
+  .card-icon::after{ display:none !important; }
+
+  /* Hero orb video: cover properly in smaller container */
+  #hero-bubble-img{
+    object-fit:cover !important;
+    width:100% !important;
+    height:100% !important;
+  }
+
+  /* Notion case study cards */
+  .cs-card-body{ padding:20px !important; }
+  .cs-card-title{ font-size:16px !important; }
+  .cs-metric{ font-size:13px !important; }
+
+  /* serif-accent underline: clip at width */
+  .serif-accent::after,
+  .serif-accent-dark::after{
+    bottom:-4px;
+    height:3px;
+  }
+
+  /* Pricing page: price cards full width */
+  .price-card{
+    padding:28px 20px !important;
+  }
+
+  /* About page: team grid 1 col */
+  [style*="grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);"]{
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    background:transparent !important;
+    border:none !important;
+  }
+
+  /* Contact: form inputs full width */
+  input, textarea, select{
+    font-size:16px !important; /* prevent iOS zoom */
+  }
+
+  /* Grad-text on mobile: ensure clip works */
+  .grad-text, .grad-text-2{
+    -webkit-background-clip:text !important;
+    background-clip:text !important;
+    -webkit-text-fill-color:transparent !important;
+  }
+}
+
+@media(max-width:480px){
+  /* Extra small: nav items hide more aggressively */
+  .hero-badge{ font-size:8px !important; padding:6px 12px !important; }
+
+  /* Notion grid single col */
+  .cs-grid{ grid-template-columns:1fr !important; }
+
+  /* Card icons even smaller */
+  .card-icon{
+    width:38px !important;
+    height:38px !important;
+  }
+  .card-icon svg{ width:20px !important; height:20px !important; }
+}
+</style>
+
+  <section style="background:var(--w);padding:110px 0;">
     <div class="con">
-
-      <!-- PROJECT 1: Karlo Financial Website -->
-      <div style="padding:60px 0;border-bottom:1px solid var(--brd);">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap;">
-          <div style="max-width:560px;">
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">Project 01</div>
-            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">Karlo Financial<br>Website Redesign</h2>
-            <p style="font-size:15px;color:var(--gr);line-height:1.8;">A full redesign of karlofinancial.com — an independent insurance and financial services agency partnering with 50+ carriers. The goal is a modern, trust-building site that clearly communicates their life insurance, annuity, IUL, and retirement planning services, and converts more visitors into consultations.</p>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);border-radius:16px;">
-            <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:6px;">Project Details</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Client:</span> Karlo Financial</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Type:</span> Full Redesign</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Status:</span> <span style="color:var(--bl);font-weight:600;">In Progress</span></div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-          <div>
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:12px;">● Current Live Site</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8520c9d9-0fda-3f32-150a-4238ce1173ad.png" alt="Karlo Financial current site" style="width:100%;display:block;"></div>
-          </div>
-          <div>
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">● Syntrex Redesign</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/dd9b64e5-52b9-60a1-479b-01da343244ad.png" alt="Karlo Financial Syntrex redesign" style="width:100%;display:block;"></div>
-          </div>
-        </div>
-      </div>
-
-<!-- PROJECT 2: HALT Website Redesign -->
-      <div style="padding:60px 0;border-bottom:1px solid var(--brd);">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap;">
-          <div style="max-width:560px;">
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">In Progress · Website Redesign</div>
-            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">HALT! Fire<br>Website Redesign</h2>
-            <p style="font-size:15px;color:var(--gr);line-height:1.8;">A full ground-up redesign of the HALT! Fire website. The goal is a faster, more conversion-focused experience that better communicates the product story and drives both consumer and retail sales.</p>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;padding:20px 28px;background:var(--off);border:1px solid var(--brd);border-radius:16px;min-width:200px;">
-            <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:4px;">Project Details</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Client:</span> HALT! Fire</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Type:</span> Full Redesign</div>
-            <div style="font-size:13px;color:var(--grd);"><span style="color:var(--nv);font-weight:700;">Status:</span> <span style="color:var(--bl);font-weight:700;">In Progress</span></div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-          <div>
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(220,80,80,.9);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:rgba(220,80,80,.9);display:inline-block;"></span>Current Live Site</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d52454ef-57f9-0709-6dba-1b8b5e6e37fb.png" alt="HALT! Fire current website" style="width:100%;display:block;"></div>
-          </div>
-          <div>
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;display:flex;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--bl);display:inline-block;"></span>Syntrex Redesign</div>
-            <div style="border:1px solid var(--brd);overflow:hidden;border-radius:16px;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d9c35404-a97d-d69f-2986-bca2e5b912bf.png" alt="HALT! Fire redesign" style="width:100%;display:block;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 3: HALT Newsletter -->
-      <div style="padding:60px 0;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
-          <div>
-            <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">Ongoing · Email Marketing</div>
-            <h2 style="font-size:36px;letter-spacing:-.5px;line-height:1.15;margin-bottom:16px;color:var(--nv);font-family:'Outfit',sans-serif;">HALT! Fire<br>Dispatch Newsletter</h2>
-            <p style="font-size:15px;color:var(--gr);line-height:1.8;margin-bottom:24px;">Designed and wrote the HALT! Retail Dispatch — a professional email newsletter targeting retail buyers and distributors. Built to drive shelf placement, educate the trade, and keep HALT! top of mind across their retail network.</p>
-            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
-              <div style="font-size:14px;color:var(--grd);padding-left:14px;border-left:2px solid var(--bl);">Professional copywriting and design</div>
-              <div style="font-size:14px;color:var(--grd);padding-left:14px;border-left:2px solid var(--bl);">Targeted at retail buyers and distributors</div>
-              <div style="font-size:14px;color:var(--grd);padding-left:14px;border-left:2px solid var(--bl);">Covers product education, media coverage, retail data</div>
-              <div style="font-size:14px;color:var(--grd);padding-left:14px;border-left:2px solid var(--bl);">Delivered on a recurring schedule</div>
-            </div>
-            <a href="https://www.haltfire.com/" target="_blank" rel="noopener" style="font-family:'Exo 2',sans-serif;font-size:11px;color:var(--bl);text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Visit haltfire.com →</a>
-          </div>
-          <div>
-            <div style="position:relative;border:1px solid var(--brd);overflow:hidden;background:#111;border-radius:16px;">
-              <img id="nl-img" src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a89f1b2-e5e1-2b08-6c29-d933263d4b50.png" alt="Newsletter" style="width:100%;display:block;transition:opacity .15s;">
-              <button onclick="nlPrev()" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);border-radius:50%;background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8249;</button>
-              <button onclick="nlNext()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);border-radius:50%;background:rgba(0,0,0,.65);border:none;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer;border-radius:4px;line-height:1;">&#8250;</button>
-              <div id="nl-counter" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);color:#fff;font-family:'Exo 2',sans-serif;font-size:10px;padding:4px 14px;border-radius:20px;letter-spacing:1px;">1 / 5</div>
-            </div>
-            <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;" id="nl-dots">
-              <span onclick="nlGo(0)" style="width:8px;height:8px;border-radius:50%;background:var(--bl);cursor:pointer;display:inline-block;transition:background .2s;"></span>
-              <span onclick="nlGo(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);cursor:pointer;display:inline-block;transition:background .2s;"></span>
-              <span onclick="nlGo(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);cursor:pointer;display:inline-block;transition:background .2s;"></span>
-              <span onclick="nlGo(3)" style="width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);cursor:pointer;display:inline-block;transition:background .2s;"></span>
-              <span onclick="nlGo(4)" style="width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);cursor:pointer;display:inline-block;transition:background .2s;"></span>
-            </div>
-            <div style="text-align:center;margin-top:10px;font-family:'Exo 2',sans-serif;font-size:10px;color:var(--gr);letter-spacing:1px;">USE ARROWS TO BROWSE</div>
-          </div>
-        </div>
+      <div class="ey">Case Studies</div>
+      <h2 style="margin-bottom:16px;">Real work.<br>Real results.</h2>
+      <p style="font-size:16px;color:var(--gr);max-width:540px;line-height:1.75;margin-bottom:60px;">Every project is built from scratch, custom to the client. Here's what we've shipped.</p>
+      <div id="cs-grid-wrap"></div>
+      <div id="cs-coming" class="rev">
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:12px;">Always Growing</div>
+        <h3 style="font-size:20px;margin-bottom:10px;color:var(--nv);">More projects on the way.</h3>
+        <p style="font-size:14px;color:var(--gr);max-width:400px;margin:0 auto 24px;">We're building new systems every week. Check back soon — or reach out to talk about yours.</p>
+        <a onclick="sp('contact')" class="btn bb" style="cursor:pointer;">Start a Project</a>
       </div>
     </div>
   </section>
 
   <script>
-  const nlImgs = [
-    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a89f1b2-e5e1-2b08-6c29-d933263d4b50.png",
-    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/0fc0c497-c4b6-f59d-8705-7f1f97f5c05e.png",
-    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/4e775590-eda6-c9f9-3da5-49d9c65eb31c.png",
-    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/b8d8ec2e-0a7e-2ff8-a3e5-ef054efad362.png",
-    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/30f5cbac-f262-dac6-09f2-f7b461331bf3.png"
-  ];
-  let nlCur = 0;
-  function nlGo(n) {
-    nlCur = n;
-    const img = document.getElementById('nl-img');
-    img.style.opacity = '0';
-    setTimeout(() => {
-      img.src = nlImgs[nlCur];
-      img.style.opacity = '1';
-      document.getElementById('nl-counter').textContent = (nlCur+1) + ' / ' + nlImgs.length;
-      const dots = document.getElementById('nl-dots').children;
-      for(let i=0;i<dots.length;i++) dots[i].style.background = i===nlCur ? 'var(--bl)' : 'rgba(0,0,0,.15)';
-    }, 150);
-  }
-  function nlNext() { nlGo((nlCur+1) % nlImgs.length); }
-  function nlPrev() { nlGo((nlCur-1+nlImgs.length) % nlImgs.length); }
+  (function(){
+    var NOTION_KEY = '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';
+    var DB_ID      = 'b3c8856fa91d4d66ae4894e63bc62d69';
+    var wrap       = document.getElementById('cs-grid-wrap');
+
+    function showSkeleton(){
+      var html='<div class="cs-grid">';
+      for(var i=0;i<3;i++){
+        html+='<div class="cs-card">';
+        html+='<div class="cs-skeleton" style="width:100%;aspect-ratio:16/9;border-radius:0;"></div>';
+        html+='<div class="cs-card-body">';
+        html+='<div class="cs-skeleton" style="height:10px;width:60%;margin-bottom:14px;"></div>';
+        html+='<div class="cs-skeleton" style="height:18px;width:85%;margin-bottom:8px;"></div>';
+        html+='<div class="cs-skeleton" style="height:14px;width:100%;margin-bottom:6px;"></div>';
+        html+='<div class="cs-skeleton" style="height:14px;width:75%;margin-bottom:24px;"></div>';
+        html+='<div class="cs-skeleton" style="height:10px;width:40%;"></div>';
+        html+='</div></div>';
+      }
+      html+='</div>';
+      wrap.innerHTML=html;
+    }
+
+    function richText(arr){
+      if(!arr||!arr.length)return'';
+      return arr.map(function(t){return t.plain_text||'';}).join('');
+    }
+
+    function renderCards(pages){
+      if(!pages.length){
+        wrap.innerHTML='<p style="color:var(--gr);font-size:15px;">No published case studies yet — check back soon.</p>';
+        return;
+      }
+      var html='<div class="cs-grid">';
+      pages.forEach(function(p){
+        var props=p.properties||{};
+        var title=richText((props['Title']||props['Name']||{}).title)||'Untitled';
+        var service=((props['Service Type']||{}).select||{}).name||'';
+        var metric=richText((props['Key Metric']||{}).rich_text);
+        var imgUrl=richText((props['Preview Image']||{}).rich_text);
+        var featured=(props['Featured']||{}).checkbox;
+
+        var imgHtml;
+        if(imgUrl){
+          imgHtml='<img class="cs-card-img" src="'+imgUrl+'" alt="'+title+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                 +'<div class="cs-card-img-placeholder" style="display:none;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>';
+        } else {
+          imgHtml='<div class="cs-card-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>';
+        }
+
+        html+='<div class="cs-card rev"'+(featured?' style="border-color:rgba(26,111,255,.3);box-shadow:0 4px 20px rgba(26,111,255,.08);"':'')+'>'+imgHtml;
+        html+='<div class="cs-card-body">';
+        if(service) html+='<div class="cs-badge">'+service+'</div>';
+        html+='<div class="cs-card-title">'+title+'</div>';
+        if(metric) html+='<div class="cs-metric">'+metric+'</div>';
+        html+='<span class="cs-cta">View Case Study <span>→</span></span>';
+        html+='</div></div>';
+      });
+      html+='</div>';
+      wrap.innerHTML=html;
+      setTimeout(function(){
+        wrap.querySelectorAll('.rev').forEach(function(el){ el.classList.add('on'); });
+      },60);
+    }
+
+    function loadCaseStudies(){
+      showSkeleton();
+
+      fetch('https://syntrex-notion.henry-314.workers.dev')
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var pages = (data.results || []);
+          if(!pages.length){
+            wrap.innerHTML='<p style="color:var(--gr);font-size:15px;">No published case studies yet — check back soon.</p>';
+            return;
+          }
+          renderCards(pages);
+        })
+        .catch(function(err){
+          console.error('Notion fetch failed:', err);
+          // Fallback to known projects
+          renderCards([
+            {properties:{Title:{title:[{plain_text:'Karlo Financial — Website Redesign'}]},'Service Type':{select:{name:'Website Redesign'}},'Key Metric':{rich_text:[{plain_text:'Full redesign of karlofinancial.com — modernizing a 50+ carrier insurance agency to convert more visitors into consultations'}]},'Preview Image':{rich_text:[{plain_text:'https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/dd9b64e5-52b9-60a1-479b-01da343244ad.png'}]},Featured:{checkbox:true}}},
+            {properties:{Title:{title:[{plain_text:'HALT! Fire — Website Redesign'}]},'Service Type':{select:{name:'Website Redesign'}},'Key Metric':{rich_text:[{plain_text:'Full ground-up redesign targeting both consumer and B2B audiences — built to convert'}]},'Preview Image':{rich_text:[{plain_text:'https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d9c35404-a97d-d69f-2986-bca2e5b912bf.png'}]},Featured:{checkbox:false}}},
+            {properties:{Title:{title:[{plain_text:'HALT! Fire — Email Newsletter System'}]},'Service Type':{select:{name:'Newsletter'}},'Key Metric':{rich_text:[{plain_text:'406 delivered · 45 opens · 30 clicks — exceptional 67% click-to-open ratio on Issue 001'}]},'Preview Image':{rich_text:[{plain_text:'https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a89f1b2-e5e1-2b08-6c29-d933263d4b50.png'}]},Featured:{checkbox:false}}}
+          ]);
+        });
+    }
+
+    var observed=false;
+    var projectsPage=document.getElementById('p-projects');
+    if(projectsPage){
+      var obs=new MutationObserver(function(){
+        if(projectsPage.classList.contains('act')&&!observed){
+          observed=true; loadCaseStudies();
+        }
+      });
+      obs.observe(projectsPage,{attributes:true,attributeFilter:['class']});
+    }
+    if(projectsPage&&projectsPage.classList.contains('act')){
+      observed=true; loadCaseStudies();
+    }
+  })();
   </script>
 
 
-        <div style="background:var(--nv);padding:80px 0;text-align:center;position:relative;overflow:hidden;">
+
+
+
+<div style="background:var(--nv);padding:80px 0;text-align:center;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;"></div>
     <div class="con" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
       <h2 style="color:#fff;">Want <span class="serif-accent">results</span> <span class="grad-text">like these?</span></h2>
@@ -2503,6 +2617,177 @@ video{-webkit-playsinline:1;}
 </div>
 
 <!-- CONTACT -->
+
+
+
+<!-- ABOUT -->
+<div id="p-about" class="page">
+  <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>About</div><h1>Built <span class="serif-accent">lean.</span><br>Built to <span class="grad-text">deliver.</span></h1><p class="pghs">Syntrex isn't a bloated agency with a 6-month timeline. We're a specialized digital solutions studio — custom websites, AI systems, and growth strategy — that moves fast and builds things that work from day one.</p></div></section>
+  <section class="sp"><div class="con"><div class="a2c">
+    <div class="atx">
+      <div class="ey">Our Story</div>
+      <h2 style="margin-bottom:26px;">Real experience.<br>Real results.</h2>
+      <p>Syntrex was built on real operational experience. We've worked hands on with growing companies from consumer brands scaling into major retail to industrial B2B operations, building sales automation tools and custom internal workflows from the ground up.</p>
+      <p>That experience means we understand what businesses actually need in practice, not just what sounds good in a pitch deck. We've seen firsthand how much time and money gets lost to repetitive manual work and how quickly the right AI system eliminates it.</p>
+      <p>Now we bring that same work to <strong>any business ready to operate smarter</strong>, regardless of size, industry, or location.</p>
+      <a onclick="sp('contact')" class="btn bb" style="margin-top:18px;cursor:pointer;">Work With Us</a>
+    </div>
+    <div class="lvals">
+      <div class="lval rev"><div class="lval-l">What We Replace</div><div class="lval-t">Hours of manual work eating your team's week, every week</div></div>
+      <div class="lval rev"><div class="lval-l">What You Get</div><div class="lval-t">A custom system that runs without you watching it</div></div>
+      <div class="lval rev"><div class="lval-l">What Makes Us Different</div><div class="lval-t">Built from scratch for your business. No templates, no subscriptions.</div></div>
+      <div class="lval rev"><div class="lval-l">Our Guarantee</div><div class="lval-t">We stand behind every system we build, from day one</div></div>
+    </div>
+  </div></div></section>
+  <div class="ticker-wrap">
+    <div class="ticker-label">Trusted By</div>
+    <div class="ticker-outer"><div class="ticker-track">
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+      <div class="ticker-set">
+        <a href="https://www.haltfire.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/10e3f309-a967-0307-1fec-28288c3acb92.png" alt="HALT! Fire"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://eatdoughbriks.com/" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" alt="Doughbrik's Wavers"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://kinetixtechnologygroup.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" alt="Kinetix Technology Group" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+        <a href="https://karlofinancial.com" target="_blank" rel="noopener"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" alt="Karlo Financial" class="logo-kinetix"></a>
+        <div class="ticker-sep"></div>
+      </div>
+    </div></div>
+  </div>
+  <section class="sp"  <section class="sp" style="background:var(--off);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;"></div>
+    <div class="con" style="position:relative;z-index:1;">
+      <div style="text-align:center;margin-bottom:60px;"><div class="ey eyc">Industries We Serve</div><h2>We work with <span class="grad-text">every kind</span> of <span class="serif-accent-dark">business.</span></h2><p style="color:var(--gr);font-size:15px;margin-top:14px;">If you have repetitive work and a team, we can build something that helps.</p></div>
+      <div class="ind-grid"><div class="ind">Real Estate</div><div class="ind">Healthcare</div><div class="ind">Contracting</div><div class="ind">Insurance</div><div class="ind">Retail and E-Commerce</div><div class="ind">Hospitality</div><div class="ind">Legal</div><div class="ind">Finance</div><div class="ind">Consumer Brands</div><div class="ind">Manufacturing</div><div class="ind">Professional Services</div><div class="ind">And More</div></div>
+    </div>
+
+  <section class="sp" style="background:var(--off);">
+    <div class="con">
+      <div class="ey">Our Team</div>
+      <h2 style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);">
+        <div class="team-card" style="padding:44px 36px;;border-radius:24px">
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Founder & CEO</div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a610ea7-18a7-6a40-7a07-1d37e2c0fed3.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Henry Bello"></div>
+          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Henry Bello</div>
+          <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Founded Syntrex LLC out of Windermere, Florida. Built AI systems for HALT! Fire and Doughbrik's Wavers before launching Syntrex to bring that work to businesses everywhere.</p>
+          <a href="mailto:henry@syntrexio.com">henry@syntrexio.com</a>
+        </div>
+        <div class="team-card" style="padding:44px 36px;;border-radius:24px">
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">CFO — Chief Financial Officer</div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5809e182-245f-9c8f-1d03-e1a4ca80da0c.png" style="width:140%;height:140%;object-fit:cover;margin-left:-22%;margin-top:-8%;" alt="Sofia Weeden"></div>
+          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Sofia Weeden</div>
+          <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Oversees the financial health of Syntrex LLC. Manages budgeting, pricing strategy, invoicing, and financial planning to ensure every project is delivered profitably and every client relationship is built on a solid foundation.</p>
+          <a href="mailto:sofia@syntrexio.com">sofia@syntrexio.com</a>
+        </div>
+        <div class="team-card" style="padding:44px 36px;;border-radius:24px">
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Head of Operations</div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/f73b6268-5065-c6e8-6fe5-91f800aedbcf.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Alexander Ohmer"></div>
+          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Alexander Ohmer</div>
+          <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Keeps Syntrex running smoothly behind the scenes. Manages project coordination, client delivery timelines, and internal processes so every build gets to the client on time and exactly as promised.</p>
+          <a href="mailto:alexander@syntrexio.com">alexander@syntrexio.com</a>
+        </div>
+        <div class="team-card" style="padding:44px 36px;;border-radius:24px">
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Director of Marketing & Social Media</div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/2e332ad2-85de-2338-8e32-e5ea06a7154b.png" style="width:150%;height:150%;object-fit:cover;margin-left:-25%;margin-top:-10%;" alt="Ciana Bello"></div>
+          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Ciana Bello</div>
+          <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Drives the brand voice and growth strategy behind Syntrex. From content and social media to campaigns and client outreach, Ciana makes sure the right people find Syntrex — and understand exactly why it's different.</p>
+          <a href="mailto:ciana@syntrexio.com">ciana@syntrexio.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+  
+
+
+
+<section class="syn-strip">
+  <div class="syn-inner">
+    <div class="syn-left">
+      <span class="syn-eyebrow">AI ASSISTANT</span>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
+      <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
+      <div class="syn-buttons">
+        <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
+        <button onclick="sp('contact');" class="btn bg">Talk to a Human</button>
+      </div>
+    </div>
+    <div class="syn-right">
+      <div class="syn-robot">
+        <video autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;">
+          <source src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/files/db6867c5-a044-d404-f577-c89716438016/Video_1_.mov" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="background:var(--nv2);padding:40px 0 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
+      <!-- LEFT: Logo + tagline + email -->
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
+        <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
+      </div>
+      <!-- RIGHT: Socials + address -->
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div style="display:flex;gap:10px;align-items:center;">
+  <a href="https://www.instagram.com/syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
+  </a>
+  <a href="https://www.tiktok.com/@syntrexio" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/company/syntrexco" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(26,111,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+        </div>
+        <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:right;">513 Main Street · Windermere, FL 34786</div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- CONTACT -->
+
 <div id="p-contact" class="page">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Contact</div><h1>Let's build <span class="serif-accent">something</span><br>that works <span class="grad-text">for you.</span></h1><p class="pghs">Tell us what you need — a new website, an AI system, or a full digital overhaul. We'll map out exactly what we'd build and what it would cost. No pressure, no sales pitch.</p></div></section>
   <section class="sp"><div class="con"><div class="ctlay">
