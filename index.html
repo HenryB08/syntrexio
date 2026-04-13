@@ -2335,6 +2335,9 @@ video{-webkit-playsinline:1;}
         var featured=(props['Featured']||{}).checkbox;
         var link=((props['Link']||{}).url)||richText((props['Link']||{}).rich_text)||'';
         if(link && link.startsWith('file://')) link='';
+        // If slug exists, use internal case study page instead
+        var slug=richText((props['Slug']||{}).rich_text);
+        if(slug) link='case-study.html?s='+slug;
 
         var uid='cs-'+Math.random().toString(36).slice(2,8);
         var imgHtml;
