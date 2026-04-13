@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Syntrex</title>
+<link rel="icon" type="image/png" href="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5bb5ac38-447d-4e84-367a-cd1a0a95f88d.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --w:#ffffff;--off:#f6f8fd;
+  --brd:#dde3f0;
+  --gr:#6b7a99;--grd:#3d4a66;
+  --nv:#08152e;--nv2:#0c1a38;
+  --bl:#1a6fff;--bld:#1252cc;
+  --blb:rgba(26,111,255,.12);
+  --glow:rgba(26,111,255,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;background:#00020d;}
+body{font-family:"Space Grotesk",sans-serif;color:var(--nv);background:var(--w);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;height:54px;padding:0 36px;display:flex;align-items:center;gap:36px;background:rgba(10,18,40,.82);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.12);border-radius:100px;box-shadow:0 8px 40px rgba(0,0,0,.4);}
+.corner-logo{position:fixed;top:20px;left:36px;z-index:201;cursor:pointer;}
+.corner-logo img{height:80px;width:auto;display:block;object-fit:contain;}
+.back-btn{font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;}
+.back-btn:hover{color:#fff;}
+.back-btn svg{transition:transform .2s;}
+.back-btn:hover svg{transform:translateX(-3px);}
+
+/* HERO */
+.cs-hero{background:#00020d;padding:140px 0 80px;position:relative;overflow:hidden;min-height:60vh;display:flex;align-items:center;}
+.cs-hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.cs-hero .con{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 60px;}
+.cs-badge{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);background:rgba(26,111,255,.12);border:1px solid rgba(26,111,255,.25);padding:7px 16px;border-radius:50px;display:inline-block;margin-bottom:24px;}
+.cs-hero h1{font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(32px,5vw,72px);letter-spacing:-2px;line-height:1.05;color:#fff;margin-bottom:20px;max-width:800px;}
+.cs-hero-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.55);max-width:600px;margin-bottom:48px;}
+.cs-metrics{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.12);padding-top:32px;flex-wrap:wrap;}
+.cs-metric-item{padding-right:36px;border-right:1px solid rgba(255,255,255,.12);margin-right:36px;}
+.cs-metric-item:last-child{border-right:none;}
+.cs-metric-n{font-weight:800;font-size:36px;letter-spacing:-2px;color:#fff;line-height:1;margin-bottom:6px;}
+.cs-metric-n span{color:var(--bl);}
+.cs-metric-l{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+
+/* IMAGE SECTION */
+.cs-images{background:var(--off);padding:60px 0;border-bottom:1px solid var(--brd);}
+.cs-images .con{max-width:1180px;margin:0 auto;padding:0 60px;}
+.cs-img-slider{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#000;}
+.cs-img-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s ease;}
+.cs-img-slider img.active{opacity:1;}
+.cs-img-slider img.hidden{opacity:0;}
+.cs-img-nav{position:absolute;bottom:16px;right:16px;display:flex;gap:8px;z-index:2;}
+.cs-img-btn{width:36px;height:36px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(8px);}
+.cs-img-btn:hover{background:var(--bl);}
+.cs-img-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
+.cs-img-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);transition:background .2s;cursor:pointer;}
+.cs-img-dot.active{background:#fff;}
+
+/* CONTENT */
+.cs-content{padding:80px 0;}
+.cs-content .con{max-width:1180px;margin:0 auto;padding:0 60px;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start;}
+.cs-body{font-size:16px;line-height:1.85;color:var(--gr);}
+.cs-body h2{font-family:"Outfit",sans-serif;font-weight:700;font-size:28px;letter-spacing:-.5px;color:var(--nv);margin:40px 0 16px;}
+.cs-body h2:first-child{margin-top:0;}
+.cs-body h3{font-family:"Outfit",sans-serif;font-weight:600;font-size:20px;color:var(--nv);margin:28px 0 12px;}
+.cs-body p{margin-bottom:18px;}
+.cs-body ul,.cs-body ol{padding-left:24px;margin-bottom:18px;}
+.cs-body li{margin-bottom:8px;}
+.cs-body strong{color:var(--nv);font-weight:600;}
+.cs-body a{color:var(--bl);text-decoration:none;}
+.cs-body a:hover{text-decoration:underline;}
+.cs-body blockquote{border-left:3px solid var(--bl);padding:16px 20px;background:var(--blb);border-radius:0 8px 8px 0;margin:24px 0;font-style:italic;color:var(--nv);}
+.cs-body img{max-width:100%;border-radius:8px;margin:16px 0;}
+.cs-body hr{border:none;border-top:1px solid var(--brd);margin:32px 0;}
+
+/* SIDEBAR */
+.cs-sidebar{position:sticky;top:100px;}
+.cs-sidebar-card{background:var(--off);border:1px solid var(--brd);border-radius:14px;padding:28px;margin-bottom:16px;}
+.cs-sidebar-label{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gr);margin-bottom:8px;}
+.cs-sidebar-val{font-weight:600;font-size:15px;color:var(--nv);}
+.cs-cta-btn{display:block;background:var(--bl);color:#fff;font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:16px 24px;border-radius:50px;text-align:center;text-decoration:none;margin-top:8px;transition:background .2s,transform .2s;box-shadow:0 4px 18px var(--glow);}
+.cs-cta-btn:hover{background:var(--bld);transform:translateY(-2px);}
+
+/* LOADING / ERROR */
+.cs-loading{text-align:center;padding:120px 60px;color:rgba(255,255,255,.5);}
+.cs-loading-spin{width:40px;height:40px;border:3px solid rgba(26,111,255,.2);border-top-color:var(--bl);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.cs-error{text-align:center;padding:80px 60px;}
+.cs-error h2{color:var(--nv);margin-bottom:12px;}
+.cs-error p{color:var(--gr);}
+
+/* FOOTER */
+.cs-footer{background:var(--nv2);padding:32px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.cs-footer span{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.2);text-transform:uppercase;}
+
+/* MOBILE */
+@media(max-width:900px){
+  .cs-content .con{grid-template-columns:1fr;}
+  .cs-sidebar{position:static;}
+  .cs-hero .con,.cs-images .con,.cs-content .con{padding:0 20px;}
+  .cs-hero{padding:110px 0 60px;}
+  .cs-hero h1{font-size:32px;}
+  .cs-metrics{flex-direction:column;gap:16px;}
+  .cs-metric-item{border-right:none;padding-right:0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:16px;}
+  .corner-logo img{height:60px;}
+  nav{padding:0 20px;}
+  .cs-footer{padding:24px 20px;}
+}
+
+/* Gradient text */
+.grad-text{background:linear-gradient(135deg,#00c6ff 0%,#1a6fff 55%,#0038a8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+</style>
+</head>
+<body>
+
+<a href="/" class="corner-logo">
+  <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex">
+</a>
+
+<nav>
+  <a href="/" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Projects
+  </a>
+</nav>
+
+<!-- Content injected here -->
+<div id="cs-root">
+  <div class="cs-hero">
+    <canvas id="cs-stars"></canvas>
+    <div class="con">
+      <div class="cs-loading">
+        <div class="cs-loading-spin"></div>
+        <div style="font-family:Exo 2,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">Loading case study...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="cs-footer">
+  <span>© 2026 Syntrex LLC. All rights reserved.</span>
+  <span>AI Solutions & Digital Services</span>
+</footer>
+
+<script>
+// ===== STAR CANVAS =====
+(function(){
+  var canvas=document.getElementById('cs-stars');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var W,H,stars=[],tick=0;
+  function resize(){W=canvas.width=canvas.parentElement.offsetWidth;H=canvas.height=canvas.parentElement.offsetHeight;}
+  function init(){stars=[];for(var i=0;i<300;i++){stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.2,op:Math.random()*.6+.1,sp:Math.random()*.01+.004,off:Math.random()*Math.PI*2});}}
+  function draw(){ctx.clearRect(0,0,W,H);tick++;for(var s of stars){var o=s.op*(0.5+0.5*Math.sin(tick*s.sp+s.off));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle='rgba(200,220,255,'+o+')';ctx.fill();}requestAnimationFrame(draw);}
+  resize();init();draw();
+  window.addEventListener('resize',function(){resize();init();});
+})();
+
+// ===== LOAD CASE STUDY FROM NOTION =====
+(function(){
+  // Get slug from URL: case-study.html?s=halt-fire-newsletter
+  var params=new URLSearchParams(window.location.search);
+  var slug=params.get('s')||'';
+
+  if(!slug){
+    showError('No case study specified.','Make sure you followed a valid link.');
+    return;
+  }
+
+  // Fetch all approved case studies from the worker
+  fetch('https://syntrex-notion.henry-314.workers.dev')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var pages=data.results||[];
+      // Find the one matching the slug
+      var page=pages.find(function(p){
+        var props=p.properties||{};
+        var s=richText((props['Slug']||{}).rich_text);
+        return s===slug;
+      });
+      if(!page){
+        showError('Case study not found.','This page may have moved or the link is incorrect.');
+        return;
+      }
+      renderPage(page);
+    })
+    .catch(function(){
+      showError('Could not load case study.','Please try again or go back to Projects.');
+    });
+
+  function richText(arr){
+    if(!arr||!arr.length)return'';
+    return arr.map(function(t){return t.plain_text||'';}).join('');
+  }
+
+  function renderPage(page){
+    var props=page.properties||{};
+    var title=richText((props['Title']||props['Name']||{}).title)||'Case Study';
+    var service=((props['Service Type']||{}).select||{}).name||'';
+    var metric=richText((props['Key Metric']||{}).rich_text)||'';
+    var img1=richText((props['Preview Image']||{}).rich_text)||'';
+    var img2=richText((props['Preview Image 2']||{}).rich_text)||'';
+    var pageContent=page.content||'';
+
+    // Parse key metric into parts for display
+    var metricParts=metric.split('·').map(function(m){return m.trim();}).filter(Boolean);
+
+    // Build image slider
+    var imagesHtml='';
+    if(img1){
+      imagesHtml='<section class="cs-images"><div class="con"><div class="cs-img-slider">';
+      imagesHtml+='<img src="'+img1+'" class="active" alt="'+title+'" loading="lazy">';
+      if(img2){
+        imagesHtml+='<img src="'+img2+'" class="hidden" alt="'+title+' 2" loading="lazy">';
+        imagesHtml+='<div class="cs-img-nav">';
+        imagesHtml+='<button class="cs-img-btn" onclick="imgSlide(0)">&#8249;</button>';
+        imagesHtml+='<button class="cs-img-btn" onclick="imgSlide(1)">&#8250;</button>';
+        imagesHtml+='</div>';
+        imagesHtml+='<div class="cs-img-dots"><div class="cs-img-dot active" onclick="imgSlide(0)"></div><div class="cs-img-dot" onclick="imgSlide(1)"></div></div>';
+      }
+      imagesHtml+='</div></div></section>';
+    }
+
+    // Build metrics display
+    var metricsHtml='';
+    if(metricParts.length>1){
+      metricsHtml='<div class="cs-metrics">';
+      metricParts.forEach(function(m){
+        var parts=m.split(' ');
+        var num=parts[0];var label=parts.slice(1).join(' ');
+        metricsHtml+='<div class="cs-metric-item"><div class="cs-metric-n">'+num+'</div><div class="cs-metric-l">'+label+'</div></div>';
+      });
+      metricsHtml+='</div>';
+    } else if(metric){
+      metricsHtml='<p style="color:rgba(255,255,255,.55);font-size:15px;margin-top:24px;">'+metric+'</p>';
+    }
+
+    // Convert Notion content to HTML
+    var bodyHtml=convertNotionContent(pageContent);
+
+    // Build sidebar
+    var sidebarHtml='<div class="cs-sidebar">';
+    if(service){
+      sidebarHtml+='<div class="cs-sidebar-card"><div class="cs-sidebar-label">Service Type</div><div class="cs-sidebar-val">'+service+'</div></div>';
+    }
+    sidebarHtml+='<div class="cs-sidebar-card"><div class="cs-sidebar-label">Company</div><div class="cs-sidebar-val">'+title.split('—')[0].trim()+'</div></div>';
+    sidebarHtml+='<a href="/" class="cs-sidebar-card cs-cta-btn" style="display:block;text-decoration:none;">← Back to Projects</a>';
+    sidebarHtml+='<a href="/" class="cs-cta-btn" style="margin-top:8px;display:block;">Work With Us</a>';
+    sidebarHtml+='</div>';
+
+    var html=
+      '<section class="cs-hero">'+
+        '<canvas id="cs-stars-hero"></canvas>'+
+        '<div class="con">'+
+          (service?'<div class="cs-badge">'+service+'</div>':'')+
+          '<h1>'+title+'</h1>'+
+          (metric&&metricParts.length<=1?'<p class="cs-hero-sub">'+metric+'</p>':'')+
+          metricsHtml+
+        '</div>'+
+      '</section>'+
+      imagesHtml+
+      '<section class="cs-content">'+
+        '<div class="con">'+
+          '<div class="cs-body">'+(bodyHtml||'<p style="color:var(--gr);">Content coming soon.</p>')+'</div>'+
+          sidebarHtml+
+        '</div>'+
+      '</section>';
+
+    document.getElementById('cs-root').innerHTML=html;
+
+    // Reinit stars on new canvas
+    initStars(document.getElementById('cs-stars-hero'));
+
+    // Update page title
+    document.title=title+' — Syntrex Case Study';
+  }
+
+  function convertNotionContent(text){
+    if(!text||!text.trim())return'';
+    // Convert basic markdown-like notion content to HTML
+    var lines=text.split('\n');
+    var html='';
+    var inList=false;
+    var inOl=false;
+    lines.forEach(function(line){
+      line=line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      // Apply inline formatting
+      line=line.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+      line=line.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+      line=line.replace(/`([^`]+)`/g,'<code>$1</code>');
+      line=line.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+      if(/^#{3}\s/.test(line)){if(inList){html+='</ul>';inList=false;}if(inOl){html+='</ol>';inOl=false;}html+='<h3>'+line.replace(/^#{3}\s/,'')+'</h3>';}
+      else if(/^#{2}\s/.test(line)){if(inList){html+='</ul>';inList=false;}if(inOl){html+='</ol>';inOl=false;}html+='<h2>'+line.replace(/^#{2}\s/,'')+'</h2>';}
+      else if(/^#\s/.test(line)){if(inList){html+='</ul>';inList=false;}if(inOl){html+='</ol>';inOl=false;}html+='<h2>'+line.replace(/^#\s/,'')+'</h2>';}
+      else if(/^[-*]\s/.test(line)){if(!inList){if(inOl){html+='</ol>';inOl=false;}html+='<ul>';inList=true;}html+='<li>'+line.replace(/^[-*]\s/,'')+'</li>';}
+      else if(/^\d+\.\s/.test(line)){if(!inOl){if(inList){html+='</ul>';inList=false;}html+='<ol>';inOl=true;}html+='<li>'+line.replace(/^\d+\.\s/,'')+'</li>';}
+      else if(/^>\s/.test(line)){if(inList){html+='</ul>';inList=false;}if(inOl){html+='</ol>';inOl=false;}html+='<blockquote>'+line.replace(/^>\s/,'')+'</blockquote>';}
+      else if(/^---+$/.test(line.trim())){if(inList){html+='</ul>';inList=false;}if(inOl){html+='</ol>';inOl=false;}html+='<hr>';}
+      else if(line.trim()){
+        if(inList){html+='</ul>';inList=false;}
+        if(inOl){html+='</ol>';inOl=false;}
+        html+='<p>'+line+'</p>';
+      }
+    });
+    if(inList)html+='</ul>';
+    if(inOl)html+='</ol>';
+    return html;
+  }
+
+  function showError(title,msg){
+    document.getElementById('cs-root').innerHTML=
+      '<section class="cs-hero" style="min-height:40vh;"><div class="con"><div class="cs-error">'+
+      '<h2 style="color:#fff;margin-bottom:12px;">'+title+'</h2>'+
+      '<p style="color:rgba(255,255,255,.5);">'+msg+'</p>'+
+      '<a href="/" style="display:inline-block;margin-top:24px;color:var(--bl);font-family:Exo 2,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">← Back to Projects</a>'+
+      '</div></div></section>';
+  }
+
+  function initStars(canvas){
+    if(!canvas)return;
+    var ctx=canvas.getContext('2d');
+    var W,H,stars=[],tick=0;
+    function resize(){W=canvas.width=canvas.parentElement.offsetWidth;H=canvas.height=canvas.parentElement.offsetHeight;}
+    function init(){stars=[];for(var i=0;i<300;i++){stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.2,op:Math.random()*.6+.1,sp:Math.random()*.01+.004,off:Math.random()*Math.PI*2});}}
+    function draw(){ctx.clearRect(0,0,W,H);tick++;for(var s of stars){var o=s.op*(0.5+0.5*Math.sin(tick*s.sp+s.off));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle='rgba(200,220,255,'+o+')';ctx.fill();}requestAnimationFrame(draw);}
+    resize();init();draw();
+  }
+})();
+
+// Image slider
+function imgSlide(idx){
+  var imgs=document.querySelectorAll('.cs-img-slider img');
+  var dots=document.querySelectorAll('.cs-img-dot');
+  imgs.forEach(function(img,i){img.className=i===idx?'active':'hidden';});
+  dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+}
+</script>
+</body>
+</html>
