@@ -911,9 +911,13 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   border: 1px solid var(--brd);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   transition: transform .25s, box-shadow .25s;
 }
-.team-card > p { flex-grow: 1; }
+.team-card > * { min-width: 0; max-width: 100%; }
+.team-card > p { flex-grow: 1; overflow-wrap: break-word; word-break: break-word; }
 /* Services page stronger numbering */
 .svn {
   font-size: 72px !important;
@@ -2847,7 +2851,7 @@ video{-webkit-playsinline:1;}
     <div class="con">
       <div class="ey">Our Team</div>
       <h2 style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1280px;margin:0 auto;justify-content:center;align-items:stretch;">
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;max-width:1280px;margin:0 auto;justify-content:center;align-items:stretch;">
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Founder, CEO & Lead Developer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a610ea7-18a7-6a40-7a07-1d37e2c0fed3.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Henry Bello"></div>
@@ -2856,7 +2860,7 @@ video{-webkit-playsinline:1;}
           <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
-          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">CFO — Chief Financial Officer</div>
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Co-Founder & CFO — Chief Financial Officer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5809e182-245f-9c8f-1d03-e1a4ca80da0c.png" style="width:140%;height:140%;object-fit:cover;margin-left:-22%;margin-top:-8%;" alt="Sofia Weeden"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Sofia Weeden</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Oversees the financial health of Syntrex LLC. Manages budgeting, pricing strategy, invoicing, and financial planning to ensure every project is delivered profitably and every client relationship is built on a solid foundation.</p>
@@ -2878,7 +2882,7 @@ video{-webkit-playsinline:1;}
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Developer & Growth Strategist</div>
-          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/da9dcdf9-e759-b4d7-0001-2a8670b10306.jpeg" style="width:150%;height:150%;object-fit:cover;margin-left:-25%;margin-top:-10%;" alt="Amy Qian"></div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/da9dcdf9-e759-b4d7-0001-2a8670b10306.jpeg" style="width:150%;height:150%;object-fit:cover;object-position:center top;margin-left:-25%;margin-top:-25%;" alt="Amy Qian"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Amy Qian</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Bridges the gap between technical builds and business strategy at Syntrex. Works on development and drives growth initiatives that turn automation into real results for every client we work with.</p>
           <a href="mailto:amy@syntrexio.com" style="color:inherit;">amy@syntrexio.com</a>
@@ -3024,7 +3028,7 @@ video{-webkit-playsinline:1;}
     <div class="con">
       <div class="ey">Our Team</div>
       <h2 style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1280px;margin:0 auto;justify-content:center;align-items:stretch;">
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;max-width:1280px;margin:0 auto;justify-content:center;align-items:stretch;">
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Founder, CEO & Lead Developer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5a610ea7-18a7-6a40-7a07-1d37e2c0fed3.png" style="width:150%;height:150%;object-fit:cover;margin-left:-28%;margin-top:-15%;" alt="Henry Bello"></div>
@@ -3033,7 +3037,7 @@ video{-webkit-playsinline:1;}
           <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
-          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">CFO — Chief Financial Officer</div>
+          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Co-Founder & CFO — Chief Financial Officer</div>
           <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/5809e182-245f-9c8f-1d03-e1a4ca80da0c.png" style="width:140%;height:140%;object-fit:cover;margin-left:-22%;margin-top:-8%;" alt="Sofia Weeden"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Sofia Weeden</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Oversees the financial health of Syntrex LLC. Manages budgeting, pricing strategy, invoicing, and financial planning to ensure every project is delivered profitably and every client relationship is built on a solid foundation.</p>
@@ -3055,7 +3059,7 @@ video{-webkit-playsinline:1;}
         </div>
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Developer & Growth Strategist</div>
-          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/da9dcdf9-e759-b4d7-0001-2a8670b10306.jpeg" style="width:150%;height:150%;object-fit:cover;margin-left:-25%;margin-top:-10%;" alt="Amy Qian"></div>
+          <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#000;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/da9dcdf9-e759-b4d7-0001-2a8670b10306.jpeg" style="width:150%;height:150%;object-fit:cover;object-position:center top;margin-left:-25%;margin-top:-25%;" alt="Amy Qian"></div>
           <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--nv);margin-bottom:12px;">Amy Qian</div>
           <p style="font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px;">Bridges the gap between technical builds and business strategy at Syntrex. Works on development and drives growth initiatives that turn automation into real results for every client we work with.</p>
           <a href="mailto:amy@syntrexio.com" style="color:inherit;">amy@syntrexio.com</a>
