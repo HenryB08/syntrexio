@@ -1907,6 +1907,7 @@ video{-webkit-playsinline:1;}
 <!-- HOME -->
 
 <!-- PAGE CONTENT -->
+<div id="p-services">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Services</div><h1>Everything we <span class="serif-accent">build,</span><br>built <span class="grad-text">for you.</span></h1><p class="pghs">We don't sell subscriptions or templates. We build custom AI systems that fit exactly how your business operates, handed over ready to run from day one.</p></div></section>
   <section class="sp"><div class="con"><div class="svl">
     <div class="svi rev"><div class="svi-left"><div class="svi-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="3" fill="white" fill-opacity="0.9"/><rect x="4" y="5" width="16" height="10" rx="1" fill="white" fill-opacity="0.3"/><path d="M8 21h8M12 17v4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="svn">01</div></div><div class="svb"><h3>Website Design & Development</h3><p>Custom professional websites built from scratch. Fast, mobile ready, and designed to convert visitors into clients. No templates, no page builders. Built specifically for your brand and business goals.</p><ul class="svbl"><li>Full custom design and development</li><li>Mobile responsive and fast loading</li><li>SEO optimized from day one</li><li>Delivered in days not months</li></ul></div></div>
@@ -2000,6 +2001,7 @@ video{-webkit-playsinline:1;}
   </div>
 </section>
 
+</div>
 <footer>
   <div style="background:var(--nv2);padding:40px 0 0;">
     <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
@@ -2880,6 +2882,15 @@ window.sp = function(page) {
   var target = (page === 'home' ? 'index' : page) + '.html';
   window.location.href = target;
 };
+/* Initialize intersection-observer animations on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof ir === 'function') ir('services');
+  if (typeof window._initPghStars === 'function') {
+    document.querySelectorAll('#p-services .pgh canvas.pgh-stars').forEach(function(c) {
+      window._initPghStars(c);
+    });
+  }
+});
 </script>
 
 </body>

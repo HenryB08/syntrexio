@@ -1907,6 +1907,7 @@ video{-webkit-playsinline:1;}
 <!-- HOME -->
 
 <!-- PAGE CONTENT -->
+<div id="p-pricing">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Pricing</div><h1>Priced for <span class="serif-accent grad-text-combo">your</span> <span class="grad-text">needs.</span></h1><p class="pghs">Every business is different. Every project gets a custom quote. No surprises, no hidden fees.</p></div></section>
   <section class="sp" style="background:var(--w);">
     <div class="con">
@@ -1998,6 +1999,7 @@ video{-webkit-playsinline:1;}
   </div>
 </section>
 
+</div>
 <footer>
   <div style="background:var(--nv2);padding:40px 0 0;">
     <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
@@ -2878,6 +2880,15 @@ window.sp = function(page) {
   var target = (page === 'home' ? 'index' : page) + '.html';
   window.location.href = target;
 };
+/* Initialize intersection-observer animations on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof ir === 'function') ir('pricing');
+  if (typeof window._initPghStars === 'function') {
+    document.querySelectorAll('#p-pricing .pgh canvas.pgh-stars').forEach(function(c) {
+      window._initPghStars(c);
+    });
+  }
+});
 </script>
 
 </body>

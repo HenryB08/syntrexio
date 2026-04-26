@@ -1907,6 +1907,7 @@ video{-webkit-playsinline:1;}
 <!-- HOME -->
 
 <!-- PAGE CONTENT -->
+<div id="p-projects">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Our Work</div><h1><span class="serif-accent">Projects</span> &amp;<br><span class="grad-text">Case Studies.</span></h1><p class="pghs">Real work built for real businesses. Every project delivered from scratch, custom to the client.</p></div></section>
 
 
@@ -2209,6 +2210,7 @@ video{-webkit-playsinline:1;}
   </div>
 </section>
 
+</div>
 <footer>
   <div style="background:var(--nv2);padding:40px 0 0;">
     <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
@@ -3089,6 +3091,15 @@ window.sp = function(page) {
   var target = (page === 'home' ? 'index' : page) + '.html';
   window.location.href = target;
 };
+/* Initialize intersection-observer animations on page load */
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof ir === 'function') ir('projects');
+  if (typeof window._initPghStars === 'function') {
+    document.querySelectorAll('#p-projects .pgh canvas.pgh-stars').forEach(function(c) {
+      window._initPghStars(c);
+    });
+  }
+});
 </script>
 
 </body>
