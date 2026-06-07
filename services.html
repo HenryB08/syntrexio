@@ -1989,7 +1989,7 @@ video{-webkit-playsinline:1;}
       <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
       <p>Get instant answers about our services, pricing, and how we can help your business grow — no waiting, no pressure.</p>
       <div class="syn-buttons">
-        <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex';" class="btn bb">Chat with SYN</button>
+        <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex'; if(typeof gtag==='function')gtag('event','chat_open',{event_category:'engagement',event_label:'SYN Chat CTA'});" class="btn bb">Chat with SYN</button>
         <a href="contact.html" class="btn bg">Talk to a Human</a>
       </div>
     </div>
@@ -2061,6 +2061,7 @@ async function fsub(e) {
 
     if (res.ok) {
       form.style.display = 'none';
+      if (typeof gtag === 'function') gtag('event', 'contact_form_submit', {event_category: 'conversion', event_label: 'Contact Form'});
       // Show the success div that is a sibling of this form's parent container
       const wrapper = form.closest('.ctlay') || form.parentElement;
       const allFss = wrapper.querySelectorAll ? wrapper.querySelectorAll('.fss') : [];
@@ -2549,6 +2550,7 @@ function getFallback() {
 
 function toggleChat() {
   const w = document.getElementById('chat-window');
+  if (!w.classList.contains('open') && typeof gtag === 'function') gtag('event', 'chat_open', {event_category: 'engagement', event_label: 'SYN Chat'});
   const b = document.getElementById('chat-bubble');
   const n = document.getElementById('chat-notif');
   w.classList.toggle('open');
