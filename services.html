@@ -124,7 +124,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Website Design & Development",
-          "description": "Custom professional websites built from scratch. Fast, mobile ready, SEO optimized, and designed to convert visitors into clients."
+          "description": "Custom professional websites built from scratch. Fast, mobile ready, SEO optimized, and designed to convert visitors into paying clients."
         }
       },
       {
@@ -132,23 +132,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "AI Chatbots",
-          "description": "Custom AI chatbots that qualify leads, answer questions, and book appointments 24/7 on your website."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Content & Social Media",
-          "description": "Blog posts, social captions, video scripts, copy, AI-generated images, AI-built presentations, and scheduled posts in your brand voice."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Lead Generation Systems",
-          "description": "AI-powered lead pipelines that capture, score, and follow up with prospects automatically."
+          "description": "Custom chatbots that qualify leads, answer questions, and book appointments 24/7 on any website platform."
         }
       },
       {
@@ -156,7 +140,23 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Workflow Automation",
-          "description": "End-to-end automation of repetitive tasks: follow-ups, invoicing, data entry, lead routing, and more."
+          "description": "End-to-end automation of repetitive tasks including follow-ups, invoicing, data entry, lead routing, and client onboarding."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lead Generation & Growth Systems",
+          "description": "AI-powered pipelines for lead capture, scoring, automated follow-up, nurturing, conversion, and retention."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Content & Social Media",
+          "description": "Blog posts, captions, video scripts, copy, email newsletters, ad creative, AI-generated images, AI-built presentations, and scheduled posts in your brand voice."
         }
       },
       {
@@ -164,15 +164,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Custom AI Tools",
-          "description": "Internal tools built for your team: proposal generators, quote builders, intake forms, report builders."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Brand & Digital Presence",
-          "description": "Full digital presence buildout: website, social profiles, email setup, content strategy, and AI systems launched together."
+          "description": "Internal tools built for your team including proposal generators, quote builders, intake forms, report dashboards, and any workflow tool needed."
         }
       },
       {
@@ -180,39 +172,15 @@
         "itemOffered": {
           "@type": "Service",
           "name": "System Integration",
-          "description": "Connect your existing tools so they communicate automatically. Calendar, email, forms, and databases stay in sync."
+          "description": "Connect existing tools so they communicate automatically. Calendar, email, forms, and databases stay in sync."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Growth System Design",
-          "description": "End-to-end AI growth systems for lead capture, nurturing, conversion, and retention."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Content Systems",
-          "description": "Automated pipelines that draft emails, posts, proposals, reports, AI-generated images, and presentations in your brand voice."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Automated Proposal Systems",
-          "description": "Professional branded proposals generated in under a minute from job details."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Client Onboarding Automation",
-          "description": "Automated onboarding from signed contract to kickoff: welcome emails, intake forms, scheduling."
+          "name": "Brand & Digital Presence",
+          "description": "Full digital presence buildout for new businesses including website, social profiles, email setup, content strategy, and AI systems."
         }
       },
       {
@@ -228,7 +196,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Reporting & Analytics Systems",
-          "description": "Custom AI dashboards and automated reports that surface the insights that matter."
+          "description": "Custom AI dashboards and automated reporting tools that surface the insights that actually matter."
         }
       },
       {
@@ -236,7 +204,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "AI Business Planning",
-          "description": "AI tools that generate business plans, financial projections, and strategic documents automatically."
+          "description": "AI tools that generate business plans, financial projections, competitive analyses, and strategic documents using your real business data."
         }
       }
     ]
@@ -752,14 +720,15 @@ const phrases = [
 let phraseIdx = 0;
 document.addEventListener('DOMContentLoaded', () => {
   const phraseEls = document.querySelectorAll('.hero-phrase');
-  // Show first phrase immediately
-  phraseEls.forEach(el => el.classList.remove('active'));
-  if (phraseEls[0]) phraseEls[0].classList.add('active');
-  setInterval(() => {
+  if (phraseEls.length > 0) {
     phraseEls.forEach(el => el.classList.remove('active'));
-    phraseIdx = (phraseIdx + 1) % phraseEls.length;
-    phraseEls[phraseIdx].classList.add('active');
-  }, 2500);
+    phraseEls[0].classList.add('active');
+    setInterval(() => {
+      phraseEls.forEach(el => el.classList.remove('active'));
+      phraseIdx = (phraseIdx + 1) % phraseEls.length;
+      phraseEls[phraseIdx].classList.add('active');
+    }, 2500);
+  }
 });
 
 

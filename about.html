@@ -660,14 +660,15 @@ const phrases = [
 let phraseIdx = 0;
 document.addEventListener('DOMContentLoaded', () => {
   const phraseEls = document.querySelectorAll('.hero-phrase');
-  // Show first phrase immediately
-  phraseEls.forEach(el => el.classList.remove('active'));
-  if (phraseEls[0]) phraseEls[0].classList.add('active');
-  setInterval(() => {
+  if (phraseEls.length > 0) {
     phraseEls.forEach(el => el.classList.remove('active'));
-    phraseIdx = (phraseIdx + 1) % phraseEls.length;
-    phraseEls[phraseIdx].classList.add('active');
-  }, 2500);
+    phraseEls[0].classList.add('active');
+    setInterval(() => {
+      phraseEls.forEach(el => el.classList.remove('active'));
+      phraseIdx = (phraseIdx + 1) % phraseEls.length;
+      phraseEls[phraseIdx].classList.add('active');
+    }, 2500);
+  }
 });
 
 
