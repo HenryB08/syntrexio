@@ -12,19 +12,20 @@
 - Founded by: Henry Bello
 - Service area: Worldwide
 
-## Services (11 core service areas)
+## Services (12 core service areas)
 
 1. Website Design & Development — custom professional websites built from scratch, mobile ready, SEO optimized, designed to convert
-2. AI Chatbots — custom chatbots that qualify leads, answer questions, and book appointments 24/7
-3. Workflow Automation — end-to-end automation of repetitive tasks: follow-ups, invoicing, data entry, lead routing, client onboarding
-4. Lead Generation & Growth Systems — AI-powered pipelines for lead capture, scoring, follow-up, nurturing, conversion, and retention
-5. AI Content & Social Media — blog posts, captions, video scripts, copy, AI-generated images, AI-built presentations, and scheduled posts in your brand voice
-6. Custom AI Tools — internal tools for your team: proposal generators, quote builders, intake forms, report dashboards
-7. System Integration — connect existing tools so they communicate automatically (calendar, email, forms, databases)
-8. Brand & Digital Presence — full digital presence buildout: website, social profiles, email setup, content strategy, AI systems
-9. AI Strategy & Consulting — operations audit, automation opportunity mapping, implementation roadmap
-10. Reporting & Analytics Systems — custom AI dashboards and automated reports
-11. AI Business Planning — AI tools that generate business plans, financial projections, and strategic documents
+2. Ecommerce & Online Stores — full online stores built to sell, product catalog, secure checkout, payments, inventory, and shipping, ready from day one
+3. AI Chatbots — custom chatbots that qualify leads, answer questions, and book appointments 24/7
+4. Workflow Automation — end-to-end automation of repetitive tasks: follow-ups, invoicing, data entry, lead routing, client onboarding
+5. Lead Generation & Growth Systems — AI-powered pipelines for lead capture, scoring, follow-up, nurturing, conversion, and retention
+6. AI Content & Social Media — blog posts, captions, video scripts, copy, AI-generated images, AI-built presentations, and scheduled posts in your brand voice
+7. Custom AI Tools — internal tools for your team: proposal generators, quote builders, intake forms, report dashboards
+8. System Integration — connect existing tools so they communicate automatically (calendar, email, forms, databases)
+9. Brand & Digital Presence — full digital presence buildout: website, social profiles, email setup, content strategy, AI systems
+10. AI Strategy & Consulting — operations audit, automation opportunity mapping, implementation roadmap
+11. Reporting & Analytics Systems — custom AI dashboards and automated reports
+12. AI Business Planning — AI tools that generate business plans, financial projections, and strategic documents
 
 ## Pricing
 
