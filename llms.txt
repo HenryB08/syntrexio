@@ -12,7 +12,7 @@
 - Founded by: Henry Bello
 - Service area: Worldwide
 
-## Services (12 core service areas)
+## Services
 
 1. Website Design & Development — custom professional websites built from scratch, mobile ready, SEO optimized, designed to convert
 2. Ecommerce & Online Stores — full online stores built to sell, product catalog, secure checkout, payments, inventory, and shipping, ready from day one
