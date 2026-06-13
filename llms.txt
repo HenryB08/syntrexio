@@ -1,6 +1,6 @@
 # Syntrex LLC
 
-> Syntrex LLC is an AI automation agency headquartered in Windermere, Florida. We build custom AI chatbots, workflow automation systems, and business automation tools for companies of all sizes, anywhere in the world. Every system is built from scratch and delivered ready to run.
+> Syntrex LLC builds custom AI systems that handle the repetitive work businesses shouldn't have to do manually. Every system is built from scratch around how the client's business actually operates, and handed over for them to own outright. No subscriptions, no templates, no vendor lock-in.
 
 ## Company Details
 
@@ -12,7 +12,7 @@
 - Founded by: Henry Bello
 - Service area: Worldwide
 
-## Services (12 core service areas)
+## Services
 
 1. Website Design & Development — custom professional websites built from scratch, mobile ready, SEO optimized, designed to convert
 2. Ecommerce & Online Stores — full online stores built to sell, product catalog, secure checkout, payments, inventory, and shipping, ready from day one
