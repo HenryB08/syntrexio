@@ -122,6 +122,18 @@
   ]
 }
 </script>
+<style>
+/* Services dropdown */
+.svc-dd{position:relative;}
+.svc-dd-panel{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);z-index:9999;pointer-events:none;}
+.svc-dd:hover .svc-dd-panel,.svc-dd-panel:hover{display:block;pointer-events:auto;}
+.svc-dd-inner{background:rgba(10,18,40,.96);-webkit-backdrop-filter:blur(32px) saturate(180%);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
+.svc-dd-cat{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.9);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06);}
+.svc-dd-inner a{display:block;font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.3px;color:rgba(255,255,255,.6);text-decoration:none;padding:5px 0;transition:color .15s;}
+.svc-dd-inner a:hover{color:#fff;}
+.svc-dd-inner a::after{display:none !important;}
+@media(max-width:768px){.svc-dd-panel{display:none !important;}}
+</style>
 </head>
 <body>
 
@@ -170,7 +182,14 @@
 <nav>
   <ul class="nls">
     <li><a href="index.html" id="n-home">Home</a></li>
-    <li><a href="services.html" id="n-services">Services</a></li>
+    <li class="svc-dd"><a href="services.html" id="n-services">Services</a>
+      <div class="svc-dd-panel"><div class="svc-dd-inner">
+        <div><div class="svc-dd-cat">Get More Customers</div><a href="services/ai-chatbots.html">AI Chatbots</a><a href="services/lead-generation.html">Lead Generation</a><a href="services/ecommerce.html">Ecommerce</a></div>
+        <div><div class="svc-dd-cat">Save Your Team Hours</div><a href="services/workflow-automation.html">Workflow Automation</a><a href="services/custom-ai-tools.html">Custom AI Tools</a><a href="services/system-integration.html">System Integration</a></div>
+        <div><div class="svc-dd-cat">Build Your Presence</div><a href="services/website-design.html">Website Design</a><a href="services/brand-digital-presence.html">Brand &amp; Digital</a><a href="services/ai-content.html">AI Content</a></div>
+        <div><div class="svc-dd-cat">Know What's Working</div><a href="services/ai-strategy.html">AI Strategy</a><a href="services/reporting-analytics.html">Reporting</a><a href="services/ai-business-planning.html">AI Planning</a></div>
+      </div></div>
+    </li>
     <li><a href="pricing.html" id="n-pricing">Pricing</a></li>
     <li><a href="projects.html" id="n-projects" class="act">Projects</a></li>
     <li><a href="about.html" id="n-about">About</a></li>
@@ -182,7 +201,26 @@
 </nav>
 <div id="mm">
   <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
+  <a href="services.html" onclick="event.preventDefault();var s=document.getElementById('mm-svc');s.style.display=s.style.display==='block'?'none':'block';">Services ▾</a>
+  <div id="mm-svc" style="display:none;padding:0 24px 8px;">
+    <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.8);padding:10px 0 4px;">Get More Customers</div>
+    <a href="services/ai-chatbots.html" style="padding:8px 12px;font-size:12px;">AI Chatbots</a>
+    <a href="services/lead-generation.html" style="padding:8px 12px;font-size:12px;">Lead Generation</a>
+    <a href="services/ecommerce.html" style="padding:8px 12px;font-size:12px;">Ecommerce</a>
+    <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.8);padding:10px 0 4px;">Save Your Team Hours</div>
+    <a href="services/workflow-automation.html" style="padding:8px 12px;font-size:12px;">Workflow Automation</a>
+    <a href="services/custom-ai-tools.html" style="padding:8px 12px;font-size:12px;">Custom AI Tools</a>
+    <a href="services/system-integration.html" style="padding:8px 12px;font-size:12px;">System Integration</a>
+    <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.8);padding:10px 0 4px;">Build Your Presence</div>
+    <a href="services/website-design.html" style="padding:8px 12px;font-size:12px;">Website Design</a>
+    <a href="services/brand-digital-presence.html" style="padding:8px 12px;font-size:12px;">Brand &amp; Digital</a>
+    <a href="services/ai-content.html" style="padding:8px 12px;font-size:12px;">AI Content</a>
+    <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.8);padding:10px 0 4px;">Know What's Working</div>
+    <a href="services/ai-strategy.html" style="padding:8px 12px;font-size:12px;">AI Strategy</a>
+    <a href="services/reporting-analytics.html" style="padding:8px 12px;font-size:12px;">Reporting</a>
+    <a href="services/ai-business-planning.html" style="padding:8px 12px;font-size:12px;">AI Planning</a>
+    <a href="services.html" style="padding:10px 12px;font-size:12px;color:var(--bl);border-top:1px solid rgba(255,255,255,.08);margin-top:4px;">View all services &rarr;</a>
+  </div>
     <a href="services/ai-chatbots.html">AI Chatbots</a>
     <a href="services/lead-generation.html">Lead Generation</a>
     <a href="services/ecommerce.html">Ecommerce</a>
