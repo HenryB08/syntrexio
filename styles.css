@@ -1824,8 +1824,8 @@ nav {
   font-size: var(--text-label) !important;
 }
 .ticker-set img {
-  filter: brightness(0) invert(1) !important;
-  opacity: 0.5 !important;
+  filter: none !important;
+  opacity: 0.85 !important;
   transition: opacity 0.3s !important;
 }
 .ticker-set a:hover img { opacity: 1 !important; }
@@ -2319,7 +2319,7 @@ div[style*="background:rgba(255,255,255,.04)"] { background: transparent !import
   color: #000000 !important;
   box-shadow: 0 4px 20px rgba(255,255,255,0.1) !important;
 }
-#chat-bubble svg { display: none; }
+#chat-bubble svg { color: #000000; }
 #chat-bubble-img {
   width: 50%;
   height: 50%;
