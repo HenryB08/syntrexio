@@ -43,12 +43,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://syntrexio.com/legal.html</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://syntrexio.com/services/ai-chatbots.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -119,5 +113,17 @@
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://syntrexio.com/privacy.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://syntrexio.com/terms.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

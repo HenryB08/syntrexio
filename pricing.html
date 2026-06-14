@@ -125,9 +125,9 @@
 <style>
 /* Services dropdown */
 .svc-dd{position:relative;}
-.svc-dd-panel{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);z-index:9999;pointer-events:none;}
+.svc-dd-panel{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);z-index:9999;pointer-events:none;}
 .svc-dd:hover .svc-dd-panel,.svc-dd-panel:hover{display:block;pointer-events:auto;}
-.svc-dd-inner{background:rgba(10,18,40,.96);-webkit-backdrop-filter:blur(32px) saturate(180%);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
+.svc-dd-inner{margin-top:12px;background:rgba(10,18,40,.96);-webkit-backdrop-filter:blur(32px) saturate(180%);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
 .svc-dd-cat{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.9);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06);}
 .svc-dd-inner a{display:block;font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.3px;color:rgba(255,255,255,.6);text-decoration:none;padding:5px 0;transition:color .15s;}
 .svc-dd-inner a:hover{color:#fff;}
@@ -194,14 +194,13 @@
     <li><a href="projects.html" id="n-projects">Projects</a></li>
     <li><a href="about.html" id="n-about">About</a></li>
     <li><a href="contact.html" id="n-contact">Contact</a></li>
-    <li><a href="legal.html" id="n-legal">Legal</a></li>
   </ul>
   <a href="contact.html" class="nc">Get In Touch</a>
   <button class="mb" onclick="tmob()">&#9776;</button>
 </nav>
 <div id="mm">
   <a href="index.html">Home</a>
-  <a href="services.html" onclick="event.preventDefault();var s=document.getElementById('mm-svc');s.style.display=s.style.display==='block'?'none':'block';">Services ▾</a>
+  <a href="services.html" onclick="event.preventDefault();var sv=document.getElementById('mm-svc');sv.style.display=sv.style.display==='block'?'none':'block';">Services ▾</a>
   <div id="mm-svc" style="display:none;padding:0 24px 8px;">
     <div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,111,255,.8);padding:10px 0 4px;">Get More Customers</div>
     <a href="services/ai-chatbots.html" style="padding:8px 12px;font-size:12px;">AI Chatbots</a>
@@ -221,22 +220,11 @@
     <a href="services/ai-business-planning.html" style="padding:8px 12px;font-size:12px;">AI Planning</a>
     <a href="services.html" style="padding:10px 12px;font-size:12px;color:var(--bl);border-top:1px solid rgba(255,255,255,.08);margin-top:4px;">View all services &rarr;</a>
   </div>
-    <a href="services/ai-chatbots.html">AI Chatbots</a>
-    <a href="services/lead-generation.html">Lead Generation</a>
-    <a href="services/ecommerce.html">Ecommerce</a>
-    <div class="mm-bucket">Save Your Team Hours</div>
-    <a href="services/workflow-automation.html">Workflow Automation</a>
-    <a href="services/custom-ai-tools.html">Custom AI Tools</a>
-    <a href="services/system-integration.html">System Integration</a>
-    <div class="mm-bucket">Build Your Presence</div>
-    <a href="services/website-design.html">Website Design</a>
-    <a href="services/brand-digital-presence.html">Brand & Digital</a>
-    <a href="services/ai-content.html">AI Content</a>
-    <div class="mm-bucket">Know What's Working</div>
-    <a href="services/ai-strategy.html">AI Strategy</a>
-    <a href="services/reporting-analytics.html">Reporting & Analytics</a>
-    <a href="services/ai-business-planning.html">AI Business Planning</a>
-  </div>
+  <a href="pricing.html">Pricing</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
   <a href="pricing.html">Pricing</a>
   <a href="projects.html">Projects</a>
   <a href="about.html">About</a>
@@ -368,7 +356,7 @@
     </div>
     <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
-      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">AI Solutions & Digital Services</span>
+      <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;"><a href="privacy.html" style="color:rgba(255,255,255,.25);text-decoration:none;">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,.25);text-decoration:none;">Terms</a></span>
     </div>
   </div>
 </footer>
@@ -606,7 +594,6 @@ Henry Bello: Founder, CEO, and Lead Developer, henry@syntrexio.com
 Sofia Weeden: Co-Founder and CFO (Chief Financial Officer), sofia@syntrexio.com
 Alexander Ohmer: Head of Operations, alexander@syntrexio.com
 Ciana Bello: Director of Marketing and Social Media, ciana@syntrexio.com. Drives brand voice, content strategy, social media, campaigns, and growth outreach for Syntrex.
-Amy Qian: Developer and Growth Strategist, amy@syntrexio.com. Works on development and growth initiatives at Syntrex, bridging the gap between technical builds and business strategy to turn automation into real results for clients.
 
 PARTNERS:
 Kinetix Technology Group (kinetixtechnologygroup.com): Technology brokerage company. When their clients need AI automation, custom systems, or workflow tools, they refer that work to Syntrex to build and deliver. Listed on the website as "Often Referred By".
@@ -814,8 +801,7 @@ const answers = {
   difference: "Every system is built from scratch for your business, not from a template. You own everything we build, no subscriptions, no monthly fees. We train your team in under an hour and the system runs on its own. Real results with real companies you can verify.",
 
   ciana: "Ciana Bello is part of the Syntrex team and helps drive the brand voice, content direction, campaign strategy, social media, and growth outreach. She helps make sure the right people find Syntrex and clearly understand what makes the company different.",
-  amy: "Amy Qian is Syntrex's Developer and Growth Strategist. She works on development and drives growth initiatives, bridging the gap between technical builds and business strategy. You can reach her at amy@syntrexio.com.",
-  team: "Syntrex is led by Henry Bello (Founder, CEO, and Lead Developer) and supported by Sofia Weeden (CFO), Alexander Ohmer (Head of Operations), Ciana Bello (Director of Marketing and Social Media), and Amy Qian (Developer and Growth Strategist).",
+  team: "Syntrex is led by Henry Bello (Founder, CEO, and Lead Developer) and supported by Sofia Weeden (CFO), Alexander Ohmer (Head of Operations), and Ciana Bello (Director of Marketing and Social Media).",
 };
 
 function matchIntent(msg) {
@@ -839,7 +825,6 @@ function matchIntent(msg) {
   // Ciana / Amy / team
   if (/ciana|ciana bello|who is ciana|tell me about ciana|amy|amy qian|who is amy|tell me about amy|growth strategist|developer and growth|team|who works at syntrex|staff|marketing|brand voice|social media|campaign/.test(m)) {
     if (/ciana/.test(m)) return 'ciana';
-    if (/amy/.test(m)) return 'amy';
     return 'team';
   }
 
