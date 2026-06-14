@@ -316,8 +316,15 @@
   <section class="sp" style="background:var(--w);">
     <div class="con">
       <div class="ey">What You Get</div>
-      <h2 style="margin-bottom:32px;">Reports that build themselves and dashboards that stay current.</h2>
-      <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:40px;">We connect to your data sources, build the calculations and visualizations that matter, and deliver reports and dashboards that update on their own. Your team stops building reports and starts reading them.</p>
+      <div class="img-split" style="margin-bottom:40px;">
+        <div class="img-txt-side">
+          <h2 style="margin-bottom:32px;">Reports that build themselves and dashboards that stay current.</h2>
+          <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:0;">We connect to your data sources, build the calculations and visualizations that matter, and deliver reports and dashboards that update on their own. Your team stops building reports and starts reading them.</p>
+        </div>
+        <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/01e1d0ae-783e-4459-a204-5972a0eca09a.png" alt="Printed analytics report on glass table, business intelligence and performance data visualization" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
         <div class="rev" style="background:#fff;padding:32px;border-left:3px solid var(--bl);">
@@ -1396,5 +1403,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
 </body>
 </html>

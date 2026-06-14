@@ -308,8 +308,15 @@
   <section class="sp" style="background:var(--w);">
     <div class="con">
       <div class="ey">What You Get</div>
-      <h2 style="margin-bottom:32px;">A clear roadmap before you spend a dollar on technology.</h2>
-      <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:40px;">Before building anything, we analyze how your business actually runs. We find the tasks consuming the most time, the processes most likely to break at scale, and the spots where automation delivers the biggest return.</p>
+      <div class="img-split" style="margin-bottom:40px;">
+        <div class="img-txt-side">
+          <h2 style="margin-bottom:32px;">A clear roadmap before you spend a dollar on technology.</h2>
+          <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:0;">Before building anything, we analyze how your business actually runs. We find the tasks consuming the most time, the processes most likely to break at scale, and the spots where automation delivers the biggest return.</p>
+        </div>
+        <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/019dd721-f07a-0ecc-a1ab-d27941e53678.png" alt="Strategy document on conference table with hands, AI business strategy planning and consulting session" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
         <div class="rev" style="background:#fff;padding:32px;border-left:3px solid var(--bl);">
@@ -1371,5 +1378,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
 </body>
 </html>

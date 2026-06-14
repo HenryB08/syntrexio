@@ -1573,3 +1573,22 @@ video{-webkit-playsinline:1;}
 .svi-left{display:flex;flex-direction:column;align-items:center;gap:10px;}
 .svi-left .svn{padding-top:0;text-align:center;}
 .svi .svi-icon{width:56px;height:56px;border-radius:14px;}
+
+/* Image reveal / fade-in */
+.img-reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.img-reveal.visible{opacity:1;transform:translateY(0);}
+/* Image beside text layout */
+.img-split{display:flex;align-items:center;gap:60px;}
+.img-split.rev-order .img-side{order:-1;}
+.img-side{flex:0 0 45%;max-width:45%;}
+.img-side img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;}
+.img-txt-side{flex:1;}
+@media(max-width:900px){
+  .img-split{flex-direction:column;gap:32px;}
+  .img-split.rev-order .img-side{order:0;}
+  .img-side{flex:0 0 auto;max-width:100%;width:100%;}
+}
+/* Background image section helper */
+.bg-img-wrap{position:absolute;inset:0;z-index:0;}
+.bg-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.bg-img-overlay{position:absolute;inset:0;z-index:1;}

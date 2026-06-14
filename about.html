@@ -227,9 +227,16 @@
 <!-- PAGE CONTENT -->
 <div id="p-about">
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>About</div><h1>Built <span class="serif-accent">lean.</span><br>Built to <span class="grad-text">deliver.</span></h1><p class="pghs">Syntrex builds custom AI systems that handle the work your business shouldn't have to do manually. Every system is built from scratch around how you operate, and owned by you outright.</p></div></section>
+  <div class="img-reveal" style="width:100%;aspect-ratio:21/9;overflow:hidden;position:relative;">
+    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/bb891a65-ef35-856a-7c7d-1594e0a72fc9.png" alt="Two professionals collaborating at a monitor, candid team work on AI and digital projects" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+    <div style="position:absolute;inset:0;background:rgba(6,7,13,0.35);"></div>
+  </div>
   <section class="sp"><div class="con"><div class="a2c">
     <div class="atx">
       <div class="ey">Our Story</div>
+  <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;">
+    <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/639e9a06-790e-c97b-258d-7fd8d92006f6.png" alt="Team collaborating around a monitor building a custom AI system, software development process" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+  </div>
       <h2 style="margin-bottom:26px;">Real experience.<br>Real results.</h2>
       <p>Syntrex was built on real operational experience. We've worked hands on with growing companies from consumer brands scaling into major retail to industrial B2B operations, building sales automation tools and custom internal workflows from the ground up.</p>
       <p>That experience means we understand what businesses actually need in practice, not just what sounds good in a pitch deck. We've seen firsthand how much time and money gets lost to repetitive manual work and how quickly the right AI system eliminates it.</p>
@@ -1252,5 +1259,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
 </body>
 </html>
