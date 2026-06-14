@@ -130,7 +130,7 @@
 .svc-dd-inner{margin-top:12px;background:rgba(10,18,40,.96);-webkit-backdrop-filter:blur(32px) saturate(180%);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
 .svc-dd-cat{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06);}
 .svc-dd-inner a{display:block;font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.3px;color:rgba(255,255,255,.6);text-decoration:none;padding:5px 0;transition:color .15s;}
-.svc-dd-inner a:hover{color:#fff;}
+.svc-dd-inner a:hover{color:#e2e2e2;}
 .svc-dd-inner a::after{display:none !important;}
 @media(max-width:768px){.svc-dd-panel{display:none !important;}}
 </style>
@@ -345,7 +345,7 @@ async function fsub(e) {
       const wrapper = form.closest('.ctlay') || form.parentElement;
       const allFss = wrapper.querySelectorAll ? wrapper.querySelectorAll('.fss') : [];
       if (allFss.length > 0) {
-        allFss[0].style.cssText = 'display:flex;flex-direction:column;align-items:center;padding:60px 40px;text-align:center;background:#fff;border:1px solid #dde3f0;gap:16px;margin-top:6px;';
+        allFss[0].style.cssText = 'display:flex;flex-direction:column;align-items:center;padding:60px 40px;text-align:center;background:#e2e2e2;border:1px solid #dde3f0;gap:16px;margin-top:6px;';
       } else {
         // fallback - replace form content
         form.innerHTML = '<div style="text-align:center;padding:40px;"><div style="font-size:56px;margin-bottom:16px;">✅</div><div style="font-weight:800;font-size:22px;color:#08152e;margin-bottom:8px;">Message sent!</div><div style="color:#6b7a99;font-size:15px;">We will be in touch within 24 hours.</div></div>';

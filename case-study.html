@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --w:#ffffff;--off:#f6f8fd;
+  --w:#e2e2e2;--off:#f6f8fd;
   --brd:#dde3f0;
   --gr:#6b7a99;--grd:#3d4a66;
   --nv:#08152e;--nv2:#0c1a38;
-  --bl:#ffffff;--bld:#cccccc;
+  --bl:#e2e2e2;--bld:#cccccc;
   --blb:rgba(255,255,255,0.08);
   --glow:rgba(255,255,255,0.14);
 }
@@ -26,7 +26,7 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
 .corner-logo{position:fixed;top:20px;left:36px;z-index:201;cursor:pointer;}
 .corner-logo img{height:80px;width:auto;display:block;object-fit:contain;}
 .back-btn{font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;}
-.back-btn:hover{color:#fff;}
+.back-btn:hover{color:#e2e2e2;}
 .back-btn svg{transition:transform .2s;}
 .back-btn:hover svg{transform:translateX(-3px);}
 
@@ -35,12 +35,12 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
 .cs-hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
 .cs-hero .con{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 60px;}
 .cs-badge{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:7px 16px;border-radius:50px;display:inline-block;margin-bottom:24px;}
-.cs-hero h1{font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(32px,5vw,72px);letter-spacing:-2px;line-height:1.05;color:#fff;margin-bottom:20px;max-width:800px;}
+.cs-hero h1{font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(32px,5vw,72px);letter-spacing:-2px;line-height:1.05;color:#e2e2e2;margin-bottom:20px;max-width:800px;}
 .cs-hero-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.55);max-width:600px;margin-bottom:48px;}
 .cs-metrics{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.12);padding-top:32px;flex-wrap:wrap;}
 .cs-metric-item{padding-right:36px;border-right:1px solid rgba(255,255,255,.12);margin-right:36px;}
 .cs-metric-item:last-child{border-right:none;}
-.cs-metric-n{font-weight:800;font-size:36px;letter-spacing:-2px;color:#fff;line-height:1;margin-bottom:6px;}
+.cs-metric-n{font-weight:800;font-size:36px;letter-spacing:-2px;color:#e2e2e2;line-height:1;margin-bottom:6px;}
 .cs-metric-n span{color:var(--bl);}
 .cs-metric-l{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);}
 
@@ -52,11 +52,11 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
 .cs-img-slider img.active{opacity:1;}
 .cs-img-slider img.hidden{opacity:0;}
 .cs-img-nav{position:absolute;bottom:16px;right:16px;display:flex;gap:8px;z-index:2;}
-.cs-img-btn{width:36px;height:36px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(8px);}
+.cs-img-btn{width:36px;height:36px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#e2e2e2;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(8px);}
 .cs-img-btn:hover{background:var(--bl);}
 .cs-img-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
 .cs-img-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);transition:background .2s;cursor:pointer;}
-.cs-img-dot.active{background:#fff;}
+.cs-img-dot.active{background:#e2e2e2;}
 
 /* CONTENT */
 .cs-content{padding:80px 0;}
@@ -80,7 +80,7 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
 .cs-sidebar-card{background:var(--off);border:1px solid var(--brd);border-radius:14px;padding:28px;margin-bottom:16px;}
 .cs-sidebar-label{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gr);margin-bottom:8px;}
 .cs-sidebar-val{font-weight:600;font-size:15px;color:var(--nv);}
-.cs-cta-btn{display:block;background:var(--bl);color:#fff;font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:16px 24px;border-radius:50px;text-align:center;text-decoration:none;margin-top:8px;transition:background .2s,transform .2s;box-shadow:0 4px 18px var(--glow);}
+.cs-cta-btn{display:block;background:var(--bl);color:#e2e2e2;font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:16px 24px;border-radius:50px;text-align:center;text-decoration:none;margin-top:8px;transition:background .2s,transform .2s;box-shadow:0 4px 18px var(--glow);}
 .cs-cta-btn:hover{background:var(--bld);transform:translateY(-2px);}
 
 /* LOADING / ERROR */
@@ -110,7 +110,7 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
 }
 
 /* Gradient text */
-.grad-text{background:linear-gradient(135deg,#ffffff 0%,#cccccc 55%,#888888 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.grad-text{background:linear-gradient(135deg,#e2e2e2 0%,#cccccc 55%,#888888 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 </style>
 </head>
 <body>
@@ -313,7 +313,7 @@ nav{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:200;heig
   function showError(title,msg){
     document.getElementById('cs-root').innerHTML=
       '<section class="cs-hero" style="min-height:40vh;"><div class="con"><div class="cs-error">'+
-      '<h2 style="color:#fff;margin-bottom:12px;">'+title+'</h2>'+
+      '<h2 style="color:#e2e2e2;margin-bottom:12px;">'+title+'</h2>'+
       '<p style="color:rgba(255,255,255,.5);">'+msg+'</p>'+
       '<a href="/" style="display:inline-block;margin-top:24px;color:var(--bl);font-family:Exo 2,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">← Back to Projects</a>'+
       '</div></div></section>';
