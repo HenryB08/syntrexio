@@ -403,6 +403,14 @@
           <p style="font-size:14px;color:var(--gr);line-height:1.7;">Syntrex is based in Windermere, FL. We have built ecommerce stores for businesses across the Orlando area and work remotely with brands anywhere.</p>
         </div>
       </div>
+      <div class="img-split" style="margin-top:48px;">
+        <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/353b47f9-c620-773e-b09c-956311966f03.png" alt="Premium product flat lay showcasing ecommerce merchandise, online store product photography" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+        <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;">
+          <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/d150987b-04bc-a2be-fd86-2f6cdeda2f2f.png" alt="Hands opening a premium branded package, ecommerce unboxing experience and customer delight" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1396,5 +1404,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
 </body>
 </html>

@@ -253,6 +253,9 @@
   <a href="mailto:henry@syntrexio.com" style="color:inherit;">henry@syntrexio.com</a>
 </div>
     </form>
+  <div class="img-reveal" style="margin-top:48px;border-radius:12px;overflow:hidden;aspect-ratio:16/9;max-height:400px;">
+  <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/e7953d65-6b53-65a1-ae2d-4c629586c009.png" alt="Laptop on desk in morning light with email compose window open, professional business communication" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+</div>
   </div></div></section>
   
 
@@ -1174,5 +1177,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
 </body>
 </html>
