@@ -196,9 +196,9 @@
 .svc-dd{position:relative;}
 .svc-dd-panel{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);z-index:9999;pointer-events:none;}
 .svc-dd:hover .svc-dd-panel,.svc-dd-panel:hover{display:block;pointer-events:auto;}
-.svc-dd-inner{margin-top:12px;background:rgba(10,18,40,.96);-webkit-backdrop-filter:blur(32px) saturate(180%);backdrop-filter:blur(32px) saturate(180%);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
-.svc-dd-cat{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06);}
-.svc-dd-inner a{display:block;font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.3px;color:rgba(255,255,255,.6);text-decoration:none;padding:5px 0;transition:color .15s;}
+.svc-dd-inner{margin-top:12px;background:#111111;border:1px solid #2a2a2a;border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;min-width:440px;box-shadow:0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);}
+.svc-dd-cat{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#e2e2e2;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.06);}
+.svc-dd-inner a{display:block;font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.3px;color:#888888;text-decoration:none;padding:5px 0;transition:color .15s;}
 .svc-dd-inner a:hover{color:#e2e2e2;}
 .svc-dd-inner a::after{display:none !important;}
 @media(max-width:768px){.svc-dd-panel{display:none !important;}}
@@ -208,7 +208,7 @@
 
 
 <div id="chat-bubble" onclick="toggleChat()" title="Chat with us">
-  <img id="chat-bubble-img" src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/65a7a290-0686-f922-de18-254107f4b105.png" alt="SYN AI" style="width:50%;height:50%;object-fit:contain;border-radius:50%;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
   <div id="chat-notif">1</div>
 </div>
 
@@ -241,7 +241,7 @@
 
 <!-- Corner logo -->
 <a class="corner-logo" href="../index.html">
-  <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex">
+  <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png" alt="Syntrex">
 </a>
 
 <nav>
@@ -299,7 +299,7 @@
     <h1>AI Strategy & <span class="grad-text">Consulting</span></h1>
     <p class="pghs">You know AI could help your business. You just do not know where to start. We audit your operations, identify the highest-value opportunities, and give you a clear plan.</p>
   </div></section>
-  <div class="img-reveal" style="width:100%;aspect-ratio:21/9;overflow:hidden;position:relative;max-height:420px;">
+  <div class="img-reveal" style="width:100%;height:400px;overflow:hidden;position:relative;">
     <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/e28b593b-db85-faee-cc5a-c48bc959aed0.png" alt="Strategy roadmap on a conference table, AI strategy consulting and business automation planning" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
 
@@ -488,7 +488,7 @@
     <div style="max-width:1180px;margin:0 auto;padding:0 60px 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;">
       <!-- LEFT: Logo + tagline + email -->
       <div style="display:flex;flex-direction:column;gap:0;">
-        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c67f9ac4-5b4a-1e00-3368-58a6922ceb7a.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png" alt="Syntrex" style="height:120px;width:auto;display:block;object-fit:contain;margin-bottom:16px;">
         <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:10px;max-width:300px;">AI solutions & digital services built for every business, anywhere in the world.</p>
         <a href="mailto:henry@syntrexio.com" style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;width:fit-content;">henry@syntrexio.com</a>
       </div>
@@ -509,6 +509,8 @@
       </div>
     </div>
     <div style="max-width:1180px;margin:0 auto;padding:18px 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      
+      <div style="text-align:center;padding:12px 0 4px;"><span style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#444444;font-weight:400;">INNOVATE. AUTOMATE. ELEVATE.</span></div>
       <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;">© 2026 Syntrex. All rights reserved.</span>
       <span style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:.8px;color:rgba(255,255,255,.18);text-transform:uppercase;"><a href="../privacy.html" style="color:rgba(255,255,255,.25);text-decoration:none;">Privacy</a> · <a href="../terms.html" style="color:rgba(255,255,255,.25);text-decoration:none;">Terms</a></span>
     </div>
