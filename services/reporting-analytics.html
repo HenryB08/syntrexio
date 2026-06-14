@@ -318,10 +318,10 @@
   <!-- What You Get -->
   <section class="sp" style="background:var(--w);">
     <div class="con">
-      <div class="ey">What You Get</div>
+      <div class="ey" data-reveal>What You Get</div>
       <div class="img-split" style="margin-bottom:40px;">
         <div class="img-txt-side">
-          <h2 style="margin-bottom:32px;">Reports that build themselves and dashboards that stay current.</h2>
+          <h2 data-reveal style="margin-bottom:32px;">Reports that build themselves and dashboards that stay current.</h2>
           <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:0;">We connect to your data sources, build the calculations and visualizations that matter, and deliver reports and dashboards that update on their own. Your team stops building reports and starts reading them.</p>
         </div>
         <div class="img-side img-reveal" style="aspect-ratio:4/3;overflow:hidden;">
@@ -362,7 +362,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>How It Works</div>
-      <h2 style="color:#fff;margin-bottom:48px;">From scattered data to one clear picture.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:48px;">From scattered data to one clear picture.</h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);">
         
         <div class="rev" style="background:rgba(255,255,255,.04);padding:36px 28px;">
@@ -392,8 +392,8 @@
   <!-- Who This Is For -->
   <section class="sp" style="background:var(--off);">
     <div class="con">
-      <div class="ey">Who This Is For</div>
-      <h2 style="margin-bottom:40px;">Businesses making decisions with incomplete or stale data.</h2>
+      <div class="ey" data-reveal>Who This Is For</div>
+      <h2 data-reveal style="margin-bottom:40px;">Businesses making decisions with incomplete or stale data.</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
         <div class="rev" style="background:#fff;padding:32px;">
@@ -420,7 +420,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Why It Matters</div>
-      <h2 style="color:#fff;margin-bottom:24px;">You cannot improve what you cannot measure. And you cannot measure what takes your team four hours to assemble every week.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:24px;">You cannot improve what you cannot measure. And you cannot measure what takes your team four hours to assemble every week.</h2>
       <p style="font-size:16px;line-height:1.78;color:rgba(255,255,255,.55);max-width:640px;">Most businesses have the data they need. It is just scattered across platforms, locked in exports, or trapped in someone's head. A reporting system puts it all in one place, keeps it current, and makes it visible to the people who need it. When decisions are based on real numbers instead of instinct, the business gets sharper. The dashboards and reports we build connect to your live data and update on their own. They belong to you. No monthly BI platform subscription, no per-user fees.</p>
     </div>
   </section>
@@ -431,7 +431,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">FAQ</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Reporting and analytics questions, answered.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Reporting and analytics questions, answered.</h2>
       <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
         
         <details style="background:#fff;border:1px solid var(--brd);border-radius:14px;overflow:hidden;">
@@ -481,7 +481,7 @@
   <!-- CTA -->
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con" style="text-align:center;">
-      <h2 style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
       <p style="color:rgba(255,255,255,.55);font-size:16px;max-width:480px;line-height:1.7;margin:0 auto 32px;">Tell us what data you are trying to track, where it currently lives, and what you wish you could see in one place. We will send back a plan and a quote.</p>
       <a href="mailto:henry@syntrexio.com" class="btn bb" style="font-size:12px;letter-spacing:1px;padding:16px 36px;">Email henry@syntrexio.com</a>
     </div>
@@ -491,7 +491,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">Related Services</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
         
         <a href="custom-ai-tools.html" style="background:#fff;border:1px solid var(--brd);border-radius:14px;padding:32px;text-decoration:none;color:inherit;transition:all .2s;" onmouseover="this.style.borderColor='var(--bl)'" onmouseout="this.style.borderColor='var(--brd)'">
@@ -1408,6 +1408,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 (function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

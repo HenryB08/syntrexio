@@ -229,8 +229,8 @@
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Pricing</div><h1>Priced for <span class="serif-accent grad-text-combo">your</span> <span class="grad-text">needs.</span></h1><p class="pghs">Every system is built from scratch for your business. Every project gets a custom quote. No subscriptions, no hidden fees, and you own everything we build.</p></div></section>
   <section class="sp" style="background:var(--w);">
     <div class="con">
-      <div class="ey">How We Price</div>
-      <h2 style="margin-bottom:16px;">We price based on what you actually need.</h2>
+      <div class="ey" data-reveal>How We Price</div>
+      <h2 data-reveal style="margin-bottom:16px;">We price based on what you actually need.</h2>
       <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:52px;">No fixed tiers. No packages that almost fit. Tell us what you need and we will quote you exactly what it costs to build it right. Projects typically range from a couple hundred dollars to several thousand depending on scope. Monthly retainers are also available for ongoing work.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);margin-bottom:24px;">
@@ -270,8 +270,8 @@
 
   <section style="background:var(--off);padding:80px 0;">
     <div class="con">
-      <div class="ey">What Affects Price</div>
-      <h2 style="margin-bottom:40px;">What goes into your quote.</h2>
+      <div class="ey" data-reveal>What Affects Price</div>
+      <h2 data-reveal style="margin-bottom:40px;">What goes into your quote.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);">
         <div style="background:#fff;padding:36px;border-left:3px solid var(--bl);">
           <div style="font-weight:700;font-size:17px;color:var(--nv);margin-bottom:10px;">Scope & Complexity</div>
@@ -291,7 +291,7 @@
 
   <div style="background:var(--nv);padding:80px 0;text-align:center;position:relative;overflow:hidden;">
     <div class="con" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
-      <h2 style="color:#fff;">Ready for a quote?</h2>
+      <h2 data-reveal style="color:#fff;">Ready for a quote?</h2>
       <p style="color:rgba(255,255,255,.6);font-size:16px;max-width:480px;line-height:1.7;font-family:Manrope,sans-serif;">Tell us what you need and we will send you a clear price within 24 hours.</p>
       <a href="contact.html" class="btn bb" style="cursor:pointer;">Get In Touch</a>
     </div>
@@ -1212,5 +1212,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

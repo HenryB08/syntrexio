@@ -318,8 +318,8 @@
   <!-- What You Get -->
   <section class="sp" style="background:var(--w);">
     <div class="con">
-      <div class="ey">What You Get</div>
-      <h2 style="margin-bottom:32px;">Everything you need to sell online, configured and running.</h2>
+      <div class="ey" data-reveal>What You Get</div>
+      <h2 data-reveal style="margin-bottom:32px;">Everything you need to sell online, configured and running.</h2>
       <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:40px;">We build the store, set up the payments, configure shipping and taxes, load your products, and hand it over ready to accept orders. You do not need to figure out any of it yourself.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
@@ -355,7 +355,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>How It Works</div>
-      <h2 style="color:#fff;margin-bottom:48px;">From product list to a store taking orders.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:48px;">From product list to a store taking orders.</h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);">
         
         <div class="rev" style="background:rgba(255,255,255,.04);padding:36px 28px;">
@@ -385,8 +385,8 @@
   <!-- Who This Is For -->
   <section class="sp" style="background:var(--off);">
     <div class="con">
-      <div class="ey">Who This Is For</div>
-      <h2 style="margin-bottom:40px;">Businesses ready to sell online or upgrade an existing store.</h2>
+      <div class="ey" data-reveal>Who This Is For</div>
+      <h2 data-reveal style="margin-bottom:40px;">Businesses ready to sell online or upgrade an existing store.</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
         <div class="rev" style="background:#fff;padding:32px;">
@@ -421,7 +421,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Why It Matters</div>
-      <h2 style="color:#fff;margin-bottom:24px;">A store that looks professional and actually converts is the difference between getting traffic and getting sales.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:24px;">A store that looks professional and actually converts is the difference between getting traffic and getting sales.</h2>
       <p style="font-size:16px;line-height:1.78;color:rgba(255,255,255,.55);max-width:640px;">Most ecommerce templates look decent but convert poorly because they are not designed around your specific products, customers, and buying process. We build each store to match how your customers actually shop. The checkout is fast, the navigation is clear, and the product pages are built to close the sale. When we hand it over, you own the store and the platform. No monthly website builder fees eating into your margins.</p>
     </div>
   </section>
@@ -432,7 +432,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">FAQ</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Ecommerce questions, answered.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Ecommerce questions, answered.</h2>
       <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
         
         <details style="background:#fff;border:1px solid var(--brd);border-radius:14px;overflow:hidden;">
@@ -482,7 +482,7 @@
   <!-- CTA -->
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con" style="text-align:center;">
-      <h2 style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
       <p style="color:rgba(255,255,255,.55);font-size:16px;max-width:480px;line-height:1.7;margin:0 auto 32px;">Tell us what you sell, how many products you have, and what platform you are currently using (if any). We will send back a store plan and a quote.</p>
       <a href="mailto:henry@syntrexio.com" class="btn bb" style="font-size:12px;letter-spacing:1px;padding:16px 36px;">Email henry@syntrexio.com</a>
     </div>
@@ -492,7 +492,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">Related Services</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
         
         <a href="website-design.html" style="background:#fff;border:1px solid var(--brd);border-radius:14px;padding:32px;text-decoration:none;color:inherit;transition:all .2s;" onmouseover="this.style.borderColor='var(--bl)'" onmouseout="this.style.borderColor='var(--brd)'">
@@ -1409,6 +1409,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 (function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
