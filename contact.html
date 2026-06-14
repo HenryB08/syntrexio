@@ -229,7 +229,7 @@
   <section class="pgh"><canvas class="pgh-stars"></canvas><div class="pgh-accent"></div><div class="con"><div class="ey" style="color:rgba(255,255,255,.45);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Contact</div><h1>Let's build <span class="serif-accent">something</span><br>that works <span class="grad-text">for you.</span></h1><p class="pghs">Tell us what's slowing your business down. We'll map out exactly what we'd build to fix it and what it would cost. No pressure, no sales pitch.</p></div></section>
   <section class="sp"><div class="con"><div class="ctlay">
     <div class="cti">
-      <div class="ey">Get In Touch</div>
+      <div class="ey" data-reveal>Get In Touch</div>
       <h3>Start with <span class="serif-accent" style="color:var(--nv);">a message.</span></h3>
       <p>Send us a message describing your business and what you'd like to improve. We'll respond within 24 hours with a clear idea of what we'd build and what it would cost.</p>
       <div class="cdts">
@@ -1179,6 +1179,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 (function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

@@ -318,8 +318,8 @@
   <!-- What You Get -->
   <section class="sp" style="background:var(--w);">
     <div class="con">
-      <div class="ey">What You Get</div>
-      <h2 style="margin-bottom:32px;">Internal tools that save hours every week.</h2>
+      <div class="ey" data-reveal>What You Get</div>
+      <h2 data-reveal style="margin-bottom:32px;">Internal tools that save hours every week.</h2>
       <p style="font-size:16px;color:var(--gr);max-width:640px;line-height:1.78;margin-bottom:40px;">Off-the-shelf software makes you adapt your workflow to its features. We build tools that adapt to yours. Every tool is designed around the specific inputs, outputs, and logic your team uses daily.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
@@ -355,7 +355,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>How It Works</div>
-      <h2 style="color:#fff;margin-bottom:48px;">From your workflow to a working tool.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:48px;">From your workflow to a working tool.</h2>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);">
         
         <div class="rev" style="background:rgba(255,255,255,.04);padding:36px 28px;">
@@ -385,8 +385,8 @@
   <!-- Who This Is For -->
   <section class="sp" style="background:var(--off);">
     <div class="con">
-      <div class="ey">Who This Is For</div>
-      <h2 style="margin-bottom:40px;">Teams that waste time on tasks a tool should handle in seconds.</h2>
+      <div class="ey" data-reveal>Who This Is For</div>
+      <h2 data-reveal style="margin-bottom:40px;">Teams that waste time on tasks a tool should handle in seconds.</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
         
         <div class="rev" style="background:#fff;padding:32px;">
@@ -413,7 +413,7 @@
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con">
       <div class="ey" style="color:rgba(255,255,255,.4);"><span style="width:28px;height:2px;background:rgba(255,255,255,.3);display:inline-block;margin-right:12px;"></span>Why It Matters</div>
-      <h2 style="color:#fff;margin-bottom:24px;">Generic software forces your team to work around its limitations. Custom tools work around theirs.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:24px;">Generic software forces your team to work around its limitations. Custom tools work around theirs.</h2>
       <p style="font-size:16px;line-height:1.78;color:rgba(255,255,255,.55);max-width:640px;">The tools we build do exactly what your team needs, nothing more and nothing less. They use your terminology, follow your business rules, and produce outputs in your format. That is why people actually use them. The tool you own outperforms the subscription you pay for monthly but never fully adopt.</p>
     </div>
   </section>
@@ -424,7 +424,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">FAQ</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Custom AI tools, answered.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Custom AI tools, answered.</h2>
       <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
         
         <details style="background:#fff;border:1px solid var(--brd);border-radius:14px;overflow:hidden;">
@@ -474,7 +474,7 @@
   <!-- CTA -->
   <section style="background:var(--nv);padding:80px 0;">
     <div class="con" style="text-align:center;">
-      <h2 style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
+      <h2 data-reveal style="color:#fff;margin-bottom:16px;">Not sure where to start? Get a free automation audit.</h2>
       <p style="color:rgba(255,255,255,.55);font-size:16px;max-width:480px;line-height:1.7;margin:0 auto 32px;">Describe the task your team does manually and what the ideal output would look like. We will tell you whether a custom tool makes sense and what it would cost.</p>
       <a href="mailto:henry@syntrexio.com" class="btn bb" style="font-size:12px;letter-spacing:1px;padding:16px 36px;">Email henry@syntrexio.com</a>
     </div>
@@ -484,7 +484,7 @@
   <section class="sp" style="background:var(--off);">
     <div class="con">
       <div class="ey eyc" style="justify-content:center;">Related Services</div>
-      <h2 class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
+      <h2 data-reveal class="c" style="text-align:center;margin-bottom:40px;">Works well with these.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
         
         <a href="workflow-automation.html" style="background:#fff;border:1px solid var(--brd);border-radius:14px;padding:32px;text-decoration:none;color:inherit;transition:all .2s;" onmouseover="this.style.borderColor='var(--bl)'" onmouseout="this.style.borderColor='var(--brd)'">
@@ -1399,5 +1399,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

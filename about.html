@@ -233,8 +233,8 @@
   </div>
   <section class="sp"><div class="con"><div class="a2c">
     <div class="atx">
-      <div class="ey">Our Story</div>
-      <h2 style="margin-bottom:26px;">Real experience.<br>Real results.</h2>
+      <div class="ey" data-reveal>Our Story</div>
+      <h2 data-reveal style="margin-bottom:26px;">Real experience.<br>Real results.</h2>
       <p>Syntrex was built on real operational experience. We've worked hands on with growing companies from consumer brands scaling into major retail to industrial B2B operations, building sales automation tools and custom internal workflows from the ground up.</p>
       <p>That experience means we understand what businesses actually need in practice, not just what sounds good in a pitch deck. We've seen firsthand how much time and money gets lost to repetitive manual work and how quickly the right AI system eliminates it.</p>
       <p>Now we bring that same work to <strong>any business ready to operate smarter</strong>, regardless of size, industry, or location.</p>
@@ -304,8 +304,8 @@
 
   <section class="sp team-section" style="background:var(--off);">
     <div class="team-wrap" style="max-width:1400px;margin:0 auto;padding:0 40px;">
-      <div class="ey">Our Team</div>
-      <h2 style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
+      <div class="ey" data-reveal>Our Team</div>
+      <h2 data-reveal style="margin-bottom:40px;">The people behind <span class="grad-text">Syntrex LLC.</span></h2>
       <div class="team-grid" style="display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:24px;margin:0 auto;justify-content:center;align-items:stretch;">
         <div class="team-card" style="padding:44px 36px;;border-radius:24px">
           <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;min-height:32px;">Founder, CEO & Lead Developer</div>
@@ -1261,6 +1261,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 (function(){var els=document.querySelectorAll('.img-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(function(el){io.observe(el);});})();
+</script>
+<script>
+/* Scroll reveal */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
