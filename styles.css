@@ -1491,6 +1491,7 @@ video{-webkit-playsinline:1;}
 .card:nth-child(13) .card-icon{background:linear-gradient(135deg,#0f9b8e,#1a6fff);animation-delay:3.5999999999999996s;}
 .card:nth-child(14) .card-icon{background:linear-gradient(135deg,#4facfe,#00f2fe);animation-delay:3.9s;}
 .card:nth-child(15) .card-icon{background:linear-gradient(135deg,#f7971e,#ffd200);animation-delay:4.2s;}
+.card:nth-child(16) .card-icon{background:linear-gradient(135deg,#7c3aed,#4f46e5);animation-delay:4.5s;}
 
 .svi-icon{
   width:52px;height:52px;border-radius:14px;
