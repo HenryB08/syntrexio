@@ -42,7 +42,6 @@ Every project gets a custom quote. No fixed tiers or packages. One-time project 
 - Sofia Weeden — Co-Founder & CFO
 - Alexander Ohmer — Head of Operations
 - Ciana Bello — Director of Marketing & Social Media
-- Amy Qian — Developer & Growth Strategist
 
 ## Social
 
@@ -58,4 +57,5 @@ Every project gets a custom quote. No fixed tiers or packages. One-time project 
 - Projects: https://syntrexio.com/projects.html
 - About: https://syntrexio.com/about.html
 - Contact: https://syntrexio.com/contact.html
-- Legal: https://syntrexio.com/legal.html
+- Privacy Policy: https://syntrexio.com/privacy.html
+- Terms of Use: https://syntrexio.com/terms.html
