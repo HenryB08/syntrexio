@@ -5,7 +5,7 @@
 ## Company Details
 
 - Name: Syntrex LLC
-- Type: Digital services and AI automation agency
+- Type: Custom digital agency (website, ecommerce, AI tools, content, automation, strategy)
 - Headquarters: 513 Main Street, Windermere, FL 34786, United States
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
