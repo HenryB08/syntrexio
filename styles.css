@@ -3006,3 +3006,33 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   body::before { animation: none !important; opacity: 0.4; }
 }
+
+/* ── INDEX FIXES ─────────────────────────────────────────────── */
+
+/* Ensure all page content sits above body::before breathing gradient (z-index:0) */
+#p-home, .ticker-wrap, nav, .chat-window-wrap, #chat-bubble, #chat-window {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ticker: ensure it's in normal document flow above breathing bg */
+.ticker-wrap { z-index: 2 !important; }
+
+/* Safety net: never leave reveal elements permanently invisible */
+[data-reveal="image"] {
+  transition: clip-path 1s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease;
+}
+
+/* Reduced-motion: show everything immediately */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], [data-reveal="image"] {
+    opacity: 1 !important;
+    clip-path: inset(0%) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .reveal-line {
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+}
