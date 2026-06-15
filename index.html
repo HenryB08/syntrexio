@@ -1022,11 +1022,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load',()=>{
   setTimeout(()=>ir('home'),100);
-  setTimeout(()=>{
-    document.getElementById('chat-window').classList.add('open');
-    const n=document.getElementById('chat-notif');
-    if(n)n.style.display='none';
-  }, 3000);
+  var _path = window.location.pathname;
+  var _isHome = _path === '/' || _path.endsWith('/index.html') || _path === '';
+  if(_isHome){
+    setTimeout(()=>{
+      document.getElementById('chat-window').classList.add('open');
+      const n=document.getElementById('chat-notif');
+      if(n)n.style.display='none';
+    }, 3000);
+  }
 });
 
 function toggleFaq(el) {
@@ -1285,11 +1289,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load',()=>{
   setTimeout(()=>ir('home'),100);
-  setTimeout(()=>{
-    document.getElementById('chat-window').classList.add('open');
-    const n=document.getElementById('chat-notif');
-    if(n)n.style.display='none';
-  }, 3000);
+  var _path = window.location.pathname;
+  var _isHome = _path === '/' || _path.endsWith('/index.html') || _path === '';
+  if(_isHome){
+    setTimeout(()=>{
+      document.getElementById('chat-window').classList.add('open');
+      const n=document.getElementById('chat-notif');
+      if(n)n.style.display='none';
+    }, 3000);
+  }
 
 });
 
