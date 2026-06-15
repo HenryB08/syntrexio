@@ -3056,25 +3056,11 @@ body::before {
 }
 .syn-strip .syn-eyebrow { color: #888888 !important; }
 
-/* FIX 2: Service page hero — remove top gap, ensure image visible */
+/* FIX 2: Service page hero — restore proper top padding (was overridden to 0) */
 .pgh {
-  padding-top: 0 !important;
+  padding-top: 150px !important;
   margin-top: 0 !important;
 }
-.pgh .bg-img-wrap,
-.pgh .bg-img-wrap img {
-  opacity: 1 !important;
-  clip-path: inset(0%) !important;
-  transform: none !important;
-}
-.pgh [data-reveal="image"],
-.pgh [data-reveal="image"].revealed {
-  clip-path: inset(0%) !important;
-  opacity: 1 !important;
-}
-/* Hero image explicit height */
-.pgh .bg-img-wrap { min-height: 420px; }
-.pgh .bg-img-wrap img { width: 100% !important; height: 420px !important; object-fit: cover !important; display: block !important; }
 
 /* FIX 3: Related service cards — dark readable (inline-styled, override via parent section) */
 .related-grid .card,
@@ -3165,25 +3151,11 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
 }
 .syn-strip .syn-eyebrow { color: #888888 !important; }
 
-/* FIX 2: Service page hero — remove top gap, ensure image visible */
+/* FIX 2: Service page hero — restore proper top padding (was overridden to 0) */
 .pgh {
-  padding-top: 0 !important;
+  padding-top: 150px !important;
   margin-top: 0 !important;
 }
-.pgh .bg-img-wrap,
-.pgh .bg-img-wrap img {
-  opacity: 1 !important;
-  clip-path: inset(0%) !important;
-  transform: none !important;
-}
-.pgh [data-reveal="image"],
-.pgh [data-reveal="image"].revealed {
-  clip-path: inset(0%) !important;
-  opacity: 1 !important;
-}
-/* Hero image explicit height */
-.pgh .bg-img-wrap { min-height: 420px; }
-.pgh .bg-img-wrap img { width: 100% !important; height: 420px !important; object-fit: cover !important; display: block !important; }
 
 /* FIX 3: Related service cards — dark readable */
 .related-grid .card,
@@ -3248,6 +3220,16 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
   display: block !important;
   opacity: 1 !important;
   clip-path: none !important;
+}
+
+/* FIX: Service hero images — force visible (these sit outside .pgh, use data-reveal="image") */
+[data-reveal="image"],
+[data-reveal="image"].revealed,
+.hero img,
+.service-hero img {
+  opacity: 1 !important;
+  clip-path: inset(0%) !important;
+  transform: none !important;
 }
 
 /* ── PERMANENT POSITION LOCKS ─────────────────────────────────
