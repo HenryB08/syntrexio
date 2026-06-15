@@ -399,7 +399,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   .nls,.nc{display:none;}
   .mb{display:block;}
   .corner-logo{top:14px;left:16px;}
-  .corner-logo img{height:36px;}
+  .corner-logo img{height:56px !important;}
   #mm{top:72px;left:12px;right:12px;}
   #mm a{padding:16px 20px;font-size:13px;}
 
@@ -2411,7 +2411,7 @@ p { color: var(--color-text-secondary); }
 .svc-card-img { opacity: 1 !important; transform: none !important; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; display: block; margin-bottom: 20px; }
 
 /* Corner logo size override */
-.corner-logo img { height: 36px !important; }
+.corner-logo img { height: 56px !important; width: auto !important; display: block !important; }
 
 /* hero bb button (See What We Build) — ghost style when on hero */
 
