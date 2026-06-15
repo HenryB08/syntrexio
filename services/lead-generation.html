@@ -214,6 +214,7 @@
 </style>
 </head>
 <body>
+<div id="page-transition" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;opacity:0;pointer-events:none;transition:opacity 0.3s ease;"></div>
 
 
 <div id="chat-bubble" onclick="toggleChat()" title="Chat with us">
@@ -308,7 +309,7 @@
     <h1>AI <span class="grad-text">Lead Generation</span> & Growth</h1>
     <p class="pghs">Leads come in, get scored, get followed up with, and move through your pipeline without anyone on your team doing it manually.</p>
   </div></section>
-  <div class="img-reveal" style="width:100%;height:400px;overflow:hidden;position:relative;border-radius:12px;margin:0 0 48px 0;">
+  <div class="img-reveal" style="width:100%;height:400px;overflow:hidden;position:relative;border-radius:12px;margin:0 0 48px 0;" data-reveal="image">
     <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/32af4e17-f767-c331-1934-34f0e5a82619.png" alt="Sales funnel chart on monitor, AI-powered lead generation and growth automation" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:0;">
   </div>
 
@@ -1420,6 +1421,113 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, {threshold: 0.1});
   els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+/* Page transition fade */
+(function(){
+  var overlay = document.getElementById('page-transition');
+  if(!overlay) return;
+  overlay.style.opacity = '1';
+  overlay.style.pointerEvents = 'none';
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      overlay.style.opacity = '0';
+    });
+  });
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced) return;
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    if(!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('tel') || a.target === '_blank') return;
+    if(href.startsWith('http') && !href.includes('syntrexio.com')) return;
+    e.preventDefault();
+    overlay.style.pointerEvents = 'all';
+    overlay.style.opacity = '1';
+    setTimeout(function(){ window.location.href = href; }, 300);
+  });
+})();
+</script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Text reveal */
+  if(!reduced){
+    var headings = document.querySelectorAll('h1, h2');
+    headings.forEach(function(h){
+      if(h.closest('.card') || h.dataset.lineRevealed) return;
+      h.dataset.lineRevealed = '1';
+      var html = h.innerHTML;
+      h.innerHTML = '<span class="reveal-text"><span class="reveal-line" style="display:block;transform:translateY(110%);transition:transform 0.85s cubic-bezier(0.16,1,0.3,1);">' + html + '</span></span>';
+      h.style.overflow = 'hidden';
+    });
+    var textIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var line = e.target.querySelector('.reveal-line');
+          if(line) line.style.transform = 'translateY(0)';
+          textIO.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('h1[data-line-revealed], h2[data-line-revealed]').forEach(function(h){
+      textIO.observe(h);
+    });
+  }
+
+  /* Image clip-in reveal */
+  var imgRevealEls = document.querySelectorAll('[data-reveal="image"]');
+  if(imgRevealEls.length){
+    var imgIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('revealed');
+          imgIO.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.1});
+    imgRevealEls.forEach(function(el){ imgIO.observe(el); });
+  }
+
+  /* Card zoom on scroll */
+  if(!reduced){
+    var cardImgs = document.querySelectorAll('.card-img');
+    cardImgs.forEach(function(ci){
+      var img = ci.querySelector('img');
+      if(!img) return;
+      img.style.transition = 'transform 1.2s cubic-bezier(0.16,1,0.3,1)';
+      img.style.transform = 'scale(1.05)';
+    });
+    var cardIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var img = e.target.querySelector('img');
+          if(img) img.style.transform = 'scale(1.0)';
+          cardIO.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.2});
+    cardImgs.forEach(function(ci){ cardIO.observe(ci); });
+  }
+
+  /* data-reveal fade-up */
+  if(!document.querySelector('[data-reveal-observer]')){
+    var els = document.querySelectorAll('[data-reveal]:not([data-reveal="image"])');
+    if(els.length){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('revealed');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.1});
+      els.forEach(function(el){ io.observe(el); });
+    }
+  }
 })();
 </script>
 </body>
