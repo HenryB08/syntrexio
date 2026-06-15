@@ -1750,6 +1750,79 @@ document.addEventListener('DOMContentLoaded', function() {
   }, {threshold: 0.1});
   els.forEach(function(el){ io.observe(el); });
 })();
+
+/* ── PREMIUM SCROLL ANIMATIONS ─────────────────────────────── */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── 1. HERO PARALLAX ── */
+  var hero = document.querySelector('.hero');
+  var heroBg = hero ? hero.querySelector('.bg-img-wrap img') : null;
+  var isMobile = window.innerWidth < 768;
+  if(heroBg && !isMobile && !reduced){
+    heroBg.style.willChange = 'transform';
+    heroBg.style.transformOrigin = 'center center';
+    function updateParallax(){
+      var sy = window.scrollY;
+      var heroH = hero.offsetHeight;
+      if(sy < heroH + 200){
+        heroBg.style.transform = 'translateY(' + (sy * 0.35) + 'px) scale(1.1)';
+      }
+    }
+    window.addEventListener('scroll', updateParallax, {passive:true});
+    updateParallax();
+  }
+
+  /* ── 2. TEXT REVEAL — line-by-line wipe ── */
+  if(!reduced){
+    var headings = document.querySelectorAll('#p-home h1, #p-home h2');
+    headings.forEach(function(h){
+      /* skip if already processed or inside a card */
+      if(h.closest('.card') || h.dataset.lineRevealed) return;
+      h.dataset.lineRevealed = '1';
+      /* wrap content in reveal-text */
+      var html = h.innerHTML;
+      h.innerHTML = '<span class="reveal-text"><span class="reveal-line" style="display:block;transform:translateY(110%);transition:transform 0.85s cubic-bezier(0.16,1,0.3,1);">' + html + '</span></span>';
+      h.style.overflow = 'hidden';
+    });
+    var textIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var line = e.target.querySelector('.reveal-line');
+          if(line) line.style.transform = 'translateY(0)';
+          textIO.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('#p-home h1[data-line-revealed], #p-home h2[data-line-revealed]').forEach(function(h){
+      textIO.observe(h);
+    });
+  }
+
+  /* ── 5. CARD IMAGE ZOOM on scroll into view ── */
+  if(!reduced){
+    var cardImgs = document.querySelectorAll('.card-img');
+    cardImgs.forEach(function(ci){
+      var img = ci.querySelector('img');
+      if(!img) return;
+      img.style.transition = 'transform 1.2s cubic-bezier(0.16,1,0.3,1)';
+      img.style.transform = 'scale(1.05)';
+      img.style.transformOrigin = 'center center';
+    });
+    var cardIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var img = e.target.querySelector('img');
+          if(img) img.style.transform = 'scale(1.0)';
+          cardIO.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.2});
+    cardImgs.forEach(function(ci){ cardIO.observe(ci); });
+  }
+
+})();
+
 </script>
 </body>
 </html>
