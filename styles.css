@@ -2414,3 +2414,24 @@ p { color: var(--color-text-secondary); }
 .corner-logo img { height: 36px !important; }
 
 /* hero bb button (See What We Build) — ghost style when on hero */
+
+/* === Hero ghost CTA override ============================================ */
+/* Must override .btn.bb { background: var(--color-accent) !important }    */
+/* Using .hero-cta-ghost class + !important to win the cascade              */
+.hero-cta-ghost,
+.hero-cta-ghost.btn,
+.hero-cta-ghost.btn.bb {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #e2e2e2 !important;
+  border: 2px solid rgba(226,226,226,0.65) !important;
+  box-shadow: none !important;
+}
+.hero-cta-ghost:hover,
+.hero-cta-ghost.btn:hover,
+.hero-cta-ghost.btn.bb:hover {
+  background: rgba(226,226,226,0.12) !important;
+  background-color: rgba(226,226,226,0.12) !important;
+  border-color: #e2e2e2 !important;
+  color: #e2e2e2 !important;
+}
