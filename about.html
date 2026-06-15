@@ -1392,5 +1392,41 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 </script>
+<script>
+/* Hero parallax — desktop only, disabled on mobile/reduced-motion */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.innerWidth < 768;
+  if(reduced || isMobile) return;
+  var pgh = document.querySelector('.pgh');
+  var heroBg = pgh ? pgh.querySelector('img[style*="position:absolute"]') : null;
+  if(!heroBg) return;
+  heroBg.style.willChange = 'transform';
+  heroBg.style.transformOrigin = 'center center';
+  function updateParallax(){
+    var sy = window.scrollY;
+    var pghH = pgh.offsetHeight;
+    if(sy < pghH + 200){
+      heroBg.style.transform = 'translateY(' + (sy * 0.25) + 'px) scale(1.08)';
+    }
+  }
+  window.addEventListener('scroll', updateParallax, {passive:true});
+  updateParallax();
+})();
+</script>
+<script>
+/* Fallback: force all reveal elements visible after 2s if observer hasn't fired */
+setTimeout(function(){
+  document.querySelectorAll('[data-reveal], [data-reveal="image"]').forEach(function(el){
+    el.classList.add('revealed');
+    el.style.clipPath = 'inset(0%)';
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+  document.querySelectorAll('.reveal-line').forEach(function(el){
+    el.style.transform = 'translateY(0)';
+  });
+}, 2000);
+</script>
 </body>
 </html>
