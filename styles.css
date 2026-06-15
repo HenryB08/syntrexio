@@ -2648,3 +2648,62 @@ a.corner-logo img { height: 56px !important; width: auto !important; display: bl
   .team-grid { grid-template-columns: 1fr !important; }
   .ind-grid { grid-template-columns: 1fr !important; }
 }
+
+/* === NAV-BLUE-SECTIONS FIX — 2026-06-15 ================================ */
+
+/* FIX 1: Nav logo — override the base 36px rule at line 47 */
+.corner-logo img { height: 52px !important; width: auto !important; display: block !important; max-height: 52px !important; min-height: 52px !important; }
+.corner-logo { overflow: visible !important; max-height: none !important; }
+
+/* FIX 2: Remaining blue text — any element using var(--bl) as color */
+[style*="color:var(--bl)"] { color: #888888 !important; }
+[style*="color: var(--bl)"] { color: #888888 !important; }
+[style*="background:var(--blb)"] { background: rgba(255,255,255,0.06) !important; }
+[style*="border-left:3px solid var(--bl)"] { border-left-color: #e2e2e2 !important; }
+/* After labels should be accent/light */
+[style*="color:var(--bl)"][style*="After"] { color: #e2e2e2 !important; }
+/* var(--grd) was dark grey — should be light body text */
+[style*="color:var(--grd)"] { color: #888888 !important; }
+/* SYN eyebrow and any remaining blue labels */
+.syn-eyebrow { color: #888888 !important; }
+
+/* FAQ heading blue em */
+#faq-heading em { color: #e2e2e2 !important; }
+
+/* FIX 3: FAQ accordion items */
+details[style*="background:#e2e2e2"] {
+  background: #111111 !important;
+  border: 1px solid #222222 !important;
+}
+details[style*="background:#e2e2e2"] summary h3 { color: #e2e2e2 !important; }
+details[style*="background:#e2e2e2"] summary span { background: rgba(255,255,255,0.06) !important; color: #888888 !important; }
+details[style*="background:#e2e2e2"] > div { color: #888888 !important; }
+
+/* FIX 3: Before/After rows */
+[style*="border-left:3px solid var(--gr)"],
+[style*="border-left:3px solid var(--bl)"] {
+  background: #111111 !important;
+  border-left-color: #333333 !important;
+}
+/* After column accent */
+[style*="border-left:3px solid var(--bl)"] { border-left-color: #555555 !important; }
+
+/* FIX 3: Who We Help items */
+div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] {
+  background: #111111 !important;
+  border-left: 3px solid transparent !important;
+  border: 1px solid #222222 !important;
+  border-radius: 8px !important;
+}
+div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"]:hover,
+div[style*="background:rgba(255,255,255,0.04)"] {
+  background: #1a1a1a !important;
+}
+
+/* Who We Help arrow */
+div[style*="font-size:20px"][style*="color:var(--bl)"] { color: #666666 !important; }
+div[style*="font-size:20px"][style*="color:var(--bl)"] + div { color: #e2e2e2 !important; }
+
+/* Shared: background grids using var(--brd) as bg */
+[style*="background:var(--brd)"] { background: #1a1a1a !important; }
+[style*="border:1px solid var(--brd)"] { border-color: #222222 !important; }
