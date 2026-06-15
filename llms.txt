@@ -1,6 +1,6 @@
 # Syntrex LLC
 
-> Syntrex LLC builds custom AI systems that handle the repetitive work businesses shouldn't have to do manually. Every system is built from scratch around how the client's business actually operates, and handed over for them to own outright. No subscriptions, no templates, no vendor lock-in.
+> Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a traditional agency would build, faster and at a fraction of the cost. Every system is custom from scratch, and you own it outright. No subscriptions, no templates, no vendor lock-in.
 
 ## Company Details
 
@@ -38,10 +38,10 @@ Every project gets a custom quote. No fixed tiers or packages. One-time project 
 
 ## Team
 
-- Henry Bello — Founder, CEO & Lead Developer
-- Sofia Weeden — Co-Founder & CFO
-- Alexander Ohmer — Head of Operations
-- Ciana Bello — Director of Marketing & Social Media
+- Henry Bello, Founder, CEO and Lead Developer
+- Sofia Weeden, Co-Founder and CFO
+- Alexander Ohmer, Head of Operations
+- Ciana Bello, Director of Marketing and Social Media
 
 ## Social
 
@@ -51,7 +51,7 @@ Every project gets a custom quote. No fixed tiers or packages. One-time project 
 
 ## Pages
 
-- Home: https://syntrexio.com/index.html
+- Home: https://syntrexio.com/
 - Services: https://syntrexio.com/services.html
 - Pricing: https://syntrexio.com/pricing.html
 - Projects: https://syntrexio.com/projects.html
