@@ -244,10 +244,8 @@
 .svc-dd-inner a::after{display:none !important;}
 @media(max-width:768px){.svc-dd-panel{display:none !important;}}
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-<div id="spiral-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.35;"></div>
 
 
 <div id="chat-bubble" onclick="toggleChat()" title="Chat with us">
@@ -1359,135 +1357,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, {threshold: 0.1});
   els.forEach(function(el){ io.observe(el); });
-})();
-</script>
-<script>
-(function(){
-  const container = document.getElementById('spiral-container');
-  if(!container || typeof THREE === 'undefined') return;
-
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(innerWidth, innerHeight);
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setClearColor(0x000000, 0);
-  container.appendChild(renderer.domElement);
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.1, 1000);
-  camera.position.set(0, 6, 52);
-  camera.lookAt(0, 0, 0);
-
-  const cubeRT = new THREE.WebGLCubeRenderTarget(128, {
-    format: THREE.RGBAFormat,
-    generateMipmaps: true,
-    minFilter: THREE.LinearMipmapLinearFilter,
-  });
-  const cubeCamera = new THREE.CubeCamera(0.1, 500, cubeRT);
-  const envScene = new THREE.Scene();
-  [
-    { col: 0xffffff, int: 9,  pos: [ 12,  16,  10] },
-    { col: 0x88aacc, int: 5,  pos: [-14,   4,   8] },
-    { col: 0xddeeff, int: 6,  pos: [ -2, -14,  -8] },
-    { col: 0x334466, int: 2,  pos: [  0,  20,  -5] },
-  ].forEach(({ col, int, pos }) => {
-    const l = new THREE.PointLight(col, int, 300);
-    l.position.set(...pos);
-    envScene.add(l);
-  });
-  envScene.add(new THREE.AmbientLight(0x111111, 0.3));
-  let envBaked = false;
-
-  const key  = new THREE.DirectionalLight(0xffffff, 2.8);
-  key.position.set(12, 16, 10);
-  scene.add(key);
-  const fill = new THREE.DirectionalLight(0x88aacc, 1.3);
-  fill.position.set(-14, 4, 8);
-  scene.add(fill);
-  const rim  = new THREE.DirectionalLight(0xddeeff, 2.0);
-  rim.position.set(-2, -14, -8);
-  scene.add(rim);
-  scene.add(new THREE.AmbientLight(0x182030, 0.9));
-
-  const mat = new THREE.MeshStandardMaterial({
-    color: 0x1e2226,
-    metalness: 0.88,
-    roughness: 0.10,
-    envMapIntensity: 1.0,
-    side: THREE.DoubleSide,
-  });
-
-  const W = 1.0, H = 0.42, CH = 0.12;
-  const shape = new THREE.Shape();
-  shape.moveTo(-W + CH, -H);
-  shape.lineTo( W - CH, -H);
-  shape.lineTo( W,      -H + CH);
-  shape.lineTo( W,       H - CH);
-  shape.lineTo( W - CH,  H);
-  shape.lineTo(-W + CH,  H);
-  shape.lineTo(-W,       H - CH);
-  shape.lineTo(-W,      -H + CH);
-  shape.closePath();
-
-  const SLAB_D = 0.75, BEVEL = 0.14;
-  const extCfg = {
-    depth: SLAB_D, bevelEnabled: true,
-    bevelThickness: BEVEL, bevelSize: BEVEL, bevelSegments: 3,
-  };
-
-  const isMobile = window.innerWidth < 768;
-  const CYL_R = 7.5, NUM_SLABS = isMobile ? 36 : 72, TOTAL_H = 42, REVS = 3.0;
-  const BLADE_W = 6.2, BLADE_D = 3.6;
-  const group = new THREE.Group();
-  scene.add(group);
-
-  for (let i = 0; i < NUM_SLABS; i++) {
-    const t     = i / (NUM_SLABS - 1);
-    const angle = t * REVS * Math.PI * 2;
-    const y     = -TOTAL_H / 2 + t * TOTAL_H;
-    const cx    = CYL_R * Math.cos(angle);
-    const cz    = CYL_R * Math.sin(angle);
-    const geo   = new THREE.ExtrudeGeometry(shape, extCfg);
-    geo.translate(0, 0, -SLAB_D / 2);
-    const mesh  = new THREE.Mesh(geo, mat);
-    mesh.rotation.x = Math.PI / 2;
-    mesh.scale.set(BLADE_W, BLADE_D, 1);
-    const pivot = new THREE.Object3D();
-    pivot.position.set(cx, y, cz);
-    pivot.rotation.y = -angle - Math.PI / 2;
-    const helixPitch = Math.atan2(TOTAL_H / REVS, 2 * Math.PI * CYL_R);
-    const pitchQ = new THREE.Quaternion().setFromAxisAngle(
-      new THREE.Vector3(1, 0, 0), helixPitch
-    );
-    pivot.quaternion.multiply(pitchQ);
-    pivot.add(mesh);
-    group.add(pivot);
-  }
-
-  let rotY = 0, clock = 0;
-
-  window.addEventListener('resize', () => {
-    camera.aspect = innerWidth / innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(innerWidth, innerHeight);
-  });
-
-  (function loop() {
-    requestAnimationFrame(loop);
-    if (!envBaked) {
-      cubeCamera.update(renderer, envScene);
-      mat.envMap = cubeRT.texture;
-      mat.needsUpdate = true;
-      envBaked = true;
-    }
-    clock += 0.005;
-    rotY += 0.002;
-    group.rotation.y = rotY;
-    group.rotation.x = 0.22;
-    key.position.x =  14 * Math.cos(clock * 0.2);
-    key.position.z =  14 * Math.sin(clock * 0.2) + 5;
-    fill.position.x = -12 * Math.cos(clock * 0.14 + 1.5);
-    renderer.render(scene, camera);
-  })();
 })();
 </script>
 </body>
