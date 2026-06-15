@@ -994,29 +994,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', animateCounters, {passive:true});
   animateCounters();
 
-  // Typing effect — only on home page hero
-  setTimeout(function() {
-    var el = document.querySelector('.hero-sub');
-    if (!el || el.dataset.typed) return;
-    el.dataset.typed = '1';
-    var text = el.innerText;
-    el.innerText = '';
-    var cursor = document.createElement('span');
-    cursor.className = 'typed-cursor';
-    el.appendChild(cursor);
-    var idx = 0;
-    function type() {
-      if (idx < text.length) {
-        var node = document.createTextNode(text[idx]);
-        el.insertBefore(node, cursor);
-        idx++;
-        setTimeout(type, 22);
-      } else {
-        setTimeout(function() { cursor.style.display = 'none'; }, 2000);
-      }
-    }
-    type();
-  }, 600);
+
 
 });
 
@@ -1261,29 +1239,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', animateCounters, {passive:true});
   animateCounters();
 
-  // Typing effect — only on home page hero
-  setTimeout(function() {
-    var el = document.querySelector('.hero-sub');
-    if (!el || el.dataset.typed) return;
-    el.dataset.typed = '1';
-    var text = el.innerText;
-    el.innerText = '';
-    var cursor = document.createElement('span');
-    cursor.className = 'typed-cursor';
-    el.appendChild(cursor);
-    var idx = 0;
-    function type() {
-      if (idx < text.length) {
-        var node = document.createTextNode(text[idx]);
-        el.insertBefore(node, cursor);
-        idx++;
-        setTimeout(type, 22);
-      } else {
-        setTimeout(function() { cursor.style.display = 'none'; }, 2000);
-      }
-    }
-    type();
-  }, 600);
+
 
 });
 

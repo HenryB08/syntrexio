@@ -697,11 +697,9 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 #particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
 .particle{position:absolute;border-radius:50%;background:rgba(255,255,255,0.2);animation:floatUp linear infinite;}
 @keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:1;}90%{opacity:.4;}100%{transform:translateY(-100px) scale(1);opacity:0;}}
-.typed-cursor{display:inline-block;width:2px;height:.9em;background:#e2e2e2;margin-left:2px;vertical-align:middle;animation:blink .7s infinite;}
 @keyframes statPop{0%{transform:scale(.85);opacity:0;}60%{transform:scale(1.04);}100%{transform:scale(1);opacity:1;}}
 .stat-n[data-animated]{animation:statPop .5s cubic-bezier(.34,1.56,.64,1) both;}
 .num-n[data-animated]{animation:statPop .5s cubic-bezier(.34,1.56,.64,1) both;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 .card{transition:transform .25s ease,box-shadow .25s ease;}
 .card:hover{box-shadow:0 0 0 2px #e2e2e2,0 20px 50px rgba(255,255,255,0.10);}
 
