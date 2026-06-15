@@ -2748,3 +2748,95 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
   .img-split .img-side { height: 260px !important; }
   .img-split .img-side img { height: 260px !important; }
 }
+
+/* === HOMEPAGE FIXES — 2026-06-15 === */
+
+/* Fix 2: Section fade transitions */
+.process, section.sp {
+  position: relative !important;
+  overflow: hidden !important;
+}
+.process::before, section.sp::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #000000, transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+.process::after, section.sp::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #000000, transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Fix 3: Why Syntrex 2-col responsive */
+@media(max-width:768px) {
+  div[style*="grid-template-columns:repeat(2,1fr)"][style*="gap:20px"] { grid-template-columns: 1fr !important; }
+}
+
+/* Fix 4: How It Works text readability */
+.process .steps .step-n,
+.process .steps .step-t,
+.process .steps .step-d,
+.process .proc-hdr h2,
+.process .proc-hdr p { text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
+
+/* Fix 4: Built for Real Companies text */
+section.sp .con [style*="font-weight:800"][style*="font-size:22px"] { color: #FFFFFF !important; font-weight: 700 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
+section.sp .con [style*="font-weight:800"][style*="font-size:32px"] { color: #FFFFFF !important; font-weight: 800 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
+section.sp .con [style*="font-size:9px"][style*="letter-spacing:1px"] { color: #E2E2E2 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
+section.sp .con p { color: #D0D0D0 !important; text-shadow: 0 1px 6px rgba(0,0,0,0.8) !important; }
+section.sp .con [style*="font-size:13px"][style*="text-transform:uppercase"] { color: #BBBBBB !important; text-shadow: 0 1px 6px rgba(0,0,0,0.8) !important; }
+
+/* Fix 5: Logo permanent fix */
+* img[alt="Syntrex"],
+img[alt="Syntrex"] { height: 56px !important; width: auto !important; min-height: 56px !important; max-height: none !important; }
+
+/* Fix 6: Testimonial redesign — borderless, divider style */
+.mobile-stack-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+.mobile-stack-grid > div {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid #222222 !important;
+  border-right: 1px solid #222222 !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  padding: 32px 28px !important;
+}
+.mobile-stack-grid > div:last-child { border-right: none !important; }
+.mobile-stack-grid > div [style*="font-size:32px"] { font-size: 48px !important; color: #333333 !important; }
+.mobile-stack-grid > div p { color: #C0C0C0 !important; font-size: 17px !important; line-height: 1.8 !important; font-style: italic !important; }
+.mobile-stack-grid > div [style*="font-weight:700"] { color: #E2E2E2 !important; font-weight: 600 !important; font-size: 15px !important; }
+.mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #666666 !important; font-size: 12px !important; letter-spacing: 0.08em !important; }
+@media(max-width:768px) {
+  .mobile-stack-grid { grid-template-columns: 1fr !important; }
+  .mobile-stack-grid > div { border-right: none !important; border-bottom: 1px solid #222222 !important; }
+}
+
+/* Fix 7: Is Syntrex Right For You — force dark */
+section[style*="background:var(--off)"] { background: #000000 !important; }
+div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] {
+  background: #111111 !important;
+  background-color: #111111 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 8px !important;
+  padding: 24px 28px !important;
+}
+div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] [style*="color:var(--nv)"] { color: #E2E2E2 !important; }
+div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p { color: #888888 !important; }
+
+/* Fix 8: "anytime." text — remove blue */
+.serif-accent { color: #E2E2E2 !important; -webkit-text-fill-color: #E2E2E2 !important; text-decoration: none !important; }
+.serif-accent::after { background: none !important; display: none !important; }
