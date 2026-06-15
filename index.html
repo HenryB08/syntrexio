@@ -613,36 +613,289 @@
       </div>
   </section>
 
-  <!-- CASE STUDIES -->
-  <section class="img-section sp" style="background:var(--nv);position:relative;overflow:hidden;">
-    <div class="bg-img-wrap" style="z-index:0;"><img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/44118612-5bf2-420b-fd67-7ffca054921e.png" alt="Person in suit walking through glass office lobby, professional business environment and enterprise clients" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="bg-img-overlay" style="background:rgba(6,7,13,0.70);"></div></div>
-    <div class="con" style="position:relative;z-index:2;">
-      <div class="ey" style="color:rgba(255,255,255,.55);">Real Work</div>
-      <h2 data-reveal style="margin-bottom:52px;color:#e2e2e2;">Built for real companies. Measured in real results.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);border:1px solid var(--brd);">
-        <div style="background:#e2e2e2;padding:48px;border-left:4px solid var(--bl);">
-          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:20px;">Case Study 01</div>
-          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;margin-bottom:12px;color:var(--nv);">HALT! Fire</div>
-          <div style="font-size:13px;color:var(--gr);margin-bottom:20px;font-family:'Exo 2',sans-serif;text-transform:uppercase;letter-spacing:1px;">Industrial Fire Suppression</div>
-          <p style="font-size:15px;line-height:1.78;color:var(--gr);margin-bottom:24px;">Built a full custom sales automation system from scratch tracking leads, managing distributor relationships, and automating follow-up sequences that previously required hours of manual work every week.</p>
-          <div style="display:flex;gap:32px;">
-            <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">10<span style="color:var(--bl);">hr+</span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Saved per week</div></div>
-            <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">100<span style="color:var(--bl);">%</span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Custom built</div></div>
+  <!-- CASE STUDIES — sticky-scroll proof section -->
+  <style>
+    /* ── proof-pin: scoped styles, no global side-effects ─────── */
+    .proof-pin-outer {
+      position: relative;
+      height: 200vh; /* tall container drives the pin */
+    }
+    .proof-pin-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--nv);
+    }
+    /* background image fills the sticky panel */
+    .proof-pin-sticky .bg-img-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .proof-pin-sticky .bg-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      opacity: 1; clip-path: none; transform: none;
+    }
+    .proof-pin-sticky .bg-img-overlay {
+      position: absolute; inset: 0; background: rgba(6,7,13,0.70);
+    }
+    /* centered content wrapper */
+    .proof-pin-inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 max(32px, calc((100vw - 1200px) / 2));
+      box-sizing: border-box;
+    }
+    .proof-pin-eyebrow {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 18px;
+    }
+    .proof-pin-heading {
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #e2e2e2;
+      margin: 0 0 48px;
+      line-height: 1.1;
+    }
+    /* case panels: stacked, only one visible at a time */
+    .proof-pin-cases {
+      position: relative;
+    }
+    .proof-pin-case {
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.8s cubic-bezier(0.16,1,0.3,1),
+                  clip-path 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .proof-pin-case[data-case="2"] {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      opacity: 0;
+      transform: translateY(28px);
+      pointer-events: none;
+    }
+    .proof-pin-case.proof-pin-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .proof-pin-case.proof-pin-exit {
+      opacity: 0;
+      transform: translateY(-28px);
+    }
+    /* case card */
+    .proof-pin-card {
+      background: #e2e2e2;
+      padding: 48px;
+      border-left: 4px solid var(--bl);
+      max-width: 640px;
+    }
+    /* counter */
+    .proof-pin-counter {
+      position: absolute;
+      bottom: 40px;
+      right: max(32px, calc((100vw - 1200px) / 2));
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .proof-pin-counter-label {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888888;
+    }
+    .proof-pin-track {
+      width: 80px;
+      height: 2px;
+      background: #222222;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .proof-pin-fill {
+      height: 100%;
+      width: 0%;
+      background: #E2E2E2;
+      border-radius: 1px;
+      transition: width 0.1s linear;
+    }
+
+    /* ── mobile: disable pin, stack normally ─────────────────── */
+    @media (max-width: 767px) {
+      .proof-pin-outer { height: auto; }
+      .proof-pin-sticky {
+        position: static;
+        height: auto;
+        overflow: visible;
+        padding: 80px 0;
+      }
+      .proof-pin-sticky .bg-img-wrap { position: absolute; }
+      .proof-pin-inner {
+        padding: 0 24px;
+        height: auto;
+      }
+      .proof-pin-case[data-case="2"] {
+        position: static;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        margin-top: 24px;
+      }
+      .proof-pin-case.proof-pin-exit { opacity: 1; transform: none; }
+      .proof-pin-card { padding: 32px 24px; max-width: 100%; }
+      .proof-pin-counter { display: none; }
+    }
+
+    /* ── prefers-reduced-motion: skip pin, show both static ──── */
+    @media (prefers-reduced-motion: reduce) {
+      .proof-pin-outer { height: auto; }
+      .proof-pin-sticky { position: static; height: auto; overflow: visible; padding: 80px 0; }
+      .proof-pin-sticky .bg-img-wrap { position: absolute; }
+      .proof-pin-inner { height: auto; }
+      .proof-pin-case[data-case="2"] { position: static; opacity: 1; transform: none; pointer-events: auto; margin-top: 24px; }
+      .proof-pin-case { transition: none; }
+      .proof-pin-counter { display: none; }
+    }
+  </style>
+
+  <div class="proof-pin-outer" id="proof-pin-outer">
+    <div class="proof-pin-sticky" id="proof-pin-sticky">
+      <!-- background -->
+      <div class="bg-img-wrap">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/44118612-5bf2-420b-fd67-7ffca054921e.png" alt="Person in suit walking through glass office lobby, professional business environment and enterprise clients" loading="lazy">
+        <div class="bg-img-overlay"></div>
+      </div>
+
+      <!-- counter -->
+      <div class="proof-pin-counter" aria-hidden="true">
+        <div class="proof-pin-counter-label"><span id="proof-pin-num">01</span> / 02</div>
+        <div class="proof-pin-track"><div class="proof-pin-fill" id="proof-pin-fill"></div></div>
+      </div>
+
+      <!-- content -->
+      <div class="proof-pin-inner">
+        <div class="proof-pin-eyebrow">Real Work</div>
+        <h2 class="proof-pin-heading">Built for real companies.<br>Measured in real results.</h2>
+
+        <div class="proof-pin-cases">
+          <!-- Case 1: HALT! Fire — visible by default -->
+          <div class="proof-pin-case proof-pin-active" data-case="1">
+            <div class="proof-pin-card">
+              <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:20px;">Case Study 01</div>
+              <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;margin-bottom:12px;color:var(--nv);">HALT! Fire</div>
+              <div style="font-size:13px;color:var(--gr);margin-bottom:20px;font-family:'Exo 2',sans-serif;text-transform:uppercase;letter-spacing:1px;">Industrial Fire Suppression</div>
+              <p style="font-size:15px;line-height:1.78;color:var(--gr);margin-bottom:24px;">Built a full custom sales automation system from scratch tracking leads, managing distributor relationships, and automating follow-up sequences that previously required hours of manual work every week.</p>
+              <div style="display:flex;gap:32px;">
+                <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">10<span style="color:var(--bl);">hr+</span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Saved per week</div></div>
+                <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">100<span style="color:var(--bl);">%</span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Custom built</div></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div style="background:#e2e2e2;padding:48px;border-left:4px solid var(--bl);">
-          <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:20px;">Case Study 02</div>
-          <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;margin-bottom:12px;color:var(--nv);">Doughbrik's Wavers</div>
-          <div style="font-size:13px;color:var(--gr);margin-bottom:20px;font-family:'Exo 2',sans-serif;text-transform:uppercase;letter-spacing:1px;">Consumer Snack Brand</div>
-          <p style="font-size:15px;line-height:1.78;color:var(--gr);margin-bottom:24px;">Built internal automation tools to support a CPG brand scaling into major retail streamlining sales workflows, retailer outreach, and operational processes as the company grew rapidly across new markets.</p>
-          <div style="display:flex;gap:32px;">
-            <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">3x<span style="color:var(--bl);"></span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Faster workflows</div></div>
-            <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">0<span style="color:var(--bl);"></span></div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Tech knowledge needed</div></div>
+
+          <!-- Case 2: Doughbrik's Wavers — hidden until scroll -->
+          <div class="proof-pin-case" data-case="2">
+            <div class="proof-pin-card">
+              <div style="font-family:'Exo 2',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:20px;">Case Study 02</div>
+              <div style="font-weight:800;font-size:22px;letter-spacing:-.5px;margin-bottom:12px;color:var(--nv);">Doughbrik's Wavers</div>
+              <div style="font-size:13px;color:var(--gr);margin-bottom:20px;font-family:'Exo 2',sans-serif;text-transform:uppercase;letter-spacing:1px;">Consumer Snack Brand</div>
+              <p style="font-size:15px;line-height:1.78;color:var(--gr);margin-bottom:24px;">Built internal automation tools to support a CPG brand scaling into major retail streamlining sales workflows, retailer outreach, and operational processes as the company grew rapidly across new markets.</p>
+              <div style="display:flex;gap:32px;">
+                <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">3x</div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Faster workflows</div></div>
+                <div><div style="font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--nv);">0</div><div style="font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gr);">Tech knowledge needed</div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <script>
+  /* proof-pin: sticky scroll driver — desktop only, RAF-throttled */
+  (function() {
+    var mq = window.matchMedia('(max-width:767px)');
+    var rmq = window.matchMedia('(prefers-reduced-motion:reduce)');
+    if (mq.matches || rmq.matches) return;
+
+    var outer = document.getElementById('proof-pin-outer');
+    var case1 = document.querySelector('.proof-pin-case[data-case="1"]');
+    var case2 = document.querySelector('.proof-pin-case[data-case="2"]');
+    var fill  = document.getElementById('proof-pin-fill');
+    var num   = document.getElementById('proof-pin-num');
+    if (!outer || !case1 || !case2) return;
+
+    var currentCase = 1;
+    var ticking = false;
+
+    function update() {
+      var rect = outer.getBoundingClientRect();
+      var outerH = outer.offsetHeight;
+      var vh = window.innerHeight;
+      // progress 0→1 across the scroll distance
+      var scrolled = -rect.top;
+      var total = outerH - vh;
+      var progress = Math.max(0, Math.min(1, total > 0 ? scrolled / total : 0));
+
+      // fill bar
+      if (fill) fill.style.width = (progress * 100) + '%';
+
+      // switch at 50%
+      var target = progress >= 0.5 ? 2 : 1;
+      if (target !== currentCase) {
+        currentCase = target;
+        if (target === 2) {
+          case1.classList.remove('proof-pin-active');
+          case1.classList.add('proof-pin-exit');
+          case2.classList.add('proof-pin-active');
+          if (num) num.textContent = '02';
+        } else {
+          case2.classList.remove('proof-pin-active');
+          case1.classList.remove('proof-pin-exit');
+          case1.classList.add('proof-pin-active');
+          if (num) num.textContent = '01';
+        }
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+
+    update();
+
+    /* 3-second fallback: force all content visible */
+    setTimeout(function() {
+      [case1, case2].forEach(function(el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.position = 'static';
+        el.style.pointerEvents = 'auto';
+      });
+    }, 3000);
+
+    /* re-evaluate on resize (mobile rotate) */
+    window.addEventListener('resize', function() {
+      if (window.matchMedia('(max-width:767px)').matches) {
+        [case1, case2].forEach(function(el) {
+          el.style.cssText = 'opacity:1;transform:none;position:static;pointer-events:auto;';
+        });
+      }
+    });
+  })();
+  </script>
 
   <!-- TESTIMONIALS -->
   <section style="background:var(--nv);padding:110px 0;position:relative;overflow:hidden;">
