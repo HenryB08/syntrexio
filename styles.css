@@ -2841,16 +2841,7 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
 .serif-accent { color: #E2E2E2 !important; -webkit-text-fill-color: #E2E2E2 !important; text-decoration: none !important; }
 .serif-accent::after { background: none !important; display: none !important; }
 
-/* Spiral background — ensure all content sits above z-index:0 */
-body > nav,
-body > header,
-body > main,
-body > section,
-body > footer,
-body > div:not(#spiral-container),
-.nav, nav, header, main, footer,
-section, .hero, .con, .about-strip,
-.process, .syn-strip, .chat-window-wrap {
-  position: relative;
-  z-index: 1;
-}
+/* Spiral z-index block removed — was orphaned after spiral revert and broke nav fixed positioning and chat-bubble fixed positioning */
+
+/* Ensure service card images are always visible regardless of reveal state */
+.card-img img { opacity: 1 !important; }
