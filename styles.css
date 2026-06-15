@@ -2845,3 +2845,15 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
 
 /* Ensure service card images are always visible regardless of reveal state */
 .card-img img { opacity: 1 !important; }
+
+/* Service card images — always visible, no reveal animation needed */
+.card-img img { 
+  opacity: 1 !important; 
+  transform: none !important;
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+/* Fallback: any img-reveal that hasn't been activated by JS */
+.img-side img { opacity: 1 !important; transform: none !important; }
