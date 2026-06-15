@@ -2435,3 +2435,147 @@ p { color: var(--color-text-secondary); }
   border-color: #e2e2e2 !important;
   color: #e2e2e2 !important;
 }
+
+/* ============================================================
+   FULL BUGFIX PASS — 2026-06-15
+   ============================================================ */
+
+/* FIX 1 — Logo size */
+.corner-logo img { height:56px !important; width:auto !important; display:block !important; }
+.corner-logo { display:flex !important; align-items:center !important; }
+
+/* FIX 2 — Light boxes dark theme */
+.pricing-card, .price-card {
+  background:#111111 !important;
+  border:1px solid #222222 !important;
+  color:#888888 !important;
+}
+[style*="background:#e2e2e2"][style*="padding:36px"],
+[style*="background:#e2e2e2"][style*="padding:38px"],
+[style*="background:#e2e2e2"][style*="padding:44px"],
+[style*="background:#e2e2e2"][style*="padding:48px"],
+[style*="background:#e2e2e2"][style*="padding:56px"] {
+  background:#111111 !important;
+  border:1px solid #222222 !important;
+  color:#888888 !important;
+}
+
+/* FIX 3 — About page industries grid */
+.ind-grid {
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  gap:1px !important;
+  background:#222222 !important;
+  border:1px solid #222222 !important;
+  border-radius:16px !important;
+  overflow:hidden !important;
+  width:100% !important;
+  max-width:900px !important;
+  margin:0 auto !important;
+}
+.ind {
+  background:#111111 !important;
+  padding:24px !important;
+  color:#888888 !important;
+  font-family:'Exo 2',sans-serif !important;
+  font-size:10px !important;
+  letter-spacing:.8px !important;
+  text-transform:uppercase !important;
+  transition:all .2s;
+}
+.ind:hover { background:#1a1a1a !important; color:#e2e2e2 !important; }
+
+/* FIX 4 — About page team cards in a row */
+.team-grid {
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  gap:24px !important;
+  width:100% !important;
+}
+.team-card {
+  background:#111111 !important;
+  border:1px solid #222222 !important;
+  border-radius:12px !important;
+  padding:24px !important;
+  display:flex !important;
+  flex-direction:column !important;
+}
+.team-card h3 { color:#e2e2e2 !important; }
+.team-card [style*="color:var(--bl)"] { color:#666666 !important; }
+.team-card p, .team-card [style*="color:var(--gr)"] { color:#888888 !important; }
+.team-card a[href^="mailto:"] { color:#666666 !important; }
+@media(max-width:768px) {
+  .team-grid { grid-template-columns:repeat(2,1fr) !important; }
+}
+@media(max-width:480px) {
+  .team-grid { grid-template-columns:1fr !important; }
+}
+
+/* FIX 5 — Pricing page hero padding + dark cards */
+.pgh { padding-top:80px !important; }
+.price-card {
+  background:#111111 !important;
+  border:1px solid #222222 !important;
+  border-radius:20px !important;
+}
+.price-card [style*="color:var(--nv)"] { color:#e2e2e2 !important; }
+.price-card [style*="color:var(--gr)"] { color:#888888 !important; }
+.price-card [style*="color:var(--grd)"] { color:#888888 !important; }
+.price-card [style*="color:var(--bl)"] { color:#e2e2e2 !important; }
+
+/* FIX 6 — Images too small */
+.img-side img, .a2c .img-side img {
+  width:100% !important;
+  height:auto !important;
+  min-height:300px !important;
+  object-fit:cover !important;
+  border-radius:12px !important;
+  display:block !important;
+}
+section.pgh + .img-reveal, .pgh + div > .img-reveal {
+  width:100% !important;
+  height:480px !important;
+}
+section.pgh + .img-reveal img, .pgh + div > .img-reveal img {
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+
+/* FIX 7 — Buttons with invisible text */
+.btn.bb { color:#000000 !important; }
+.hero-cta-ghost, .hero-cta-ghost.btn, .hero-cta-ghost.btn.bb {
+  color:#e2e2e2 !important;
+  background:transparent !important;
+  background-color:transparent !important;
+}
+.btn.bg {
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,0.3) !important;
+  color:#e2e2e2 !important;
+}
+
+/* FIX 8 — Chatbot toggle button */
+#chat-bubble {
+  background:#1a1a1a !important;
+  border:1px solid #333333 !important;
+  color:#e2e2e2 !important;
+}
+
+/* FIX 9 — Chatbot widget soften contrast */
+#chat-window { background:#0a0a0a !important; border:1px solid #222222 !important; }
+#chat-header { background:#0f0f0f !important; border-bottom:1px solid #222222 !important; }
+#chat-input-area { background:#111111 !important; border-top:1px solid #1a1a1a !important; }
+#chat-input { background:#1a1a1a !important; border:1px solid #2a2a2a !important; color:#e2e2e2 !important; }
+#chat-send { background:#e2e2e2 !important; color:#000000 !important; }
+#chat-send:hover { background:#ffffff !important; }
+#chat-send svg { stroke:#000000 !important; color:#000000 !important; }
+.chat-msg.bot .chat-bubble-msg { background:#1a1a1a !important; color:#c0c0c0 !important; }
+.chat-msg.user .chat-bubble-msg { background:#2a2a2a !important; color:#e2e2e2 !important; }
+
+/* FIX 10 — Final text/contrast pass */
+footer { color:#666666; }
+footer a { color:#666666 !important; }
+.nls a { color:#e2e2e2 !important; }
+h1,h2,h3 { color:var(--color-text-primary) !important; }
