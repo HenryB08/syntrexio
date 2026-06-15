@@ -2749,7 +2749,7 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
   .img-split .img-side img { height: 260px !important; }
 }
 
-/* === HOMEPAGE FIXES — 2026-06-15 === */
+/* === HOMEPAGE FIXES — 2026-06-15 ======================================== */
 
 /* Fix 2: Section fade transitions */
 .process, section.sp {
@@ -2775,19 +2775,18 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
   pointer-events: none;
 }
 
-/* Fix 3: Why Syntrex 2-col responsive */
-@media(max-width:768px) {
-  div[style*="grid-template-columns:repeat(2,1fr)"][style*="gap:20px"] { grid-template-columns: 1fr !important; }
-}
+/* Fix 3: Why Syntrex mobile */
+@media(max-width:768px){.why-syntrex-grid{grid-template-columns:1fr!important;}}
 
-/* Fix 4: How It Works text readability */
+/* Fix 4: Text readability in image-background sections */
+/* How It Works text readability */
 .process .steps .step-n,
 .process .steps .step-t,
 .process .steps .step-d,
 .process .proc-hdr h2,
 .process .proc-hdr p { text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
 
-/* Fix 4: Built for Real Companies text */
+/* Built for Real Companies text */
 section.sp .con [style*="font-weight:800"][style*="font-size:22px"] { color: #FFFFFF !important; font-weight: 700 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
 section.sp .con [style*="font-weight:800"][style*="font-size:32px"] { color: #FFFFFF !important; font-weight: 800 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
 section.sp .con [style*="font-size:9px"][style*="letter-spacing:1px"] { color: #E2E2E2 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
@@ -2798,7 +2797,8 @@ section.sp .con [style*="font-size:13px"][style*="text-transform:uppercase"] { c
 * img[alt="Syntrex"],
 img[alt="Syntrex"] { height: 56px !important; width: auto !important; min-height: 56px !important; max-height: none !important; }
 
-/* Fix 6: Testimonial redesign — borderless, divider style */
+/* Fix 6: Testimonial boxes — redesign */
+/* Testimonial redesign — borderless, divider style */
 .mobile-stack-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
