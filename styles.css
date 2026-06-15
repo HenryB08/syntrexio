@@ -45,7 +45,7 @@ nav{
   align-items:center;
 }
 .corner-logo img{
-  height:140px;
+  height:36px;
   width:auto;
   display:block;
   object-fit:contain;
@@ -399,7 +399,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   .nls,.nc{display:none;}
   .mb{display:block;}
   .corner-logo{top:14px;left:16px;}
-  .corner-logo img{height:70px;}
+  .corner-logo img{height:36px;}
   #mm{top:72px;left:12px;right:12px;}
   #mm a{padding:16px 20px;font-size:13px;}
 
@@ -2406,3 +2406,11 @@ p { color: var(--color-text-secondary); }
 /* Step numbers — subtle */
 .step-n { color: var(--color-accent) !important; opacity: 0.15 !important; font-size: 72px !important; }
 
+
+/* Services hub card images — always visible (no fade-in needed) */
+.svc-card-img { opacity: 1 !important; transform: none !important; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; display: block; margin-bottom: 20px; }
+
+/* Corner logo size override */
+.corner-logo img { height: 36px !important; }
+
+/* hero bb button (See What We Build) — ghost style when on hero */
