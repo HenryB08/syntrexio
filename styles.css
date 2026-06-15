@@ -2857,3 +2857,70 @@ div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p {
 }
 /* Fallback: any img-reveal that hasn't been activated by JS */
 .img-side img { opacity: 1 !important; transform: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM SCROLL ANIMATIONS — index.html
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. Smooth scroll global */
+:root { scroll-behavior: smooth; }
+
+/* 2. Full-viewport image sections (Before/After + Built for Real Companies) */
+#p-home .sp { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+
+/* 3. Section fade edges — top + bottom gradient overlays on image sections */
+#p-home .sp,
+#p-home .process {
+  position: relative;
+  overflow: hidden;
+}
+#p-home .sp::before,
+#p-home .process::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+#p-home .sp::after,
+#p-home .process::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to top, #000000 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* 4. Scroll snap — full-viewport sections only */
+body {
+  scroll-snap-type: y proximity;
+}
+#p-home .sp {
+  scroll-snap-align: start;
+}
+
+/* 5. Text reveal container */
+.reveal-text { overflow: hidden; display: block; }
+
+/* 6. Card image zoom — overflow clip so scale doesn't bleed */
+.card-img { overflow: hidden !important; border-radius: 8px 8px 0 0; }
+
+/* 7. Reduced motion — skip all transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  :root { scroll-behavior: auto; }
+  body { scroll-snap-type: none; }
+}
+
+/* 8. Mobile — no scroll snap, keep images static */
+@media (max-width: 768px) {
+  body { scroll-snap-type: none; }
+  #p-home .sp { min-height: auto; }
+}
