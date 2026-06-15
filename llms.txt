@@ -1,16 +1,18 @@
 # Syntrex LLC
 
-> Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a traditional agency would build, faster and at a fraction of the cost. Every system is custom from scratch, and you own it outright. No subscriptions, no templates, no vendor lock-in.
+> Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a big agency builds, without the big agency cost. Every system is built from scratch, custom to the business, and owned by the client outright. No templates, no subscriptions, no monthly platform fees.
 
 ## Company Details
 
 - Name: Syntrex LLC
-- Type: AI automation and digital services agency
+- Type: Digital services and AI automation agency
 - Headquarters: 513 Main Street, Windermere, FL 34786, United States
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
 - Founded by: Henry Bello
 - Service area: Worldwide
+- Pricing: Custom quotes only. No fixed tiers. One-time project builds and monthly retainers available. Every quote is free and agreed before work starts.
+- Key differentiators: Faster and cheaper than a traditional agency. Built from scratch, not templates. Client owns everything outright after final payment.
 
 ## Services
 
