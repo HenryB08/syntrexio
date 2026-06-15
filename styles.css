@@ -2579,3 +2579,72 @@ footer { color:#666666; }
 footer a { color:#666666 !important; }
 .nls a { color:#e2e2e2 !important; }
 h1,h2,h3 { color:var(--color-text-primary) !important; }
+
+/* === LOGO + ABOUT PAGE FIX — 2026-06-15 ================================ */
+
+/* Logo: nuclear override — beats all previous rules */
+.corner-logo { display: flex !important; align-items: center !important; }
+.corner-logo img,
+.corner-logo > img,
+a.corner-logo img { height: 56px !important; width: auto !important; display: block !important; max-height: 56px !important; }
+
+/* About: industries section full width */
+.ind-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4,1fr) !important;
+  gap: 1px !important;
+  background: #222222 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+.ind {
+  background: #111111 !important;
+  padding: 24px !important;
+  color: #888888 !important;
+  border: none !important;
+}
+.ind:hover { background: #1a1a1a !important; color: #e2e2e2 !important; }
+
+/* About: team grid — 4-col responsive */
+.team-section { background: #000000 !important; }
+.team-wrap { max-width: 1200px !important; margin: 0 auto !important; padding: 0 24px !important; }
+.team-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+.team-card {
+  background: #111111 !important;
+  border: 1px solid #222222 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+/* Team card photo */
+.team-card [style*="width:80px"] { width: 64px !important; height: 64px !important; border-radius: 50% !important; margin-bottom: 16px !important; }
+/* Team card name */
+.team-card [style*="font-weight:800"][style*="font-size:22px"] { font-size: 18px !important; font-weight: 600 !important; color: #e2e2e2 !important; margin-bottom: 4px !important; }
+/* Team card role */
+.team-card [style*="font-size:10px"][style*="letter-spacing:2px"] { font-size: 11px !important; color: #666666 !important; margin-bottom: 12px !important; }
+/* Team card description */
+.team-card p { font-size: 14px !important; color: #888888 !important; line-height: 1.6 !important; }
+/* Team card email */
+.team-card a { font-size: 13px !important; color: #666666 !important; margin-top: auto !important; padding-top: 16px !important; }
+
+@media(max-width:768px) {
+  .team-grid { grid-template-columns: repeat(2,1fr) !important; }
+  .ind-grid { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media(max-width:480px) {
+  .team-grid { grid-template-columns: 1fr !important; }
+  .ind-grid { grid-template-columns: 1fr !important; }
+}
