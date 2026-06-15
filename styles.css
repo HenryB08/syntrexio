@@ -3222,6 +3222,30 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
   clip-path: none !important;
 }
 
+/* About page hero: image-as-background layout, override standard .pgh padding */
+#p-about .pgh {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* About Our Story: stretch grid so image column matches text height */
+#p-about .sp .a2c {
+  align-items: stretch !important;
+}
+#p-about .sp .img-side {
+  display: flex !important;
+  flex-direction: column !important;
+}
+#p-about .sp .img-side img {
+  flex: 1 !important;
+  min-height: 460px !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  clip-path: none !important;
+  transform: none !important;
+}
+
 /* FIX: Service hero images — force visible (these sit outside .pgh, use data-reveal="image") */
 [data-reveal="image"],
 [data-reveal="image"].revealed,
