@@ -3036,3 +3036,215 @@ body::before {
     transition: none !important;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   MULTI-FIX BLOCK — 7 targeted fixes
+   ══════════════════════════════════════════════════════════════ */
+
+/* FIX 1: SYN strip — force all text white, no blue */
+.syn-strip h2,
+.syn-strip h2 span,
+.syn-strip h2 .serif-accent,
+.syn-strip h2 .grad-text {
+  color: #E2E2E2 !important;
+  -webkit-text-fill-color: #E2E2E2 !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  text-decoration: none !important;
+}
+.syn-strip .syn-eyebrow { color: #888888 !important; }
+
+/* FIX 2: Service page hero — remove top gap, ensure image visible */
+.pgh {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.pgh .bg-img-wrap,
+.pgh .bg-img-wrap img {
+  opacity: 1 !important;
+  clip-path: inset(0%) !important;
+  transform: none !important;
+}
+.pgh [data-reveal="image"],
+.pgh [data-reveal="image"].revealed {
+  clip-path: inset(0%) !important;
+  opacity: 1 !important;
+}
+/* Hero image explicit height */
+.pgh .bg-img-wrap { min-height: 420px; }
+.pgh .bg-img-wrap img { width: 100% !important; height: 420px !important; object-fit: cover !important; display: block !important; }
+
+/* FIX 3: Related service cards — dark readable (inline-styled, override via parent section) */
+.related-grid .card,
+.related-services .card,
+[class*="related"] .card,
+.svc-related .card {
+  background: #111111 !important;
+  border: 1px solid #222222 !important;
+}
+[class*="related"] .card .card-t,
+.svc-related .card .card-t { color: #E2E2E2 !important; }
+[class*="related"] .card .card-d,
+.svc-related .card .card-d { color: #888888 !important; }
+/* Also target the inline-styled related service links (no card class) */
+.sp a[href*=".html"][style*="background:#e2e2e2"],
+section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
+  background: #111111 !important;
+  border-color: #222222 !important;
+}
+
+/* FIX 4: Pricing cards */
+.price-card {
+  border: 1px solid #333333 !important;
+  border-radius: 12px !important;
+  padding: 40px !important;
+  background: #0a0a0a !important;
+}
+.price-card .btn,
+.price-card a.btn {
+  background: transparent !important;
+  border: 1px solid #E2E2E2 !important;
+  color: #E2E2E2 !important;
+  border-radius: 100px !important;
+  padding: 16px 32px !important;
+  width: 100% !important;
+  display: block !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+.price-card .btn:hover,
+.price-card a.btn:hover {
+  background: #E2E2E2 !important;
+  color: #000000 !important;
+}
+
+/* FIX 6: About page — unified black background */
+#p-about section,
+#p-about > div,
+.about-hero,
+.about-intro,
+.about-strip,
+.about-values,
+.team-section,
+.ind-section {
+  background: #000000 !important;
+}
+/* Keep surface cards dark but not pure black */
+.team-card { background: #111111 !important; }
+.ind { background: #111111 !important; }
+
+/* FIX 7: Team card photos — ensure visible */
+.team-card img {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  margin-bottom: 16px !important;
+  display: block !important;
+  opacity: 1 !important;
+  clip-path: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MULTI-PAGE FIXES — claude/multi-fixes
+   ═══════════════════════════════════════════════════════════════ */
+
+/* FIX 1: SYN strip — force all text white, no blue */
+.syn-strip h2,
+.syn-strip h2 span,
+.syn-strip h2 .serif-accent,
+.syn-strip h2 .grad-text {
+  color: #E2E2E2 !important;
+  -webkit-text-fill-color: #E2E2E2 !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  text-decoration: none !important;
+}
+.syn-strip .syn-eyebrow { color: #888888 !important; }
+
+/* FIX 2: Service page hero — remove top gap, ensure image visible */
+.pgh {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.pgh .bg-img-wrap,
+.pgh .bg-img-wrap img {
+  opacity: 1 !important;
+  clip-path: inset(0%) !important;
+  transform: none !important;
+}
+.pgh [data-reveal="image"],
+.pgh [data-reveal="image"].revealed {
+  clip-path: inset(0%) !important;
+  opacity: 1 !important;
+}
+/* Hero image explicit height */
+.pgh .bg-img-wrap { min-height: 420px; }
+.pgh .bg-img-wrap img { width: 100% !important; height: 420px !important; object-fit: cover !important; display: block !important; }
+
+/* FIX 3: Related service cards — dark readable */
+.related-grid .card,
+.related-services .card,
+[class*="related"] .card,
+.svc-related .card {
+  background: #111111 !important;
+  border: 1px solid #222222 !important;
+}
+[class*="related"] .card .card-t,
+.svc-related .card .card-t { color: #E2E2E2 !important; }
+[class*="related"] .card .card-d,
+.svc-related .card .card-d { color: #888888 !important; }
+
+/* FIX 4: Pricing cards */
+.price-card {
+  border: 1px solid #333333 !important;
+  border-radius: 12px !important;
+  padding: 40px !important;
+  background: #0a0a0a !important;
+}
+.price-card .btn,
+.price-card a.btn {
+  background: transparent !important;
+  border: 1px solid #E2E2E2 !important;
+  color: #E2E2E2 !important;
+  border-radius: 100px !important;
+  padding: 16px 32px !important;
+  width: 100% !important;
+  display: block !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+.price-card .btn:hover,
+.price-card a.btn:hover {
+  background: #E2E2E2 !important;
+  color: #000000 !important;
+}
+
+/* FIX 6: About page — unified black background */
+#p-about section,
+#p-about > div,
+.about-hero,
+.about-intro,
+.about-strip,
+.about-values,
+.team-section,
+.ind-section {
+  background: #000000 !important;
+}
+/* Keep surface cards dark but not pure black */
+.team-card { background: #111111 !important; }
+.ind { background: #111111 !important; }
+
+/* FIX 7: Team card photos — ensure visible */
+.team-card img {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  margin-bottom: 16px !important;
+  display: block !important;
+  opacity: 1 !important;
+  clip-path: none !important;
+}
