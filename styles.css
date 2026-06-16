@@ -3281,6 +3281,11 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
   }
 }
 
+/* Examples grid — 1 column on mobile */
+@media (max-width: 767px) {
+  .examples-grid { grid-template-columns: 1fr !important; }
+}
+
 /* ── PERMANENT POSITION LOCKS ─────────────────────────────────
    These must always be last in the file.
    Never add position:relative or z-index overrides to nav,
