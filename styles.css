@@ -9,7 +9,7 @@
   --glow:rgba(255,255,255,0.14);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;margin:0;padding:0;background:#00020d;}
+html{scroll-behavior:smooth;margin:0;padding:0;background:#00020d;overflow-x:hidden;}
 body{margin:0;padding:0;background:var(--w);color:var(--nv);font-family:"Space Grotesk",sans-serif;overflow-x:hidden;}
 
 nav{
