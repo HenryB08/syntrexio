@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Page Not Found | Syntrex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="corner-logo" href="/" style="display:flex;align-items:center;">
+  <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png" alt="Syntrex" width="180" height="56" style="height:56px!important;width:auto!important;min-height:56px!important;max-height:none!important;display:block!important;" loading="eager" decoding="auto" fetchpriority="high">
+</a>
+
+<nav>
+  <ul class="nls">
+    <li><a href="/index.html" id="n-home">Home</a></li>
+    <li class="svc-dd"><a href="/services.html" id="n-services">Services</a>
+      <div class="svc-dd-panel"><div class="svc-dd-inner">
+        <div><div class="svc-dd-cat">Get More Customers</div><a href="/services/ai-chatbots.html">AI Chatbots</a><a href="/services/lead-generation.html">Lead Generation</a><a href="/services/ecommerce.html">Ecommerce</a></div>
+        <div><div class="svc-dd-cat">Save Your Team Hours</div><a href="/services/workflow-automation.html">Workflow Automation</a><a href="/services/custom-ai-tools.html">Custom AI Tools</a><a href="/services/system-integration.html">System Integration</a></div>
+        <div><div class="svc-dd-cat">Build Your Presence</div><a href="/services/website-design.html">Website Design</a><a href="/services/brand-digital-presence.html">Brand &amp; Digital</a><a href="/services/ai-content.html">AI Content</a></div>
+        <div><div class="svc-dd-cat">Know What's Working</div><a href="/services/ai-strategy.html">AI Strategy</a><a href="/services/reporting-analytics.html">Reporting</a><a href="/services/ai-business-planning.html">AI Planning</a></div>
+      </div></div>
+    </li>
+    <li><a href="/pricing.html" id="n-pricing">Pricing</a></li>
+    <li><a href="/projects.html" id="n-projects">Projects</a></li>
+    <li><a href="/about.html" id="n-about">About</a></li>
+    <li><a href="/contact.html" id="n-contact">Contact</a></li>
+  </ul>
+  <a href="/contact.html" class="nc">Get In Touch</a>
+  <button class="mb" onclick="tmob()">&#9776;</button>
+</nav>
+
+<div id="mm">
+  <a href="/index.html">Home</a>
+  <a href="/services.html" onclick="event.preventDefault();var sv=document.getElementById('mm-svc');sv.style.display=sv.style.display==='block'?'none':'block';">Services &#9662;</a>
+  <div id="mm-svc" style="display:none;padding:0 24px 8px;">
+    <a href="/services/ai-chatbots.html">AI Chatbots</a>
+    <a href="/services/lead-generation.html">Lead Generation</a>
+    <a href="/services/ecommerce.html">Ecommerce</a>
+    <a href="/services/workflow-automation.html">Workflow Automation</a>
+    <a href="/services/custom-ai-tools.html">Custom AI Tools</a>
+    <a href="/services/system-integration.html">System Integration</a>
+    <a href="/services/website-design.html">Website Design</a>
+    <a href="/services/brand-digital-presence.html">Brand &amp; Digital</a>
+    <a href="/services/ai-content.html">AI Content</a>
+    <a href="/services/ai-strategy.html">AI Strategy</a>
+    <a href="/services/reporting-analytics.html">Reporting</a>
+    <a href="/services/ai-business-planning.html">AI Planning</a>
+  </div>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/projects.html">Projects</a>
+  <a href="/about.html">About</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:#000000;padding:120px 24px 80px;position:relative;overflow:hidden;">
+  <div style="position:relative;z-index:2;max-width:620px;">
+    <div style="font-family:'Exo 2',sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#888888;margin-bottom:24px;">Error 404</div>
+    <h1 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(64px,14vw,140px);line-height:1;letter-spacing:-3px;color:#E2E2E2;margin-bottom:20px;">4<span class="grad-text">0</span>4</h1>
+    <h2 style="font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);letter-spacing:-0.5px;color:#E2E2E2;margin-bottom:18px;">Page not found.</h2>
+    <p style="font-size:16px;line-height:1.75;color:#888888;max-width:440px;margin:0 auto 36px;">The page you are looking for does not exist or may have moved. Let's get you back on track.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="/" class="btn bb" style="cursor:pointer;">Back to Home</a>
+      <a href="/contact.html" class="btn bg" style="cursor:pointer;">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function tmob(){const m=document.getElementById('mm');m.style.display=m.style.display==='flex'?'none':'flex';}
+</script>
+
+</body>
+</html>
