@@ -1934,7 +1934,6 @@ section[style*="background:var(--nv)"] { background: #000 !important; }
 .why-syntrex-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--color-border);
 }
 .why-syntrex-item {
   padding: 48px;
