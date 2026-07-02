@@ -226,7 +226,25 @@
 
 <!-- PAGE CONTENT -->
 <div id="p-contact">
-  <section class="sp" id="referral" style="border-bottom:1px solid rgba(255,255,255,.06);">
+<section class="syn-strip">
+  <div class="syn-inner">
+    <div class="syn-left">
+      <span class="syn-eyebrow">AI ASSISTANT</span>
+      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
+      <p>Get instant answers about our services, pricing, and how we can help your business grow, no waiting, no pressure.</p>
+      <div class="syn-buttons">
+        <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex'; if(typeof gtag==='function')gtag('event','chat_open',{event_category:'engagement',event_label:'SYN Chat CTA'});" class="btn bb">Chat with SYN</button>
+        <a href="contact.html" class="btn bg">Talk to a Human</a>
+      </div>
+    </div>
+    <div class="syn-right">
+      <div class="syn-robot">
+        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/65a7a290-0686-f922-de18-254107f4b105.png" alt="SYN AI" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;" loading="eager" decoding="auto" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="sp" id="referral" style="border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
     <div class="con">
       <div class="ey" data-reveal>Referral Program</div>
       <h2>Know someone <span class="serif-accent" style="color:var(--nv);">who needs us?</span></h2>
@@ -277,28 +295,6 @@
     </form>
 
   </div></div></section>
-
-
-
-
-<section class="syn-strip">
-  <div class="syn-inner">
-    <div class="syn-left">
-      <span class="syn-eyebrow">AI ASSISTANT</span>
-      <h2>Talk to <span class="grad-text">SYN</span> anytime.</h2>
-      <p>Get instant answers about our services, pricing, and how we can help your business grow, no waiting, no pressure.</p>
-      <div class="syn-buttons">
-        <button onclick="document.getElementById('chat-window').classList.add('open'); document.getElementById('chat-bubble').style.display='flex'; if(typeof gtag==='function')gtag('event','chat_open',{event_category:'engagement',event_label:'SYN Chat CTA'});" class="btn bb">Chat with SYN</button>
-        <a href="contact.html" class="btn bg">Talk to a Human</a>
-      </div>
-    </div>
-    <div class="syn-right">
-      <div class="syn-robot">
-        <img src="https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/65a7a290-0686-f922-de18-254107f4b105.png" alt="SYN AI" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;" loading="eager" decoding="auto" fetchpriority="high">
-      </div>
-    </div>
-  </div>
-</section>
 
 </div>
 <footer>
@@ -1217,6 +1213,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var href = a.getAttribute('href');
     if(!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('tel') || a.target === '_blank') return;
     if(href.startsWith('http') && !href.includes('syntrexio.com')) return;
+    /* Same-page hash link (e.g. contact.html#referral while already on this
+       page): let the browser do a native anchor jump. Showing the transition
+       overlay here would leave a black screen because location.href with only
+       a fragment change does not reload the page to clear it. */
+    if(a.pathname === window.location.pathname && a.hash) return;
     e.preventDefault();
     overlay.style.pointerEvents = 'all';
     overlay.style.opacity = '1';
@@ -1318,10 +1319,16 @@ function _forceRevealVisible(){
   });
 }
 setTimeout(_forceRevealVisible, 2000);
-/* Landing on a hash anchor scrolls past content whose reveal observers never
-   fire, leaving it stuck at opacity:0. Force everything visible immediately so
-   the page isn't blank on anchor loads. Normal (no-hash) visits still animate. */
+/* Landing on or jumping to a hash anchor scrolls past content whose reveal
+   observers never fire, leaving it stuck at opacity:0. Force everything visible
+   whenever a hash is present so the page/section is never blank. Normal
+   (no-hash) visits still animate. */
 if(window.location.hash){ _forceRevealVisible(); }
+window.addEventListener('hashchange', function(){
+  if(window.location.hash){ _forceRevealVisible(); }
+  var _ov = document.getElementById('page-transition');
+  if(_ov){ _ov.style.opacity = '0'; _ov.style.pointerEvents = 'none'; }
+});
 </script>
 </body>
 </html>
