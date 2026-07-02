@@ -1307,7 +1307,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script>
 /* Fallback: force all reveal elements visible after 2s if observer hasn't fired */
-setTimeout(function(){
+function _forceRevealVisible(){
   document.querySelectorAll('[data-reveal], [data-reveal="image"]').forEach(function(el){
     el.classList.add('revealed');
     el.style.clipPath = 'inset(0%)';
@@ -1317,7 +1317,12 @@ setTimeout(function(){
   document.querySelectorAll('.reveal-line').forEach(function(el){
     el.style.transform = 'translateY(0)';
   });
-}, 2000);
+}
+setTimeout(_forceRevealVisible, 2000);
+/* Landing on a hash anchor scrolls past content whose reveal observers never
+   fire, leaving it stuck at opacity:0. Force everything visible immediately so
+   the page isn't blank on anchor loads. Normal (no-hash) visits still animate. */
+if(window.location.hash){ _forceRevealVisible(); }
 </script>
 </body>
 </html>
