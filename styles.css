@@ -1275,13 +1275,13 @@ h2 {
 .ticker-set{display:flex;align-items:center;gap:90px;padding-right:90px;}
 .ticker-set a{display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.85;transition:opacity .2s;flex-shrink:0;}
 .ticker-set a:hover{opacity:1;}
-.ticker-set img{height:40px;width:auto;max-width:180px;object-fit:contain;display:block;}
-.ticker-set img.logo-kinetix{height:40px;max-width:180px;}
+.ticker-set img{height:64px;width:auto;max-width:240px;object-fit:contain;display:block;}
+.ticker-set img.logo-kinetix{height:64px;max-width:240px;}
 .ticker-sep{width:1px;height:56px;background:rgba(255,255,255,.12);flex-shrink:0;}
 @keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-@media(max-width:1024px){.ticker-set img{height:36px;max-width:160px;}.ticker-set img.logo-kinetix{height:36px;}.ticker-set{gap:70px;padding-right:70px;}}
-@media(max-width:768px){.ticker-wrap{padding:20px 0 34px;}.ticker-label{font-size:10px;letter-spacing:2px;margin-bottom:22px;}.ticker-set{gap:50px;padding-right:50px;}.ticker-set img{height:32px;max-width:140px;}.ticker-set img.logo-kinetix{height:32px;max-width:140px;}.ticker-sep{height:40px;}}
-@media(max-width:480px){.ticker-set{gap:36px;padding-right:36px;}.ticker-set img{height:28px;max-width:120px;}.ticker-set img.logo-kinetix{height:28px;max-width:120px;}.ticker-sep{height:32px;}}
+@media(max-width:1024px){.ticker-set img{height:56px;max-width:210px;}.ticker-set img.logo-kinetix{height:56px;}.ticker-set{gap:70px;padding-right:70px;}}
+@media(max-width:768px){.ticker-wrap{padding:20px 0 34px;}.ticker-label{font-size:10px;letter-spacing:2px;margin-bottom:22px;}.ticker-set{gap:50px;padding-right:50px;}.ticker-set img{height:48px;max-width:180px;}.ticker-set img.logo-kinetix{height:48px;max-width:180px;}.ticker-sep{height:40px;}}
+@media(max-width:480px){.ticker-set{gap:36px;padding-right:36px;}.ticker-set img{height:44px;max-width:150px;}.ticker-set img.logo-kinetix{height:44px;max-width:150px;}.ticker-sep{height:32px;}}
 
 /* Mobile video fix */
 .syn-robot video{-webkit-transform:translateZ(0);transform:translateZ(0);}
@@ -2952,7 +2952,7 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
    ──────────────────────────────────────────────────────────────────── */
 .hero h1 {
   font-size: clamp(48px, 6.5vw, 88px) !important;
-  line-height: 1.03 !important;
+  line-height: 1.1 !important;
   font-weight: 800 !important;
   letter-spacing: -0.03em !important;
 }
@@ -2965,7 +2965,7 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
   .hero h1 {
     font-size: clamp(34px, 9.5vw, 46px) !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.06 !important;
+    line-height: 1.1 !important;
   }
   .hero {
     padding-top: 110px !important;
@@ -2998,6 +2998,12 @@ section a[style*="background:#e2e2e2"][style*="border-radius:14px"] {
 .card-t { color: #e2e2e2 !important; }
 div[style*="font-weight:700"][style*="color:var(--nv)"],
 div[style*="font-weight:800"][style*="color:var(--nv)"] { color: #e2e2e2 !important; }
+
+/* ── DESIGN FIX: hero descenders ──
+   The text-reveal wrapper clips at the line box; give the last line
+   room for g/y/p tails without changing the visual size. */
+.hero h1 .reveal-line { padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.hero h1 .reveal-text { padding-bottom: 0.12em; margin-bottom: -0.12em; }
 
 /* ── PERMANENT POSITION LOCKS ─────────────────────────────────
    These must always be last in the file.
