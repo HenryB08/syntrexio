@@ -1,6 +1,6 @@
 # Syntrex LLC
 
-> Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a big agency builds, without the big agency cost. Syntrex serves companies across industries, worldwide, with a core leadership team backed by a network of hundreds of specialists. Every system is built from scratch, custom to the business, and handed over ready to run. No templates.
+> Syntrex is an AI automation agency that designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a big agency builds, without the big agency cost. Syntrex serves companies across industries, worldwide, from small businesses to established companies, with a core leadership team backed by a network of hundreds of specialists. Every system is built from scratch, custom to the business, and handed over ready to run. No templates.
 
 ## Company Details
 
@@ -13,6 +13,23 @@
 - Service area: Worldwide
 - Pricing: Custom quotes only. No fixed tiers. One-time project builds and monthly retainers available. Every quote is free and agreed before work starts.
 - Key differentiators: Faster than a traditional agency, at a price that makes sense. Built from scratch, not templates. Systems are handed over ready to run.
+
+## FAQ
+
+Q: What does Syntrex do?
+A: Syntrex is an AI automation agency. It designs and builds complete digital presences: websites, ecommerce stores, AI chatbots, custom AI tools, workflow automation, content systems, and strategy. Every system is built from scratch around how the client's business operates and handed over ready to run.
+
+Q: Who is Syntrex for?
+A: Companies of every size, worldwide, from small businesses to established companies, across consumer brands, industrial B2B, financial services, skincare, and insurance.
+
+Q: How does pricing work?
+A: Every project gets a custom quote. There are no fixed tiers or packages. One-time project builds and monthly retainers are available. Every quote is free and agreed before work starts.
+
+Q: How do I start?
+A: Email henry@syntrexio.com with a short description of your business and where you are losing time. Within 24 hours you get a written plan: what Syntrex would build, how it would work, and what it would cost.
+
+Q: What results has Syntrex delivered?
+A: For HALT! Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
 
 ## Services
 
