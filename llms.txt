@@ -7,7 +7,7 @@ Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. 
 ## Company Details
 
 - Name: Syntrex LLC
-- Type: Custom digital agency (website, ecommerce, AI tools, content, automation, strategy)
+- Type: AI automation agency (website, ecommerce, AI tools, content, automation, strategy)
 - Headquarters: 513 Main Street, Windermere, FL 34786, United States
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
@@ -52,6 +52,21 @@ A: For HALT! Fire, an industrial fire suppression company, Syntrex built a compl
 
 Every project gets a custom quote. No fixed tiers or packages. One-time project builds and monthly retainers are available. Every quote is free and agreed before work starts.
 
+## How It Works
+
+1. Get a Free Quote: email henry@syntrexio.com with a brief overview of your business and what you want to solve.
+2. We Build It: a custom solution built around your workflow, delivered ready to run.
+3. You Review It: test and refine until it is exactly right, no technical knowledge needed.
+4. It Runs For You: deployed and live, with ongoing support and improvements included.
+
+## Industries
+
+Syntrex serves real estate, healthcare, contracting, insurance, retail and ecommerce, hospitality, legal, finance, consumer brands, manufacturing, and professional services, among others.
+
+## Referral Program
+
+Refer someone to Syntrex, and if they become a paying client you earn 10% of their first project or their first three months of a retainer, as cash or as credit toward your own Syntrex services, paid once the referred client is onboarded and has paid.
+
 ## Real Clients & Case Studies
 
 - HALT! Fire (industrial fire suppression): built full sales automation system, saved 10+ hours of manual work per week
@@ -60,7 +75,7 @@ Every project gets a custom quote. No fixed tiers or packages. One-time project 
 ## Team
 
 - Henry Bello, Founder, CEO and Lead Developer
-- Sofia Weeden, Co-Founder and CFO
+- Sofia Weeden, Chief Financial Officer
 - Alexander Ohmer, Head of Operations
 - Ciana Bello, Director of Marketing and Social Media
 
