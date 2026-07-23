@@ -67,7 +67,7 @@ nav{
 .con{max-width:1180px;margin:0 auto;padding:0 60px;}
 .sp{padding:110px 0;}
 
-.ey{font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.ey{font-family:"Exo 2",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bl);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
 .ey::before{content:'';width:28px;height:2px;background:var(--bl);flex-shrink:0;}
 .eyc{justify-content:center;}.eyc::before{display:none;}
 
@@ -483,7 +483,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   .syn-strip{padding:56px 0 !important;}
   .syn-inner{grid-template-columns:1fr !important;gap:32px !important;padding:0 18px !important;text-align:left !important;}
   .syn-left h2{font-size:28px !important;letter-spacing:-.8px !important;}
-  .syn-left p{font-size:15px !important;}
+  .syn-left p{font-size:16px !important;}
   .syn-buttons{flex-direction:column !important;gap:10px !important;}
   .syn-buttons .btn{width:100% !important;text-align:center !important;}
   .syn-right{justify-content:flex-start !important;}
@@ -1482,7 +1482,7 @@ background:#111111;border:1px solid #222222;color:#E2E2E2;}
   --text-h1:     clamp(36px, 5vw, 72px);
   --text-h2:     clamp(28px, 3.5vw, 48px);
   --text-h3:     clamp(18px, 2vw, 24px);
-  --text-body:   17px;
+  --text-body:   16px;
   --text-small:  14px;
   --text-label:  11px;
 
@@ -1516,7 +1516,7 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 h1 { font-size: var(--text-h1); line-height: 1.08; }
-h2 { font-size: var(--text-h2); line-height: 1.1; }
+h2 { font-size: var(--text-h2); line-height: 1.1; font-weight: 800; }
 h3 { font-size: var(--text-h3); line-height: 1.3; }
 h2.c { text-align: center; }
 h1 em, h2 em { font-style: normal; color: var(--color-accent); }
@@ -2396,7 +2396,7 @@ a.corner-logo img { height: 78px !important; width: auto !important; display: bl
 /* Team card name */
 .team-card [style*="font-weight:800"][style*="font-size:22px"] { font-size: 18px !important; font-weight: 600 !important; color: #e2e2e2 !important; margin-bottom: 4px !important; }
 /* Team card role */
-.team-card [style*="font-size:10px"][style*="letter-spacing:2px"] { font-size: 11px !important; color: #8A8A8A !important; margin-bottom: 12px !important; }
+.team-card [style*="font-size:11px"][style*="letter-spacing:2px"] { font-size: 11px !important; color: #8A8A8A !important; margin-bottom: 12px !important; }
 /* Team card description */
 .team-card p { font-size: 14px !important; color: #888888 !important; line-height: 1.6 !important; }
 /* Team card email */
@@ -2555,7 +2555,7 @@ html body .corner-logo img,
 /* Built for Real Companies text */
 section.sp .con [style*="font-weight:800"][style*="font-size:22px"] { color: #FFFFFF !important; font-weight: 700 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
 section.sp .con [style*="font-weight:800"][style*="font-size:32px"] { color: #FFFFFF !important; font-weight: 800 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
-section.sp .con [style*="font-size:9px"][style*="letter-spacing:1px"] { color: #E2E2E2 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
+section.sp .con [style*="font-size:11px"][style*="letter-spacing:1px"] { color: #E2E2E2 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.9) !important; }
 section.sp .con p { color: #D0D0D0 !important; text-shadow: 0 1px 6px rgba(0,0,0,0.8) !important; }
 section.sp .con [style*="font-size:13px"][style*="text-transform:uppercase"] { color: #BBBBBB !important; text-shadow: 0 1px 6px rgba(0,0,0,0.8) !important; }
 
@@ -2583,7 +2583,7 @@ img[alt="Syntrex"] { height: 56px !important; width: auto !important; min-height
 }
 .mobile-stack-grid > div:last-child { border-right: none !important; }
 .mobile-stack-grid > div [style*="font-size:32px"] { font-size: 48px !important; color: #333333 !important; }
-.mobile-stack-grid > div p { color: #C0C0C0 !important; font-size: 17px !important; line-height: 1.8 !important; font-style: italic !important; }
+.mobile-stack-grid > div p { color: #C0C0C0 !important; font-size: 16px !important; line-height: 1.8 !important; font-style: italic !important; }
 .mobile-stack-grid > div [style*="font-weight:700"] { color: #E2E2E2 !important; font-weight: 600 !important; font-size: 15px !important; }
 .mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #8A8A8A !important; font-size: 12px !important; letter-spacing: 0.08em !important; }
 @media(max-width:768px) {
