@@ -112,7 +112,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 .build-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:70px;position:relative;z-index:1;}
 .build-intro-right p{font-size:15px;line-height:1.82;color:var(--gr);margin-bottom:24px;}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:transparent;border:none;position:relative;z-index:1;}
-.card{background:#e2e2e2;padding:46px 40px;position:relative;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;border:1px solid var(--brd);border-radius:16px;box-shadow:0 2px 12px rgba(8,21,46,.05);}
+.card{background:#111111;padding:46px 40px;position:relative;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;border:1px solid var(--brd);border-radius:16px;box-shadow:0 2px 12px rgba(8,21,46,.05);}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--bl),#e2e2e2,var(--bl));background-size:200% 100%;transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
 /* Subtle corner accent */
 .card::after{content:'';position:absolute;bottom:0;right:0;width:0;height:0;border-style:solid;border-width:0 0 28px 28px;border-color:transparent transparent var(--blb2) transparent;transition:border-width .3s ease;}
@@ -153,7 +153,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 .as-text p{font-size:15px;line-height:1.85;color:var(--gr);margin-bottom:16px;}
 .as-text p strong{color:var(--nv);font-weight:600;}
 .vals{display:flex;flex-direction:column;gap:1px;background:var(--brd);border:1px solid var(--brd);}
-.val{background:#e2e2e2;padding:28px 32px;border-left:3px solid transparent;border-radius:16px;transition:all .25s;}
+.val{background:#111111;padding:28px 32px;border-left:3px solid transparent;border-radius:16px;transition:all .25s;}
 .val:hover{background:var(--blb2);border-left-color:var(--bl);}
 .val-l{font-family:"Exo 2",sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bl);margin-bottom:8px;}
 .val-t{font-weight:600;font-size:15px;color:var(--nv);line-height:1.4;}
@@ -176,7 +176,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 
 /* SERVICES FULL */
 
-.svi{background:#e2e2e2;padding:44px 48px;display:grid;grid-template-columns:80px 1fr;gap:36px;align-items:start;transition:all .22s;border-left:4px solid transparent;border-radius:16px;}
+.svi{background:#111111;padding:44px 48px;display:grid;grid-template-columns:80px 1fr;gap:36px;align-items:start;transition:all .22s;border-left:4px solid transparent;border-radius:16px;}
 .svi:hover{background:var(--blb2);border-left-color:var(--bl);}
 
 
@@ -184,7 +184,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 
 
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border:1px solid var(--brd);border-radius:16px;overflow:hidden;}
-.ind{background:#e2e2e2;padding:22px 24px;font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--grd);transition:all .2s;border-left:2px solid transparent;}
+.ind{background:#111111;padding:22px 24px;font-family:"Exo 2",sans-serif;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--grd);transition:all .2s;border-left:2px solid transparent;}
 .ind:hover{background:var(--blb2);color:var(--bl);border-left-color:var(--bl);}
 
 /* CONTACT */
@@ -599,7 +599,7 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   .syn-buttons .btn{font-size:11px !important;}
 }
 
-.faq-item{background:#e2e2e2;padding:0;cursor:pointer;border:1px solid var(--brd);border-radius:16px;transition:all .25s;box-shadow:0 1px 6px rgba(8,21,46,.05);}
+.faq-item{background:#111111;padding:0;cursor:pointer;border:1px solid var(--brd);border-radius:16px;transition:all .25s;box-shadow:0 1px 6px rgba(8,21,46,.05);}
 .faq-item:hover{border-color:rgba(255,255,255,0.15);box-shadow:0 4px 18px rgba(255,255,255,0.05);}
 
 
@@ -1044,10 +1044,10 @@ h2 {
 [style*="More Projects"] { border-radius: 16px !important; }
 
 /* Inline white cards in pricing/about etc */
-[style*="background:#e2e2e2;padding:36px;border-left:3px solid var(--bl)"] {
+[style*="background:#111111;padding:36px;border-left:3px solid var(--bl)"] {
   border-radius: 16px !important;
 }
-[style*="background:#e2e2e2;padding:48px;border-left:4px solid var(--bl)"] {
+[style*="background:#111111;padding:48px;border-left:4px solid var(--bl)"] {
   border-radius: 16px !important;
 }
 [style*="background:rgba(255,255,255,.04);padding:44px"] {
@@ -1070,10 +1070,10 @@ h2 {
 }
 
 /* Round inline white boxes in grids */
-[style*="background:#e2e2e2;padding:36px"],
-[style*="background:#e2e2e2;padding:38px"],
-[style*="background:#e2e2e2;padding:44px"],
-[style*="background:#e2e2e2;padding:48px"] { border-radius: 16px !important; }
+[style*="background:#111111;padding:36px"],
+[style*="background:#111111;padding:38px"],
+[style*="background:#111111;padding:44px"],
+[style*="background:#111111;padding:48px"] { border-radius: 16px !important; }
 
 /* "Every quote is free" bar */
 [style*="background:var(--off);border:1px solid var(--brd);padding:28px"] {
@@ -1812,7 +1812,7 @@ div[style*="background:rgba(255,255,255,.04)"][style*="border-left:3px solid var
 }
 
 /* === Case Study Section === */
-div[style*="background:#e2e2e2"][style*="border-left:4px solid var(--bl)"] {
+div[style*="background:#111111"][style*="border-left:4px solid var(--bl)"] {
   background: transparent !important;
   border: none !important;
   border-left: 2px solid var(--color-accent) !important;
@@ -1940,20 +1940,20 @@ section[style*="background:linear-gradient(135deg"] {
 
 /* === Who We Help section === */
 
-div[style*="background:#e2e2e2;padding:38px;border-left:3px solid transparent"] {
+div[style*="background:#111111;padding:38px;border-left:3px solid transparent"] {
   background: transparent !important;
   border: none !important;
   border-bottom: 1px solid var(--color-border) !important;
   padding: 20px 0 !important;
   border-radius: 0 !important;
 }
-div[style*="background:#e2e2e2;padding:38px;border-left:3px solid transparent"] div[style*="font-weight:700;font-size:17px"] {
+div[style*="background:#111111;padding:38px;border-left:3px solid transparent"] div[style*="font-weight:700;font-size:17px"] {
   color: var(--color-text-primary) !important;
 }
-div[style*="background:#e2e2e2;padding:38px;border-left:3px solid transparent"] p {
+div[style*="background:#111111;padding:38px;border-left:3px solid transparent"] p {
   color: var(--color-text-secondary) !important;
 }
-div[style*="background:#e2e2e2;padding:38px;border-left:3px solid transparent"]:last-child {
+div[style*="background:#111111;padding:38px;border-left:3px solid transparent"]:last-child {
   border-bottom: none !important;
 }
 
@@ -2009,7 +2009,7 @@ label { color: var(--color-text-secondary) !important; }
 
 
 /* Services hub cards (services.html inline cards) */
-div[style*="background:#e2e2e2;border:1px solid var(--brd);border-radius:16px"] {
+div[style*="background:#111111;border:1px solid var(--brd);border-radius:16px"] {
   background: var(--color-surface) !important;
   border-color: var(--color-border) !important;
 }
@@ -2127,11 +2127,11 @@ div[style*="background:rgba(255,255,255,.04)"] { background: transparent !import
 }
 
 /* 8. services.html hub cards — dark background */
-.rev[style*="background:#e2e2e2"] {
+.rev[style*="background:#111111"] {
   background: #111111 !important;
   border-color: #222222 !important;
 }
-.rev[style*="background:#e2e2e2"]:hover {
+.rev[style*="background:#111111"]:hover {
   background: #161616 !important;
 }
 
@@ -2156,8 +2156,8 @@ p { color: var(--color-text-secondary); }
 [style*="color:var(--nv)"] { color: #e2e2e2 !important; }
 
 /* services.html card text */
-.rev[style*="background:#e2e2e2"] [style*="color:var(--nv)"],
-.rev[style*="background:#e2e2e2"] [style*="font-weight:700"] {
+.rev[style*="background:#111111"] [style*="color:var(--nv)"],
+.rev[style*="background:#111111"] [style*="font-weight:700"] {
   color: #e2e2e2 !important;
 }
 
@@ -2211,11 +2211,11 @@ p { color: var(--color-text-secondary); }
   border:1px solid #222222 !important;
   color:#888888 !important;
 }
-[style*="background:#e2e2e2"][style*="padding:36px"],
-[style*="background:#e2e2e2"][style*="padding:38px"],
-[style*="background:#e2e2e2"][style*="padding:44px"],
-[style*="background:#e2e2e2"][style*="padding:48px"],
-[style*="background:#e2e2e2"][style*="padding:56px"] {
+[style*="background:#111111"][style*="padding:36px"],
+[style*="background:#111111"][style*="padding:38px"],
+[style*="background:#111111"][style*="padding:44px"],
+[style*="background:#111111"][style*="padding:48px"],
+[style*="background:#111111"][style*="padding:56px"] {
   background:#111111 !important;
   border:1px solid #222222 !important;
   color:#888888 !important;
@@ -2432,13 +2432,13 @@ a.corner-logo img { height: 78px !important; width: auto !important; display: bl
 #faq-heading em { color: #e2e2e2 !important; }
 
 /* FIX 3: FAQ accordion items */
-details[style*="background:#e2e2e2"] {
+details[style*="background:#111111"] {
   background: #111111 !important;
   border: 1px solid #222222 !important;
 }
-details[style*="background:#e2e2e2"] summary h3 { color: #e2e2e2 !important; }
-details[style*="background:#e2e2e2"] summary span { background: rgba(255,255,255,0.06) !important; color: #888888 !important; }
-details[style*="background:#e2e2e2"] > div { color: #888888 !important; }
+details[style*="background:#111111"] summary h3 { color: #e2e2e2 !important; }
+details[style*="background:#111111"] summary span { background: rgba(255,255,255,0.06) !important; color: #888888 !important; }
+details[style*="background:#111111"] > div { color: #888888 !important; }
 
 /* FIX 3: Before/After rows */
 [style*="border-left:3px solid var(--gr)"],
@@ -2450,13 +2450,13 @@ details[style*="background:#e2e2e2"] > div { color: #888888 !important; }
 [style*="border-left:3px solid var(--bl)"] { border-left-color: #555555 !important; }
 
 /* FIX 3: Who We Help items */
-div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] {
+div[style*="background:#111111"][style*="border-left:3px solid transparent"] {
   background: #111111 !important;
   border-left: 3px solid transparent !important;
   border: 1px solid #222222 !important;
   border-radius: 16px !important;
 }
-div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"]:hover,
+div[style*="background:#111111"][style*="border-left:3px solid transparent"]:hover,
 div[style*="background:rgba(255,255,255,0.04)"] {
   background: #1a1a1a !important;
 }
@@ -2592,15 +2592,15 @@ img[alt="Syntrex"] { height: 56px !important; width: auto !important; min-height
 
 /* Fix 7: Is Syntrex Right For You — force dark */
 section[style*="background:var(--off)"] { background: #000000 !important; }
-div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] {
+div[style*="background:#111111"][style*="border-left:3px solid transparent"] {
   background: #111111 !important;
   background-color: #111111 !important;
   border: 1px solid #222222 !important;
   border-radius: 16px !important;
   padding: 24px 28px !important;
 }
-div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] [style*="color:var(--nv)"] { color: #E2E2E2 !important; }
-div[style*="background:#e2e2e2"][style*="border-left:3px solid transparent"] p { color: #888888 !important; }
+div[style*="background:#111111"][style*="border-left:3px solid transparent"] [style*="color:var(--nv)"] { color: #E2E2E2 !important; }
+div[style*="background:#111111"][style*="border-left:3px solid transparent"] p { color: #888888 !important; }
 
 /* Fix 8: "anytime." text — remove blue */
 .serif-accent { color: #E2E2E2 !important; -webkit-text-fill-color: #E2E2E2 !important; text-decoration: none !important; }
@@ -2817,8 +2817,8 @@ body::before {
 
 
 /* Also target the inline-styled related service links (no card class) */
-.sp a[href*=".html"][style*="background:#e2e2e2"],
-section a[style*="background:#e2e2e2"][style*="border-radius:16px"] {
+.sp a[href*=".html"][style*="background:#111111"],
+section a[style*="background:#111111"][style*="border-radius:16px"] {
   background: #111111 !important;
   border-color: #222222 !important;
 }
