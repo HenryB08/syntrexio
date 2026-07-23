@@ -1456,7 +1456,7 @@ background:#111111;border:1px solid #222222;color:#E2E2E2;}
   --color-border:          #1a1a1a;
   --color-text-primary:    #FFFFFF;
   --color-text-secondary:  #999999;
-  --color-text-muted:      #666666;
+  --color-text-muted:      #8A8A8A;
   --color-accent:          #e2e2e2;
   --color-accent-dim:      rgba(255,255,255,0.08);
 
@@ -1746,7 +1746,8 @@ section[style*="linear-gradient"] {
 }
 
 /* === Why Syntrex === */
-section[style*="background:var(--nv)"] { background: #000 !important; }
+section[style*="background:var(--nv)"],
+div[style*="background:var(--nv)"] { background: #000 !important; }
 .why-syntrex-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1986,7 +1987,11 @@ input, textarea, select {
 }
 input:focus, textarea:focus {
   border-color: var(--color-accent) !important;
-  outline: none !important;
+}
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, summary:focus-visible {
+  outline: 2px solid rgba(255,255,255,.7) !important;
+  outline-offset: 2px;
 }
 input::placeholder, textarea::placeholder { color: var(--color-text-muted) !important; }
 
@@ -2072,10 +2077,10 @@ div[style*="background:rgba(255,255,255,.04)"] { background: transparent !import
 .team-card [style*="font-weight:700"],
 .team-card [style*="font-weight:800"],
 .team-card [style*="color:var(--nv)"] { color: #e2e2e2 !important; }
-.team-card [style*="color:var(--bl)"] { color: #666666 !important; }
+.team-card [style*="color:var(--bl)"] { color: #8A8A8A !important; }
 .team-card [style*="color:var(--gr)"],
 .team-card p { color: #888888 !important; }
-.team-card a, .team-card a[href^="mailto:"] { color: #666666 !important; }
+.team-card a, .team-card a[href^="mailto:"] { color: #8A8A8A !important; }
 
 /* 5 & 6. Chatbot toggle + widget */
 #chat-bubble {
@@ -2142,7 +2147,7 @@ div[style*="background:rgba(255,255,255,.04)"] { background: transparent !import
 /* 10. Sitewide text visibility */
 h1, h2, h3, h4 { color: var(--color-text-primary) !important; }
 p { color: var(--color-text-secondary); }
-.ey { color: #666666 !important; }
+.ey { color: #8A8A8A !important; }
 .ey::before { background: #666666 !important; }
 
 /* Services.html bucket labels and card text */
@@ -2257,9 +2262,9 @@ p { color: var(--color-text-secondary); }
   flex-direction:column !important;
 }
 .team-card h3 { color:#e2e2e2 !important; }
-.team-card [style*="color:var(--bl)"] { color:#666666 !important; }
+.team-card [style*="color:var(--bl)"] { color:#8A8A8A !important; }
 .team-card p, .team-card [style*="color:var(--gr)"] { color:#888888 !important; }
-.team-card a[href^="mailto:"] { color:#666666 !important; }
+.team-card a[href^="mailto:"] { color:#8A8A8A !important; }
 @media(max-width:768px) {
   .team-grid { grid-template-columns:repeat(2,1fr) !important; }
 }
@@ -2390,11 +2395,11 @@ a.corner-logo img { height: 56px !important; width: auto !important; display: bl
 /* Team card name */
 .team-card [style*="font-weight:800"][style*="font-size:22px"] { font-size: 18px !important; font-weight: 600 !important; color: #e2e2e2 !important; margin-bottom: 4px !important; }
 /* Team card role */
-.team-card [style*="font-size:10px"][style*="letter-spacing:2px"] { font-size: 11px !important; color: #666666 !important; margin-bottom: 12px !important; }
+.team-card [style*="font-size:10px"][style*="letter-spacing:2px"] { font-size: 11px !important; color: #8A8A8A !important; margin-bottom: 12px !important; }
 /* Team card description */
 .team-card p { font-size: 14px !important; color: #888888 !important; line-height: 1.6 !important; }
 /* Team card email */
-.team-card a { font-size: 13px !important; color: #666666 !important; margin-top: auto !important; padding-top: 16px !important; }
+.team-card a { font-size: 13px !important; color: #8A8A8A !important; margin-top: auto !important; padding-top: 16px !important; }
 
 @media(max-width:768px) {
   .team-grid { grid-template-columns: repeat(2,1fr) !important; }
@@ -2412,7 +2417,7 @@ a.corner-logo img { height: 56px !important; width: auto !important; display: bl
 .corner-logo { overflow: visible !important; max-height: none !important; }
 
 /* FIX 2: Remaining blue text — any element using var(--bl) as color */
-[style*="color:var(--bl)"] { color: #666666 !important; }
+[style*="color:var(--bl)"] { color: #8A8A8A !important; }
 [style*="color: var(--bl)"] { color: #888888 !important; }
 [style*="background:var(--blb)"] { background: rgba(255,255,255,0.06) !important; }
 [style*="border-left:3px solid var(--bl)"] { border-left-color: #e2e2e2 !important; }
@@ -2457,7 +2462,7 @@ div[style*="background:rgba(255,255,255,0.04)"] {
 }
 
 /* Who We Help arrow */
-div[style*="font-size:20px"][style*="color:var(--bl)"] { color: #666666 !important; }
+div[style*="font-size:20px"][style*="color:var(--bl)"] { color: #8A8A8A !important; }
 div[style*="font-size:20px"][style*="color:var(--bl)"] + div { color: #e2e2e2 !important; }
 
 /* Shared: background grids using var(--brd) as bg */
@@ -2489,7 +2494,7 @@ html body .corner-logo img,
 .mobile-stack-grid > div [style*="font-size:32px"] { color: #C0C0C0 !important; }
 .mobile-stack-grid > div p { color: #C0C0C0 !important; }
 .mobile-stack-grid > div [style*="font-weight:700"] { color: #E2E2E2 !important; }
-.mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #666666 !important; }
+.mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #8A8A8A !important; }
 
 /* FIX 7: Is Syntrex Right For You — text colors inside dark items */
 
@@ -2574,7 +2579,7 @@ img[alt="Syntrex"] { height: 56px !important; width: auto !important; min-height
 .mobile-stack-grid > div [style*="font-size:32px"] { font-size: 48px !important; color: #333333 !important; }
 .mobile-stack-grid > div p { color: #C0C0C0 !important; font-size: 17px !important; line-height: 1.8 !important; font-style: italic !important; }
 .mobile-stack-grid > div [style*="font-weight:700"] { color: #E2E2E2 !important; font-weight: 600 !important; font-size: 15px !important; }
-.mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #666666 !important; font-size: 12px !important; letter-spacing: 0.08em !important; }
+.mobile-stack-grid > div [style*="letter-spacing:1px"] { color: #8A8A8A !important; font-size: 12px !important; letter-spacing: 0.08em !important; }
 @media(max-width:768px) {
   .mobile-stack-grid { grid-template-columns: 1fr !important; }
   .mobile-stack-grid > div { border-right: none !important; border-bottom: 1px solid #222222 !important; }
