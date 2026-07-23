@@ -135,9 +135,9 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
 /* PROCESS */
 .process{padding:120px 0;background:var(--nv);position:relative;overflow:hidden;}
 .process::before{content:'';position:absolute;inset:0;}
-.proc-hdr{text-align:center;margin-bottom:72px;position:relative;z-index:1;}
+.proc-hdr{text-align:left;margin-bottom:72px;position:relative;z-index:1;}
 .proc-hdr h2{color:#e2e2e2;margin-bottom:14px;}
-.proc-hdr p{font-size:15px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto;line-height:1.7;}
+.proc-hdr p{font-size:15px;color:rgba(255,255,255,.5);max-width:480px;margin:0;line-height:1.7;}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);position:relative;z-index:1;}
 .step{background:rgba(255,255,255,.04);padding:48px 34px;border-left:3px solid transparent;border-radius:16px;transition:all .25s;}
 .step:hover{background:rgba(255,255,255,.09);border-left-color:var(--bl);}
