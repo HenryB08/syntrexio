@@ -3012,6 +3012,28 @@ section a[style*="background:#111111"][style*="border-radius:16px"] {
 div[style*="font-weight:700"][style*="color:var(--nv)"],
 div[style*="font-weight:800"][style*="color:var(--nv)"] { color: #e2e2e2 !important; }
 
+/* ── Reveal fade fix ──────────────────────────────────────────
+   Component hover transitions (.card/.val/.team-card) win the cascade
+   over the reveal transition and omit opacity, so opacity snapped.
+   Layer the reveal as a keyframe ANIMATION, which is independent of any
+   transition: the animation drives the entrance opacity+translate, while
+   .revealed/.on and :hover keep owning the resting/hover state. No
+   fill-forwards, so hover transforms are untouched. Excludes image
+   reveals (clip-path). The global reduced-motion { *{animation:none} }
+   block disables this automatically. */
+@keyframes revealFade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+[data-reveal]:not([data-reveal="image"]).revealed,
+.rev.on {
+  animation: revealFade var(--duration-base) var(--ease-out) backwards;
+}
+[data-reveal]:not([data-reveal="image"])[data-delay="1"].revealed { animation-delay: .1s; }
+[data-reveal]:not([data-reveal="image"])[data-delay="2"].revealed { animation-delay: .2s; }
+[data-reveal]:not([data-reveal="image"])[data-delay="3"].revealed { animation-delay: .3s; }
+[data-reveal]:not([data-reveal="image"])[data-delay="4"].revealed { animation-delay: .4s; }
+
 /* ── PERMANENT POSITION LOCKS ─────────────────────────────────
    These must always be last in the file.
    Never add position:relative or z-index overrides to nav,
