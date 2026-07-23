@@ -37,7 +37,7 @@ nav{
 /* Corner logo */
 .corner-logo{
   position:fixed;
-  top:20px;
+  top:9px;
   left:36px;
   z-index:201;
   cursor:pointer;
@@ -45,7 +45,7 @@ nav{
   align-items:center;
 }
 .corner-logo img{
-  height:36px;
+  height:78px;
   width:auto;
   display:block;
   object-fit:contain;
@@ -353,8 +353,8 @@ h3{font-weight:700;font-size:22px;letter-spacing:-.3px;color:var(--nv);margin-bo
   nav{top:12px;left:50%;transform:translateX(-50%);width:auto;right:auto;padding:0 20px;height:48px;border-radius:100px;gap:0;}
   .nls,.nc{display:none;}
   .mb{display:block;}
-  .corner-logo{top:14px;left:16px;}
-  .corner-logo img{height:56px !important;}
+  .corner-logo{top:9px;left:16px;}
+  .corner-logo img{height:66px !important;}
   #mm{top:72px;left:12px;right:12px;}
   #mm a{padding:16px 20px;font-size:13px;}
 
@@ -2172,7 +2172,7 @@ p { color: var(--color-text-secondary); }
 .svc-card-img { opacity: 1 !important; transform: none !important; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; display: block; margin-bottom: 20px; }
 
 /* Corner logo size override */
-.corner-logo img { height: 56px !important; width: auto !important; display: block !important; }
+.corner-logo img { height: 78px !important; width: auto !important; display: block !important; }
 
 /* hero bb button (See What We Build) — ghost style when on hero */
 
@@ -2202,7 +2202,7 @@ p { color: var(--color-text-secondary); }
    ============================================================ */
 
 /* FIX 1 — Logo size */
-.corner-logo img { height:56px !important; width:auto !important; display:block !important; }
+.corner-logo img { height:78px !important; width:auto !important; display:block !important; }
 .corner-logo { display:flex !important; align-items:center !important; }
 
 /* FIX 2 — Light boxes dark theme */
@@ -2347,7 +2347,7 @@ h1,h2,h3 { color:var(--color-text-primary) !important; }
 .corner-logo { display: flex !important; align-items: center !important; }
 .corner-logo img,
 .corner-logo > img,
-a.corner-logo img { height: 56px !important; width: auto !important; display: block !important; max-height: 56px !important; }
+a.corner-logo img { height: 78px !important; width: auto !important; display: block !important; max-height: 78px !important; }
 
 /* About: industries section full width */
 .ind-grid {
@@ -2413,7 +2413,7 @@ a.corner-logo img { height: 56px !important; width: auto !important; display: bl
 /* === NAV-BLUE-SECTIONS FIX — 2026-06-15 ================================ */
 
 /* FIX 1: Nav logo — override the base 36px rule at line 47 */
-.corner-logo img { height: 52px !important; width: auto !important; display: block !important; max-height: 52px !important; min-height: 52px !important; }
+.corner-logo img { height: 78px !important; width: auto !important; display: block !important; max-height: 78px !important; min-height: 78px !important; }
 .corner-logo { overflow: visible !important; max-height: none !important; }
 
 /* FIX 2: Remaining blue text — any element using var(--bl) as color */
@@ -2478,7 +2478,12 @@ div[style*="font-size:20px"][style*="color:var(--bl)"] + div { color: #e2e2e2 !i
 /* FIX 2: Nav logo — 60px, maximum specificity */
 html body a.corner-logo img,
 html body .corner-logo img,
-.corner-logo img { height: 60px !important; width: auto !important; max-height: 60px !important; min-height: 60px !important; }
+.corner-logo img { height: 78px !important; width: auto !important; max-height: 78px !important; min-height: 78px !important; }
+/* Mobile/tablet: must follow the high-specificity rule above to win */
+@media (max-width: 768px) {
+  html body a.corner-logo img,
+  html body .corner-logo img { height: 66px !important; max-height: 66px !important; min-height: 66px !important; max-width: 36vw !important; object-fit: contain !important; object-position: left center !important; }
+}
 
 /* FIX 3: Remove remaining blue/teal — grad-text-2 had a teal tone */
 .grad-text-2 { background: linear-gradient(135deg,#e2e2e2 0%,#aaaaaa 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; }
