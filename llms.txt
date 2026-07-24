@@ -51,10 +51,10 @@ A: For HALT! Fire, an industrial fire suppression company, Syntrex built a compl
 A done-for-you system that captures every lead, responds instantly, follows up until the customer books, and reports the recovered value each month. One-time install $597 (waived on annual prepay). Growth Core $397 a month. Growth Pro $547 a month, which adds AI voice answering. Backed by the guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free.
 
 Five components:
-1. Never-Miss Capture: every call, form, and message is captured, and an unanswered call gets an instant text back so the lead is not lost.
-2. Instant Response: leads get an immediate, on-brand reply the moment they reach out.
-3. Follow-Up That Books: automated follow-up continues until the customer books.
-4. AI Voice Answering: available as an add-on with Growth Pro, answering calls in the business's voice.
+1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. AI voice answering is available as an add-on with Growth Pro.
+2. Never-Miss Capture: every call, form, and message is captured, and an unanswered call gets an instant text back so the lead is not lost.
+3. Automatic Follow-Up: automated email and SMS follow-up continues until the customer answers or books.
+4. Booking: appointments land on the calendar without anyone touching them.
 5. The Receipt: a monthly report showing the value the system captured and recovered.
 
 ### The Presence System (subscription, from $1,500 a month)
