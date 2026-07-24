@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { siteHead } from "@/lib/seo";
 import { ChatBubble } from "@/components/site/ChatBubble";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -82,9 +83,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Syntrex" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      // Site-wide meta + Organization/LocalBusiness/WebSite JSON-LD, ported
+      // from the pre-cutover site so every page carries them.
+      ...siteHead().meta,
     ],
     links: [
       {

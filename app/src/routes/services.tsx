@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import {
   ArrowRight,
   Bot,
@@ -26,14 +27,7 @@ const DESC =
   "Three systems built to capture, convert, and compound revenue: Growth, Presence, and Brand.";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => pageHead("/services"),
   component: Services,
 });
 
