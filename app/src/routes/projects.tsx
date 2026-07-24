@@ -95,7 +95,7 @@ function Projects() {
           <div className="mt-8">
             <MagneticButton>
               <Button asChild size="xl" variant="accent">
-                <Link to="/free-leak-audit">
+                <Link to="/leak-audit">
                   Get Your Free Leak Audit
                   <ArrowRight />
                 </Link>

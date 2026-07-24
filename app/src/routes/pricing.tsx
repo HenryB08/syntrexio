@@ -114,7 +114,7 @@ function Pricing() {
       >
         <MagneticButton>
           <Button asChild size="lg" variant="accent">
-            <Link to="/free-leak-audit">
+            <Link to="/leak-audit">
               Get Your Free Leak Audit
               <ArrowRight />
             </Link>
@@ -193,7 +193,7 @@ function Pricing() {
           </p>
           <div className="mt-8">
             <Button asChild size="xl" variant="accent">
-              <Link to="/free-leak-audit">
+              <Link to="/leak-audit">
                 Get Your Free Leak Audit
                 <ArrowRight />
               </Link>
@@ -244,7 +244,7 @@ function PlanCard({ plan: p, index: i }: { plan: Plan; index: number }) {
               variant={p.highlight ? "accent" : "outline"}
               className="w-full"
             >
-              <Link to="/free-leak-audit">Get started</Link>
+              <Link to="/leak-audit">Get started</Link>
             </Button>
           </div>
         </article>

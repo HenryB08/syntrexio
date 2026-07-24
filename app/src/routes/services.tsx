@@ -86,7 +86,7 @@ function Services() {
         description="Choose the layer you need most. Stack them when you're ready. Each one is engineered to capture, convert, or compound revenue."
       >
         <Button asChild size="lg" variant="accent">
-          <Link to="/free-leak-audit">
+          <Link to="/leak-audit">
             Start with a Free Leak Audit
             <ArrowRight />
           </Link>
@@ -150,7 +150,7 @@ function Services() {
           </p>
           <div className="mt-8">
             <Button asChild size="xl" variant="accent">
-              <Link to="/free-leak-audit">
+              <Link to="/leak-audit">
                 Get Your Free Leak Audit
                 <ArrowRight />
               </Link>

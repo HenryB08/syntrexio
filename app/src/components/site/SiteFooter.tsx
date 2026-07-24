@@ -17,7 +17,7 @@ const cols = [
     links: [
       { to: "/services", label: "Services" },
       { to: "/pricing", label: "Pricing" },
-      { to: "/free-leak-audit", label: "Free Leak Audit" },
+      { to: "/leak-audit", label: "Free Leak Audit" },
     ],
   },
   {
