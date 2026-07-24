@@ -105,7 +105,7 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div className="ken-burns ken-burns--bright">
-          <img src={heroOffice.url} alt="" aria-hidden />
+          <img src={heroOffice.url} alt="" aria-hidden loading="eager" fetchPriority="high" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -165,7 +165,7 @@ function Home() {
       {/* STAT STRIP */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns">
-          <img src={aerialCity.url} alt="" aria-hidden />
+          <img src={aerialCity.url} alt="" aria-hidden loading="lazy" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -340,7 +340,7 @@ function Home() {
       {/* SERVICES OVERVIEW */}
       <section className="relative overflow-hidden border-t border-hairline bg-surface/20">
         <div className="ken-burns ken-burns--bright">
-          <img src={glassLobby.url} alt="" aria-hidden />
+          <img src={glassLobby.url} alt="" aria-hidden loading="lazy" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
