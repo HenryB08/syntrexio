@@ -25,12 +25,16 @@ function Contact() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // Capture the form element now: React nullifies e.currentTarget after the
+    // await, so reading it later (e.g. to reset) would throw and wrongly trip
+    // the catch, showing an error toast on a successful submit.
+    const formEl = e.currentTarget;
     setLoading(true);
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const data = Object.fromEntries(new FormData(formEl).entries());
     try {
       await submitForm({ form: "contact", ...data });
       toast.success("Message sent. We'll reply within 24 hours.");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
