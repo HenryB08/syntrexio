@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ElementType, type ReactNode } from "react";
+import { useLayoutEffect, useRef, type ElementType, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -10,15 +10,33 @@ type Props = {
 export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }: Props) {
   const ref = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const reveal = () => {
+      el.style.animationDelay = `${delay}ms`;
+      el.classList.add("in-view");
+    };
+
+    // If the element is already in (or near) the viewport at mount — which is
+    // the case for above-the-fold content right after a client-side route
+    // change — reveal it synchronously before paint. Waiting for the async
+    // IntersectionObserver left the whole new page hidden for ~100ms, which
+    // showed up as a blank/distorted transition frame.
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top < vh && r.bottom > 0) {
+      reveal();
+      return;
+    }
+
+    // Otherwise reveal on scroll.
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (e.target as HTMLElement).style.animationDelay = `${delay}ms`;
-            e.target.classList.add("in-view");
+            reveal();
             io.unobserve(e.target);
           }
         });

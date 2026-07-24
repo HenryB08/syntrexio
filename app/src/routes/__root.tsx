@@ -4,7 +4,6 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -127,7 +126,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -149,9 +147,7 @@ function RootComponent() {
       <div className="min-h-screen bg-background text-foreground antialiased">
         <SiteNav />
         <main>
-          <div key={pathname} className="page-fade">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
         <SiteFooter />
         <ChatBubble />
