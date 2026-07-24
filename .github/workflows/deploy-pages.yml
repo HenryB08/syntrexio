@@ -4,11 +4,12 @@ name: Deploy site to GitHub Pages
 # GitHub Pages on the syntrexio.com domain.
 #
 # SAFETY DURING MIGRATION (phases B through F):
-#   The `deploy` job is gated to the main branch. Running this workflow from a
-#   feature branch (or via workflow_dispatch on a branch) only runs `build`, so
-#   the current live site is never touched before the Phase G cutover. Cutover =
-#   (1) set Pages source to "GitHub Actions" in repo Settings, (2) land this on
-#   main. Until Pages source is "GitHub Actions", the deploy step is inert.
+#   The `deploy` job is double-gated: it runs only on main AND only when the repo
+#   variable PAGES_DEPLOY_ENABLED == 'true'. So even after this lands on main,
+#   merges just build green and skip deploy — the current branch-served live site
+#   is never touched before the Phase G cutover.
+#   Cutover (Phase G) = (1) set Pages source to "GitHub Actions" in repo Settings,
+#   (2) set repo variable PAGES_DEPLOY_ENABLED = true. Both are one-time UI steps.
 
 on:
   push:
@@ -68,9 +69,13 @@ jobs:
           path: app/dist/client
 
   deploy:
-    # Gate: only the main branch performs a real deployment. Feature-branch and
-    # workflow_dispatch runs stop after build.
-    if: github.ref == 'refs/heads/main'
+    # Double gate, both required to deploy:
+    #   1. main branch only (feature-branch / dispatch runs stop after build)
+    #   2. repo variable PAGES_DEPLOY_ENABLED == 'true' — set this ONLY at the
+    #      Phase G cutover, together with flipping Pages source to "GitHub
+    #      Actions". Until then, main merges build green and skip deploy, so the
+    #      current branch-served live site is never disturbed during B through F.
+    if: github.ref == 'refs/heads/main' && vars.PAGES_DEPLOY_ENABLED == 'true'
     needs: build
     runs-on: ubuntu-latest
     environment:
