@@ -63,7 +63,7 @@ export function SiteNav() {
             <div className="ml-1 pl-1 border-l border-white/10">
               <MagneticButton strength={0.25} radius={90}>
                 <Button asChild size="sm" variant="accent" className="rounded-full h-8 px-4 text-[13px]">
-                  <Link to="/free-leak-audit">Get Your Free Leak Audit</Link>
+                  <Link to="/leak-audit">Get Your Free Leak Audit</Link>
                 </Button>
               </MagneticButton>
             </div>
@@ -114,7 +114,7 @@ export function SiteNav() {
           </nav>
           <div className="mt-auto">
             <Button asChild variant="accent" size="lg" className="w-full">
-              <Link to="/free-leak-audit" onClick={() => setOpen(false)}>
+              <Link to="/leak-audit" onClick={() => setOpen(false)}>
                 Get Your Free Leak Audit
               </Link>
             </Button>

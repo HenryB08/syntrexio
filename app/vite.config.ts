@@ -37,7 +37,7 @@ export default defineConfig({
       { path: "/pricing" },
       { path: "/projects" },
       { path: "/contact" },
-      { path: "/free-leak-audit" },
+      { path: "/leak-audit" },
     ],
   },
 });

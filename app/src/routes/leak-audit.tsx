@@ -14,7 +14,7 @@ const TITLE = "Free Leak Audit — Syntrex";
 const DESC =
   "We mystery-shop your phone and web forms, time the responses, and deliver a one-page report on the dollar cost of missed inquiries. Free. Within 48 hours.";
 
-export const Route = createFileRoute("/free-leak-audit")({
+export const Route = createFileRoute("/leak-audit")({
   head: () => ({
     meta: [
       { title: TITLE },

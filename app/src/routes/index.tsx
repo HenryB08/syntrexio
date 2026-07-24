@@ -155,7 +155,7 @@ function Home() {
             <div className="mt-9">
               <MagneticButton>
                 <Button asChild size="xl" variant="accent" className="animate-glow-pulse">
-                  <Link to="/free-leak-audit">
+                  <Link to="/leak-audit">
                     Get Your Free Leak Audit
                     <ArrowRight />
                   </Link>
@@ -426,7 +426,7 @@ function Home() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <MagneticButton>
                   <Button asChild size="xl" variant="accent">
-                    <Link to="/free-leak-audit">
+                    <Link to="/leak-audit">
                       Get Your Free Leak Audit
                       <ArrowRight />
                     </Link>

@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FreeLeakAuditRouteImport } from './routes/free-leak-audit'
+import { Route as LeakAuditRouteImport } from './routes/leak-audit'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
@@ -33,9 +33,9 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FreeLeakAuditRoute = FreeLeakAuditRouteImport.update({
-  id: '/free-leak-audit',
-  path: '/free-leak-audit',
+const LeakAuditRoute = LeakAuditRouteImport.update({
+  id: '/leak-audit',
+  path: '/leak-audit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -63,7 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/free-leak-audit': typeof FreeLeakAuditRoute
+  '/leak-audit': typeof LeakAuditRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -73,7 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/free-leak-audit': typeof FreeLeakAuditRoute
+  '/leak-audit': typeof LeakAuditRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -84,7 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/free-leak-audit': typeof FreeLeakAuditRoute
+  '/leak-audit': typeof LeakAuditRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -96,7 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/free-leak-audit'
+    | '/leak-audit'
     | '/pricing'
     | '/projects'
     | '/services'
@@ -106,7 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/free-leak-audit'
+    | '/leak-audit'
     | '/pricing'
     | '/projects'
     | '/services'
@@ -116,7 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/free-leak-audit'
+    | '/leak-audit'
     | '/pricing'
     | '/projects'
     | '/services'
@@ -127,7 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  FreeLeakAuditRoute: typeof FreeLeakAuditRoute
+  LeakAuditRoute: typeof LeakAuditRoute
   PricingRoute: typeof PricingRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
@@ -157,11 +157,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/free-leak-audit': {
-      id: '/free-leak-audit'
-      path: '/free-leak-audit'
-      fullPath: '/free-leak-audit'
-      preLoaderRoute: typeof FreeLeakAuditRouteImport
+    '/leak-audit': {
+      id: '/leak-audit'
+      path: '/leak-audit'
+      fullPath: '/leak-audit'
+      preLoaderRoute: typeof LeakAuditRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -199,7 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  FreeLeakAuditRoute: FreeLeakAuditRoute,
+  LeakAuditRoute: LeakAuditRoute,
   PricingRoute: PricingRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
