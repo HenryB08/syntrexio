@@ -1,10 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MessageSquare, X, Send } from "lucide-react";
+import { sendChat, type ChatMessage } from "@/lib/site";
 
 export function ChatBubble() {
   const [open, setOpen] = useState(false);
   const [thinking, setThinking] = useState(false);
   const [preview, setPreview] = useState(false);
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Keep the transcript pinned to the latest message.
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
+  }, [messages, thinking]);
+
+  async function handleSend(e: React.FormEvent) {
+    e.preventDefault();
+    const text = input.trim();
+    if (!text || thinking) return;
+    const next: ChatMessage[] = [...messages, { role: "user", content: text }];
+    setMessages(next);
+    setInput("");
+    setThinking(true);
+    try {
+      const reply = await sendChat(next);
+      setMessages((m) => [...m, { role: "assistant", content: reply }]);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        {
+          role: "assistant",
+          content:
+            "I'm having trouble connecting right now. Please email henry@syntrexio.com directly.",
+        },
+      ]);
+    } finally {
+      setThinking(false);
+    }
+  }
 
   // Every ~30s, if closed, flash a small typing-dots preview for 2.4s.
   useEffect(() => {
@@ -48,11 +82,23 @@ export function ChatBubble() {
           </button>
         </div>
 
-        <div className="space-y-3 px-4 py-4">
+        <div ref={scrollRef} className="max-h-80 space-y-3 overflow-y-auto px-4 py-4">
           <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-background px-3.5 py-2.5 text-sm text-foreground">
             Hey! I'm the Syntrex assistant. Ask about the Growth System or book
             a Free Leak Audit.
           </div>
+          {messages.map((m, i) => (
+            <div
+              key={i}
+              className={
+                m.role === "user"
+                  ? "ml-auto max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-tr-sm bg-accent px-3.5 py-2.5 text-sm text-accent-foreground"
+                  : "max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-tl-sm bg-background px-3.5 py-2.5 text-sm text-foreground"
+              }
+            >
+              {m.content}
+            </div>
+          ))}
           {thinking ? (
             <div className="inline-flex items-center gap-1.5 rounded-2xl rounded-tl-sm bg-background px-3.5 py-3">
               <span className="think-dot h-1.5 w-1.5 rounded-full bg-accent" />
@@ -64,21 +110,20 @@ export function ChatBubble() {
 
         <form
           className="flex items-center gap-2 border-t border-hairline p-3"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // Preview of the thinking state; real send wiring comes later.
-            setThinking(true);
-            window.setTimeout(() => setThinking(false), 2400);
-          }}
+          onSubmit={handleSend}
         >
           <input
             type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="Type your question…"
+            aria-label="Ask the Syntrex assistant a question"
             className="flex-1 rounded-md border border-hairline bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent/60 focus:outline-none"
           />
           <button
             type="submit"
-            className="grid h-9 w-9 place-items-center rounded-md bg-accent text-accent-foreground transition-transform hover:-translate-y-0.5"
+            disabled={thinking}
+            className="grid h-9 w-9 place-items-center rounded-md bg-accent text-accent-foreground transition-transform hover:-translate-y-0.5 disabled:opacity-60"
             aria-label="Send"
           >
             <Send size={14} />
