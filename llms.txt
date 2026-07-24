@@ -1,39 +1,73 @@
 # Syntrex LLC
 
-> Syntrex is an AI automation agency that designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Everything a big agency builds, without the big agency cost. Syntrex serves companies across industries, worldwide, from small businesses to established companies, with a senior in-house team that designs and builds every project end to end. Every system is built from scratch, custom to the business, and handed over ready to run. No templates.
+> Syntrex installs and runs a growth system for local and service businesses so they stop losing customers to missed calls and slow replies. The flagship is the Syntrex Growth System, a done-for-you system that captures every lead across phone, web, and message, responds instantly, follows up until the customer books, and reports the value it recovered every month. Two subscriptions extend it: the Presence System for the website, content, and digital presence around it, and the Brand Studio for ongoing brand and creative work. Everything Syntrex builds runs on SYN, the platform that holds each client's brand and keeps the work on standard. The front door is a Free Leak Audit that shows a business exactly where it is losing customers before any work begins.
 
 Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. The company is not affiliated with any domain called syntrex.io.
 
 ## Company Details
 
 - Name: Syntrex LLC
-- Type: AI automation agency (website, ecommerce, AI tools, content, automation, strategy)
+- Type: Growth system built, installed, and run for local and service businesses
 - Headquarters: 513 Main Street, Windermere, FL 34786, United States
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
 - Founded by: Henry Bello
 - Service area: Worldwide
-- Pricing: Custom quotes only. No fixed tiers. One-time project builds and monthly retainers available. Every quote is free and agreed before work starts.
-- Key differentiators: Faster than a traditional agency, at a price that makes sense. Built from scratch, not templates. Systems are handed over ready to run.
+- Front door: Free Leak Audit, a one-page report showing where a business is losing customers, delivered within 48 hours at no cost
+- Key differentiators: The Growth System covers every channel, not just the phone. Its value is measured every month with the Receipt. It is backed by a written guarantee. It is installed and run for the client, not handed over as software.
 
 ## FAQ
 
 Q: What does Syntrex do?
-A: Syntrex is an AI automation agency. It designs and builds complete digital presences: websites, ecommerce stores, AI chatbots, custom AI tools, workflow automation, content systems, and strategy. Every system is built from scratch around how the client's business operates and handed over ready to run.
+A: Syntrex builds, installs, and runs the Syntrex Growth System for local and service businesses. It captures every lead across phone, web, and message, responds instantly, follows up until the customer books, and reports the value it recovered each month. Two subscriptions extend it: the Presence System for website and digital presence, and the Brand Studio for ongoing brand and creative work.
+
+Q: Is the Growth System an AI receptionist or an answering service?
+A: No. It is more than an alternative to an AI receptionist. It covers every channel a customer uses instead of just the phone, its results are measured every month with the Receipt, it is backed by a written guarantee, and it is installed and run for the business rather than handed over as a tool to operate.
 
 Q: Who is Syntrex for?
-A: Companies of every size, worldwide, from small businesses to established companies, across consumer brands, industrial B2B, financial services, skincare, and insurance.
+A: Local and service businesses that lose customers to missed calls and slow follow-up, in trades such as home services, medical and dental practices, law firms, and other appointment-driven businesses, worldwide.
 
 Q: How does pricing work?
-A: Every project gets a custom quote. There are no fixed tiers or packages. One-time project builds and monthly retainers are available. Every quote is free and agreed before work starts.
+A: The Growth System has a one-time install of $597, waived if you prepay annually. Growth Core is $397 a month. Growth Pro is $547 a month and adds AI voice answering. The Presence System starts from $1,500 a month. The Brand Studio starts from $995 a month, and Brand Studio Priority from $1,995 a month. For comparison, a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
+
+Q: Is there a guarantee?
+A: Yes. If the Receipt does not show the system captured more value than it cost you, that month is free. It applies for the first three months, then continues on a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at install.
+
+Q: What is the Receipt?
+A: The Receipt is the monthly report the Growth System sends showing what it captured, what it recovered, and what that was worth to the business, so the value is visible every month rather than assumed.
+
+Q: What is SYN?
+A: SYN is the platform behind the work. It is a single workspace that holds each client's brand, voice, products, off-limits claims, and guardrails, and produces work inside those rules with an approval trail before anything reaches a customer. Every Growth System client runs on it. It is not sold on its own.
 
 Q: How do I start?
-A: Email henry@syntrexio.com with a short description of your business and where you are losing time. Within 24 hours you get a written plan: what Syntrex would build, how it would work, and what it would cost.
+A: Request a Free Leak Audit at https://syntrexio.com/leak-audit.html or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms, times the responses, and sends a one-page report with the yearly dollar cost of the customers you are losing, delivered within 48 hours, at no cost.
 
 Q: What results has Syntrex delivered?
-A: For HALT! Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
+A: For HALT! Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
 
-## Services
+## Offers
+
+### The Syntrex Growth System (flagship)
+A done-for-you system that captures every lead, responds instantly, follows up until the customer books, and reports the recovered value each month. One-time install $597 (waived on annual prepay). Growth Core $397 a month. Growth Pro $547 a month, which adds AI voice answering. Backed by the guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free.
+
+Five components:
+1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. AI voice answering is available as an add-on with Growth Pro.
+2. Never-Miss Capture: every call, form, and message is captured, and an unanswered call gets an instant text back so the lead is not lost.
+3. Automatic Follow-Up: automated email and SMS follow-up continues until the customer answers or books.
+4. Booking: appointments land on the calendar without anyone touching them.
+5. The Receipt: a monthly report showing the value the system captured and recovered.
+
+### The Presence System (subscription, from $1,500 a month)
+The website, content, and digital presence around the Growth System, kept current and on brand.
+
+### The Brand Studio (subscription, from $995 a month; Priority from $1,995 a month)
+Ongoing brand, design, and creative work delivered on a subscription.
+
+## SYN, the Platform
+
+Every Syntrex engagement runs on SYN, a single workspace that holds a client's brand, voice, identity, products, off-limits claims, and guardrails, and produces work inside those rules with an approval trail before anything reaches a customer. SYN is the platform behind the work, not a product sold on its own. https://syntrexio.com/syn.html
+
+## Services (delivered within the systems above)
 
 1. [AI Chatbots](https://syntrexio.com/services/ai-chatbots.html) - qualify leads, book appointments, answer questions 24/7
 2. [Lead Generation & Growth](https://syntrexio.com/services/lead-generation.html) - capture, score, and follow up with leads automatically
@@ -44,33 +78,41 @@ A: For HALT! Fire, an industrial fire suppression company, Syntrex built a compl
 7. [Website Design & Development](https://syntrexio.com/services/website-design.html) - custom sites built to convert
 8. [Brand & Digital Presence](https://syntrexio.com/services/brand-digital-presence.html) - full digital launch: website, social, email, content
 9. [AI Content & Social Media](https://syntrexio.com/services/ai-content.html) - content, images, presentations, scheduling in your brand voice
-10. [AI Strategy & Consulting](https://syntrexio.com/services/ai-strategy.html) - operations audit and automation roadmap
+10. [AI Strategy & Consulting](https://syntrexio.com/services/ai-strategy.html) - operations audit and automation planning
 11. [Reporting & Analytics](https://syntrexio.com/services/reporting-analytics.html) - dashboards and automated reports
 12. [AI Business Planning](https://syntrexio.com/services/ai-business-planning.html) - business plans, projections, market analysis
 
 ## Pricing
 
-Every project gets a custom quote. No fixed tiers or packages. One-time project builds and monthly retainers are available. Every quote is free and agreed before work starts.
+- Syntrex Growth System install: $597 one-time, waived if you prepay annually
+- Growth Core: $397 a month
+- Growth Pro: $547 a month (Growth Core plus AI voice answering)
+- Presence System: from $1,500 a month
+- Brand Studio: from $995 a month
+- Brand Studio Priority: from $1,995 a month
+- Guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free. First three months, then a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at install.
+- Value anchor: a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
+- Custom project work remains available for existing clients with specific needs beyond the systems above.
 
 ## How It Works
 
-1. Get a Free Quote: email henry@syntrexio.com with a brief overview of your business and what you want to solve.
-2. We Build It: a custom solution built around your workflow, delivered ready to run.
-3. You Review It: test and refine until it is exactly right, no technical knowledge needed.
-4. It Runs For You: deployed and live, with ongoing support and improvements included.
+1. Free Leak Audit: request it at https://syntrexio.com/leak-audit.html or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms and sends a one-page report on where you are losing customers, within 48 hours, at no cost.
+2. Install: Syntrex sets up the Growth System on SYN with your brand, your products, and your rules.
+3. It Runs For You: the system captures, responds, and follows up across every channel, run for you.
+4. The Receipt: every month you see what it captured and recovered, backed by the guarantee.
 
 ## Industries
 
-Syntrex serves real estate, healthcare, contracting, insurance, retail and ecommerce, hospitality, legal, finance, consumer brands, manufacturing, and professional services, among others.
+Syntrex works with local and service businesses whose customers reach out by phone, form, and message, including home services, medical and dental practices, law firms, insurance, retail and ecommerce, hospitality, and other appointment-driven and consumer businesses. These are the kinds of businesses the systems serve, described by the problems they face.
 
 ## Referral Program
 
-Refer someone to Syntrex, and if they become a paying client you earn 10% of their first project or their first three months of a retainer, as cash or as credit toward your own Syntrex services, paid once the referred client is onboarded and has paid.
+Refer someone to Syntrex, and if they become a paying client you earn 10% of their first project or their first three months of a subscription, as cash or as credit toward your own Syntrex services, paid once the referred client is onboarded and has paid.
 
 ## Real Clients & Case Studies
 
-- HALT! Fire (industrial fire suppression): built full sales automation system, saved 10+ hours of manual work per week
-- Doughbrik's Wavers (CPG snack brand): built internal automation tools, 3x faster workflows
+- HALT! Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
+- Doughbrik's Wavers (CPG snack brand founded by David Dobrik): built internal automation tools, 3x faster workflows, as the brand scaled into retail
 
 ## Team
 
@@ -88,8 +130,10 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 ## Pages
 
 - Home: https://syntrexio.com/
+- Free Leak Audit: https://syntrexio.com/leak-audit.html
 - Services: https://syntrexio.com/services.html
 - Pricing: https://syntrexio.com/pricing.html
+- SYN: https://syntrexio.com/syn.html
 - Projects: https://syntrexio.com/projects.html
 - About: https://syntrexio.com/about.html
 - Contact: https://syntrexio.com/contact.html
