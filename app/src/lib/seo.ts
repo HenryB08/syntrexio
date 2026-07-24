@@ -26,6 +26,23 @@ export function siteHead(): { meta: MetaTag[]; links: LinkTag[] } {
   };
 }
 
+// Extract the FAQ Q&A from a page's ported FAQPage schema, so the visible
+// accordion and the structured data render from the SAME source and are
+// therefore character-identical by construction. Returns [] if the page has
+// no FAQPage schema.
+export function getFaq(path: string): { question: string; answer: string }[] {
+  const p = PAGE_SEO[path];
+  if (!p) return [];
+  const faq = p.schema.find((s) => s["@type"] === "FAQPage") as
+    | { mainEntity?: Array<{ name?: string; acceptedAnswer?: { text?: string } }> }
+    | undefined;
+  if (!faq?.mainEntity) return [];
+  return faq.mainEntity.map((q) => ({
+    question: q.name ?? "",
+    answer: q.acceptedAnswer?.text ?? "",
+  }));
+}
+
 // Per-route tags. Title, description, keywords, canonical, OG/Twitter, and the
 // page's own JSON-LD (Service / FAQPage / BreadcrumbList / Person / Product).
 export function pageHead(path: string): { meta: MetaTag[]; links: LinkTag[] } {

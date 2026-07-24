@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -11,7 +12,7 @@ import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { submitForm } from "@/lib/site";
 
-const TITLE = "Free Leak Audit — Syntrex";
+const TITLE = "Free Leak Audit Syntrex";
 const DESC =
   "We mystery-shop your phone and web forms, time the responses, and deliver a one-page report on the dollar cost of missed inquiries. Free. Within 48 hours.";
 
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/leak-audit")({
 
 const steps = [
   { icon: Search, title: "We mystery-shop", desc: "Our team calls and submits your web forms as a prospect would." },
-  { icon: Clock, title: "We time everything", desc: "Every ring, every reply, every drop-off — measured to the second." },
+  { icon: Clock, title: "We time everything", desc: "Every ring, every reply, every drop-off, measured to the second." },
   { icon: FileText, title: "You get the Receipt", desc: "A one-page report with the dollar cost of your missed inquiries." },
 ];
 
@@ -118,6 +119,7 @@ function FreeLeakAudit() {
           </Reveal>
         </div>
       </Section>
+      <Faq path="/leak-audit" />
     </>
   );
 }

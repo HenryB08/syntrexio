@@ -76,7 +76,7 @@ export function SiteFooter() {
           </p>
           <div className="flex items-center gap-2 pt-1">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/syntrexio"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-hairline text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground"
@@ -85,7 +85,7 @@ export function SiteFooter() {
               <Instagram size={16} />
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@syntrexio"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-hairline text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground"
@@ -94,7 +94,7 @@ export function SiteFooter() {
               <TikTokIcon className="h-4 w-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/syntrexco"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-hairline text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground"
@@ -146,7 +146,13 @@ export function SiteFooter() {
       <div className="border-t border-hairline">
         <div className="container-page flex flex-col items-start justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Syntrex. All rights reserved.</p>
-          <p>Built for businesses that refuse to lose another lead.</p>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href="/syn.html" className="transition-colors hover:text-foreground">SYN</a>
+            <span aria-hidden>·</span>
+            <a href="/privacy.html" className="transition-colors hover:text-foreground">Privacy</a>
+            <span aria-hidden>·</span>
+            <a href="/terms.html" className="transition-colors hover:text-foreground">Terms</a>
+          </nav>
         </div>
       </div>
     </footer>
