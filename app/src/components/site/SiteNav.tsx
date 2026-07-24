@@ -35,14 +35,16 @@ export function SiteNav() {
   return (
     <>
       <header className="fixed inset-x-0 top-3 z-50 md:top-5">
-        <div className="container-page flex items-center gap-4">
-          {/* Desktop: logo left, pill center */}
-          <div className="hidden md:block">
+        <div className="container-page flex items-center gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+          {/* Desktop: 3-column grid — logo left, pill centered in the viewport,
+              spacer right. The pill sits between two equal 1fr columns, so it is
+              centered independent of the logo and can never overlap it. */}
+          <div className="hidden lg:flex min-w-0 items-center justify-start">
             <Logo />
           </div>
 
           <div
-            className={`hidden md:flex mx-auto items-center gap-1 rounded-full p-1.5 pl-2 backdrop-blur-xl transition-all duration-300 ${
+            className={`hidden lg:flex items-center gap-1 rounded-full p-1.5 pl-2 backdrop-blur-xl transition-all duration-300 ${
               scrolled
                 ? "border border-hairline bg-background/85 shadow-[0_10px_40px_-10px_oklch(0_0_0/0.6)]"
                 : "border border-white/10 bg-background/45"
@@ -69,9 +71,12 @@ export function SiteNav() {
             </div>
           </div>
 
+          {/* Desktop grid spacer (col 3) — balances the logo so the pill centers */}
+          <div className="hidden lg:block" aria-hidden />
+
           {/* Mobile: compact pill */}
           <div
-            className={`flex md:hidden w-full items-center justify-between rounded-full border p-1.5 pl-3 backdrop-blur-xl transition-all ${
+            className={`flex lg:hidden w-full items-center justify-between rounded-full border p-1.5 pl-3 backdrop-blur-xl transition-all ${
               scrolled
                 ? "border-hairline bg-background/85 shadow-[0_8px_28px_-10px_oklch(0_0_0/0.6)]"
                 : "border-white/10 bg-background/50"
@@ -91,7 +96,7 @@ export function SiteNav() {
 
       {/* Full-screen mobile menu */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!open}
