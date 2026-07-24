@@ -8,7 +8,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Icon3D } from "@/components/site/Icon3D";
 import { MagneticButton } from "@/components/site/MagneticButton";
 
-const TITLE = "Projects — Syntrex";
+const TITLE = "Projects Syntrex";
 const DESC =
   "A selection of work: automation systems shipped for operators who count every lead.";
 
@@ -23,7 +23,7 @@ const projects = [
     client: "HALT! Fire",
     sector: "Industrial fire suppression",
     summary:
-      "Full sales automation across chat, SMS, voice, and follow-up — with a monthly Receipt showing captured value.",
+      "Full sales automation across chat, SMS, voice, and follow-up, with a monthly Receipt showing captured value.",
     stats: [
       { v: "10+", l: "hours saved weekly" },
       { v: "280%", l: "search growth" },
@@ -34,7 +34,7 @@ const projects = [
     client: "Doughbrik's Wavers",
     sector: "Consumer snack brand",
     summary:
-      "Internal automation across ops, fulfillment, and customer flow. One unified system replacing five tools.",
+      "Internal automation across ops, fulfillment, and customer flow. One unified system in place of scattered tools.",
     stats: [
       { v: "3×", l: "faster workflows" },
       { v: "1", l: "unified system" },
@@ -49,7 +49,7 @@ function Projects() {
         variant="mosaic"
         eyebrow="Selected work"
         title="Automation, shipped."
-        description="A small, growing shelf of engagements. We only publish what clients say we can — the rest lives inside the Receipt."
+        description="A small, growing shelf of engagements. We only publish what clients say we can. The rest lives inside the Receipt."
       />
 
       <Section>

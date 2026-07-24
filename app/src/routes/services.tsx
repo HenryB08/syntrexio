@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import {
   ArrowRight,
@@ -22,7 +23,7 @@ import { Section, SectionHeader } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { Icon3D } from "@/components/site/Icon3D";
 
-const TITLE = "Services — Syntrex";
+const TITLE = "Services Syntrex";
 const DESC =
   "Three systems built to capture, convert, and compound revenue: Growth, Presence, and Brand.";
 
@@ -152,6 +153,7 @@ function Services() {
           </div>
         </Reveal>
       </Section>
+      <Faq path="/services" />
     </>
   );
 }

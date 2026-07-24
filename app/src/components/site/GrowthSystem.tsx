@@ -85,14 +85,14 @@ const items: SystemItem[] = [
     icon: MessageCircle,
     title: "Instant Answer",
     line: "AI replies to every inquiry in under 10 seconds, 24/7.",
-    full: "Every web chat, SMS, and DM is answered in seconds by a trained AI concierge that speaks like your best rep — day, night, weekends.",
+    full: "Every web chat, SMS, and DM is answered in seconds by a trained AI concierge that speaks like your best rep, day, night, weekends.",
     Motif: Waveform,
   },
   {
     icon: PhoneCall,
     title: "Never-Miss Capture",
     line: "Missed calls trigger an instant SMS with the caller's name.",
-    full: "The moment a call goes unanswered, the caller receives a friendly SMS with their name and a link to book — before they call your competitor.",
+    full: "The moment a call goes unanswered, the caller receives a friendly SMS with their name and a link to book, before they call your competitor.",
     Motif: InboxRows,
   },
   {
@@ -106,14 +106,14 @@ const items: SystemItem[] = [
     icon: CalendarCheck,
     title: "Booking",
     line: "Qualified leads self-book straight onto your calendar.",
-    full: "Qualified leads land straight on your calendar with the right service, duration, and reminders — no back-and-forth, no double-booking.",
+    full: "Qualified leads land straight on your calendar with the right service, duration, and reminders, no back-and-forth, no double-booking.",
     Motif: CalendarGrid,
   },
   {
     icon: Receipt,
     title: "The Receipt",
     line: "A monthly report showing every dollar Syntrex captured.",
-    full: "The Receipt is a monthly one-pager showing every lead captured, booked, and won — with the exact revenue attributed to the system.",
+    full: "The Receipt is a monthly one-pager showing every lead captured, booked, and won, with the exact revenue attributed to the system.",
     Motif: ReceiptLines,
   },
 ];

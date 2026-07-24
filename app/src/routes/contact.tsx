@@ -12,7 +12,7 @@ import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { submitForm } from "@/lib/site";
 
-const TITLE = "Contact — Syntrex";
+const TITLE = "Contact Syntrex";
 const DESC = "Get in touch with Syntrex. We reply within 24 hours.";
 
 export const Route = createFileRoute("/contact")({

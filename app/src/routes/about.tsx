@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import { ArrowRight, Globe, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { Section, SectionHeader } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { MagneticButton } from "@/components/site/MagneticButton";
 
-const TITLE = "About — Syntrex";
+const TITLE = "About Syntrex";
 const DESC =
   "Syntrex is an AI automation company headquartered in Windermere, Florida, serving clients worldwide.";
 
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const facts = [
-  { icon: MapPin, label: "Headquartered", value: "Windermere, FL — Greater Orlando" },
+  { icon: MapPin, label: "Headquartered", value: "Windermere, FL, Greater Orlando" },
   { icon: Globe, label: "Clients", value: "Served worldwide" },
   { icon: Users, label: "Team", value: "Operators, engineers, storytellers" },
 ];
@@ -35,7 +36,7 @@ function About() {
         variant="worldmap"
         eyebrow="About Syntrex"
         title="We build the AI layer your business needs to stop losing leads."
-        description="Syntrex is a small team of operators and engineers headquartered in Windermere, Florida, in the greater Orlando area. We build the automation that turns inquiries into revenue — for clients worldwide."
+        description="Syntrex is a small team of operators and engineers headquartered in Windermere, Florida, in the greater Orlando area. We build the automation that turns inquiries into revenue, for clients worldwide."
       />
 
       <Section>
@@ -72,7 +73,7 @@ function About() {
               <p>
                 We built one. The Growth System captures every lead the moment
                 it appears, then works it until it books or dies. The monthly
-                Receipt shows the math — because you shouldn't have to trust
+                Receipt shows the math, because you shouldn't have to trust
                 us, you should be able to count.
               </p>
               <p>
@@ -137,6 +138,7 @@ function About() {
           </div>
         </Reveal>
       </Section>
+      <Faq path="/about" />
     </>
   );
 }

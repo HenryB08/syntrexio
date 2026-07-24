@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import { ArrowRight, Check, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Icon3D } from "@/components/site/Icon3D";
 import { MagneticButton } from "@/components/site/MagneticButton";
 
-const TITLE = "Pricing — Syntrex";
+const TITLE = "Pricing Syntrex";
 const DESC =
   "Transparent pricing for the Syntrex Growth System, Presence System, and Brand Studio. Backed by a written guarantee.";
 
@@ -136,7 +137,7 @@ function Pricing() {
           </div>
         </Reveal>
 
-        {/* Growth plans — featured pair, equal heights */}
+        {/* Growth plans, featured pair, equal heights */}
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 items-stretch">
           {growthPlans.map((p, i) => (
             <PlanCard key={p.name} plan={p} index={i} />
@@ -166,7 +167,7 @@ function Pricing() {
                 </p>
                 <p className="mt-5 text-sm text-muted-foreground md:text-base">
                   Active for the first 3 months, then rolling quarterly review.
-                  We measure captured value against your monthly fee — you see
+                  We measure captured value against your monthly fee. You see
                   the math on the Receipt every month.
                 </p>
               </div>
@@ -195,6 +196,7 @@ function Pricing() {
           </div>
         </Reveal>
       </Section>
+      <Faq path="/pricing" />
     </>
   );
 }

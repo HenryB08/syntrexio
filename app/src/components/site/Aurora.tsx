@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Aurora — full-bleed slow-flowing luminous ribbons.
+ * Aurora: full-bleed slow-flowing luminous ribbons.
  * Pure CSS + transforms/opacity. GPU-friendly. Monochrome white/grey on black.
  * Variants control intensity; `rich` for hero, `soft`/`whisper` elsewhere.
  */

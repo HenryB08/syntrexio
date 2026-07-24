@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import {
   ArrowRight,
@@ -26,7 +27,7 @@ import heroOffice from "@/assets/hero-office.png.asset.json";
 import glassLobby from "@/assets/glass-lobby.png.asset.json";
 import aerialCity from "@/assets/aerial-city.png.asset.json";
 
-const TITLE = "Syntrex — Stop Losing Customers to Missed Calls";
+const TITLE = "Syntrex: Stop Losing Customers to Missed Calls";
 const DESC =
   "62% of calls to small businesses go unanswered. Syntrex answers every inquiry in seconds, 24/7, so you never miss another lead.";
 
@@ -68,7 +69,7 @@ function Home() {
     return () => io.disconnect();
   }, []);
 
-  // Hero scale/fade on scroll — 1 → 0.97, opacity 1 → 0.35
+  // Hero scale/fade on scroll, 1 → 0.97, opacity 1 → 0.35
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -208,7 +209,7 @@ function Home() {
             <SectionHeader
               eyebrow="The Syntrex Growth System"
               title="Five layers. One outcome: nothing gets missed."
-              description="Every part is engineered to convert an inquiry into revenue — automatically."
+              description="Every part is engineered to convert an inquiry into revenue, automatically."
             />
           </div>
         </Reveal>
@@ -436,6 +437,7 @@ function Home() {
           </Reveal>
         </div>
       </section>
+      <Faq path="/" />
     </div>
   );
 }
