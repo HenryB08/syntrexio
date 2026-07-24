@@ -1,0 +1,82 @@
+name: Deploy site to GitHub Pages
+
+# Builds the app/ TanStack Start app into fully static HTML and deploys it to
+# GitHub Pages on the syntrexio.com domain.
+#
+# SAFETY DURING MIGRATION (phases B through F):
+#   The `deploy` job is gated to the main branch. Running this workflow from a
+#   feature branch (or via workflow_dispatch on a branch) only runs `build`, so
+#   the current live site is never touched before the Phase G cutover. Cutover =
+#   (1) set Pages source to "GitHub Actions" in repo Settings, (2) land this on
+#   main. Until Pages source is "GitHub Actions", the deploy step is inert.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "CNAME"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let an in-progress run finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.11"
+
+      - name: Install dependencies
+        working-directory: app
+        run: bun install --frozen-lockfile
+
+      - name: Build static site
+        working-directory: app
+        run: bun run build
+
+      - name: Add Pages metadata (CNAME, .nojekyll, SPA 404 fallback)
+        run: |
+          set -eu
+          OUT=app/dist/client
+          # Custom domain: keep syntrexio.com bound to the Pages deployment.
+          cp CNAME "$OUT/CNAME"
+          # Disable Jekyll so files/dirs beginning with "_" are served as-is.
+          touch "$OUT/.nojekyll"
+          # SPA fallback: unknown paths boot the app so the router can resolve
+          # client-side routes and render its own not-found page.
+          cp "$OUT/index.html" "$OUT/404.html"
+          echo "Artifact contents:" && ls -a "$OUT"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist/client
+
+  deploy:
+    # Gate: only the main branch performs a real deployment. Feature-branch and
+    # workflow_dispatch runs stop after build.
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
