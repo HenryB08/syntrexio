@@ -32,12 +32,21 @@ function FreeLeakAudit() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // Capture the form element now: React nullifies e.currentTarget after the
+    // await, so reading it later (e.g. to reset) would throw and wrongly trip
+    // the catch, showing an error toast on a successful submit.
+    const formEl = e.currentTarget;
     setLoading(true);
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const data = Object.fromEntries(new FormData(formEl).entries());
+    // Website is a lenient text field: accept bare domains like "haltfire.com"
+    // and normalize to a URL by prepending https:// when no scheme is present.
+    if (typeof data.website === "string" && data.website.trim() && !/^https?:\/\//i.test(data.website.trim())) {
+      data.website = "https://" + data.website.trim();
+    }
     try {
       await submitForm({ form: "leak-audit", ...data });
       toast.success("Audit request received. We'll be in touch within 48 hours.");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
@@ -95,11 +104,11 @@ function FreeLeakAudit() {
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label="Name" name="name" required />
-                <Field label="Business" name="business" required />
-                <Field label="Website" name="website" type="url" placeholder="https://" required />
-                <Field label="Phone" name="phone" type="tel" required />
+                <Field label="Business" name="business" />
+                <Field label="Website" name="website" type="text" placeholder="yourbusiness.com" />
+                <Field label="Phone" name="phone" type="tel" />
                 <Field label="Email" name="email" type="email" required />
-                <Field label="Industry" name="industry" required />
+                <Field label="Industry" name="industry" />
               </div>
               <Button
                 type="submit"

@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/syntrex-logo.png.asset.json";
 
+// Single clean lockup: icon-only swirl glyph (no baked-in text) + one SYNTREX
+// wordmark. The previous mark image had "SYNTREX" baked in, which doubled the
+// name next to the wordmark span.
 export function Logo({ className = "", compact = false }: { className?: string; compact?: boolean }) {
   return (
     <Link to="/" className={`group inline-flex items-center gap-2.5 ${className}`}>
       <img
-        src={logoAsset.url}
+        src="/logo-mark.png"
         alt="Syntrex"
         width={compact ? 32 : 40}
         height={compact ? 32 : 40}
