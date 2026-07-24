@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Clock, FileText, PhoneCall, Search, Send } from "lucide-react";
@@ -15,14 +16,7 @@ const DESC =
   "We mystery-shop your phone and web forms, time the responses, and deliver a one-page report on the dollar cost of missed inquiries. Free. Within 48 hours.";
 
 export const Route = createFileRoute("/leak-audit")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => pageHead("/leak-audit"),
   component: FreeLeakAudit,
 });
 

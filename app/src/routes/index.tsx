@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import {
   ArrowRight,
   Bot,
@@ -30,14 +31,7 @@ const DESC =
   "62% of calls to small businesses go unanswered. Syntrex answers every inquiry in seconds, 24/7, so you never miss another lead.";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => pageHead("/"),
   component: Home,
 });
 

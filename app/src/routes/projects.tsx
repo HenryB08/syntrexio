@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { ArrowRight, Cookie, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
@@ -12,14 +13,7 @@ const DESC =
   "A selection of work: automation systems shipped for operators who count every lead.";
 
 export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => pageHead("/projects"),
   component: Projects,
 });
 

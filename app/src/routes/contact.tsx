@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Clock, Mail, MapPin, Send } from "lucide-react";
@@ -15,14 +16,7 @@ const TITLE = "Contact — Syntrex";
 const DESC = "Get in touch with Syntrex. We reply within 24 hours.";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-    ],
-  }),
+  head: () => pageHead("/contact"),
   component: Contact,
 });
 
