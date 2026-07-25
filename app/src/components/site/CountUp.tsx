@@ -47,7 +47,9 @@ export function CountUp({
           io.disconnect();
         });
       },
-      { threshold: 0.4 },
+      // Start counting as soon as the number enters view, not at 40% visible,
+      // so it is never stuck showing 0 while on screen.
+      { threshold: 0, rootMargin: "0px 0px 0px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
