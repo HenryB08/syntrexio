@@ -36,8 +36,8 @@ function About() {
       <PageHero
         variant="worldmap"
         eyebrow="About Syntrex"
-        title="The team that stops businesses losing customers."
-        description="Syntrex builds, installs, and runs the Growth System for local and service businesses worldwide, from our headquarters in Windermere, Florida, in the greater Orlando area."
+        title="We build the platform. Then we run it for you."
+        description="Syntrex is the software company behind the Growth System and SYN. We build the platform that captures every customer, then install and run it for you. Headquartered in Windermere, Florida, serving operators worldwide."
       />
 
       <Section>
@@ -61,30 +61,31 @@ function About() {
       <Section className="border-t border-hairline bg-surface/20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <SectionHeader eyebrow="Our story" title="Started on a leak. Built into a system." />
+            <SectionHeader eyebrow="Our story" title="Started on a leak. Built into a platform." />
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                Syntrex started with one observation: most local businesses lose
-                more revenue to missed calls and slow replies in a month than
-                they spend on marketing all year. The tools to fix it already
-                existed. Nobody was assembling them into a system a business
-                could actually run on.
+                Syntrex started with one observation: most businesses lose more
+                revenue to missed calls and slow replies in a month than they
+                spend on marketing all year. The tools to fix it already existed.
+                Nobody was assembling them into a platform a business could
+                actually run on.
               </p>
               <p>
                 So we built one. The Growth System answers every call, chat, and
                 form the moment it arrives, follows up until the customer books,
-                and reports what it recovered each month in the Receipt. What
-                began as a fix for missed calls is now the front door to a full
-                growth stack, extended by the Presence System and the Brand
-                Studio.
+                and reports what it recovered each month in the Receipt. It runs
+                on SYN, the platform that holds a client's brand, calendar,
+                content, assets, and automation. What began as a fix for missed
+                calls is now a business platform companies grow into.
               </p>
               <p>
-                Today Syntrex runs as a senior team leading every project, with a
-                full in-house team delivering the work, giving the capacity of a
-                large agency with the focus of a boutique one. Every engagement
-                is backed by a written guarantee.
+                Today Syntrex is a platform company that installs and runs the
+                system for you. A senior team leads every project and a full
+                in-house team delivers the work, the capacity of a large agency
+                with the focus of a boutique one. Every engagement is backed by a
+                written guarantee.
               </p>
             </div>
           </Reveal>

@@ -11,6 +11,11 @@ import {
   Globe,
   Layers,
   Palette,
+  LayoutGrid,
+  CalendarCheck,
+  Boxes,
+  Wand2,
+  Workflow,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
@@ -27,9 +32,9 @@ import heroOffice from "@/assets/hero-office.png.asset.json";
 import glassLobby from "@/assets/glass-lobby.png.asset.json";
 import aerialCity from "@/assets/aerial-city.png.asset.json";
 
-const TITLE = "Syntrex: Stop Losing Customers to Missed Calls";
+const TITLE = "Syntrex | AI Growth System & Business Platform";
 const DESC =
-  "62% of calls to small businesses go unanswered. Syntrex answers every inquiry in seconds, 24/7, so you never miss another lead.";
+  "The Growth System answers every call, chat, and form in seconds, 24/7, and follows up until the job is booked. It runs on SYN, the business platform you grow into.";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("/"),
@@ -46,6 +51,14 @@ const services = [
   { icon: Layers, title: "The Growth System", desc: "Answer every call, chat, and form in seconds. Capture every missed call, follow up automatically, and book the job. Guaranteed." },
   { icon: Globe, title: "The Presence System", desc: "Your complete digital presence as one subscription: website, SEO, content, and the Growth System, built and run for you." },
   { icon: Palette, title: "The Brand Studio", desc: "Ongoing brand, design, and creative on subscription, always on-brand, for established brands and multi-brand operators." },
+];
+
+const platform = [
+  { icon: LayoutGrid, name: "Workspace", desc: "Your brand, voice, and rules, in one place." },
+  { icon: CalendarCheck, name: "Calendar", desc: "Bookings and scheduling, run for you." },
+  { icon: Boxes, name: "Brand & assets", desc: "Every asset managed and on brand." },
+  { icon: Wand2, name: "AI build", desc: "Tools, pages, and content built with AI." },
+  { icon: Workflow, name: "Automation", desc: "The busywork, handled end to end." },
 ];
 
 function Home() {
@@ -410,6 +423,59 @@ function Home() {
           <div className="mt-12">
             <WorldMap height={520} />
           </div>
+        </div>
+      </section>
+
+      {/* THE PLATFORM: SYN */}
+      <section className="relative overflow-hidden border-t border-hairline bg-surface/20">
+        <Aurora variant="soft" />
+        <div className="container-page relative py-20 md:py-28">
+          <Reveal>
+            <div data-choreo className="headline-blur mx-auto max-w-3xl text-center">
+              <div className="text-eyebrow mb-4">The platform behind it</div>
+              <h2 className="text-display text-3xl text-foreground md:text-5xl">
+                The Growth System is the door.{" "}
+                <span className="text-shimmer">SYN is the platform.</span>
+              </h2>
+              <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
+                Every Syntrex engagement runs on SYN, the business platform your
+                company grows into. One workspace that holds your brand, runs
+                your calendar, manages your content and assets, builds with AI,
+                and automates the work, with an approval trail before anything
+                reaches a customer.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5">
+            {platform.map((p, i) => (
+              <Reveal key={p.name} delay={i * 80}>
+                <div className="surface-card surface-card-hover group h-full p-6">
+                  <Icon3D icon={p.icon} size={40} iconSize={18} />
+                  <div className="mt-4 text-[15px] font-semibold text-foreground">
+                    {p.name}
+                  </div>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{p.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={200}>
+            <div className="mt-12 flex flex-col items-center gap-3 text-center">
+              <p className="text-sm text-muted-foreground">
+                Growth is the door. SYN is where every client ends up.
+              </p>
+              <MagneticButton>
+                <Button asChild size="xl" variant="outline">
+                  <a href="https://syn.syntrexio.com">
+                    Explore the SYN platform
+                    <ArrowRight />
+                  </a>
+                </Button>
+              </MagneticButton>
+            </div>
+          </Reveal>
         </div>
       </section>
 

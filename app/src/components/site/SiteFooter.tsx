@@ -147,7 +147,7 @@ export function SiteFooter() {
         <div className="container-page flex flex-col items-start justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Syntrex. All rights reserved.</p>
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="/syn.html" className="transition-colors hover:text-foreground">SYN</a>
+            <a href="https://syn.syntrexio.com" className="transition-colors hover:text-foreground">SYN</a>
             <span aria-hidden>·</span>
             <a href="/privacy.html" className="transition-colors hover:text-foreground">Privacy</a>
             <span aria-hidden>·</span>

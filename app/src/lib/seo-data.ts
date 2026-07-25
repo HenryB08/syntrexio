@@ -30,7 +30,7 @@ export const SITE_SCHEMA: LdJson[] = [
     "url": "https://syntrexio.com",
     "logo": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
     "image": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
-    "description": "Syntrex builds, installs, and runs the Growth System for local and service businesses so they stop losing customers to missed calls and slow replies. It answers every call, chat, and form in seconds, captures every missed call, follows up until the customer books, and reports the value it recovered each month.",
+    "description": "Syntrex is the platform company behind the Growth System and SYN. The Growth System answers every call, chat, and form in seconds, captures every missed call, follows up until the customer books, and reports recovered value each month. It runs on SYN, the business platform that holds each client's brand, calendar, content, assets, and automation. Installed and run for operators from local to multi-brand.",
     "email": "henry@syntrexio.com",
     "sameAs": [
       "https://www.instagram.com/syntrexio",
@@ -224,11 +224,11 @@ const THREE_SYSTEM_CATALOG: LdJson = {
 
 export const PAGE_SEO: Record<string, PageSeo> = {
   "/": {
-    "title": "Syntrex | AI Receptionist & Missed-Call Capture for Small Business",
-    "description": "62% of calls to small businesses go unanswered and 85% never call back. The Syntrex Growth System answers every call, chat, and form in seconds, 24/7, captures every missed call, and follows up until the job is booked. Start with a Free Leak Audit.",
-    "keywords": "AI receptionist for small business, missed call text back, 24/7 lead response, missed calls costing my business, answering service alternative, AI web chat, lead capture system, Syntrex Growth System",
-    "ogTitle": "Stop Losing Customers to Missed Calls | Syntrex",
-    "ogDescription": "62% of calls to small businesses go unanswered. Syntrex answers every call, chat, and form in seconds, 24/7, captures every missed call, and follows up until the job is booked.",
+    "title": "Syntrex | AI Growth System & Business Platform",
+    "description": "62% of calls to small businesses go unanswered and 85% never call back. The Syntrex Growth System answers every call, chat, and form in seconds, 24/7, and follows up until the job is booked. It runs on SYN, the business platform that growing and multi-location operators grow into. Start with a Free Leak Audit.",
+    "keywords": "AI growth system, business platform, AI receptionist, missed call text back, 24/7 lead response, lead capture platform, multi-location business software, automation platform, SYN platform, Syntrex",
+    "ogTitle": "The Growth System is the door. SYN is the platform. | Syntrex",
+    "ogDescription": "Syntrex answers every call, chat, and form in seconds, 24/7, and follows up until the job is booked. It runs on SYN, the business platform that local and multi-brand operators grow into.",
     "canonical": "https://syntrexio.com/",
     "schema": [
       { ...THREE_SYSTEM_CATALOG, "url": "https://syntrexio.com/", "@id": "https://syntrexio.com/#service" },
@@ -302,11 +302,11 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/about": {
-    "title": "Syntrex | About Us and the Team Behind the Growth System",
-    "description": "Syntrex builds, installs, and runs the Growth System that stops local and service businesses losing customers to missed calls. A senior team leading every project with a full in-house team delivering the work, headquartered in Windermere, Florida.",
-    "keywords": "about Syntrex, Syntrex team, Henry Bello, Growth System, in-house agency, done for you growth, Windermere Florida, small business automation",
-    "ogTitle": "About Syntrex | The Team Behind the Growth System",
-    "ogDescription": "A senior team leading every project, with a full in-house team delivering the work: the capacity of a large agency with the focus of a boutique one.",
+    "title": "Syntrex | About the Company Behind the Platform",
+    "description": "Syntrex is the platform company behind the Growth System and SYN. We build the software that captures every customer, then install and run it for you, backed by a senior team and a full in-house crew. Headquartered in Windermere, Florida, serving operators worldwide.",
+    "keywords": "about Syntrex, Syntrex platform, SYN, business platform, Growth System, Henry Bello, installed and run, automation platform, Windermere Florida",
+    "ogTitle": "About Syntrex | The Company Behind the Platform",
+    "ogDescription": "Syntrex is the platform company behind the Growth System and SYN, software that captures every customer, installed and run for you by a senior in-house team.",
     "canonical": "https://syntrexio.com/about",
     "schema": [
       {
@@ -383,10 +383,10 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
   "/services": {
     "title": "Syntrex | Growth System, Presence System, and Brand Studio",
-    "description": "Three systems from Syntrex. The Growth System captures and converts every customer you are losing today. The Presence System runs your full digital presence. The Brand Studio delivers ongoing creative. Start with a Free Leak Audit.",
-    "keywords": "Syntrex Growth System, Presence System, Brand Studio, AI lead capture, done for you digital presence, brand creative subscription, small business growth system",
-    "ogTitle": "Three Systems, One Front Door | Syntrex",
-    "ogDescription": "The Growth System captures every lead. The Presence System runs your full digital presence. The Brand Studio delivers ongoing creative. One offer opens the door.",
+    "description": "Three systems on one platform. The Growth System captures and converts every customer you are losing today. The Presence System runs your entire digital presence. The Brand Studio delivers ongoing creative. All of it runs on SYN, the platform you grow into. Start with a Free Leak Audit.",
+    "keywords": "Syntrex Growth System, Presence System, Brand Studio, SYN platform, AI lead capture, business platform, brand creative subscription, multi-location operators",
+    "ogTitle": "Three Systems, One Platform | Syntrex",
+    "ogDescription": "The Growth System captures every lead. The Presence System runs your digital presence. The Brand Studio delivers creative. All on SYN, the platform you grow into.",
     "canonical": "https://syntrexio.com/services",
     "schema": [
       { ...THREE_SYSTEM_CATALOG },
@@ -453,9 +453,9 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/pricing": {
-    "title": "Syntrex | AI Receptionist and Growth System Pricing",
+    "title": "Syntrex | Growth System and Platform Pricing",
     "description": "Simple, printed pricing. Growth Core $349 a month, Growth Pro $549 a month, $497 one-time install, backed by a guarantee: if the Receipt does not show the system captured more than it cost, that month is free. Presence from $1,500 a month. Brand Studio from $995 a month.",
-    "keywords": "AI receptionist pricing, Growth System pricing, missed call system cost, small business AI pricing, Presence System price, Brand Studio price, Syntrex pricing",
+    "keywords": "Growth System pricing, business platform pricing, AI growth system pricing, missed call system cost, Presence System price, Brand Studio price, SYN platform, Syntrex pricing",
     "ogTitle": "Pricing, Printed. Backed by a Guarantee | Syntrex",
     "ogDescription": "Growth Core $349 a month, Growth Pro $549 a month, $497 install. If the Receipt does not show it captured more than it cost, that month is free.",
     "canonical": "https://syntrexio.com/pricing",
@@ -616,7 +616,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/contact": {
     "title": "Syntrex | Contact Us",
     "description": "Tell Syntrex about your business and we reply within 24 hours. The fastest way to start is a Free Leak Audit that shows exactly where you are losing customers, delivered within 48 hours. Or email henry@syntrexio.com.",
-    "keywords": "contact Syntrex, Syntrex email, Free Leak Audit, get started with Syntrex, small business growth system contact",
+    "keywords": "contact Syntrex, Syntrex email, Free Leak Audit, get started with Syntrex, business platform, Growth System",
     "ogTitle": "Contact Syntrex | Start With a Free Leak Audit",
     "ogDescription": "Tell us about your business and we reply within 24 hours. The fastest way to start is a Free Leak Audit that shows exactly where you are losing customers.",
     "canonical": "https://syntrexio.com/contact",
@@ -645,7 +645,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/leak-audit": {
     "title": "Syntrex | Free Leak Audit, See What Missed Calls Cost You",
     "description": "Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with a dollar estimate of what missed calls and slow replies cost you each year. Free, within 48 hours.",
-    "keywords": "free leak audit, missed call text back, AI receptionist for small business, missed calls costing my business, 24/7 lead response, answering service alternative, never miss a call, lead response system",
+    "keywords": "free leak audit, missed call text back, AI receptionist, missed calls costing my business, 24/7 lead response, answering service alternative, never miss a call, lead response system",
     "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
     "ogDescription": "See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, delivered within 48 hours.",
     "canonical": "https://syntrexio.com/leak-audit",

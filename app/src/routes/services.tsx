@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, Globe, Layers, Palette } from "lucide-react";
+import { ArrowRight, Boxes, Globe, Layers, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { Icon3D } from "@/components/site/Icon3D";
+import { MagneticButton } from "@/components/site/MagneticButton";
 
 export const Route = createFileRoute("/services")({
   head: () => pageHead("/services"),
@@ -61,8 +62,8 @@ function Services() {
       <PageHero
         variant="grid"
         eyebrow="Services"
-        title="Three systems. One place to start."
-        description="Lead with the Growth System: it stops you losing customers today. The Presence System and Brand Studio extend it when you are ready. You never buy everything at once."
+        title="Three systems. One platform."
+        description="Lead with the Growth System: it captures every customer you are losing today. The Presence System and Brand Studio extend it. All three run on SYN, the platform your business grows into."
       >
         <Button asChild size="lg" variant="accent">
           <Link to="/leak-audit">
@@ -109,6 +110,41 @@ function Services() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      <Section className="border-t border-hairline">
+        <Reveal>
+          <div className="surface-card relative overflow-hidden p-8 md:p-12">
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-4">
+                  <Icon3D icon={Boxes} size={48} iconSize={22} />
+                  <div className="text-eyebrow">The platform tier</div>
+                </div>
+                <h2 className="text-display mt-5 text-2xl text-foreground md:text-4xl">
+                  SYN, the platform underneath
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  The three systems are how you start. SYN is where they run: one
+                  workspace holding your brand, calendar, content, assets, AI
+                  build tools, and automation, with an approval trail before
+                  anything ships. It is the platform every Syntrex client grows
+                  into, and it lives at syn.syntrexio.com.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <MagneticButton>
+                  <Button asChild size="lg" variant="outline">
+                    <a href="https://syn.syntrexio.com">
+                      Explore SYN
+                      <ArrowRight />
+                    </a>
+                  </Button>
+                </MagneticButton>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </Section>
 
       <Section className="border-t border-hairline bg-surface/20">
