@@ -1,8 +1,34 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { geoEqualEarth, geoContains, type GeoPermissibleObjects } from "d3-geo";
-import { feature } from "topojson-client";
+import { geoEqualEarth } from "d3-geo";
+import landMask from "./land-mask.json";
 
 type LonLat = [number, number];
+
+// Precomputed land bitmap (see land-mask.json, generated once from world-atlas
+// land-110m via geoContains). Replaces ~13,500 runtime geoContains calls with an
+// O(1) lookup, so the dotted world paints without blocking the main thread.
+const MASK_BITS = (() => {
+  const b64 = landMask.bits;
+  if (typeof atob === "function") {
+    const s = atob(b64);
+    const u = new Uint8Array(s.length);
+    for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i);
+    return u;
+  }
+  return Uint8Array.from(Buffer.from(b64, "base64"));
+})();
+
+function isLand(lon: number, lat: number): boolean {
+  const { cellDeg, cols, rows } = landMask;
+  let c = Math.floor((lon + 180) / cellDeg);
+  let r = Math.floor((90 - lat) / cellDeg);
+  if (c < 0) c = 0;
+  else if (c >= cols) c = cols - 1;
+  if (r < 0) r = 0;
+  else if (r >= rows) r = rows - 1;
+  const i = r * cols + c;
+  return (MASK_BITS[i >> 3] & (1 << (i & 7))) !== 0;
+}
 
 const FLORIDA: LonLat = [-81.6, 28.5];
 const DESTINATIONS: { name: string; coord: LonLat; delay: number }[] = [
@@ -56,9 +82,9 @@ export function WorldMap({ height = 520 }: { height?: number }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const dotsRef = useRef<HTMLCanvasElement | null>(null);
   const fxRef = useRef<HTMLCanvasElement | null>(null);
-  const [land, setLand] = useState<GeoPermissibleObjects | null>(null);
   const [size, setSize] = useState({ w: 1000, h: height });
   const [reduced, setReduced] = useState(false);
+  const [near, setNear] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -68,18 +94,22 @@ export function WorldMap({ height = 520 }: { height?: number }) {
     return () => mq.removeEventListener("change", on);
   }, []);
 
-  // Load land geometry
+  // Only draw once the section is near the viewport, so nothing runs on initial
+  // page load while the map is far below the fold.
   useEffect(() => {
-    let alive = true;
-    import("world-atlas/land-110m.json").then((mod) => {
-      if (!alive) return;
-      // @ts-expect-error topojson typing loose
-      const geo = feature(mod.default ?? mod, (mod.default ?? mod).objects.land);
-      setLand(geo as GeoPermissibleObjects);
-    });
-    return () => {
-      alive = false;
-    };
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px 600px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   // Track container width
@@ -97,14 +127,15 @@ export function WorldMap({ height = 520 }: { height?: number }) {
 
   const projection = useMemo(() => {
     const p = geoEqualEarth();
-    p.fitSize([size.w, size.h], { type: "Sphere" } as GeoPermissibleObjects);
+    p.fitSize([size.w, size.h], { type: "Sphere" } as never);
     return p;
   }, [size.w, size.h]);
 
-  // Draw dotted world (static)
+  // Draw dotted world (static) — bitmap lookup, no geoContains
   useEffect(() => {
+    if (!near) return;
     const canvas = dotsRef.current;
-    if (!canvas || !land) return;
+    if (!canvas || size.w <= 0 || size.h <= 0) return;
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     canvas.width = size.w * dpr;
     canvas.height = size.h * dpr;
@@ -122,19 +153,20 @@ export function WorldMap({ height = 520 }: { height?: number }) {
       for (let x = step / 2; x < size.w; x += step) {
         const lonlat = projection.invert?.([x, y]);
         if (!lonlat) continue;
-        if (geoContains(land, lonlat)) {
+        if (isLand(lonlat[0], lonlat[1])) {
           ctx.beginPath();
           ctx.arc(x, y, dotR, 0, Math.PI * 2);
           ctx.fill();
         }
       }
     }
-  }, [land, projection, size.w, size.h]);
+  }, [projection, size.w, size.h, near]);
 
   // Animate arcs
   useEffect(() => {
+    if (!near) return;
     const canvas = fxRef.current;
-    if (!canvas) return;
+    if (!canvas || size.w <= 0 || size.h <= 0) return;
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     canvas.width = size.w * dpr;
     canvas.height = size.h * dpr;
@@ -157,7 +189,9 @@ export function WorldMap({ height = 520 }: { height?: number }) {
 
     const draw = (t: number) => {
       ctx.clearRect(0, 0, size.w, size.h);
-      const elapsed = (t - start) / 1000;
+      // Clamp to >= 0: on the first frame the rAF timestamp can predate `start`,
+      // which made the origin pulse radius go negative and throw in arc().
+      const elapsed = Math.max(0, (t - start) / 1000);
 
       // Origin pulse (Florida)
       if (origin) {
@@ -182,7 +216,7 @@ export function WorldMap({ height = 520 }: { height?: number }) {
 
       for (const a of arcs) {
         if (a.pts.length < 2 || !a.dest) continue;
-        const local = ((elapsed - a.d.delay) % CYCLE + CYCLE) % CYCLE;
+        const local = (((elapsed - a.d.delay) % CYCLE) + CYCLE) % CYCLE;
         // Phase 1: draw arc (0..ARC_DURATION)
         // Phase 2: hold (ARC_DURATION..ARC_DURATION+HOLD)
         // Phase 3: fade (..+FADE)
@@ -271,14 +305,10 @@ export function WorldMap({ height = 520 }: { height?: number }) {
       raf = requestAnimationFrame(draw);
     }
     return () => cancelAnimationFrame(raf);
-  }, [projection, size.w, size.h, reduced]);
+  }, [projection, size.w, size.h, reduced, near]);
 
   return (
-    <div
-      ref={wrapRef}
-      className="relative w-full"
-      style={{ height }}
-    >
+    <div ref={wrapRef} className="relative w-full" style={{ height }}>
       <canvas ref={dotsRef} className="absolute inset-0" />
       <canvas ref={fxRef} className="absolute inset-0" />
     </div>
