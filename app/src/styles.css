@@ -1032,11 +1032,11 @@
   .nav-link:hover { text-shadow: none !important; }
 }
 
-/* ---- Trusted-by infinite logo marquee ---------------------------------- */
+/* ---- Trusted-by infinite text-wordmark marquee ------------------------- */
 /* Two identical groups sit side by side inside .marquee__track; the track
    translates from 0 to -50% (exactly one group's width) and loops, so the
    second group seamlessly takes the first's place with no gap or jump.
-   Edges fade out via a mask. Pauses while hovered. */
+   Edges fade out via a mask. Pauses while the strip is hovered. */
 @keyframes marquee-scroll {
   from { transform: translate3d(0, 0, 0); }
   to   { transform: translate3d(-50%, 0, 0); }
@@ -1053,7 +1053,7 @@
   animation: marquee-scroll 36s linear infinite;
   will-change: transform;
 }
-/* Pause when the strip is hovered (the whole strip links to /customers). */
+/* Pause when the strip's section is hovered. */
 .group:hover .marquee__track {
   animation-play-state: paused;
 }
@@ -1063,13 +1063,30 @@
   flex: 0 0 auto;
 }
 .marquee__item {
-  height: 3.25rem;            /* ~52px logo height */
   display: flex;
   align-items: center;
-  padding-inline: 3rem;       /* ~96px total gap between logos */
+  padding-inline: 2.5rem;       /* ~80px total gap between wordmarks */
 }
 @media (min-width: 768px) {
-  .marquee__item { height: 3.75rem; padding-inline: 3.5rem; } /* ~60px / ~112px */
+  .marquee__item { padding-inline: 3rem; } /* ~96px */
+}
+/* Text wordmark — Linear-style: off-white, medium weight, subtle tracking,
+   75% opacity resting -> 100% on hover. */
+.marquee__wordmark {
+  white-space: nowrap;
+  font-size: 1.125rem;          /* ~18px */
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: oklch(0.97 0 0);
+  opacity: 0.78;
+  transition: opacity 200ms ease;
+}
+.marquee__wordmark:hover,
+.marquee__wordmark:focus-visible {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .marquee__wordmark { font-size: 1.25rem; } /* ~20px */
 }
 
 @media (prefers-reduced-motion: reduce) {
