@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { pageHead } from "@/lib/seo";
 import { ArrowRight, Globe, LayoutGrid, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/news")({
 
 type Post = {
   icon: typeof Rocket;
+  image: string;
   title: string;
   date: string; // display date
   excerpt: string;
@@ -22,10 +24,12 @@ type Post = {
 };
 
 // Newest first. To add a post, prepend an entry here and add a matching
-// NewsArticle to the /news schema in seo-data.ts.
+// NewsArticle to the /news schema in seo-data.ts. Images hotlink the Mailchimp
+// CDN (403 in the sandbox, load in production; the icon is the onError fallback).
 const posts: Post[] = [
   {
     icon: Globe,
+    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6f0cef5-488a-df51-14d1-da05ce42c51b.png",
     title: "The new syntrexio.com",
     date: "July 24, 2026",
     excerpt:
@@ -34,6 +38,7 @@ const posts: Post[] = [
   },
   {
     icon: LayoutGrid,
+    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efd26a69-39e0-70b7-5ab1-9f27517231b7.png",
     title: "SYN Workspace enters early access",
     date: "July 18, 2026",
     excerpt:
@@ -43,6 +48,7 @@ const posts: Post[] = [
   },
   {
     icon: Rocket,
+    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/263a40e9-7220-0431-5618-6f118ac0053b.png",
     title: "Introducing SYN Growth",
     date: "July 14, 2026",
     excerpt:
@@ -50,6 +56,27 @@ const posts: Post[] = [
     href: "/pricing",
   },
 ];
+
+/** Post cover image with the post icon as an onError fallback (CDN images 403
+ *  in the sandbox; in production they render as the card visual). */
+function PostVisual({ p }: { p: Post }) {
+  const [failed, setFailed] = useState(false);
+  if (failed)
+    return (
+      <div className="grid h-full w-full place-items-center">
+        <Icon3D icon={p.icon} size={52} iconSize={24} />
+      </div>
+    );
+  return (
+    <img
+      src={p.image}
+      alt={p.title}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className="h-full w-full object-cover"
+    />
+  );
+}
 
 function News() {
   return (
@@ -66,8 +93,8 @@ function News() {
           {posts.map((p, i) => {
             const body = (
               <article className="surface-card surface-card-hover group flex h-full flex-col overflow-hidden p-0">
-                <div className="brand-photo grid aspect-[16/9] w-full place-items-center">
-                  <Icon3D icon={p.icon} size={52} iconSize={24} />
+                <div className="brand-photo aspect-[16/9] w-full overflow-hidden">
+                  <PostVisual p={p} />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="text-eyebrow">{p.date}</div>
