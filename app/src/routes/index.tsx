@@ -5,8 +5,6 @@ import {
   ArrowRight,
   ShieldCheck,
   Sparkles,
-  Flame,
-  Cookie,
   Layers,
   LayoutGrid,
   Fingerprint,
@@ -59,6 +57,13 @@ const wlayers = [
   { icon: Boxes, title: "Content & assets", line: "Content and brand assets produced and organized." },
   { icon: Wand2, title: "Builds & automations", line: "Tools, pages, and workflows built with AI." },
   { icon: ShieldCheck, title: "Approval trail", line: "Nothing reaches a customer without your sign-off." },
+];
+
+const trusted = [
+  { name: "HALT Fire", runsSyn: true, kind: "" },
+  { name: "Doughbrik's Wavers", runsSyn: true, kind: "" },
+  { name: "Karlo Financial", runsSyn: false, kind: "Partner" },
+  { name: "Kinetix Technology Group", runsSyn: false, kind: "Partner" },
 ];
 
 function Home() {
@@ -448,90 +453,46 @@ function Home() {
         </div>
       </section>
 
-      {/* PROOF */}
+      {/* TRUSTED BY */}
       <Section className="relative">
         <Aurora variant="whisper" />
         <Reveal>
-          <div data-choreo className="headline-blur">
-            <SectionHeader
-              eyebrow="Proof"
-              title="Built by operators who count every lead."
-              description="Syntrex began as a hands-on agency. These are two of the businesses that work became SYN."
-            />
+          <div className="text-center">
+            <div className="text-eyebrow mb-8">Trusted by</div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {trusted.map((t) => (
+                <Link
+                  key={t.name}
+                  to="/customers"
+                  className="surface-card surface-card-hover group flex h-full flex-col items-center justify-center gap-3 p-6 text-center"
+                >
+                  <div className="text-[15px] font-semibold text-foreground">{t.name}</div>
+                  {t.runsSyn ? (
+                    <span className="inline-flex items-center rounded-full border border-hairline bg-background px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                      Runs SYN Growth + Workspace
+                    </span>
+                  ) : (
+                    <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                      {t.kind}
+                    </span>
+                  )}
+                </Link>
+              ))}
+            </div>
+            <p className="mx-auto mt-8 max-w-xl text-sm text-muted-foreground">
+              Including Doughbrik's Wavers, the consumer brand from David Dobrik,
+              one of the most-followed creators in the world.
+            </p>
+            <div className="mt-6">
+              <Button asChild variant="outline">
+                <Link to="/customers">
+                  See our customers
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <article
-            data-choreo
-            onPointerMove={cardTilt}
-            className="side-in-left card-reveal surface-card surface-card-hover group h-full overflow-hidden p-0"
-          >
-              <ProofPhoto alt="HALT Fire brand imagery" src={undefined} />
-              <div className="p-8">
-              <div className="flex items-center gap-3">
-                <div data-parallax="icon">
-                  <Icon3D icon={Flame} size={44} iconSize={20} />
-                </div>
-                <div data-parallax="text">
-                  <div className="text-eyebrow">Case study</div>
-                  <div className="mt-1 text-lg font-semibold text-foreground">
-                    HALT Fire
-                  </div>
-                </div>
-              </div>
-              <p data-parallax="text" className="mt-5 text-sm text-muted-foreground">
-                Industrial fire suppression. A full sales automation rebuild
-                across chat, SMS, voice, and follow-up.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-hairline pt-6">
-                <div>
-                  <div className="text-display text-3xl text-foreground">10+</div>
-                  <div className="text-xs text-muted-foreground">hours saved weekly</div>
-                </div>
-                <div>
-                  <div className="text-display text-3xl text-shimmer">280%</div>
-                  <div className="text-xs text-muted-foreground">search growth</div>
-                </div>
-              </div>
-              </div>
-          </article>
-
-          <article
-            data-choreo
-            onPointerMove={cardTilt}
-            className="side-in-right card-reveal surface-card surface-card-hover group h-full overflow-hidden p-0"
-          >
-              <ProofPhoto alt="Doughbrik's Wavers brand imagery" src={undefined} />
-              <div className="p-8">
-              <div className="flex items-center gap-3">
-                <div data-parallax="icon">
-                  <Icon3D icon={Cookie} size={44} iconSize={20} />
-                </div>
-                <div data-parallax="text">
-                  <div className="text-eyebrow">Case study</div>
-                  <div className="mt-1 text-lg font-semibold text-foreground">
-                    Doughbrik's Wavers
-                  </div>
-                </div>
-              </div>
-              <p data-parallax="text" className="mt-5 text-sm text-muted-foreground">
-                Snack brand founded by David Dobrik. Internal automation across
-                ops, fulfillment, and customer flow.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-hairline pt-6">
-                <div>
-                  <div className="text-display text-3xl text-shimmer">3×</div>
-                  <div className="text-xs text-muted-foreground">faster workflows</div>
-                </div>
-                <div>
-                  <div className="text-display text-3xl text-foreground">1</div>
-                  <div className="text-xs text-muted-foreground">unified system</div>
-                </div>
-              </div>
-              </div>
-          </article>
-        </div>
       </Section>
 
       {/* WORLDWIDE MAP */}
@@ -591,28 +552,6 @@ function Home() {
         </div>
       </section>
       <Faq path="/" />
-    </div>
-  );
-}
-
-/** Photo slot for proof cards. Renders a placeholder tile until a real image
- *  URL is provided; then flips to the desaturated brand-photo treatment. */
-function ProofPhoto({ src, alt }: { src?: string; alt: string }) {
-  return (
-    <div className="brand-photo aspect-[16/9] w-full">
-      {src ? (
-        <img src={src} alt={alt} loading="lazy" />
-      ) : (
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 30% 30%, oklch(1 0 0 / 8%), transparent 55%), radial-gradient(circle at 70% 70%, oklch(1 0 0 / 5%), transparent 55%)",
-          }}
-          aria-label={alt}
-          role="img"
-        />
-      )}
     </div>
   );
 }

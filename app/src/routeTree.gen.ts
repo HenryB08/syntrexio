@@ -12,10 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CustomersRouteImport } from './routes/customers'
 import { Route as LeakAuditRouteImport } from './routes/leak-audit'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
 
@@ -34,9 +35,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CustomersRoute = CustomersRouteImport.update({
+  id: '/customers',
+  path: '/customers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeakAuditRoute = LeakAuditRouteImport.update({
   id: '/leak-audit',
   path: '/leak-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -47,11 +58,6 @@ const PricingRoute = PricingRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -69,10 +75,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/customers': typeof CustomersRoute
   '/leak-audit': typeof LeakAuditRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -80,10 +87,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/customers': typeof CustomersRoute
   '/leak-audit': typeof LeakAuditRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -92,10 +100,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/customers': typeof CustomersRoute
   '/leak-audit': typeof LeakAuditRoute
+  '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -105,10 +114,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/customers'
     | '/leak-audit'
+    | '/news'
     | '/pricing'
     | '/privacy'
-    | '/projects'
     | '/services'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
@@ -116,10 +126,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/customers'
     | '/leak-audit'
+    | '/news'
     | '/pricing'
     | '/privacy'
-    | '/projects'
     | '/services'
     | '/terms'
   id:
@@ -127,10 +138,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/customers'
     | '/leak-audit'
+    | '/news'
     | '/pricing'
     | '/privacy'
-    | '/projects'
     | '/services'
     | '/terms'
   fileRoutesById: FileRoutesById
@@ -139,10 +151,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CustomersRoute: typeof CustomersRoute
   LeakAuditRoute: typeof LeakAuditRoute
+  NewsRoute: typeof NewsRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
-  ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
 }
@@ -170,11 +183,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/customers': {
+      id: '/customers'
+      path: '/customers'
+      fullPath: '/customers'
+      preLoaderRoute: typeof CustomersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leak-audit': {
       id: '/leak-audit'
       path: '/leak-audit'
       fullPath: '/leak-audit'
       preLoaderRoute: typeof LeakAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -189,13 +216,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -219,10 +239,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CustomersRoute: CustomersRoute,
   LeakAuditRoute: LeakAuditRoute,
+  NewsRoute: NewsRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
-  ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
 }

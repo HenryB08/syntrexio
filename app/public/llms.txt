@@ -112,7 +112,8 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 - Services: https://syntrexio.com/services
 - Pricing: https://syntrexio.com/pricing
 - SYN Workspace: https://syn.syntrexio.com
-- Projects: https://syntrexio.com/projects
+- Customers: https://syntrexio.com/customers
+- News: https://syntrexio.com/news
 - About: https://syntrexio.com/about
 - Contact: https://syntrexio.com/contact
 - Privacy Policy: https://syntrexio.com/privacy
