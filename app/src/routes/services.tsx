@@ -48,7 +48,7 @@ const offers: Offer[] = [
     icon: Palette,
     name: "The Brand Studio",
     tagline: "On-demand creative that stays on brand.",
-    what: "Ongoing brand, design, and creative on a flat monthly subscription with a request queue. Every asset runs through your encoded brand profile with an approval trail.",
+    what: "Ongoing brand, design, and creative on a flat monthly subscription with a request queue. Every asset is checked against your brand guidelines before it ships, so nothing off-brand goes out.",
     who: "Established brands, portfolio operators, and multi-brand teams that need a steady stream of on-brand work.",
     outcome: "Campaign imagery, product visuals, and social creative on tap, consistent and safe to publish by default.",
     price: "From $995/mo · Priority from $1,995/mo",

@@ -279,7 +279,7 @@ function Home() {
             onPointerMove={cardTilt}
             className="side-in-left card-reveal surface-card surface-card-hover group h-full overflow-hidden p-0"
           >
-              <ProofPhoto alt="HALT! Fire brand imagery" src={undefined} />
+              <ProofPhoto alt="HALT Fire brand imagery" src={undefined} />
               <div className="p-8">
               <div className="flex items-center gap-3">
                 <div data-parallax="icon">
@@ -288,7 +288,7 @@ function Home() {
                 <div data-parallax="text">
                   <div className="text-eyebrow">Case study</div>
                   <div className="mt-1 text-lg font-semibold text-foreground">
-                    HALT! Fire
+                    HALT Fire
                   </div>
                 </div>
               </div>

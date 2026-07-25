@@ -43,7 +43,7 @@ Q: How do I start?
 A: Request a Free Leak Audit at https://syntrexio.com/leak-audit or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms, times the responses, and sends a one-page report with the yearly dollar cost of the customers you are losing, delivered within 48 hours, at no cost.
 
 Q: What results has Syntrex delivered?
-A: For HALT! Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
+A: For HALT Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
 
 ## Offers
 
@@ -111,7 +111,7 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 
 ## Real Clients & Case Studies
 
-- HALT! Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
+- HALT Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
 - Doughbrik's Wavers (CPG snack brand founded by David Dobrik): built internal automation tools, 3x faster workflows, as the brand scaled into retail
 
 ## Team

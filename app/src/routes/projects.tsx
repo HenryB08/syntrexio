@@ -20,7 +20,7 @@ export const Route = createFileRoute("/projects")({
 const projects = [
   {
     icon: Flame,
-    client: "HALT! Fire",
+    client: "HALT Fire",
     sector: "Industrial fire suppression",
     summary:
       "A full rebuild. Syntrex replaced scattered manual work with one sales automation system across chat, SMS, voice, and follow-up, reporting into a monthly Receipt. The team stopped chasing leads by hand and started closing them.",
