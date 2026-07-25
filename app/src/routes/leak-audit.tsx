@@ -58,7 +58,7 @@ function FreeLeakAudit() {
     <>
       <PageHero
         variant="scanline"
-        eyebrow="The SYN Growth entry point · Free · 48 hours"
+        eyebrow="Available today · Pre-launch entry to SYN Growth · Free"
         title="See exactly what missed calls are costing you."
         description="62% of calls to small businesses go unanswered and 85% never call back. The Free Leak Audit is how you start with SYN Growth: Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with the dollar cost, per year, of the customers you are losing. Free, within 48 hours."
       />

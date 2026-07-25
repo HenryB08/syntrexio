@@ -59,8 +59,8 @@ function Pricing() {
       <PageHero
         variant="radar"
         eyebrow="Pricing"
-        title="Printed pricing. Backed by a guarantee."
-        description="SYN Growth is a one-time $497 setup, then a flat monthly rate. SYN Workspace is in early access. No quotes, no surprises."
+        title="Launch pricing. Backed by a guarantee."
+        description="SYN Growth launch pricing is a one-time $497 setup, then a flat monthly rate. SYN Growth is launching soon; the Free Leak Audit is available today. SYN Workspace is in early access. No quotes, no surprises."
       >
         <MagneticButton>
           <Button asChild size="lg" variant="accent">
@@ -75,7 +75,12 @@ function Pricing() {
       {/* SYN GROWTH */}
       <Section className="!py-16">
         <Reveal>
-          <div className="text-eyebrow mb-4">SYN Growth</div>
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <span className="text-eyebrow">SYN Growth</span>
+            <span className="inline-flex items-center rounded-full border border-white/40 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
+              <span className="badge-shimmer">Launching soon</span>
+            </span>
+          </div>
         </Reveal>
 
         {/* Setup callout - make it unmistakable the $497 is one-time */}
