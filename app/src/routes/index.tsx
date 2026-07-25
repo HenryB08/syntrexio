@@ -198,16 +198,16 @@ function Home() {
           <Reveal>
             <Link to="/customers" className="group block">
               <div className="text-eyebrow mb-7 text-center">Trusted by</div>
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16 lg:gap-x-20">
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-16 lg:gap-x-20">
                 {trusted.map((t) => (
-                  <img
-                    key={t.name}
-                    src={t.logo}
-                    alt={t.name}
-                    height={32}
-                    loading="lazy"
-                    className="h-7 w-auto opacity-60 brightness-0 invert transition-opacity duration-300 group-hover:opacity-100 md:h-8"
-                  />
+                  <div key={t.name} className="flex h-9 items-center md:h-10">
+                    <img
+                      src={t.logo}
+                      alt={t.name}
+                      loading="lazy"
+                      className="max-h-full w-auto object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  </div>
                 ))}
               </div>
             </Link>
