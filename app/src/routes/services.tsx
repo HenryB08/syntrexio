@@ -121,14 +121,17 @@ function Services() {
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {capabilities.map((c, i) => (
             <Reveal key={c.name} delay={i * 40}>
-              <div className="surface-card surface-card-hover group flex items-center gap-3 p-4 hover:-translate-y-0.5">
+              <Link
+                to="/leak-audit"
+                className="surface-card surface-card-hover group flex items-center gap-3 p-4 hover:-translate-y-0.5"
+              >
                 <Icon3D icon={c.icon} size={36} iconSize={16} />
                 <div className="text-sm font-medium text-foreground">{c.name}</div>
                 <ArrowRight
                   size={14}
                   className="ml-auto text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-foreground"
                 />
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>

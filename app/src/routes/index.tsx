@@ -54,6 +54,7 @@ function Home() {
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>("[data-choreo]");
+    const vh = window.innerHeight || document.documentElement.clientHeight;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -63,9 +64,16 @@ function Home() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
+      // Fire the moment any part of the element enters the viewport, instead of
+      // waiting until it is 15% visible and 80px inside — which left partially
+      // visible content blank until the user scrolled further.
+      { threshold: 0, rootMargin: "0px 0px 0px 0px" },
     );
-    nodes.forEach((n) => io.observe(n));
+    nodes.forEach((n) => {
+      // Already in view (e.g. above the fold on load): reveal immediately.
+      if (n.getBoundingClientRect().top < vh) n.classList.add("in-view");
+      else io.observe(n);
+    });
     return () => io.disconnect();
   }, []);
 

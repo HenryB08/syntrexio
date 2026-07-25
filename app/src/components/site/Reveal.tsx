@@ -31,7 +31,8 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
       return;
     }
 
-    // Otherwise reveal on scroll.
+    // Otherwise reveal on scroll — the moment any part enters the viewport,
+    // so content is never left blank while partially visible.
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -41,7 +42,7 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      { threshold: 0, rootMargin: "0px 0px 0px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
