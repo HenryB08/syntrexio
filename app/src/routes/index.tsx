@@ -68,6 +68,10 @@ const trusted = [
   { name: "Kinetix Technology Group", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" },
 ];
 
+// Repeat the four logos so each marquee group is dense enough to fill the track
+// at wide viewports (the group is then duplicated once more for the loop).
+const marqueeLogos = [...trusted, ...trusted, ...trusted];
+
 function Home() {
   const choreoRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -192,23 +196,32 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUSTED BY - monochrome logo bar, directly below the hero */}
+      {/* TRUSTED BY - infinite full-color logo marquee, directly below the hero */}
       <section className="border-b border-hairline bg-surface/20">
-        <div className="container-page py-10 md:py-12">
+        <div className="py-10 md:py-12">
           <Reveal>
             <Link to="/customers" className="group block">
-              <div className="text-eyebrow mb-7 text-center">Trusted by</div>
-              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-16 lg:gap-x-20">
-                {trusted.map((t) => (
-                  <div key={t.name} className="flex h-9 items-center md:h-10">
-                    <img
-                      src={t.logo}
-                      alt={t.name}
-                      loading="lazy"
-                      className="max-h-full w-auto object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
-                ))}
+              <div className="text-eyebrow mb-8 text-center">Trusted by</div>
+              {/* CSS-only marquee: two identical tracks translate -50% for a
+                  seamless loop. Pauses on hover; falls back to a static wrapped
+                  row under prefers-reduced-motion (see styles.css). */}
+              <div className="marquee" aria-label="Trusted by HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group">
+                <div className="marquee__track">
+                  {[0, 1].map((dup) => (
+                    <div key={dup} className="marquee__group" aria-hidden={dup === 1}>
+                      {marqueeLogos.map((t, i) => (
+                        <div key={`${dup}-${i}`} className="marquee__item">
+                          <img
+                            src={t.logo}
+                            alt={dup === 0 ? t.name : ""}
+                            loading="lazy"
+                            className="h-full w-auto object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </Link>
           </Reveal>

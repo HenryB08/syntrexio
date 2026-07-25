@@ -32,8 +32,8 @@ const customers: Customer[] = [
   {
     icon: Flame,
     logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8c7f2cbe-39b2-9320-be0b-bb06479a0b8a.png",
-    image: "https://images.unsplash.com/photo-1478147427282-58a87a120781" + UNSPLASH,
-    imageAlt: "Industrial flames against a dark background",
+    image: "https://images.unsplash.com/photo-1486551937199-baf066858de7" + UNSPLASH,
+    imageAlt: "Firefighter silhouetted against dramatic flames",
     name: "HALT Fire",
     badge: "Runs SYN Growth + Workspace",
     desc: "Industrial fire suppression. Syntrex built and runs the full digital operation.",
@@ -41,8 +41,8 @@ const customers: Customer[] = [
   {
     icon: Cookie,
     logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png",
-    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e" + UNSPLASH,
-    imageAlt: "Freshly baked cookies on a dark surface",
+    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/45c480e8-9b07-53dc-0733-e5ed3bb5b2f3.png",
+    imageAlt: "Doughbrik's Wavers brand imagery",
     name: "Doughbrik's Wavers",
     badge: "Runs SYN Growth + Workspace",
     desc: "The consumer snack brand from David Dobrik, one of the most-followed creators in the world. Built and operated by Syntrex.",
@@ -88,22 +88,6 @@ function BannerImage({ c }: { c: Customer }) {
   );
 }
 
-/** Small full-color logo next to the company name; hides on error. */
-function SmallLogo({ c }: { c: Customer }) {
-  const [failed, setFailed] = useState(false);
-  if (failed) return null;
-  return (
-    <img
-      src={c.logo}
-      alt=""
-      aria-hidden
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className="h-5 w-auto max-w-[28px] shrink-0 object-contain"
-    />
-  );
-}
-
 function Customers() {
   return (
     <>
@@ -133,8 +117,7 @@ function Customers() {
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <div className="text-eyebrow">Customer</div>
-                      <div className="mt-1 flex items-center gap-2">
-                        <SmallLogo c={c} />
+                      <div className="mt-1">
                         <span className="text-lg font-semibold text-foreground">
                           {c.name}
                         </span>
