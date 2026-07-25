@@ -19,7 +19,7 @@ Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. 
 ## FAQ
 
 Q: What is SYN?
-A: SYN is Syntrex's product, in two forms. SYN Growth is the installed, guaranteed system that captures every customer you are losing today across phone, web, and message. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, brand assets, builds, and automations from one encoded brand.
+A: SYN is Syntrex's product, in two forms. SYN Growth is the guaranteed system that captures every customer you are losing to missed calls across phone, web, and message; it is launching soon. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, brand assets, builds, and automations from one encoded brand.
 
 Q: What is the difference between SYN Growth and SYN Workspace?
 A: SYN Growth captures the customers you are losing to missed calls, with the value proven monthly in the Receipt; it is launching soon at printed launch pricing. SYN Workspace is in early access and runs the rest of the business from one encoded brand. Growth is the door; Workspace is where you grow.
