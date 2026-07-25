@@ -379,14 +379,15 @@ function Home() {
           </div>
         </Reveal>
 
+        {/* Cards render statically visible. Do NOT gate them behind an entrance
+            animation (.reveal/.spread-in): those set the final visible state via
+            a keyframe `to`, so if the animation fails to advance (e.g. when the
+            element jumps from far offscreen into view, or a late font reflow
+            moves it in), the card is left stuck at its opacity:0 base and shows
+            as an empty box. Static visibility cannot get stuck. */}
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {wlayers.map((s, i) => (
-            <div
-              key={s.title}
-              data-choreo
-              className="spread-in surface-card surface-card-hover group h-full p-6"
-              style={{ ["--sx" as never]: `${(i - 2) * 50}px`, ["--d" as never]: `${i * 90}ms` }}
-            >
+          {wlayers.map((s) => (
+            <div key={s.title} className="surface-card surface-card-hover group h-full p-6">
               <Icon3D icon={s.icon} size={44} iconSize={20} />
               <div className="mt-5 text-[15px] font-semibold text-foreground">{s.title}</div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.line}</p>
