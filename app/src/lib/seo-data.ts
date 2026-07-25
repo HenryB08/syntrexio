@@ -77,7 +77,7 @@ const SYN_GROWTH_PRODUCT: LdJson = {
   "@id": "https://syntrexio.com/#syn-growth",
   "name": "SYN Growth",
   "brand": { "@type": "Brand", "name": "SYN" },
-  "url": "https://syntrexio.com/pricing",
+  "url": "https://syntrexio.com/pricing/",
   "description": "The guaranteed SYN product, launching soon. It answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. Launch pricing: one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. The Free Leak Audit is available today as the pre-launch entry point.",
   "releaseDate": "2026",
   "offers": [
@@ -216,14 +216,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "about Syntrex, SYN, SYN Growth, SYN Workspace, Henry Bello, AI software company, digital agency origin, HALT Fire, Doughbrik's Wavers, Windermere Florida",
     "ogTitle": "About Syntrex | The Company Building SYN",
     "ogDescription": "We build SYN, one AI platform in two products: SYN Growth (launching soon) and SYN Workspace (early access). A senior team with a full in-house crew, born from a hands-on digital agency.",
-    "canonical": "https://syntrexio.com/about",
+    "canonical": "https://syntrexio.com/about/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://syntrexio.com/about" }
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://syntrexio.com/about/" }
         ]
       },
       {
@@ -271,7 +271,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "name": "Henry Bello",
         "jobTitle": "Founder & CEO",
         "worksFor": { "@id": "https://syntrexio.com/#organization" },
-        "url": "https://syntrexio.com/about"
+        "url": "https://syntrexio.com/about/"
       }
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
@@ -282,7 +282,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "AI receptionist, AI answering service for business, AI business workspace, AI tools for small business operations, business automation platform, missed call text back, SYN Growth, SYN Workspace, Syntrex products",
     "ogTitle": "Two Products, One Company | Syntrex",
     "ogDescription": "SYN Growth captures every customer you are losing. SYN Workspace runs the rest of the business. Both are SYN, both launching, built by Syntrex.",
-    "canonical": "https://syntrexio.com/services",
+    "canonical": "https://syntrexio.com/services/",
     "schema": [
       SYN_GROWTH_PRODUCT,
       SYN_WORKSPACE_PRODUCT,
@@ -291,7 +291,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://syntrexio.com/services" }
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://syntrexio.com/services/" }
         ]
       },
       {
@@ -357,7 +357,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "AI receptionist pricing, AI answering service cost, SYN Growth pricing, SYN Workspace access, Syntrex pricing, $497 setup, Growth Core, Growth Pro, business automation platform pricing",
     "ogTitle": "SYN Growth Pricing, Printed and Guaranteed | Syntrex",
     "ogDescription": "One-time $497 setup, then $349 or $549 a month. If the Receipt does not show it captured more than it cost, that month is free. SYN Workspace: early access by waitlist.",
-    "canonical": "https://syntrexio.com/pricing",
+    "canonical": "https://syntrexio.com/pricing/",
     "schema": [
       SYN_GROWTH_PRODUCT,
       SYN_WORKSPACE_PRODUCT,
@@ -366,7 +366,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://syntrexio.com/pricing" }
+          { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://syntrexio.com/pricing/" }
         ]
       },
       {
@@ -432,14 +432,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "Syntrex customers, SYN customers, HALT Fire, Doughbrik's Wavers, David Dobrik, Karlo Financial, Kinetix Technology Group, AI automation customers",
     "ogTitle": "Customers | Syntrex",
     "ogDescription": "Businesses running on SYN: HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group, all built and run by Syntrex.",
-    "canonical": "https://syntrexio.com/customers",
+    "canonical": "https://syntrexio.com/customers/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://syntrexio.com/customers" }
+          { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://syntrexio.com/customers/" }
         ]
       },
       {
@@ -462,14 +462,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "Syntrex news, SYN Growth launch, SYN Workspace early access, AI product updates, Syntrex announcements",
     "ogTitle": "News | Syntrex",
     "ogDescription": "Launches, releases, and updates as Syntrex builds SYN. SYN Growth is launching soon; SYN Workspace is in early access.",
-    "canonical": "https://syntrexio.com/news",
+    "canonical": "https://syntrexio.com/news/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "News", "item": "https://syntrexio.com/news" }
+          { "@type": "ListItem", "position": 2, "name": "News", "item": "https://syntrexio.com/news/" }
         ]
       },
       {
@@ -480,7 +480,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "author": { "@id": "https://syntrexio.com/#organization" },
         "publisher": { "@id": "https://syntrexio.com/#organization" },
         "description": "One platform, two products, one new identity. Where Syntrex is headed as a software company: SYN Growth for your customers, SYN Workspace for your operations.",
-        "url": "https://syntrexio.com/news"
+        "url": "https://syntrexio.com/news/"
       },
       {
         "@context": "https://schema.org",
@@ -490,7 +490,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "author": { "@id": "https://syntrexio.com/#organization" },
         "publisher": { "@id": "https://syntrexio.com/#organization" },
         "description": "The AI business workspace that runs your calendar, content, assets, and automations from one encoded brand is now in early access. The waitlist is open.",
-        "url": "https://syntrexio.com/news"
+        "url": "https://syntrexio.com/news/"
       },
       {
         "@context": "https://schema.org",
@@ -500,7 +500,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "author": { "@id": "https://syntrexio.com/#organization" },
         "publisher": { "@id": "https://syntrexio.com/#organization" },
         "description": "The guaranteed system that answers every call, chat, and form in seconds, captures every missed call, and follows up until the customer books. Launching soon at printed pricing.",
-        "url": "https://syntrexio.com/news"
+        "url": "https://syntrexio.com/news/"
       }
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
@@ -511,14 +511,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "contact Syntrex, Syntrex email, SYN Growth, Free Leak Audit, SYN Workspace waitlist, get started with SYN",
     "ogTitle": "Contact Syntrex | Start With a Free Leak Audit",
     "ogDescription": "Tell us about your business and we reply within 24 hours. The fastest way to start with SYN Growth is a Free Leak Audit showing exactly where you are losing customers.",
-    "canonical": "https://syntrexio.com/contact",
+    "canonical": "https://syntrexio.com/contact/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://syntrexio.com/contact" }
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://syntrexio.com/contact/" }
         ]
       }
     ],
@@ -530,14 +530,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "free leak audit, how to stop missing customer calls, missed call text back, AI receptionist, AI answering service for business, missed calls costing my business, 24/7 lead response, SYN Growth",
     "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
     "ogDescription": "The entry point to SYN Growth. See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, within 48 hours.",
-    "canonical": "https://syntrexio.com/leak-audit",
+    "canonical": "https://syntrexio.com/leak-audit/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Free Leak Audit", "item": "https://syntrexio.com/leak-audit" }
+          { "@type": "ListItem", "position": 2, "name": "Free Leak Audit", "item": "https://syntrexio.com/leak-audit/" }
         ]
       },
       {
@@ -545,7 +545,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "@type": "Service",
         "@id": "https://syntrexio.com/leak-audit#service",
         "name": "Free Leak Audit",
-        "url": "https://syntrexio.com/leak-audit",
+        "url": "https://syntrexio.com/leak-audit/",
         "serviceType": "Lead response and missed call audit",
         "provider": { "@id": "https://syntrexio.com/#organization" },
         "areaServed": "Worldwide",
@@ -607,14 +607,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "Syntrex privacy policy, data protection, GDPR, CCPA, AI processing, cookies, SYN privacy",
     "ogTitle": "Syntrex | Privacy Policy",
     "ogDescription": "How Syntrex collects, uses, and protects your information. SYN products, chatbot, forms, analytics, cookies, and your privacy rights.",
-    "canonical": "https://syntrexio.com/privacy",
+    "canonical": "https://syntrexio.com/privacy/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://syntrexio.com/privacy" }
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://syntrexio.com/privacy/" }
         ]
       }
     ],
@@ -626,14 +626,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "keywords": "Syntrex terms of use, terms and conditions, SYN Growth terms, SYN Workspace terms, guarantee, governing law",
     "ogTitle": "Syntrex | Terms of Use",
     "ogDescription": "The terms that govern your use of syntrexio.com and the SYN products, SYN Growth and SYN Workspace.",
-    "canonical": "https://syntrexio.com/terms",
+    "canonical": "https://syntrexio.com/terms/",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://syntrexio.com/terms" }
+          { "@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://syntrexio.com/terms/" }
         ]
       }
     ],
