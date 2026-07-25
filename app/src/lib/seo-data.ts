@@ -541,4 +541,42 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
+  "/privacy": {
+    "title": "Syntrex | Privacy Policy",
+    "description": "How Syntrex collects, uses, and protects your information across syntrexio.com, the SYN chatbot, contact and Free Leak Audit forms, analytics, and the SYN products. Includes AI processing, no sale of data, sub-processors, retention, security, and your GDPR and CCPA rights.",
+    "keywords": "Syntrex privacy policy, data protection, GDPR, CCPA, AI processing, cookies, SYN privacy",
+    "ogTitle": "Syntrex | Privacy Policy",
+    "ogDescription": "How Syntrex collects, uses, and protects your information. SYN products, chatbot, forms, analytics, cookies, and your privacy rights.",
+    "canonical": "https://syntrexio.com/privacy",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://syntrexio.com/privacy" }
+        ]
+      }
+    ],
+    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+  },
+  "/terms": {
+    "title": "Syntrex | Terms of Use",
+    "description": "The terms that govern your use of syntrexio.com and the SYN products, SYN Growth and SYN Workspace: the products, fees and launch pricing, the guarantee, acceptable use, intellectual property, disclaimers, liability, and Florida governing law.",
+    "keywords": "Syntrex terms of use, terms and conditions, SYN Growth terms, SYN Workspace terms, guarantee, governing law",
+    "ogTitle": "Syntrex | Terms of Use",
+    "ogDescription": "The terms that govern your use of syntrexio.com and the SYN products, SYN Growth and SYN Workspace.",
+    "canonical": "https://syntrexio.com/terms",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://syntrexio.com/terms" }
+        ]
+      }
+    ],
+    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+  },
 };

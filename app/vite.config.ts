@@ -38,6 +38,8 @@ export default defineConfig({
       { path: "/projects" },
       { path: "/contact" },
       { path: "/leak-audit" },
+      { path: "/privacy" },
+      { path: "/terms" },
     ],
   },
 });
