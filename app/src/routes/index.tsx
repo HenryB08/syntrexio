@@ -59,11 +59,13 @@ const wlayers = [
   { icon: ShieldCheck, title: "Approval trail", line: "Nothing reaches a customer without your sign-off." },
 ];
 
+// Customer logos are hotlinked from the Mailchimp CDN (same host the hero image
+// already uses). They 403 in the sandbox but load in production.
 const trusted = [
-  { name: "HALT Fire", runsSyn: true, kind: "" },
-  { name: "Doughbrik's Wavers", runsSyn: true, kind: "" },
-  { name: "Karlo Financial", runsSyn: false, kind: "Partner" },
-  { name: "Kinetix Technology Group", runsSyn: false, kind: "Partner" },
+  { name: "HALT Fire", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8c7f2cbe-39b2-9320-be0b-bb06479a0b8a.png" },
+  { name: "Doughbrik's Wavers", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" },
+  { name: "Karlo Financial", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" },
+  { name: "Kinetix Technology Group", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" },
 ];
 
 function Home() {
@@ -187,6 +189,29 @@ function Home() {
             </div>
           </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* TRUSTED BY - monochrome logo bar, directly below the hero */}
+      <section className="border-b border-hairline bg-surface/20">
+        <div className="container-page py-10 md:py-12">
+          <Reveal>
+            <Link to="/customers" className="group block">
+              <div className="text-eyebrow mb-7 text-center">Trusted by</div>
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16 lg:gap-x-20">
+                {trusted.map((t) => (
+                  <img
+                    key={t.name}
+                    src={t.logo}
+                    alt={t.name}
+                    height={32}
+                    loading="lazy"
+                    className="h-7 w-auto opacity-60 brightness-0 invert transition-opacity duration-300 group-hover:opacity-100 md:h-8"
+                  />
+                ))}
+              </div>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -452,48 +477,6 @@ function Home() {
           </p>
         </div>
       </section>
-
-      {/* TRUSTED BY */}
-      <Section className="relative">
-        <Aurora variant="whisper" />
-        <Reveal>
-          <div className="text-center">
-            <div className="text-eyebrow mb-8">Trusted by</div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {trusted.map((t) => (
-                <Link
-                  key={t.name}
-                  to="/customers"
-                  className="surface-card surface-card-hover group flex h-full flex-col items-center justify-center gap-3 p-6 text-center"
-                >
-                  <div className="text-[15px] font-semibold text-foreground">{t.name}</div>
-                  {t.runsSyn ? (
-                    <span className="inline-flex items-center rounded-full border border-hairline bg-background px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                      Runs SYN Growth + Workspace
-                    </span>
-                  ) : (
-                    <span className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                      {t.kind}
-                    </span>
-                  )}
-                </Link>
-              ))}
-            </div>
-            <p className="mx-auto mt-8 max-w-xl text-sm text-muted-foreground">
-              Including Doughbrik's Wavers, the consumer brand from David Dobrik,
-              one of the most-followed creators in the world.
-            </p>
-            <div className="mt-6">
-              <Button asChild variant="outline">
-                <Link to="/customers">
-                  See our customers
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </Reveal>
-      </Section>
 
       {/* WORLDWIDE MAP */}
       <section className="relative overflow-hidden border-t border-hairline">

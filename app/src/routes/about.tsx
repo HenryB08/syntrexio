@@ -20,14 +20,16 @@ const facts = [
   { icon: Users, label: "Team", value: "Senior leads, full in-house crew" },
 ];
 
-type Member = { name: string; role: string; initials: string; photo: string };
+type Member = { name: string; role: string; initials: string; photo: string; email?: string };
 
+// Photos hotlink the Mailchimp CDN (same host as the hero image). They 403 in
+// the sandbox but load in production; initials are the onError fallback.
 const team: Member[] = [
-  { name: "Henry Bello", role: "Founder & CEO", initials: "HB", photo: "/team/henry.png" },
-  { name: "Sofia Weeden", role: "Chief Financial Officer", initials: "SW", photo: "/team/sofia.png" },
-  { name: "Alexander Ohmer", role: "Head of Operations", initials: "AO", photo: "/team/alexander.png" },
-  { name: "Anthony Fallon", role: "Head of Digital", initials: "AF", photo: "/team/anthony.png" },
-  { name: "Ciana Bello", role: "Director of Marketing & Social", initials: "CB", photo: "/team/ciana.png" },
+  { name: "Henry Bello", role: "Founder & CEO", initials: "HB", email: "henry@syntrexio.com", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/3cc9cc48-ba3c-9ebd-464d-0df28c4cc939.png" },
+  { name: "Sofia Weeden", role: "Chief Financial Officer", initials: "SW", email: "sofia@syntrexio.com", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/eb1cf569-580c-9d7e-a642-0f9458c4cf05.png" },
+  { name: "Alexander Ohmer", role: "Head of Operations", initials: "AO", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/9dfeaa13-67cf-4655-f0fa-09489017922c.png" },
+  { name: "Anthony Fallon", role: "Head of Digital", initials: "AF", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efcf170e-3d5b-743c-35eb-d66e2e79fb9a.png" },
+  { name: "Ciana Bello", role: "Director of Marketing & Social", initials: "CB", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6a2a7c2-55d3-dbff-b92a-567152be1a15.png" },
 ];
 
 function About() {
@@ -92,7 +94,11 @@ function About() {
 
       <Section>
         <Reveal>
-          <SectionHeader eyebrow="Team" title="A senior team, in-house." />
+          <SectionHeader
+            eyebrow="Team"
+            title="The core team."
+            description="The leadership that runs every engagement. A broader in-house team of developers and specialists delivers the work alongside them."
+          />
         </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m, i) => (
@@ -104,6 +110,14 @@ function About() {
                     {m.name}
                   </div>
                   <div className="text-sm text-muted-foreground">{m.role}</div>
+                  {m.email ? (
+                    <a
+                      href={`mailto:${m.email}`}
+                      className="mt-2 inline-block text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+                    >
+                      {m.email}
+                    </a>
+                  ) : null}
                 </div>
               </article>
             </Reveal>

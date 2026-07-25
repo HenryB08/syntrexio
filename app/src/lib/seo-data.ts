@@ -428,10 +428,10 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
   "/customers": {
     "title": "Syntrex | Customers",
-    "description": "The businesses running on SYN. Syntrex builds and runs the full digital operation for HALT Fire and for Doughbrik's Wavers, the consumer brand from David Dobrik, and works alongside partners Karlo Financial and Kinetix Technology Group.",
+    "description": "The businesses running on SYN. Syntrex builds and runs the full digital operation for HALT Fire, for Doughbrik's Wavers, the consumer brand from David Dobrik, and for Karlo Financial and Kinetix Technology Group, all on SYN Growth and SYN Workspace.",
     "keywords": "Syntrex customers, SYN customers, HALT Fire, Doughbrik's Wavers, David Dobrik, Karlo Financial, Kinetix Technology Group, AI automation customers",
     "ogTitle": "Customers | Syntrex",
-    "ogDescription": "Businesses running on SYN: HALT Fire and Doughbrik's Wavers, built and run by Syntrex, plus partners Karlo Financial and Kinetix Technology Group.",
+    "ogDescription": "Businesses running on SYN: HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group, all built and run by Syntrex.",
     "canonical": "https://syntrexio.com/customers",
     "schema": [
       {
@@ -445,7 +445,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Syntrex customers and partners",
+        "name": "Syntrex customers",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "HALT Fire" },
           { "@type": "ListItem", "position": 2, "name": "Doughbrik's Wavers" },
