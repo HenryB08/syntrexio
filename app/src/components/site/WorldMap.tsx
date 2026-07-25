@@ -131,7 +131,7 @@ export function WorldMap({ height = 520 }: { height?: number }) {
     return p;
   }, [size.w, size.h]);
 
-  // Draw dotted world (static) — bitmap lookup, no geoContains
+  // Draw dotted world (static) - bitmap lookup, no geoContains
   useEffect(() => {
     if (!near) return;
     const canvas = dotsRef.current;
