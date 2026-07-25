@@ -43,9 +43,9 @@ const stats = [
 ];
 
 const services = [
-  { icon: Layers, title: "The Growth System", desc: "Chat, SMS, missed-call text-back, follow-up, booking, monthly Receipt." },
-  { icon: Globe, title: "The Presence System", desc: "Local SEO, review engine, and organic growth across every channel." },
-  { icon: Palette, title: "The Brand Studio", desc: "Identity, site, and content that make you the obvious choice." },
+  { icon: Layers, title: "The Growth System", desc: "Answer every call, chat, and form in seconds. Capture every missed call, follow up automatically, and book the job. Guaranteed." },
+  { icon: Globe, title: "The Presence System", desc: "Your complete digital presence as one subscription: website, SEO, content, and the Growth System, built and run for you." },
+  { icon: Palette, title: "The Brand Studio", desc: "Ongoing brand, design, and creative on subscription, always on-brand, for established brands and multi-brand operators." },
 ];
 
 function Home() {
@@ -127,7 +127,7 @@ function Home() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
               <Sparkles size={12} className="text-foreground" />
-              AI automation, built for businesses that answer
+              Answers every call, chat, and form in seconds, 24/7
             </div>
           </Reveal>
           <h1 className="text-display word-rise mt-6 text-5xl text-foreground md:text-7xl">
@@ -151,7 +151,8 @@ function Home() {
           <Reveal delay={160}>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
               62% of calls to small businesses go unanswered. Syntrex answers
-              every inquiry in seconds, 24/7.
+              every call, chat, and form in seconds, 24/7, and follows up until
+              the job is booked.
             </p>
           </Reveal>
           <Reveal delay={240}>
@@ -278,7 +279,7 @@ function Home() {
             onPointerMove={cardTilt}
             className="side-in-left card-reveal surface-card surface-card-hover group h-full overflow-hidden p-0"
           >
-              <ProofPhoto alt="HALT! Fire brand imagery" src={undefined} />
+              <ProofPhoto alt="HALT Fire brand imagery" src={undefined} />
               <div className="p-8">
               <div className="flex items-center gap-3">
                 <div data-parallax="icon">
@@ -287,7 +288,7 @@ function Home() {
                 <div data-parallax="text">
                   <div className="text-eyebrow">Case study</div>
                   <div className="mt-1 text-lg font-semibold text-foreground">
-                    HALT! Fire
+                    HALT Fire
                   </div>
                 </div>
               </div>
@@ -361,7 +362,7 @@ function Home() {
         <Reveal>
           <SectionHeader
             eyebrow="Services"
-            title="Three systems. Every lever your business needs."
+            title="Start with the Growth System. Add the rest when you're ready."
           />
         </Reveal>
 

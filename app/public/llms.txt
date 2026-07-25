@@ -28,7 +28,7 @@ Q: Who is Syntrex for?
 A: Local and service businesses that lose customers to missed calls and slow follow-up, in trades such as home services, medical and dental practices, law firms, and other appointment-driven businesses, worldwide.
 
 Q: How does pricing work?
-A: The Growth System has a one-time install of $597, waived if you prepay annually. Growth Core is $397 a month. Growth Pro is $547 a month and adds AI voice answering. The Presence System starts from $1,500 a month. The Brand Studio starts from $995 a month, and Brand Studio Priority from $1,995 a month. For comparison, a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
+A: The Growth System has a one-time install of $497. Growth Core is $349 a month. Growth Pro is $549 a month and adds AI voice answering. The Presence System starts from $1,500 a month, with a build from $2,500. The Brand Studio starts from $995 a month, and Brand Studio Priority from $1,995 a month. For comparison, a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
 
 Q: Is there a guarantee?
 A: Yes. If the Receipt does not show the system captured more value than it cost you, that month is free. It applies for the first three months, then continues on a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at install.
@@ -43,12 +43,12 @@ Q: How do I start?
 A: Request a Free Leak Audit at https://syntrexio.com/leak-audit or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms, times the responses, and sends a one-page report with the yearly dollar cost of the customers you are losing, delivered within 48 hours, at no cost.
 
 Q: What results has Syntrex delivered?
-A: For HALT! Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
+A: For HALT Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
 
 ## Offers
 
 ### The Syntrex Growth System (flagship)
-A done-for-you system that captures every lead, responds instantly, follows up until the customer books, and reports the recovered value each month. One-time install $597 (waived on annual prepay). Growth Core $397 a month. Growth Pro $547 a month, which adds AI voice answering. Backed by the guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free.
+A done-for-you system that captures every lead, responds instantly, follows up until the customer books, and reports the recovered value each month. One-time install $497. Growth Core $349 a month. Growth Pro $549 a month, which adds AI voice answering. Backed by the guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free.
 
 Five components:
 1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. AI voice answering is available as an add-on with Growth Pro.
@@ -84,10 +84,10 @@ Every Syntrex engagement runs on SYN, a single workspace that holds a client's b
 
 ## Pricing
 
-- Syntrex Growth System install: $597 one-time, waived if you prepay annually
-- Growth Core: $397 a month
-- Growth Pro: $547 a month (Growth Core plus AI voice answering)
-- Presence System: from $1,500 a month
+- Syntrex Growth System install: $497 one-time
+- Growth Core: $349 a month
+- Growth Pro: $549 a month (Growth Core plus AI voice answering)
+- Presence System: from $1,500 a month, build from $2,500
 - Brand Studio: from $995 a month
 - Brand Studio Priority: from $1,995 a month
 - Guarantee: if the Receipt does not show the system captured more value than it cost you, that month is free. First three months, then a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at install.
@@ -111,15 +111,16 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 
 ## Real Clients & Case Studies
 
-- HALT! Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
+- HALT Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
 - Doughbrik's Wavers (CPG snack brand founded by David Dobrik): built internal automation tools, 3x faster workflows, as the brand scaled into retail
 
 ## Team
 
-- Henry Bello, Founder, CEO and Lead Developer
+- Henry Bello, Founder & CEO
 - Sofia Weeden, Chief Financial Officer
 - Alexander Ohmer, Head of Operations
-- Ciana Bello, Director of Marketing and Social Media
+- Anthony Fallon, Head of Digital
+- Ciana Bello, Director of Marketing & Social
 
 ## Social
 

@@ -1,7 +1,7 @@
-// AUTO-GENERATED in Phase D from the pre-cutover static site's <head> SEO.
-// Ported verbatim (schema, meta, keywords) with .html URLs rewritten to the
-// new extensionless routes. Site-wide schema lives in SITE_SCHEMA; per-route
-// meta and schema in PAGE_SEO. Consumed by src/lib/seo.ts.
+// Per-route SEO source of truth. Site-wide schema lives in SITE_SCHEMA; per-route
+// title/description/keywords/canonical/OG/Twitter and JSON-LD in PAGE_SEO.
+// The visible FAQ accordions render from the FAQPage schema here (see seo.ts),
+// so editing an answer updates both the page and its structured data.
 
 export const ORIGIN = "https://syntrexio.com";
 
@@ -30,7 +30,7 @@ export const SITE_SCHEMA: LdJson[] = [
     "url": "https://syntrexio.com",
     "logo": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
     "image": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
-    "description": "Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Custom to your business, faster than a traditional agency, at a price that makes sense. Every system built from scratch.",
+    "description": "Syntrex builds, installs, and runs the Growth System for local and service businesses so they stop losing customers to missed calls and slow replies. It answers every call, chat, and form in seconds, captures every missed call, follows up until the customer books, and reports the value it recovered each month.",
     "email": "henry@syntrexio.com",
     "sameAs": [
       "https://www.instagram.com/syntrexio",
@@ -92,109 +92,7 @@ export const SITE_SCHEMA: LdJson[] = [
           "itemOffered": {
             "@type": "Service",
             "name": "The Presence System",
-            "url": "https://syntrexio.com/services#presence",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Services within the Presence System",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Custom AI Chatbots",
-                    "url": "https://syntrexio.com/services/ai-chatbots.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Lead Generation & Growth Systems",
-                    "url": "https://syntrexio.com/services/lead-generation.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Ecommerce & Online Stores",
-                    "url": "https://syntrexio.com/services/ecommerce.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Workflow Automation",
-                    "url": "https://syntrexio.com/services/workflow-automation.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Custom AI Tools",
-                    "url": "https://syntrexio.com/services/custom-ai-tools.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "System Integration",
-                    "url": "https://syntrexio.com/services/system-integration.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Website Design & Development",
-                    "url": "https://syntrexio.com/services/website-design.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Brand & Digital Presence",
-                    "url": "https://syntrexio.com/services/brand-digital-presence.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "AI Content & Social Media",
-                    "url": "https://syntrexio.com/services/ai-content.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "AI Strategy & Consulting",
-                    "url": "https://syntrexio.com/services/ai-strategy.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Reporting & Analytics Systems",
-                    "url": "https://syntrexio.com/services/reporting-analytics.html"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "AI Business Planning",
-                    "url": "https://syntrexio.com/services/ai-business-planning.html"
-                  }
-                }
-              ]
-            }
+            "url": "https://syntrexio.com/services#presence"
           }
         },
         {
@@ -222,132 +120,118 @@ export interface PageSeo {
   canonical: string; schema: LdJson[];
 }
 
+// Reusable Service schema for the three offers, kept accurate to canonical pricing.
+const GROWTH_SERVICE: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Growth System",
+  "url": "https://syntrexio.com/services#growth",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://syntrexio.com/#business",
+    "name": "Syntrex"
+  },
+  "areaServed": "Worldwide",
+  "description": "One installed, guaranteed system that answers every call, chat, and form in seconds on web chat, SMS, and voice, captures every missed call with text-back, follows up automatically, books appointments, and reports recovered revenue in a monthly Receipt. Growth Core from $349 a month, Growth Pro $549 a month, $497 one-time install.",
+  "offers": {
+    "@type": "Offer",
+    "price": "349",
+    "priceCurrency": "USD"
+  }
+};
+const PRESENCE_SERVICE: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Presence System",
+  "url": "https://syntrexio.com/services#presence",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://syntrexio.com/#business",
+    "name": "Syntrex"
+  },
+  "areaServed": "Worldwide",
+  "description": "The complete digital presence as one subscription: a website or store built and continuously run, SEO and AI-search optimization, and content, with the Growth System included. From $1,500 a month, build from $2,500.",
+  "offers": {
+    "@type": "Offer",
+    "price": "1500",
+    "priceCurrency": "USD"
+  }
+};
+const STUDIO_SERVICE: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Brand Studio",
+  "url": "https://syntrexio.com/services#studio",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://syntrexio.com/#business",
+    "name": "Syntrex"
+  },
+  "areaServed": "Worldwide",
+  "description": "Ongoing brand, design, and creative delivered on a monthly subscription. Every asset produced through an encoded brand profile with an approval trail, so it is on-brand by default. From $995 a month, Priority from $1,995 a month.",
+  "offers": {
+    "@type": "Offer",
+    "price": "995",
+    "priceCurrency": "USD"
+  }
+};
+
+// Three-system catalog used on Home and Services, replacing the old
+// twelve-capability "we do everything" catalog.
+const THREE_SYSTEM_CATALOG: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI lead capture and growth systems",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://syntrexio.com/#business"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Syntrex Systems",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "The Growth System",
+          "description": "One installed, guaranteed system that answers every call, chat, and form in seconds, captures every missed call with text-back, follows up automatically, books appointments, and reports recovered value each month in the Receipt."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "The Presence System",
+          "description": "The complete digital presence as one subscription: a website or store built and continuously run, SEO and AI-search optimization, and content, with the Growth System included."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "The Brand Studio",
+          "description": "Ongoing brand, design, and creative on a monthly subscription, produced through an encoded brand profile with an approval trail so it is on-brand by default."
+        }
+      }
+    ]
+  }
+};
+
 export const PAGE_SEO: Record<string, PageSeo> = {
   "/": {
-    "title": "Stop Losing Customers to Missed Calls | Syntrex AI Growth System",
-    "description": "62% of calls to small businesses go unanswered. The Syntrex Growth System is an AI automation agency system that answers every call, chat, and form in seconds, 24/7, captures every missed call, follows up automatically, and books the job. Get a Free Leak Audit.",
-    "keywords": "digital presence, website design, ecommerce, AI tools, content automation, business automation, custom digital agency, Syntrex, small business website, AI chatbot, workflow automation",
-    "ogTitle": "Everything a Big Agency Builds, Without the Big Agency Cost | Syntrex",
-    "ogDescription": "Syntrex designs and builds your entire digital presence: website, ecommerce, AI tools, content, automation, and strategy. Custom to your business, faster than a traditional agency, at a price that makes sense.",
+    "title": "Syntrex | AI Receptionist & Missed-Call Capture for Small Business",
+    "description": "62% of calls to small businesses go unanswered and 85% never call back. The Syntrex Growth System answers every call, chat, and form in seconds, 24/7, captures every missed call, and follows up until the job is booked. Start with a Free Leak Audit.",
+    "keywords": "AI receptionist for small business, missed call text back, 24/7 lead response, missed calls costing my business, answering service alternative, AI web chat, lead capture system, Syntrex Growth System",
+    "ogTitle": "Stop Losing Customers to Missed Calls | Syntrex",
+    "ogDescription": "62% of calls to small businesses go unanswered. Syntrex answers every call, chat, and form in seconds, 24/7, captures every missed call, and follows up until the job is booked.",
     "canonical": "https://syntrexio.com/",
     "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "AI Automation & Digital Services",
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": "https://syntrexio.com/#business"
-        },
-        "areaServed": {
-          "@type": "Place",
-          "name": "Worldwide"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Syntrex AI Automation Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Website Design & Development",
-                "description": "Custom professional websites built from scratch. Fast, mobile ready, SEO optimized, and designed to convert visitors into paying clients."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Ecommerce & Online Stores",
-                "description": "Full online stores built to sell. Product catalog, secure checkout, payments, inventory, and shipping, all configured and ready to take orders from day one."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Custom AI Chatbots",
-                "description": "Custom chatbots that qualify leads, answer questions, and book appointments 24/7 on any website platform."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Workflow Automation",
-                "description": "End-to-end automation of repetitive tasks including follow-ups, invoicing, data entry, lead routing, and client onboarding."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Lead Generation & Growth Systems",
-                "description": "AI-powered pipelines for lead capture, scoring, automated follow-up, nurturing, conversion, and retention."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Content & Social Media",
-                "description": "Blog posts, captions, video scripts, copy, email newsletters, ad creative, AI-generated images, AI-built presentations, and scheduled posts in your brand voice."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Custom AI Tools",
-                "description": "Internal tools built for your team including proposal generators, quote builders, intake forms, report dashboards, and any workflow tool needed."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "System Integration",
-                "description": "Connect existing tools so they communicate automatically. Calendar, email, forms, and databases stay in sync."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Brand & Digital Presence",
-                "description": "Full digital presence buildout for new businesses including website, social profiles, email setup, content strategy, and AI systems."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Strategy & Consulting",
-                "description": "Operations audit, automation opportunity mapping, and a clear implementation roadmap."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Reporting & Analytics Systems",
-                "description": "Custom AI dashboards and automated reporting tools that surface the insights that actually matter."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Business Planning",
-                "description": "AI tools that generate business plans, financial projections, competitive analyses, and strategic documents using your real business data."
-              }
-            }
-          ]
-        },
-        "url": "https://syntrexio.com/",
-        "@id": "https://syntrexio.com/#service"
-      },
+      { ...THREE_SYSTEM_CATALOG, "url": "https://syntrexio.com/", "@id": "https://syntrexio.com/#service" },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -365,7 +249,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "How many calls do small businesses actually miss?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "62% of calls to small businesses go unanswered, according to a 58-industry study by 411 Locals, and after hours the miss rate approaches 100%. 85% of those missed callers never call back, according to Aircall, and 62% of unanswered callers contact a competitor instead."
+              "text": "62% of calls to small businesses go unanswered, according to a 58-industry study by 411 Locals, and 85% of those missed callers never call back, according to Aircall. Phone leads convert 10 to 15 times better than web forms, so the calls you miss are the leads most likely to buy."
             }
           },
           {
@@ -381,7 +265,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is included in the Free Leak Audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page leak report with a dollar estimate of what the leak costs you per year, based on your trade. It is free and delivered within 48 hours of your request."
+              "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page report with a dollar estimate of what the leak costs you per year, based on your trade. It is free and delivered within 48 hours of your request."
             }
           },
           {
@@ -418,11 +302,11 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/about": {
-    "title": "About Syntrex | The Team Behind the Growth System",
-    "description": "Syntrex builds, installs, and runs the Growth System that stops local and service businesses from losing customers to missed calls and slow replies. A senior in-house team, built on real operational experience, headquartered in Windermere, Florida.",
-    "keywords": "Syntrex, Growth System, missed call solution, lead response system, small business automation, in-house team, Windermere Florida, done for you growth",
+    "title": "Syntrex | About Us and the Team Behind the Growth System",
+    "description": "Syntrex builds, installs, and runs the Growth System that stops local and service businesses losing customers to missed calls. A senior team leading every project with a full in-house team delivering the work, headquartered in Windermere, Florida.",
+    "keywords": "about Syntrex, Syntrex team, Henry Bello, Growth System, in-house agency, done for you growth, Windermere Florida, small business automation",
     "ogTitle": "About Syntrex | The Team Behind the Growth System",
-    "ogDescription": "A senior in-house team that builds, installs, and runs the Growth System for local and service businesses: the capacity of a large agency with the focus of a boutique one.",
+    "ogDescription": "A senior team leading every project, with a full in-house team delivering the work: the capacity of a large agency with the focus of a boutique one.",
     "canonical": "https://syntrexio.com/about",
     "schema": [
       {
@@ -452,7 +336,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is Syntrex?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Syntrex builds, installs, and runs the Syntrex Growth System for local and service businesses, so they stop losing customers to missed calls and slow replies. It captures every lead across phone, web, and message, responds instantly, follows up until the customer books, and reports the value it recovered each month. Two subscriptions extend it: the Presence System and the Brand Studio. Everything runs on SYN, the platform that holds each client's brand. Syntrex is headquartered in Windermere, Florida."
+              "text": "Syntrex builds, installs, and runs the Syntrex Growth System for local and service businesses, so they stop losing customers to missed calls and slow replies. It captures every lead across phone, web, and message, responds instantly, follows up until the customer books, and reports the value it recovered each month. Two subscriptions extend it: the Presence System and the Brand Studio. Syntrex is headquartered in Windermere, Florida."
             }
           },
           {
@@ -468,7 +352,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "Who does the work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A senior team leads every project and stays your single point of contact. Behind them, our full in-house team executes the design, engineering, and AI work end to end. That is how we deliver the capacity of a large agency with the focus of a boutique one."
+              "text": "A senior team leads every project and stays your single point of contact. Behind them, a full in-house team delivers the design, engineering, and AI work end to end. That is how Syntrex delivers the capacity of a large agency with the focus of a boutique one."
             }
           },
           {
@@ -476,7 +360,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "Where does Syntrex operate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Worldwide. We are headquartered in Windermere, Florida and work remotely with clients anywhere. Everything starts with an email to henry@syntrexio.com."
+              "text": "Worldwide. Syntrex is headquartered in Windermere, Florida and works remotely with clients anywhere. Everything starts with an email to henry@syntrexio.com or a Free Leak Audit."
             }
           }
         ]
@@ -498,120 +382,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/services": {
-    "title": "The Growth System, Presence System, and Brand Studio | Syntrex",
-    "description": "Syntrex is an AI automation agency with three systems: the Growth System that answers and captures every customer, the Presence System that builds and runs your entire digital presence, and the Brand Studio for on-demand brand creative. Start with a Free Leak Audit.",
-    "keywords": "digital presence, website design, ecommerce, AI tools, content automation, business automation, custom digital agency, Syntrex, small business website, AI chatbot, workflow automation",
-    "ogTitle": "AI Automation Services | Syntrex LLC",
-    "ogDescription": "Custom AI chatbots, workflow automation, lead generation, ecommerce, content systems, and more. Every system built from scratch and owned by you.",
+    "title": "Syntrex | Growth System, Presence System, and Brand Studio",
+    "description": "Three systems from Syntrex. The Growth System captures and converts every customer you are losing today. The Presence System runs your full digital presence. The Brand Studio delivers ongoing creative. Start with a Free Leak Audit.",
+    "keywords": "Syntrex Growth System, Presence System, Brand Studio, AI lead capture, done for you digital presence, brand creative subscription, small business growth system",
+    "ogTitle": "Three Systems, One Front Door | Syntrex",
+    "ogDescription": "The Growth System captures every lead. The Presence System runs your full digital presence. The Brand Studio delivers ongoing creative. One offer opens the door.",
     "canonical": "https://syntrexio.com/services",
     "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "AI Automation & Digital Services",
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": "https://syntrexio.com/#business"
-        },
-        "areaServed": {
-          "@type": "Place",
-          "name": "Worldwide"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Syntrex AI Automation Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Website Design & Development",
-                "description": "Custom professional websites built from scratch. Fast, mobile ready, SEO optimized, and designed to convert visitors into paying clients."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Custom AI Chatbots",
-                "description": "Custom chatbots that qualify leads, answer questions, and book appointments 24/7 on any website platform."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Workflow Automation",
-                "description": "End-to-end automation of repetitive tasks including follow-ups, invoicing, data entry, lead routing, and client onboarding."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Lead Generation & Growth Systems",
-                "description": "AI-powered pipelines for lead capture, scoring, automated follow-up, nurturing, conversion, and retention."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Content & Social Media",
-                "description": "Blog posts, captions, video scripts, copy, email newsletters, ad creative, AI-generated images, AI-built presentations, and scheduled posts in your brand voice."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Custom AI Tools",
-                "description": "Internal tools built for your team including proposal generators, quote builders, intake forms, report dashboards, and any workflow tool needed."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "System Integration",
-                "description": "Connect existing tools so they communicate automatically. Calendar, email, forms, and databases stay in sync."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Brand & Digital Presence",
-                "description": "Full digital presence buildout for new businesses including website, social profiles, email setup, content strategy, and AI systems."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Strategy & Consulting",
-                "description": "Operations audit, automation opportunity mapping, and a clear implementation roadmap."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Reporting & Analytics Systems",
-                "description": "Custom AI dashboards and automated reporting tools that surface the insights that actually matter."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "AI Business Planning",
-                "description": "AI tools that generate business plans, financial projections, competitive analyses, and strategic documents using your real business data."
-              }
-            }
-          ]
-        }
-      },
+      { ...THREE_SYSTEM_CATALOG },
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -639,7 +417,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the Growth System?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Growth System is one installed, guaranteed AI system that answers every call, chat, and form in seconds on web chat, SMS, and voice, captures every missed call, follows up automatically, books appointments, and reports what it recovered each month in the Receipt. It is more than an alternative to an AI receptionist or answering service: it covers every channel, not just the phone, and its outcomes are measured monthly."
+              "text": "The Growth System is one installed, guaranteed AI system that answers every call, chat, and form in seconds on web chat, SMS, and voice, captures every missed call, follows up automatically, books appointments, and reports what it recovered each month in the Receipt. It covers every channel a customer uses, not just the phone, and its outcomes are measured monthly."
             }
           },
           {
@@ -647,7 +425,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the difference between the Growth System and the Presence System?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Growth System catches and converts the customers you are losing today. The Presence System is the complete digital presence as one subscription, a website or store built and continuously run, with SEO and AI-search optimization, content, and the Growth System included. Most businesses start with the Growth System and grow into the Presence System."
+              "text": "The Growth System catches and converts the customers you are losing today. The Presence System is your complete digital presence as one subscription: a website or store built and continuously run, with SEO and AI-search optimization, content, and the Growth System included. Most businesses start with the Growth System and grow into the Presence System."
             }
           },
           {
@@ -655,7 +433,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the Brand Studio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Brand Studio is on-demand campaign imagery, product visuals, social creative, and collateral on a flat monthly subscription with a request queue. Every asset is generated through your encoded brand profile with guardrails and an approval trail, so it is on-brand and safe to publish by default. It is built for multi-brand operators and regulated brands."
+              "text": "The Brand Studio is ongoing brand, design, and creative on a flat monthly subscription with a request queue. Every asset is produced through your encoded brand profile with guardrails and an approval trail, so it is on-brand and safe to publish by default. It is built for established brands and multi-brand operators."
             }
           },
           {
@@ -668,69 +446,18 @@ export const PAGE_SEO: Record<string, PageSeo> = {
           }
         ]
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "The Growth System",
-        "url": "https://syntrexio.com/services#growth",
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": "https://syntrexio.com/#business",
-          "name": "Syntrex"
-        },
-        "areaServed": "United States",
-        "description": "One installed, guaranteed AI system that answers every call, chat, and form in seconds on web chat, SMS, and voice, captures every missed call with text-back, follows up automatically, books appointments, and reports recovered revenue in a monthly Receipt.",
-        "offers": {
-          "@type": "Offer",
-          "price": "397",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "The Presence System",
-        "url": "https://syntrexio.com/services#presence",
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": "https://syntrexio.com/#business",
-          "name": "Syntrex"
-        },
-        "areaServed": "United States",
-        "description": "The complete digital presence as one subscription: a website or store built and continuously run, SEO and AI-search optimization, content, with the Growth System included. From $1,500 a month.",
-        "offers": {
-          "@type": "Offer",
-          "price": "1500",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "The Brand Studio",
-        "url": "https://syntrexio.com/services#studio",
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": "https://syntrexio.com/#business",
-          "name": "Syntrex"
-        },
-        "areaServed": "United States",
-        "description": "On-demand campaign imagery, product visuals, social creative, and collateral on a flat monthly subscription with a request queue. Every asset generated through an encoded brand profile with guardrails and an approval trail. From $995 a month.",
-        "offers": {
-          "@type": "Offer",
-          "price": "995",
-          "priceCurrency": "USD"
-        }
-      }
+      GROWTH_SERVICE,
+      PRESENCE_SERVICE,
+      STUDIO_SERVICE
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/pricing": {
-    "title": "Pricing | The Growth System, Presence, and Brand Studio | Syntrex",
-    "description": "Syntrex pricing, printed. The Growth System from $397 a month with a guarantee: if the Receipt does not show it captured more value than it cost, that month is free. Presence System from $1,500 a month. Brand Studio from $995 a month.",
-    "keywords": "digital presence, website design, ecommerce, AI tools, content automation, business automation, custom digital agency, Syntrex, small business website, AI chatbot, workflow automation",
-    "ogTitle": "Pricing | The Growth System, Presence System, Brand Studio | Syntrex",
-    "ogDescription": "Printed pricing with a guarantee. Growth System from $397 a month. If it does not pay for itself, that month is free.",
+    "title": "Syntrex | AI Receptionist and Growth System Pricing",
+    "description": "Simple, printed pricing. Growth Core $349 a month, Growth Pro $549 a month, $497 one-time install, backed by a guarantee: if the Receipt does not show the system captured more than it cost, that month is free. Presence from $1,500 a month. Brand Studio from $995 a month.",
+    "keywords": "AI receptionist pricing, Growth System pricing, missed call system cost, small business AI pricing, Presence System price, Brand Studio price, Syntrex pricing",
+    "ogTitle": "Pricing, Printed. Backed by a Guarantee | Syntrex",
+    "ogDescription": "Growth Core $349 a month, Growth Pro $549 a month, $497 install. If the Receipt does not show it captured more than it cost, that month is free.",
     "canonical": "https://syntrexio.com/pricing",
     "schema": [
       {
@@ -760,7 +487,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "How does Syntrex pricing work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pricing is printed, not quoted. The Growth System is $397 a month for Growth Core or $547 a month for Growth Pro, with a $597 one-time install that is waived on annual prepay. The Presence System starts at $1,500 a month and Brand Studio starts at $995 a month. Every plan carries the guarantee."
+              "text": "Pricing is printed, not quoted. The Growth System is $349 a month for Growth Core or $549 a month for Growth Pro, with a one-time install of $497. The Presence System starts at $1,500 a month, with build from $2,500. Brand Studio starts at $995 a month. Every plan carries the guarantee."
             }
           },
           {
@@ -776,7 +503,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the difference between Growth Core and Growth Pro?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Growth Core is $397 a month and includes chat, SMS, follow-up, booking, and the Receipt. Growth Pro is $547 a month and adds AI phone answering, so missed and after-hours calls are answered instead of going to voicemail."
+              "text": "Growth Core is $349 a month and includes AI web chat, SMS, missed-call text-back, follow-up, booking, and the monthly Receipt. Growth Pro is $549 a month and adds AI voice answering, so missed and after-hours calls are answered instead of going to voicemail."
             }
           },
           {
@@ -784,7 +511,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What do the Presence System and Brand Studio cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Presence System starts at $1,500 a month and is scope-dependent, since it includes a website or store built and continuously run, SEO and AI-search optimization, content, and the Growth System. Brand Studio is from $995 a month for one active request, or from $1,995 a month for two active requests with priority turnaround."
+              "text": "The Presence System starts at $1,500 a month, with a build from $2,500, and is scope-dependent, since it includes a website or store built and continuously run, SEO and AI-search optimization, content, and the Growth System. Brand Studio is from $995 a month, or from $1,995 a month for priority turnaround with more active work."
             }
           },
           {
@@ -811,24 +538,24 @@ export const PAGE_SEO: Record<string, PageSeo> = {
           {
             "@type": "Offer",
             "name": "Install",
-            "price": "597",
+            "price": "497",
             "priceCurrency": "USD",
-            "description": "One-time install, waived on annual prepay."
+            "description": "One-time install."
           },
           {
             "@type": "Offer",
             "name": "Growth Core",
-            "price": "397",
+            "price": "349",
             "priceCurrency": "USD",
-            "description": "Per month. Chat, SMS, follow-up, booking, the Receipt.",
+            "description": "Per month. AI web chat, SMS, missed-call text-back, follow-up, booking, the Receipt.",
             "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
             "name": "Growth Pro",
-            "price": "547",
+            "price": "549",
             "priceCurrency": "USD",
-            "description": "Per month. Core plus AI phone answering.",
+            "description": "Per month. Core plus AI voice answering.",
             "availability": "https://schema.org/InStock"
           },
           {
@@ -836,21 +563,21 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "Presence System",
             "price": "1500",
             "priceCurrency": "USD",
-            "description": "Per month, from. Scope-dependent."
+            "description": "Per month, from. Build from $2,500. Scope-dependent."
           },
           {
             "@type": "Offer",
             "name": "Brand Studio",
             "price": "995",
             "priceCurrency": "USD",
-            "description": "Per month. One active request."
+            "description": "Per month, from."
           },
           {
             "@type": "Offer",
             "name": "Brand Studio Priority",
             "price": "1995",
             "priceCurrency": "USD",
-            "description": "Per month. Two active requests, priority turnaround."
+            "description": "Per month, from. Priority turnaround."
           }
         ]
       }
@@ -858,11 +585,11 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/projects": {
-    "title": "Projects and Case Studies | Real Results for Real Businesses | Syntrex",
-    "description": "Real work Syntrex has delivered. For HALT! Fire, a full sales automation system that saves 10+ hours a week and drove 280% search growth. For Doughbrik's Wavers, internal automation with 3x faster workflows. Plus examples of the work we produce.",
-    "keywords": "digital presence, website design, ecommerce, AI tools, content automation, business automation, custom digital agency, Syntrex, small business website, AI chatbot, workflow automation",
-    "ogTitle": "Projects & Case Studies | AI Automation in Action | Syntrex LLC",
-    "ogDescription": "Real AI automation projects and case studies from Syntrex. Custom systems built for HALT! Fire, Doughbrik's Wavers, and more.",
+    "title": "Syntrex | Case Studies and Client Results",
+    "description": "Real work Syntrex has delivered. For HALT Fire, a full sales automation rebuild that saves the team 10+ hours a week and drove 280% search growth. For Doughbrik's Wavers, internal automation that made workflows 3x faster as the brand scaled into retail.",
+    "keywords": "Syntrex case studies, HALT Fire automation, Doughbrik's Wavers, AI automation results, sales automation case study, workflow automation results",
+    "ogTitle": "Case Studies and Client Results | Syntrex",
+    "ogDescription": "For HALT Fire, a full rebuild that saved 10+ hours a week and drove 280% search growth. For Doughbrik's Wavers, automation that made workflows 3x faster.",
     "canonical": "https://syntrexio.com/projects",
     "schema": [
       {
@@ -887,11 +614,11 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/contact": {
-    "title": "Contact Syntrex | Start With a Free Leak Audit",
-    "description": "The fastest way to start with Syntrex is a Free Leak Audit that shows exactly where you are losing customers, delivered within 48 hours. Prefer to just tell us what you need? Send a message or email henry@syntrexio.com.",
-    "keywords": "digital presence, website design, ecommerce, AI tools, content automation, business automation, custom digital agency, Syntrex, small business website, AI chatbot, workflow automation",
+    "title": "Syntrex | Contact Us",
+    "description": "Tell Syntrex about your business and we reply within 24 hours. The fastest way to start is a Free Leak Audit that shows exactly where you are losing customers, delivered within 48 hours. Or email henry@syntrexio.com.",
+    "keywords": "contact Syntrex, Syntrex email, Free Leak Audit, get started with Syntrex, small business growth system contact",
     "ogTitle": "Contact Syntrex | Start With a Free Leak Audit",
-    "ogDescription": "Contact Syntrex for a free AI automation quote. Email henry@syntrexio.com or send a message. We respond within 24 hours.",
+    "ogDescription": "Tell us about your business and we reply within 24 hours. The fastest way to start is a Free Leak Audit that shows exactly where you are losing customers.",
     "canonical": "https://syntrexio.com/contact",
     "schema": [
       {
@@ -916,11 +643,11 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/leak-audit": {
-    "title": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
-    "description": "Free Leak Audit. Syntrex mystery-shops your phone and web forms, times the responses, and sends a one-page report with the yearly dollar cost of the customers you are losing to missed calls and slow replies. Delivered within 48 hours.",
-    "keywords": "free leak audit, missed call text back, AI receptionist for small business, missed calls costing my business, 24/7 lead response, answering service alternative, never miss a call, missed call solution Central Florida, lead response system",
+    "title": "Syntrex | Free Leak Audit, See What Missed Calls Cost You",
+    "description": "Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with a dollar estimate of what missed calls and slow replies cost you each year. Free, within 48 hours.",
+    "keywords": "free leak audit, missed call text back, AI receptionist for small business, missed calls costing my business, 24/7 lead response, answering service alternative, never miss a call, lead response system",
     "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
-    "ogDescription": "See exactly how many customers you are losing to missed calls and slow replies. Free one-page leak report, delivered within 48 hours.",
+    "ogDescription": "See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, delivered within 48 hours.",
     "canonical": "https://syntrexio.com/leak-audit",
     "schema": [
       {
@@ -953,8 +680,8 @@ export const PAGE_SEO: Record<string, PageSeo> = {
           "@id": "https://syntrexio.com/#business",
           "name": "Syntrex"
         },
-        "areaServed": "United States",
-        "description": "Syntrex mystery-shops your phone and web forms, times how long each response takes, and delivers a one-page leak report with a dollar estimate of what missed calls and slow replies cost your business per year. Delivered within 48 hours. Free.",
+        "areaServed": "Worldwide",
+        "description": "Syntrex mystery-shops your phone and web forms, times how long each response takes, and delivers a one-page report with a dollar estimate of what missed calls and slow replies cost your business per year. Delivered within 48 hours. Free.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -970,7 +697,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "How many calls do small businesses actually miss?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Studies are consistent. 62% of calls to small businesses go unanswered, according to a 58-industry study by 411 Locals, and after hours the miss rate approaches 100%. 85% of those missed callers never call back, according to Aircall, and 62% of unanswered callers contact a competitor instead."
+              "text": "62% of calls to small businesses go unanswered, according to a 58-industry study by 411 Locals, and 85% of those missed callers never call back, according to Aircall. On top of that, 78% of customers buy from whoever responds first, so a slow reply loses the sale even when you eventually call back."
             }
           },
           {
@@ -986,7 +713,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "How much revenue do missed calls cost a business?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The average small business loses roughly $126,000 a year to missed calls. A single missed call is worth $100 to $1,200 depending on the trade, and high-ticket home services average around $1,200. Phone leads also convert 10 to 15 times better than web forms, according to BIA/Kelsey, so the calls you miss are the leads most likely to buy."
+              "text": "The average small business loses roughly $126,000 a year to missed calls. Phone leads also convert 10 to 15 times better than web forms, according to BIA/Kelsey, so the calls you miss are the leads most likely to buy."
             }
           },
           {
@@ -994,7 +721,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is included in the Free Leak Audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page leak report with a dollar estimate of what the leak costs you per year, based on your trade. It is free and delivered within 48 hours of your request."
+              "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page report with a dollar estimate of what the leak costs you per year, based on your trade. It is free and delivered within 48 hours of your request."
             }
           }
         ]

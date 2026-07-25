@@ -20,9 +20,9 @@ export const Route = createFileRoute("/pricing")({
 
 const install = {
   name: "Install",
-  price: "$597",
+  price: "$497",
   cadence: "one-time",
-  note: "Waived on annual prepay.",
+  note: "One setup, built on your brand and rules. Then it runs for you.",
 };
 
 type Plan = {
@@ -36,7 +36,7 @@ type Plan = {
 const growthPlans: Plan[] = [
   {
     name: "Growth Core",
-    price: "$397",
+    price: "$349",
     cadence: "/month",
     highlight: false,
     features: [
@@ -50,16 +50,16 @@ const growthPlans: Plan[] = [
   },
   {
     name: "Growth Pro",
-    price: "$547",
+    price: "$549",
     cadence: "/month",
     highlight: true,
     features: [
       "Everything in Growth Core",
       "AI voice answering, 24/7",
+      "Missed and after-hours calls answered, not sent to voicemail",
       "Live call transcription & summaries",
       "Priority routing rules",
       "Advanced analytics",
-      "Priority support",
     ],
   },
 ];
@@ -70,10 +70,11 @@ const addOnPlans: Plan[] = [
     price: "from $1,500",
     cadence: "/month",
     features: [
-      "Local SEO & GBP optimization",
-      "Review engine automation",
-      "Content distribution",
-      "Monthly search reporting",
+      "Website or store built and run for you",
+      "SEO & AI-search optimization",
+      "Content, kept current",
+      "The Growth System included",
+      "Build from $2,500",
     ],
   },
   {

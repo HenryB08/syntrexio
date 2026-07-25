@@ -47,8 +47,8 @@ function Contact() {
       <PageHero
         variant="converge"
         eyebrow="Contact"
-        title="Let's talk."
-        description="Tell us about your business. We reply within 24 hours."
+        title="Tell us what you need."
+        description="Send a message about your business and what you want to fix. We reply within 24 hours. For the fastest start, request a Free Leak Audit and see exactly where you are losing customers."
       />
 
       <Section>

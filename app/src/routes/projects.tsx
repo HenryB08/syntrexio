@@ -20,10 +20,10 @@ export const Route = createFileRoute("/projects")({
 const projects = [
   {
     icon: Flame,
-    client: "HALT! Fire",
+    client: "HALT Fire",
     sector: "Industrial fire suppression",
     summary:
-      "Full sales automation across chat, SMS, voice, and follow-up, with a monthly Receipt showing captured value.",
+      "A full rebuild. Syntrex replaced scattered manual work with one sales automation system across chat, SMS, voice, and follow-up, reporting into a monthly Receipt. The team stopped chasing leads by hand and started closing them.",
     stats: [
       { v: "10+", l: "hours saved weekly" },
       { v: "280%", l: "search growth" },
@@ -32,9 +32,9 @@ const projects = [
   {
     icon: Cookie,
     client: "Doughbrik's Wavers",
-    sector: "Consumer snack brand",
+    sector: "Consumer snack brand founded by David Dobrik",
     summary:
-      "Internal automation across ops, fulfillment, and customer flow. One unified system in place of scattered tools.",
+      "Syntrex built the internal automation that ran ops, fulfillment, and customer flow as one system, so the team moved faster and stayed in control as the brand scaled into retail.",
     stats: [
       { v: "3×", l: "faster workflows" },
       { v: "1", l: "unified system" },
@@ -47,9 +47,9 @@ function Projects() {
     <>
       <PageHero
         variant="mosaic"
-        eyebrow="Selected work"
-        title="Automation, shipped."
-        description="A small, growing shelf of engagements. We only publish what clients say we can. The rest lives inside the Receipt."
+        eyebrow="Case studies"
+        title="Proof, not promises."
+        description="We publish only what our clients let us. Two engagements, two full builds, measured by outcomes rather than adjectives."
       />
 
       <Section>
@@ -84,7 +84,7 @@ function Projects() {
       <Section className="border-t border-hairline text-center">
         <Reveal>
           <h2 className="text-display mx-auto max-w-2xl text-3xl text-foreground md:text-5xl">
-            Want to be the next one on the shelf?
+            Want results like these?
           </h2>
           <div className="mt-8">
             <MagneticButton>
