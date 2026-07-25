@@ -36,8 +36,8 @@ function About() {
       <PageHero
         variant="worldmap"
         eyebrow="About Syntrex"
-        title="The team that stops businesses losing customers."
-        description="Syntrex builds, installs, and runs the Growth System for local and service businesses worldwide, from our headquarters in Windermere, Florida, in the greater Orlando area."
+        title="The company building SYN."
+        description="Syntrex builds SYN: AI that answers your customers today and runs your whole business next. We shipped SYN Growth, and we are building SYN Workspace in early access. Headquartered in Windermere, Florida, serving operators worldwide."
       />
 
       <Section>
@@ -61,30 +61,30 @@ function About() {
       <Section className="border-t border-hairline bg-surface/20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <SectionHeader eyebrow="Our story" title="Started on a leak. Built into a system." />
+            <SectionHeader eyebrow="Our story" title="Started on a leak. Building a platform." />
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                Syntrex started with one observation: most local businesses lose
-                more revenue to missed calls and slow replies in a month than
-                they spend on marketing all year. The tools to fix it already
-                existed. Nobody was assembling them into a system a business
-                could actually run on.
+                Syntrex started with one observation: most businesses lose more
+                revenue to missed calls and slow replies in a month than they
+                spend on marketing all year. The tools to fix it already existed.
+                Nobody was assembling them into something a business could
+                actually run on.
               </p>
               <p>
-                So we built one. The Growth System answers every call, chat, and
-                form the moment it arrives, follows up until the customer books,
-                and reports what it recovered each month in the Receipt. What
-                began as a fix for missed calls is now the front door to a full
-                growth stack, extended by the Presence System and the Brand
-                Studio.
+                So we shipped SYN Growth: the installed, guaranteed system that
+                answers every call, chat, and form the moment it arrives, follows
+                up until the customer books, and proves what it recovered each
+                month in the Receipt. It captures the revenue you are losing
+                today, and it is backed by a written guarantee.
               </p>
               <p>
-                Today Syntrex runs as a senior team leading every project, with a
-                full in-house team delivering the work, giving the capacity of a
-                large agency with the focus of a boutique one. Every engagement
-                is backed by a written guarantee.
+                Now we are building SYN Workspace, in early access: the AI
+                business workspace that encodes your brand once and runs your
+                calendar, content, assets, builds, and automations. Growth is the
+                door. Workspace is the whole house. A senior team leads every
+                project, with a full in-house team delivering the work.
               </p>
             </div>
           </Reveal>

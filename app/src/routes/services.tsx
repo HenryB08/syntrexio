@@ -1,57 +1,53 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, Globe, Layers, Palette } from "lucide-react";
+import { ArrowRight, Layers, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { Icon3D } from "@/components/site/Icon3D";
+import { MagneticButton } from "@/components/site/MagneticButton";
 
 export const Route = createFileRoute("/services")({
   head: () => pageHead("/services"),
   component: Services,
 });
 
-type Offer = {
+type Product = {
   icon: typeof Layers;
+  badge: string;
+  available: boolean;
   name: string;
   tagline: string;
   what: string;
   who: string;
   outcome: string;
-  price: string;
-  flagship?: boolean;
+  footnote: string;
 };
 
-const offers: Offer[] = [
+const products: Product[] = [
   {
     icon: Layers,
-    name: "The Growth System",
-    tagline: "The flagship. Answer and capture every customer.",
-    what: "One installed, guaranteed system that answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, follows up until the customer books, and reports what it recovered each month in the Receipt.",
-    who: "Local and service businesses losing customers to missed calls and slow replies: trades, home services, medical and dental, legal, and insurance.",
+    badge: "Available now",
+    available: true,
+    name: "SYN Growth",
+    tagline: "Answer and capture every customer.",
+    what: "The installed, guaranteed system. It answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, follows up until the customer books, and proves what it recovered each month in the Receipt.",
+    who: "Operators losing customers to missed calls and slow replies: trades, home services, medical and dental, legal, and insurance, from local to multi-location.",
     outcome: "You stop losing the leads you already paid to earn. If the Receipt does not show it captured more than it cost, that month is free.",
-    price: "Growth Core $349/mo · Growth Pro $549/mo · $497 install",
-    flagship: true,
+    footnote: "One-time $497 setup, then $349/mo (Growth Core) or $549/mo (Growth Pro).",
   },
   {
-    icon: Globe,
-    name: "The Presence System",
-    tagline: "Your entire digital presence, run for you.",
-    what: "A website or store built and kept current, with SEO and AI-search optimization, content, and the Growth System included. Your whole online presence as one subscription.",
-    who: "Established businesses that want their online presence owned and run by one team instead of stitched together across freelancers.",
-    outcome: "You show up first, look the part everywhere, and keep converting, without managing any of it yourself.",
-    price: "From $1,500/mo · build from $2,500",
-  },
-  {
-    icon: Palette,
-    name: "The Brand Studio",
-    tagline: "On-demand creative that stays on brand.",
-    what: "Ongoing brand, design, and creative on a flat monthly subscription with a request queue. Every asset is checked against your brand guidelines before it ships, so nothing off-brand goes out.",
-    who: "Established brands, portfolio operators, and multi-brand teams that need a steady stream of on-brand work.",
-    outcome: "Campaign imagery, product visuals, and social creative on tap, consistent and safe to publish by default.",
-    price: "From $995/mo · Priority from $1,995/mo",
+    icon: LayoutGrid,
+    badge: "Early access",
+    available: false,
+    name: "SYN Workspace",
+    tagline: "Encode your brand. AI runs the rest.",
+    what: "The AI business workspace. Encode your brand once, and SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer.",
+    who: "Any business that wants AI running its operations, not just its inbox. Every SYN Growth client is first in line as access opens.",
+    outcome: "Your brand, encoded once, executing everywhere. On standard and on brand by default, with a human approval before anything ships.",
+    footnote: "In early access. Join the waitlist at syn.syntrexio.com.",
   },
 ];
 
@@ -60,9 +56,9 @@ function Services() {
     <>
       <PageHero
         variant="grid"
-        eyebrow="Services"
-        title="Three systems. One place to start."
-        description="Lead with the Growth System: it stops you losing customers today. The Presence System and Brand Studio extend it when you are ready. You never buy everything at once."
+        eyebrow="Products"
+        title="Two products. One SYN."
+        description="SYN Growth captures the revenue you are losing today. SYN Workspace, in early access, runs the rest of your business. Start with Growth, grow into Workspace."
       >
         <Button asChild size="lg" variant="accent">
           <Link to="/leak-audit">
@@ -73,37 +69,63 @@ function Services() {
       </PageHero>
 
       <Section>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {offers.map((o, i) => (
-            <Reveal key={o.name} delay={i * 100}>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {products.map((p, i) => (
+            <Reveal key={p.name} delay={i * 100}>
               <article
                 className={`surface-card surface-card-hover group flex h-full flex-col p-8 hover:-translate-y-0.5 ${
-                  o.flagship ? "border-white/40" : ""
+                  p.available ? "border-white/40" : ""
                 }`}
               >
-                {o.flagship ? (
-                  <div className="mb-4 inline-flex w-fit items-center rounded-full border border-white/40 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
-                    <span className="badge-shimmer">Flagship</span>
-                  </div>
-                ) : null}
-                <Icon3D icon={o.icon} size={48} iconSize={22} />
-                <h2 className="mt-6 text-xl font-semibold text-foreground">{o.name}</h2>
-                <div className="mt-1 text-sm text-foreground/80">{o.tagline}</div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{o.what}</p>
+                <div
+                  className={`mb-4 inline-flex w-fit items-center rounded-full border bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${
+                    p.available ? "border-white/40" : "border-hairline text-muted-foreground"
+                  }`}
+                >
+                  {p.available ? <span className="badge-shimmer">{p.badge}</span> : p.badge}
+                </div>
+                <Icon3D icon={p.icon} size={48} iconSize={22} />
+                <h2 className="mt-6 text-2xl font-semibold text-foreground">{p.name}</h2>
+                <div className="mt-1 text-sm text-foreground/80">{p.tagline}</div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.what}</p>
 
                 <dl className="mt-6 space-y-4 border-t border-hairline pt-5">
                   <div>
                     <dt className="text-eyebrow mb-1">Who it's for</dt>
-                    <dd className="text-sm text-muted-foreground">{o.who}</dd>
+                    <dd className="text-sm text-muted-foreground">{p.who}</dd>
                   </div>
                   <div>
                     <dt className="text-eyebrow mb-1">The outcome</dt>
-                    <dd className="text-sm text-muted-foreground">{o.outcome}</dd>
+                    <dd className="text-sm text-muted-foreground">{p.outcome}</dd>
                   </div>
                 </dl>
 
-                <div className="mt-auto pt-6 text-sm font-medium text-foreground">
-                  {o.price}
+                <div className="mt-auto pt-6">
+                  <div className="text-sm font-medium text-foreground">{p.footnote}</div>
+                  <div className="mt-4">
+                    {p.available ? (
+                      <div className="flex flex-wrap gap-3">
+                        <Button asChild variant="accent">
+                          <Link to="/leak-audit">
+                            Get Your Free Leak Audit
+                            <ArrowRight />
+                          </Link>
+                        </Button>
+                        <Button asChild variant="outline">
+                          <Link to="/pricing">See pricing</Link>
+                        </Button>
+                      </div>
+                    ) : (
+                      <MagneticButton>
+                        <Button asChild variant="outline">
+                          <a href="https://syn.syntrexio.com">
+                            Join the waitlist
+                            <ArrowRight />
+                          </a>
+                        </Button>
+                      </MagneticButton>
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -114,11 +136,9 @@ function Services() {
       <Section className="border-t border-hairline bg-surface/20">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="text-eyebrow mb-4">Existing clients</div>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Custom AI tools, integrations, and dashboards remain available for
-              businesses already working with Syntrex, when a need goes beyond
-              the three systems. New customers start with the Growth System.
+            <p className="text-base text-muted-foreground md:text-lg">
+              Already running on SYN? Our team also builds and runs websites,
+              content, and creative for existing clients.
             </p>
           </div>
         </Reveal>
