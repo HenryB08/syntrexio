@@ -41,8 +41,8 @@ const customers: Customer[] = [
   {
     icon: Cookie,
     logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png",
-    image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e" + UNSPLASH,
-    imageAlt: "Freshly baked cookies on a dark surface",
+    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/45c480e8-9b07-53dc-0733-e5ed3bb5b2f3.png",
+    imageAlt: "Doughbrik's Wavers brand imagery",
     name: "Doughbrik's Wavers",
     badge: "Runs SYN Growth + Workspace",
     desc: "The consumer snack brand from David Dobrik, one of the most-followed creators in the world. Built and operated by Syntrex.",
