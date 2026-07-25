@@ -142,6 +142,48 @@ function RootComponent() {
     return () => window.removeEventListener("pointermove", onMove);
   }, []);
 
+  // Reveal safety net. The scroll-entrance classes (.reveal, .spread-in, etc.)
+  // default to opacity:0 and only become visible when their CSS animation
+  // completes. Chromium can leave that animation stuck at frame 0 when an
+  // element jumps into view (fast scroll, anchor jump, or a late font reflow),
+  // which leaves the content invisible. This watches for the .in-view class and,
+  // after the animation window has passed, forces any element still stuck
+  // invisible to its final visible state. Elements that animated normally are
+  // already at opacity ~1 and are left untouched, so the animation is preserved.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const SEL =
+      ".reveal,.spread-in,.side-in-left,.side-in-right,.stat-scale,.headline-blur,.card-reveal";
+    const scheduled = new WeakSet<Element>();
+    const force = (el: HTMLElement) => {
+      el.style.setProperty("opacity", "1", "important");
+      el.style.setProperty("transform", "none", "important");
+      el.style.setProperty("filter", "none", "important");
+      el.style.setProperty("clip-path", "none", "important");
+    };
+    const consider = (el: Element) => {
+      if (scheduled.has(el)) return;
+      if (!(el instanceof HTMLElement)) return;
+      if (!el.matches(SEL) || !el.classList.contains("in-view")) return;
+      scheduled.add(el);
+      // Wait past the longest reveal (max stagger delay + duration ~1.5s) so a
+      // normal animation has finished; only rescue what is still invisible.
+      window.setTimeout(() => {
+        if (parseFloat(getComputedStyle(el).opacity) < 0.99) force(el);
+      }, 1600);
+    };
+    const mo = new MutationObserver((muts) => {
+      for (const m of muts) if (m.type === "attributes") consider(m.target as Element);
+    });
+    mo.observe(document.body, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    document.querySelectorAll(SEL).forEach(consider);
+    return () => mo.disconnect();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-background text-foreground antialiased">

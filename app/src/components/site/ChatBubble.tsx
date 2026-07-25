@@ -53,7 +53,7 @@ export function ChatBubble() {
   }, [open]);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    <div className="pointer-events-none fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       <div
         className={`relative w-[min(22rem,calc(100vw-2.5rem))] origin-bottom-right rounded-2xl border border-hairline bg-surface shadow-2xl shadow-black/50 ${
           open
@@ -133,7 +133,7 @@ export function ChatBubble() {
 
       <button
         onClick={() => setOpen((o) => !o)}
-        className="group relative grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-lg shadow-accent/30 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40 chat-breathe"
+        className="group pointer-events-auto relative grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-lg shadow-accent/30 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40 chat-breathe"
         aria-label="Open chat"
       >
         {open ? <X size={20} /> : <MessageSquare size={20} />}

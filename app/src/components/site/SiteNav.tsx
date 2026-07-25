@@ -37,7 +37,7 @@ export function SiteNav() {
     <>
       <header className="fixed inset-x-0 top-3 z-50 md:top-5">
         <div className="container-page flex items-center gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
-          {/* Desktop: 3-column grid — logo left, pill centered in the viewport,
+          {/* Desktop: 3-column grid - logo left, pill centered in the viewport,
               spacer right. The pill sits between two equal 1fr columns, so it is
               centered independent of the logo and can never overlap it. */}
           <div className="hidden lg:flex min-w-0 items-center justify-start">
@@ -72,7 +72,7 @@ export function SiteNav() {
             </div>
           </div>
 
-          {/* Desktop grid spacer (col 3) — balances the logo so the pill centers */}
+          {/* Desktop grid spacer (col 3) - balances the logo so the pill centers */}
           <div className="hidden lg:block" aria-hidden />
 
           {/* Mobile: compact pill */}

@@ -19,9 +19,9 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
       el.classList.add("in-view");
     };
 
-    // If the element is already in (or near) the viewport at mount — which is
+    // If the element is already in (or near) the viewport at mount - which is
     // the case for above-the-fold content right after a client-side route
-    // change — reveal it synchronously before paint. Waiting for the async
+    // change - reveal it synchronously before paint. Waiting for the async
     // IntersectionObserver left the whole new page hidden for ~100ms, which
     // showed up as a blank/distorted transition frame.
     const r = el.getBoundingClientRect();
@@ -31,7 +31,7 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
       return;
     }
 
-    // Otherwise reveal on scroll — the moment any part enters the viewport,
+    // Otherwise reveal on scroll - the moment any part enters the viewport,
     // so content is never left blank while partially visible.
     const io = new IntersectionObserver(
       (entries) => {
