@@ -29,14 +29,14 @@ type Product = {
 const products: Product[] = [
   {
     icon: Layers,
-    badge: "Available now",
+    badge: "Launching soon",
     available: true,
     name: "SYN Growth",
     tagline: "Answer and capture every customer.",
-    what: "The installed, guaranteed system. It answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, follows up until the customer books, and proves what it recovered each month in the Receipt.",
+    what: "The guaranteed system that answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, follows up until the customer books, and proves what it recovered each month in the Receipt. An AI receptionist that covers every channel, not just the phone.",
     who: "Operators losing customers to missed calls and slow replies: trades, home services, medical and dental, legal, and insurance, from local to multi-location.",
     outcome: "You stop losing the leads you already paid to earn. If the Receipt does not show it captured more than it cost, that month is free.",
-    footnote: "One-time $497 setup, then $349/mo (Growth Core) or $549/mo (Growth Pro).",
+    footnote: "Launch pricing: one-time $497 setup, then $349/mo (Growth Core) or $549/mo (Growth Pro).",
   },
   {
     icon: LayoutGrid,
@@ -58,7 +58,7 @@ function Services() {
         variant="grid"
         eyebrow="Products"
         title="Two products. One SYN."
-        description="SYN Growth captures the revenue you are losing today. SYN Workspace, in early access, runs the rest of your business. Start with Growth, grow into Workspace."
+        description="SYN Growth answers and books the customers you are losing to missed calls. SYN Workspace runs the rest of your business. Both are in development, Growth launching soon and Workspace in early access. Start today with the free audit."
       >
         <Button asChild size="lg" variant="accent">
           <Link to="/leak-audit">

@@ -9,6 +9,10 @@ import {
   Cookie,
   Layers,
   LayoutGrid,
+  Fingerprint,
+  CalendarCheck,
+  Boxes,
+  Wand2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
@@ -27,17 +31,34 @@ import aerialCity from "@/assets/aerial-city.png.asset.json";
 
 const TITLE = "Syntrex | SYN Growth & SYN Workspace";
 const DESC =
-  "Syntrex builds SYN: AI that answers your customers today and runs your whole business next. SYN Growth captures every customer now; SYN Workspace runs the rest, in early access.";
+  "Syntrex is building SYN, one AI platform in two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations.";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("/"),
   component: Home,
 });
 
+// SYN Growth's proof: the cost of missing customers. Sources cited below the band.
 const stats = [
   { to: 62, suffix: "%", prefix: "", format: "plain" as const, label: "of calls to small businesses go unanswered" },
   { to: 85, suffix: "%", prefix: "", format: "plain" as const, label: "of missed callers never call back" },
   { to: 126000, prefix: "$", suffix: "", format: "commas" as const, label: "the average small business loses each year to missed calls" },
+];
+
+// SYN Workspace's proof: the cost of scattered operations. Every figure is a
+// published research finding with its source named in the caption.
+const wstats = [
+  { to: 1200, prefix: "~", suffix: "", format: "commas" as const, label: "app switches a day for the average knowledge worker (Harvard Business Review)" },
+  { to: 9, suffix: "%", prefix: "", format: "plain" as const, label: "of the work year lost reorienting after those switches (Harvard Business Review)" },
+  { to: 58, suffix: "%", prefix: "", format: "plain" as const, label: "of the workday spent on work about work, not real work (Asana)" },
+];
+
+const wlayers = [
+  { icon: Fingerprint, title: "Brand encoded once", line: "Your brand, voice, and rules, captured one time." },
+  { icon: CalendarCheck, title: "Calendar run by AI", line: "Bookings and scheduling handled automatically." },
+  { icon: Boxes, title: "Content & assets", line: "Content and brand assets produced and organized." },
+  { icon: Wand2, title: "Builds & automations", line: "Tools, pages, and workflows built with AI." },
+  { icon: ShieldCheck, title: "Approval trail", line: "Nothing reaches a customer without your sign-off." },
 ];
 
 function Home() {
@@ -114,32 +135,33 @@ function Home() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
               <Sparkles size={12} className="text-foreground" />
-              Syntrex builds SYN
+              AI systems for businesses that can't afford to miss a customer
             </div>
           </Reveal>
           <h1 className="text-display word-rise mt-6 text-5xl text-foreground md:text-7xl">
-            {"AI that answers your customers today,".split(" ").map((w, i) => (
+            {"Answer every customer.".split(" ").map((w, i) => (
               <span key={`a-${i}`} style={{ ["--i" as never]: i }}>
                 {w}
-                {" "}
+                {"\u00A0"}
               </span>
             ))}
-            {"and runs your business next.".split(" ").map((w, i) => (
+            {"Automate the rest.".split(" ").map((w, i) => (
               <span
                 key={`b-${i}`}
                 className="text-shimmer"
-                style={{ ["--i" as never]: i + 5 }}
+                style={{ ["--i" as never]: i + 3 }}
               >
                 {w}
-                {" "}
+                {"\u00A0"}
               </span>
             ))}
           </h1>
           <Reveal delay={160}>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              SYN captures every customer you are losing right now, and is
-              becoming the AI workspace that runs the rest of your business. One
-              company. Two products.
+              Syntrex is building SYN, one AI platform in two products. SYN
+              Growth answers and books your customers automatically. SYN
+              Workspace runs your calendar, content, and operations. Start today
+              with a free audit of what missed calls are costing you.
             </p>
           </Reveal>
           <Reveal delay={240}>
@@ -169,9 +191,9 @@ function Home() {
         <Reveal>
           <div data-choreo className="headline-blur">
             <SectionHeader
-              eyebrow="One product, two forms"
-              title="SYN Growth today. SYN Workspace next."
-              description="Growth is the door: it captures the revenue you are losing now. Workspace is the house: AI that runs your whole business. Start with Growth, grow into Workspace."
+              eyebrow="One platform, two products"
+              title="SYN Growth first. SYN Workspace next."
+              description="Growth is the door: it captures the revenue you are losing to missed calls. Workspace is the house: AI that runs your whole business. Both are in development. Start with the free audit."
             />
           </div>
         </Reveal>
@@ -184,23 +206,27 @@ function Home() {
             className="side-in-left card-reveal surface-card surface-card-hover group flex h-full flex-col p-8"
           >
             <div className="mb-4 inline-flex w-fit items-center rounded-full border border-white/40 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
-              <span className="badge-shimmer">Available now</span>
+              <span className="badge-shimmer">Launching soon</span>
             </div>
             <Icon3D icon={Layers} size={48} iconSize={22} />
             <h3 className="mt-6 text-2xl font-semibold text-foreground">SYN Growth</h3>
             <div className="mt-1 text-sm text-foreground/80">Answer and capture every customer.</div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              The installed, guaranteed system. It answers every call, chat, and
-              form in seconds, 24/7, texts back every missed call, follows up
-              until the customer books, and proves what it recovered each month
-              in the Receipt.
+              The guaranteed system that answers every call, chat, and form in
+              seconds, 24/7, texts back every missed call, follows up until the
+              customer books, and proves what it recovered each month in the
+              Receipt. It is an AI receptionist that covers every channel, not
+              just the phone.
             </p>
             <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-foreground">
               <ShieldCheck size={16} className="shrink-0" />
               If the Receipt does not show it captured more than it cost, that
               month is free.
             </div>
-            <div className="mt-auto flex flex-wrap gap-3 pt-7">
+            <div className="mt-4 text-xs text-muted-foreground">
+              Launch pricing: one-time $497 setup, then $349/mo or $549/mo.
+            </div>
+            <div className="mt-auto flex flex-wrap gap-3 pt-6">
               <Button asChild variant="accent">
                 <Link to="/leak-audit">
                   Get Your Free Leak Audit
@@ -228,13 +254,17 @@ function Home() {
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               The AI business workspace. Encode your brand once, and SYN runs
               your calendar, content, brand assets, builds, and automations, with
-              an approval trail before anything reaches a customer.
+              an approval trail before anything reaches a customer. One workspace
+              in place of a dozen disconnected tools.
             </p>
             <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-muted-foreground">
               <Sparkles size={16} className="shrink-0 text-foreground" />
               In early access. Every SYN Growth client is first in line.
             </div>
-            <div className="mt-auto flex flex-wrap gap-3 pt-7">
+            <div className="mt-4 text-xs text-muted-foreground">
+              Joining the waitlist reserves early access and shapes what we build.
+            </div>
+            <div className="mt-auto flex flex-wrap gap-3 pt-6">
               <Button asChild variant="outline">
                 <a href="https://syn.syntrexio.com">
                   Join the waitlist
@@ -245,45 +275,6 @@ function Home() {
           </article>
         </div>
       </Section>
-
-      {/* STAT STRIP - SYN Growth's proof */}
-      <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
-        <div className="ken-burns">
-          <img src={aerialCity.url} alt="" aria-hidden />
-        </div>
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, oklch(0.14 0 0 / 82%), oklch(0.14 0 0 / 72%) 50%, oklch(0.14 0 0 / 88%))",
-          }}
-        />
-        <div className="ambient-depth" />
-        <div className="container-page relative grid grid-cols-1 divide-y divide-hairline md:grid-cols-3 md:divide-x md:divide-y-0">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              data-choreo
-              className="stat-scale px-2 py-10 md:px-10 md:py-14"
-              style={{ ["--d" as never]: `${i * 100}ms` }}
-            >
-              <div className="text-display text-5xl text-foreground md:text-6xl">
-                <span className="stat-underline">
-                  <CountUp
-                    to={s.to}
-                    prefix={s.prefix}
-                    suffix={s.suffix}
-                    format={s.format}
-                  />
-                </span>
-              </div>
-              <p className="stat-caption mt-4 max-w-xs text-sm text-muted-foreground md:text-base">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* INSIDE SYN GROWTH */}
       <Section className="relative">
@@ -301,8 +292,47 @@ function Home() {
         <GrowthSystem />
       </Section>
 
+      {/* SYN GROWTH STAT STRIP */}
+      <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
+        <div className="ken-burns">
+          <img src={aerialCity.url} alt="" aria-hidden />
+        </div>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.14 0 0 / 82%), oklch(0.14 0 0 / 72%) 50%, oklch(0.14 0 0 / 88%))",
+          }}
+        />
+        <div className="ambient-depth" />
+        <div className="container-page relative">
+          <div className="grid grid-cols-1 divide-y divide-hairline md:grid-cols-3 md:divide-x md:divide-y-0">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                data-choreo
+                className="stat-scale px-2 py-10 md:px-10 md:py-14"
+                style={{ ["--d" as never]: `${i * 100}ms` }}
+              >
+                <div className="text-display text-5xl text-foreground md:text-6xl">
+                  <span className="stat-underline">
+                    <CountUp to={s.to} prefix={s.prefix} suffix={s.suffix} format={s.format} />
+                  </span>
+                </div>
+                <p className="stat-caption mt-4 max-w-xs text-sm text-muted-foreground md:text-base">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="pb-6 text-center text-xs text-muted-foreground/80">
+            Sources: 411 Locals (58-industry study); Aircall.
+          </p>
+        </div>
+      </section>
+
       {/* GUARANTEE BANNER */}
-      <section className="relative overflow-hidden border-y border-hairline bg-surface/40">
+      <section className="relative overflow-hidden border-b border-hairline bg-surface/40">
         <Aurora variant="soft" />
         <DataStream />
         <div className="container-page relative py-16 md:py-20">
@@ -324,7 +354,7 @@ function Home() {
                       {"If the Receipt does not show the system captured more value than it cost you,".split(" ").map((w, i) => (
                         <span key={`g-${i}`} style={{ ["--i" as never]: i }}>
                           {w}
-                          {" "}
+                          {"\u00A0"}
                         </span>
                       ))}
                       <span className="text-shimmer">that month is free.</span>
@@ -336,6 +366,87 @@ function Home() {
         </div>
       </section>
 
+      {/* INSIDE SYN WORKSPACE */}
+      <Section className="relative">
+        <Aurora variant="whisper" />
+        <Reveal>
+          <div data-choreo className="headline-blur">
+            <SectionHeader
+              eyebrow="Inside SYN Workspace"
+              title="Five layers. One outcome: the business runs itself."
+              description="Encode your brand once, and AI does the operational work, always inside your rules, always with your sign-off."
+            />
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {wlayers.map((s, i) => (
+            <div
+              key={s.title}
+              data-choreo
+              className="spread-in surface-card surface-card-hover group h-full p-6"
+              style={{ ["--sx" as never]: `${(i - 2) * 50}px`, ["--d" as never]: `${i * 90}ms` }}
+            >
+              <Icon3D icon={s.icon} size={44} iconSize={20} />
+              <div className="mt-5 text-[15px] font-semibold text-foreground">{s.title}</div>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.line}</p>
+            </div>
+          ))}
+        </div>
+
+        <Reveal delay={120}>
+          <div className="mt-10 text-center">
+            <MagneticButton>
+              <Button asChild size="lg" variant="outline">
+                <a href="https://syn.syntrexio.com">
+                  Join the Workspace waitlist
+                  <ArrowRight />
+                </a>
+              </Button>
+            </MagneticButton>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* SYN WORKSPACE STAT BAND */}
+      <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
+        <div className="ken-burns ken-burns--bright">
+          <img src={glassLobby.url} alt="" aria-hidden />
+        </div>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.14 0 0 / 84%), oklch(0.14 0 0 / 74%) 50%, oklch(0.14 0 0 / 90%))",
+          }}
+        />
+        <div className="ambient-depth" />
+        <div className="container-page relative">
+          <div className="grid grid-cols-1 divide-y divide-hairline md:grid-cols-3 md:divide-x md:divide-y-0">
+            {wstats.map((s, i) => (
+              <div
+                key={s.label}
+                data-choreo
+                className="stat-scale px-2 py-10 md:px-10 md:py-14"
+                style={{ ["--d" as never]: `${i * 100}ms` }}
+              >
+                <div className="text-display text-5xl text-foreground md:text-6xl">
+                  <span className="stat-underline">
+                    <CountUp to={s.to} prefix={s.prefix} suffix={s.suffix} format={s.format} />
+                  </span>
+                </div>
+                <p className="stat-caption mt-4 max-w-xs text-sm text-muted-foreground md:text-base">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="pb-6 text-center text-xs text-muted-foreground/80">
+            The cost of scattered operations. SYN Workspace is built to erase it.
+          </p>
+        </div>
+      </section>
+
       {/* PROOF */}
       <Section className="relative">
         <Aurora variant="whisper" />
@@ -343,7 +454,8 @@ function Home() {
           <div data-choreo className="headline-blur">
             <SectionHeader
               eyebrow="Proof"
-              title="Built for operators who count every lead."
+              title="Built by operators who count every lead."
+              description="Syntrex began as a hands-on agency. These are two of the businesses that work became SYN."
             />
           </div>
         </Reveal>
@@ -432,7 +544,7 @@ function Home() {
                 Built in Florida. <span className="text-shimmer">Running everywhere.</span>
               </h2>
               <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                SYN runs for operators worldwide, 24/7.
+                SYN is built to run for operators worldwide, 24/7.
               </p>
             </div>
           </Reveal>
@@ -453,9 +565,10 @@ function Home() {
                 See exactly what missed leads are costing you.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-                The Free Leak Audit is how you start with SYN Growth. We
-                mystery-shop your phone and web forms, time the responses, and
-                deliver a one-page report in 48 hours. Free.
+                The Free Leak Audit is available today, the pre-launch entry
+                point to SYN Growth. We mystery-shop your phone and web forms,
+                time the responses, and deliver a one-page report in 48 hours.
+                Free.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <MagneticButton>

@@ -4,7 +4,7 @@
 // so editing an answer updates both the page and its structured data.
 //
 // Company model: Syntrex builds SYN. SYN ships in two products, SYN Growth
-// (available now, printed pricing) and SYN Workspace (early access, waitlist,
+// (launching soon, printed launch pricing) and SYN Workspace (early access, waitlist,
 // no price). Presence/Brand are not sold on these surfaces.
 
 export const ORIGIN = "https://syntrexio.com";
@@ -36,7 +36,7 @@ export const SITE_SCHEMA: LdJson[] = [
     "url": "https://syntrexio.com",
     "logo": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
     "image": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
-    "description": "Syntrex builds SYN, AI that answers your customers today and runs your whole business next. SYN ships in two products: SYN Growth, the installed and guaranteed system that captures every customer, and SYN Workspace, the AI business workspace in early access.",
+    "description": "Syntrex builds SYN, one AI platform in two products. SYN Growth answers and books your customers automatically and is launching soon. SYN Workspace, in early access, runs your calendar, content, assets, and automations. Syntrex started as a hands-on digital agency and productized what it learned building for real businesses.",
     "email": "henry@syntrexio.com",
     "founder": { "@type": "Person", "name": "Henry Bello" },
     "address": {
@@ -69,7 +69,7 @@ export interface PageSeo {
   canonical: string; schema: LdJson[];
 }
 
-// SYN Growth: available now, printed pricing. One-time $497 setup, then a
+// SYN Growth: launching soon, printed launch pricing. One-time $497 setup, then a
 // monthly plan. Guarantee attached.
 const SYN_GROWTH_PRODUCT: LdJson = {
   "@context": "https://schema.org",
@@ -78,14 +78,16 @@ const SYN_GROWTH_PRODUCT: LdJson = {
   "name": "SYN Growth",
   "brand": { "@type": "Brand", "name": "SYN" },
   "url": "https://syntrexio.com/pricing",
-  "description": "The installed, guaranteed SYN product. Answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. One-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering.",
+  "description": "The guaranteed SYN product, launching soon. It answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. Launch pricing: one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. The Free Leak Audit is available today as the pre-launch entry point.",
+  "releaseDate": "2026",
   "offers": [
     {
       "@type": "Offer",
       "name": "Setup",
       "price": "497",
       "priceCurrency": "USD",
-      "description": "One-time setup. Charged once, not monthly."
+      "availability": "https://schema.org/PreOrder",
+      "description": "One-time setup at launch pricing. Charged once, not monthly."
     },
     {
       "@type": "Offer",
@@ -93,7 +95,7 @@ const SYN_GROWTH_PRODUCT: LdJson = {
       "price": "349",
       "priceCurrency": "USD",
       "description": "Per month after the one-time $497 setup. AI web chat, SMS, missed-call text-back, follow-up, booking, and the monthly Receipt.",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/PreOrder"
     },
     {
       "@type": "Offer",
@@ -101,7 +103,7 @@ const SYN_GROWTH_PRODUCT: LdJson = {
       "price": "549",
       "priceCurrency": "USD",
       "description": "Per month after the one-time $497 setup. Everything in Growth Core plus AI voice answering.",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/PreOrder"
     }
   ]
 };
@@ -128,10 +130,10 @@ const SYN_WORKSPACE_PRODUCT: LdJson = {
 export const PAGE_SEO: Record<string, PageSeo> = {
   "/": {
     "title": "Syntrex | SYN Growth & SYN Workspace",
-    "description": "Syntrex builds SYN: AI that answers your customers today and runs your whole business next. SYN Growth captures every call, chat, and form and proves it monthly. SYN Workspace, in early access, runs your calendar, content, and automations. Start with a Free Leak Audit.",
-    "keywords": "Syntrex, SYN, SYN Growth, SYN Workspace, AI business platform, AI receptionist, missed call capture, AI workspace, business automation, lead capture system",
-    "ogTitle": "Syntrex builds SYN | AI that answers your customers today",
-    "ogDescription": "SYN Growth captures every customer you are losing now. SYN Workspace, in early access, runs your calendar, content, brand assets, and automations. One company, two products.",
+    "description": "Syntrex is building SYN, one AI platform in two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations. Both launching soon. Start today with a free audit of what missed calls cost you.",
+    "keywords": "AI receptionist, missed call text back, AI answering service for business, AI business workspace, business automation platform, SYN Growth, SYN Workspace, Syntrex, lead capture system, AI tools for small business",
+    "ogTitle": "Syntrex is building SYN | AI for your customers and your operations",
+    "ogDescription": "One AI platform, two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations. Both launching soon.",
     "canonical": "https://syntrexio.com/",
     "schema": [
       SYN_GROWTH_PRODUCT,
@@ -153,15 +155,23 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the difference between SYN Growth and SYN Workspace?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth is available today and captures the customers you are losing right now: calls, chats, and forms answered in seconds, missed calls recovered, follow-up until booked, with the value proven monthly. SYN Workspace is in early access and runs the rest of the business: encode your brand once and SYN handles your calendar, content, assets, builds, and automations. Growth is the door. Workspace is where you grow."
+              "text": "SYN Growth captures the customers you are losing: calls, chats, and forms answered in seconds, missed calls recovered, follow-up until booked, with the value proven monthly in the Receipt. SYN Workspace runs the rest of the business: encode your brand once and SYN handles your calendar, content, assets, builds, and automations. Both are in development; Growth is launching soon and Workspace is in early access. Growth is the door, Workspace is where you grow."
             }
           },
           {
             "@type": "Question",
-            "name": "Is the $497 one-time or monthly?",
+            "name": "What is an AI receptionist?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The $497 is a one-time setup, charged once. After setup, SYN Growth is $349 a month for Growth Core or $549 a month for Growth Pro, which adds AI voice answering. The $497 is never the total by itself."
+              "text": "An AI receptionist answers your calls, chats, and forms automatically, around the clock, so no customer reaches a voicemail or an empty inbox. SYN Growth is more than a phone AI receptionist: it covers every channel, texts back missed calls, follows up until the customer books, and reports the value it recovered each month. It is launching soon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does an AI answering service cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SYN Growth launch pricing is a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro, which adds AI voice answering. The $497 is a one-time setup, not the total. For comparison, a part-time human answering a fraction of this work runs $2,000 to $3,000 a month."
             }
           },
           {
@@ -174,10 +184,10 @@ export const PAGE_SEO: Record<string, PageSeo> = {
           },
           {
             "@type": "Question",
-            "name": "How fast is setup?",
+            "name": "When does SYN Growth launch and how fast is setup?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth is installed and run for you. Setup begins right after your Free Leak Audit, and most businesses are live in days, not weeks, once your brand, services, and rules are encoded."
+              "text": "SYN Growth is launching soon. The Free Leak Audit is available today as the pre-launch entry point. At launch, SYN Growth is installed and run for you: setup begins after your audit, and most businesses go live in days, not weeks, once your brand, services, and rules are encoded."
             }
           },
           {
@@ -203,9 +213,9 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/about": {
     "title": "Syntrex | The Company Building SYN",
     "description": "Syntrex builds SYN. Founded on the revenue businesses lose to missed calls and slow replies, we shipped SYN Growth, the guaranteed system that captures every customer, and are building SYN Workspace, the AI business workspace, in early access. A senior team, headquartered in Windermere, Florida.",
-    "keywords": "about Syntrex, SYN, SYN Growth, SYN Workspace, Henry Bello, AI software company, business platform, Windermere Florida",
+    "keywords": "about Syntrex, SYN, SYN Growth, SYN Workspace, Henry Bello, AI software company, digital agency origin, HALT Fire, Doughbrik's Wavers, Windermere Florida",
     "ogTitle": "About Syntrex | The Company Building SYN",
-    "ogDescription": "We build SYN: AI that answers your customers today and runs your whole business next. Shipped SYN Growth, building SYN Workspace. A senior team with a full in-house crew.",
+    "ogDescription": "We build SYN, one AI platform in two products: SYN Growth (launching soon) and SYN Workspace (early access). A senior team with a full in-house crew, born from a hands-on digital agency.",
     "canonical": "https://syntrexio.com/about",
     "schema": [
       {
@@ -225,7 +235,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is Syntrex?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Syntrex is the company that builds SYN. SYN Growth, available now, is the installed and guaranteed system that captures every customer you are losing to missed calls and slow replies. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, builds, and automations. Syntrex is headquartered in Windermere, Florida and works with operators worldwide."
+              "text": "Syntrex is the company that builds SYN. SYN Growth, launching soon, is the guaranteed system that captures every customer you are losing to missed calls and slow replies. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, builds, and automations. Syntrex is headquartered in Windermere, Florida and works with operators worldwide."
             }
           },
           {
@@ -233,7 +243,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is SYN?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN is Syntrex's product, in two forms: SYN Growth, the installed and guaranteed system that answers and captures every customer today, and SYN Workspace, the AI business workspace in early access that runs the rest of the business from one encoded brand."
+              "text": "SYN is Syntrex's product, in two forms: SYN Growth, the guaranteed system that answers and captures every customer, launching soon, and SYN Workspace, the AI business workspace in early access that runs the rest of the business from one encoded brand."
             }
           },
           {
@@ -268,10 +278,10 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
   "/services": {
     "title": "Syntrex | SYN Growth and SYN Workspace",
-    "description": "Two products, one company. SYN Growth is the installed, guaranteed system that captures every customer you are losing today. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, and automations. Start with a Free Leak Audit.",
-    "keywords": "SYN Growth, SYN Workspace, Syntrex products, AI receptionist, missed call capture, AI business workspace, business automation platform",
+    "description": "Two products, one company. SYN Growth is the guaranteed system that captures every customer you are losing to missed calls, launching soon. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, and automations. Start with a Free Leak Audit.",
+    "keywords": "AI receptionist, AI answering service for business, AI business workspace, AI tools for small business operations, business automation platform, missed call text back, SYN Growth, SYN Workspace, Syntrex products",
     "ogTitle": "Two Products, One Company | Syntrex",
-    "ogDescription": "SYN Growth captures every customer today. SYN Workspace, in early access, runs the rest of the business. Both are SYN, built by Syntrex.",
+    "ogDescription": "SYN Growth captures every customer you are losing. SYN Workspace runs the rest of the business. Both are SYN, both launching, built by Syntrex.",
     "canonical": "https://syntrexio.com/services",
     "schema": [
       SYN_GROWTH_PRODUCT,
@@ -293,7 +303,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What does SYN Growth do?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth answers every call, chat, and form in seconds on web chat, SMS, and voice, texts back every missed call, follows up automatically until the customer books, and reports what it recovered each month in the Receipt. It is installed and run for you, and backed by a guarantee."
+              "text": "SYN Growth answers every call, chat, and form in seconds on web chat, SMS, and voice, texts back every missed call, follows up automatically until the customer books, and reports what it recovered each month in the Receipt. It is installed and run for you, launching soon, and backed by a guarantee."
             }
           },
           {
@@ -302,6 +312,22 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "SYN Workspace is the AI business workspace, in early access. Encode your brand once and SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer. Join the waitlist at syn.syntrexio.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an AI business workspace?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An AI business workspace is one place where AI runs the operational work of a business instead of you juggling a dozen disconnected apps. SYN Workspace encodes your brand once, then handles your calendar, content, brand assets, builds, and automations, with an approval trail so nothing goes out off-brand. It is in early access; join the waitlist at syn.syntrexio.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI tools does SYN include for small business operations?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Across the two products, SYN covers customer-facing and operational work: AI web chat, SMS, and voice answering, missed-call text-back, follow-up, and booking in SYN Growth; and calendar management, content and asset production, AI builds, and workflow automation in SYN Workspace. Everything runs from one encoded brand with a human approval step."
             }
           },
           {
@@ -328,7 +354,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/pricing": {
     "title": "Syntrex | SYN Growth Pricing and SYN Workspace Access",
     "description": "SYN Growth: a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. If the Receipt does not show it captured more than it cost, that month is free. SYN Workspace is in early access by waitlist.",
-    "keywords": "SYN Growth pricing, SYN Workspace access, AI receptionist pricing, Syntrex pricing, $497 setup, Growth Core, Growth Pro, business automation pricing",
+    "keywords": "AI receptionist pricing, AI answering service cost, SYN Growth pricing, SYN Workspace access, Syntrex pricing, $497 setup, Growth Core, Growth Pro, business automation platform pricing",
     "ogTitle": "SYN Growth Pricing, Printed and Guaranteed | Syntrex",
     "ogDescription": "One-time $497 setup, then $349 or $549 a month. If the Receipt does not show it captured more than it cost, that month is free. SYN Workspace: early access by waitlist.",
     "canonical": "https://syntrexio.com/pricing",
@@ -386,6 +412,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
               "@type": "Answer",
               "text": "SYN Workspace is in early access and is not sold at a printed price yet. Join the waitlist at syn.syntrexio.com. Every SYN Growth client is first in line as access opens."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Is SYN Growth available yet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SYN Growth is launching soon, and the pricing shown is launch pricing. What is available today is the Free Leak Audit, a no-cost report on what missed calls cost you, which is the pre-launch entry point. Request it now and you are first in line when SYN Growth opens."
+            }
           }
         ]
       }
@@ -433,7 +467,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/leak-audit": {
     "title": "Syntrex | Free Leak Audit, See What Missed Calls Cost You",
     "description": "The Free Leak Audit is how you start with SYN Growth. Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with the dollar cost, per year, of the customers you are losing. Free, within 48 hours.",
-    "keywords": "free leak audit, SYN Growth, missed call text back, AI receptionist, missed calls costing my business, 24/7 lead response, answering service alternative, lead response system",
+    "keywords": "free leak audit, how to stop missing customer calls, missed call text back, AI receptionist, AI answering service for business, missed calls costing my business, 24/7 lead response, SYN Growth",
     "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
     "ogDescription": "The entry point to SYN Growth. See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, within 48 hours.",
     "canonical": "https://syntrexio.com/leak-audit",
@@ -492,6 +526,14 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page report with a dollar estimate of what the leak costs you per year, based on your trade. It is free, delivered within 48 hours, and it is how you start with SYN Growth."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I stop missing customer calls?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cover every channel and respond instantly. Missed-call text-back replies to an unanswered call with a text in seconds, AI web chat and voice answer the rest, and automated follow-up keeps the conversation going until the customer books. That is exactly what SYN Growth does, and the Free Leak Audit shows you where the gaps are first."
             }
           }
         ]

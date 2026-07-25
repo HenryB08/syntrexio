@@ -36,8 +36,8 @@ function About() {
       <PageHero
         variant="worldmap"
         eyebrow="About Syntrex"
-        title="The company building SYN."
-        description="Syntrex builds SYN: AI that answers your customers today and runs your whole business next. We shipped SYN Growth, and we are building SYN Workspace in early access. Headquartered in Windermere, Florida, serving operators worldwide."
+        title="From agency to software company."
+        description="Syntrex builds SYN, one AI platform in two products, both in development. We started as a hands-on digital agency, saw the same problems in every business we built for, and productized the fixes. Headquartered in Windermere, Florida, serving operators worldwide."
       />
 
       <Section>
@@ -61,29 +61,28 @@ function About() {
       <Section className="border-t border-hairline bg-surface/20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <SectionHeader eyebrow="Our story" title="Started on a leak. Building a platform." />
+            <SectionHeader eyebrow="Our story" title="It started as client work." />
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                Syntrex started with one observation: most businesses lose more
-                revenue to missed calls and slow replies in a month than they
-                spend on marketing all year. The tools to fix it already existed.
-                Nobody was assembling them into something a business could
-                actually run on.
+                Syntrex began as a hands-on digital agency: building websites,
+                e-commerce, content systems, and AI automations for real
+                businesses, including industrial brand HALT Fire and consumer
+                brand Doughbrik's Wavers.
               </p>
               <p>
-                So we shipped SYN Growth: the installed, guaranteed system that
-                answers every call, chat, and form the moment it arrives, follows
-                up until the customer books, and proves what it recovered each
-                month in the Receipt. It captures the revenue you are losing
-                today, and it is backed by a written guarantee.
+                Running that client work exposed the same two problems
+                everywhere. Businesses lose customers the moment they can't
+                answer. And their operations live scattered across a dozen
+                disconnected tools. So we productized the fixes.
               </p>
               <p>
-                Now we are building SYN Workspace, in early access: the AI
-                business workspace that encodes your brand once and runs your
-                calendar, content, assets, builds, and automations. Growth is the
-                door. Workspace is the whole house. A senior team leads every
+                The client work became SYN Growth, the system that answers and
+                books customers automatically. The operations problem is becoming
+                SYN Workspace, one AI workspace that runs the business. Today
+                Syntrex is a software company, and the agency roots are why the
+                products work in the real world. A senior team leads every
                 project, with a full in-house team delivering the work.
               </p>
             </div>
