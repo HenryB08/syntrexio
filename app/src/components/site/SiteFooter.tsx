@@ -149,9 +149,9 @@ export function SiteFooter() {
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <a href="https://syn.syntrexio.com" className="transition-colors hover:text-foreground">SYN</a>
             <span aria-hidden>·</span>
-            <a href="/privacy.html" className="transition-colors hover:text-foreground">Privacy</a>
+            <a href="/privacy" className="transition-colors hover:text-foreground">Privacy</a>
             <span aria-hidden>·</span>
-            <a href="/terms.html" className="transition-colors hover:text-foreground">Terms</a>
+            <a href="/terms" className="transition-colors hover:text-foreground">Terms</a>
           </nav>
         </div>
       </div>
