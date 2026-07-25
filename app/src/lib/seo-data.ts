@@ -426,21 +426,81 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
-  "/projects": {
-    "title": "Syntrex | Case Studies and Client Results",
-    "description": "Real work Syntrex has delivered on SYN. For HALT Fire, a full sales automation rebuild that saves the team 10+ hours a week and drove 280% search growth. For Doughbrik's Wavers, internal automation that made workflows 3x faster as the brand scaled into retail.",
-    "keywords": "Syntrex case studies, SYN results, HALT Fire automation, Doughbrik's Wavers, AI automation results, sales automation case study",
-    "ogTitle": "Case Studies and Client Results | Syntrex",
-    "ogDescription": "For HALT Fire, a full rebuild that saved 10+ hours a week and drove 280% search growth. For Doughbrik's Wavers, automation that made workflows 3x faster.",
-    "canonical": "https://syntrexio.com/projects",
+  "/customers": {
+    "title": "Syntrex | Customers",
+    "description": "The businesses running on SYN. Syntrex builds and runs the full digital operation for HALT Fire and for Doughbrik's Wavers, the consumer brand from David Dobrik, and works alongside partners Karlo Financial and Kinetix Technology Group.",
+    "keywords": "Syntrex customers, SYN customers, HALT Fire, Doughbrik's Wavers, David Dobrik, Karlo Financial, Kinetix Technology Group, AI automation customers",
+    "ogTitle": "Customers | Syntrex",
+    "ogDescription": "Businesses running on SYN: HALT Fire and Doughbrik's Wavers, built and run by Syntrex, plus partners Karlo Financial and Kinetix Technology Group.",
+    "canonical": "https://syntrexio.com/customers",
     "schema": [
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://syntrexio.com/projects" }
+          { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://syntrexio.com/customers" }
         ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Syntrex customers and partners",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "HALT Fire" },
+          { "@type": "ListItem", "position": 2, "name": "Doughbrik's Wavers" },
+          { "@type": "ListItem", "position": 3, "name": "Karlo Financial" },
+          { "@type": "ListItem", "position": 4, "name": "Kinetix Technology Group" }
+        ]
+      }
+    ],
+    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+  },
+  "/news": {
+    "title": "Syntrex | News",
+    "description": "Product launches, releases, and company updates from Syntrex as we build SYN. Introducing SYN Growth, SYN Workspace enters early access, and the new syntrexio.com.",
+    "keywords": "Syntrex news, SYN Growth launch, SYN Workspace early access, AI product updates, Syntrex announcements",
+    "ogTitle": "News | Syntrex",
+    "ogDescription": "Launches, releases, and updates as Syntrex builds SYN. SYN Growth is launching soon; SYN Workspace is in early access.",
+    "canonical": "https://syntrexio.com/news",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
+          { "@type": "ListItem", "position": 2, "name": "News", "item": "https://syntrexio.com/news" }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "The new syntrexio.com",
+        "datePublished": "2026-07-24",
+        "author": { "@id": "https://syntrexio.com/#organization" },
+        "publisher": { "@id": "https://syntrexio.com/#organization" },
+        "description": "One platform, two products, one new identity. Where Syntrex is headed as a software company: SYN Growth for your customers, SYN Workspace for your operations.",
+        "url": "https://syntrexio.com/news"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "SYN Workspace enters early access",
+        "datePublished": "2026-07-18",
+        "author": { "@id": "https://syntrexio.com/#organization" },
+        "publisher": { "@id": "https://syntrexio.com/#organization" },
+        "description": "The AI business workspace that runs your calendar, content, assets, and automations from one encoded brand is now in early access. The waitlist is open.",
+        "url": "https://syntrexio.com/news"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Introducing SYN Growth",
+        "datePublished": "2026-07-14",
+        "author": { "@id": "https://syntrexio.com/#organization" },
+        "publisher": { "@id": "https://syntrexio.com/#organization" },
+        "description": "The guaranteed system that answers every call, chat, and form in seconds, captures every missed call, and follows up until the customer books. Launching soon at printed pricing.",
+        "url": "https://syntrexio.com/news"
       }
     ],
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
