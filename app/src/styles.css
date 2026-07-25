@@ -207,17 +207,23 @@
   }
 }
 
+/* Transform-only: opacity is never animated, so a stalled animation (stuck at
+   currentTime 0) leaves text at most slightly offset, never invisible. */
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(24px); }
+  to   { transform: translateY(0); }
 }
 
+/* Base state is fully visible: if .in-view is never added (observer misses),
+   the content simply sits there rather than being stranded invisible. The
+   entrance plays only once .in-view applies; `both` fill-mode applies the
+   from-state (offset) during any animation-delay so delayed reveals don't
+   flash, without ever leaving content hidden when no animation runs. */
 .reveal {
-  opacity: 0;
   will-change: opacity, transform;
 }
 .reveal.in-view {
-  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ==========================================================================
@@ -240,14 +246,13 @@
 
 /* Word-by-word rise for hero headline */
 @keyframes word-rise {
-  from { opacity: 0; transform: translate3d(0, 24px, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  from { transform: translate3d(0, 24px, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 .word-rise > span {
   display: inline-block;
-  opacity: 0;
   will-change: transform, opacity;
-  animation: word-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: word-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: calc(var(--i, 0) * 80ms + 120ms);
 }
 
@@ -426,36 +431,36 @@
 
 /* Spread outward from center — used by grids on enter */
 @keyframes spread-in {
-  from { opacity: 0; transform: translate3d(var(--sx, 0), 24px, 0) scale(0.92); }
+  from { transform: translate3d(var(--sx, 0), 24px, 0) scale(0.92); }
   to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
-.spread-in { opacity: 0; will-change: transform, opacity; }
+.spread-in { will-change: transform, opacity; }
 .spread-in.in-view {
-  animation: spread-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: spread-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0ms);
 }
 
 /* Side reveal with slight 3D rotation, settles flat */
 @keyframes side-in-left {
-  from { opacity: 0; transform: perspective(1200px) rotateY(-14deg) translate3d(-40px, 0, 0); }
-  to   { opacity: 1; transform: perspective(1200px) rotateY(0deg) translate3d(0, 0, 0); }
+  from { transform: perspective(1200px) rotateY(-14deg) translate3d(-40px, 0, 0); }
+  to   { transform: perspective(1200px) rotateY(0deg) translate3d(0, 0, 0); }
 }
 @keyframes side-in-right {
-  from { opacity: 0; transform: perspective(1200px) rotateY(14deg) translate3d(40px, 0, 0); }
+  from { transform: perspective(1200px) rotateY(14deg) translate3d(40px, 0, 0); }
   to   { opacity: 1; transform: perspective(1200px) rotateY(0deg) translate3d(0, 0, 0); }
 }
-.side-in-left { opacity: 0; will-change: transform, opacity; }
-.side-in-right { opacity: 0; will-change: transform, opacity; }
-.side-in-left.in-view  { animation: side-in-left 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-.side-in-right.in-view { animation: side-in-right 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.side-in-left { will-change: transform, opacity; }
+.side-in-right { will-change: transform, opacity; }
+.side-in-left.in-view  { animation: side-in-left 0.95s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.side-in-right.in-view { animation: side-in-right 0.95s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
 /* Stat scale + count container */
 @keyframes stat-scale-in {
-  from { opacity: 0; transform: scale(0.8); }
-  to   { opacity: 1; transform: scale(1); }
+  from { transform: scale(0.8); }
+  to   { transform: scale(1); }
 }
-.stat-scale { opacity: 0; will-change: transform, opacity; transform-origin: left center; }
-.stat-scale.in-view { animation: stat-scale-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; animation-delay: var(--d, 0ms); }
+.stat-scale { will-change: transform, opacity; transform-origin: left center; }
+.stat-scale.in-view { animation: stat-scale-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d, 0ms); }
 
 /* Guarantee border draw — SVG stroke handled inline; here we animate a conic gradient */
 @keyframes border-draw {
@@ -816,46 +821,43 @@
 
 /* Scroll choreography */
 @keyframes spread-in {
-  from { opacity: 0; transform: translate3d(var(--sx, 0), 20px, 0) scale(0.94); }
+  from { transform: translate3d(var(--sx, 0), 20px, 0) scale(0.94); }
   to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
 .spread-in {
-  opacity: 0;
   will-change: transform, opacity;
 }
 .spread-in.in-view {
-  animation: spread-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: spread-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0ms);
 }
 
 @keyframes stat-scale {
-  from { opacity: 0; transform: scale(0.8) translateY(16px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from { transform: scale(0.8) translateY(16px); }
+  to   { transform: scale(1) translateY(0); }
 }
 .stat-scale {
-  opacity: 0;
   will-change: transform, opacity;
 }
 .stat-scale.in-view {
-  animation: stat-scale 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: stat-scale 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0ms);
 }
 
 @keyframes side-in-left {
-  from { opacity: 0; transform: translateX(-32px) rotateY(-12deg); }
-  to   { opacity: 1; transform: translateX(0) rotateY(0); }
+  from { transform: translateX(-32px) rotateY(-12deg); }
+  to   { transform: translateX(0) rotateY(0); }
 }
 @keyframes side-in-right {
-  from { opacity: 0; transform: translateX(32px) rotateY(12deg); }
-  to   { opacity: 1; transform: translateX(0) rotateY(0); }
+  from { transform: translateX(32px) rotateY(12deg); }
+  to   { transform: translateX(0) rotateY(0); }
 }
 .side-in-left, .side-in-right {
-  opacity: 0;
   will-change: transform, opacity;
   transform-origin: center;
 }
-.side-in-left.in-view  { animation: side-in-left  0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-.side-in-right.in-view { animation: side-in-right 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; animation-delay: 120ms; }
+.side-in-left.in-view  { animation: side-in-left  0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.side-in-right.in-view { animation: side-in-right 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 120ms; }
 
 /* Border draw — banner perimeter */
 .border-draw {
@@ -946,23 +948,25 @@
 
 /* Headline blur-in on scroll — sharpens as it rises */
 @keyframes headline-blur-in {
-  from { opacity: 0; filter: blur(4px); transform: translate3d(0, 18px, 0); }
-  to   { opacity: 1; filter: blur(0);    transform: translate3d(0, 0, 0); }
+  from { filter: blur(4px); transform: translate3d(0, 18px, 0); }
+  to   { filter: blur(0);   transform: translate3d(0, 0, 0); }
 }
-.headline-blur { opacity: 0; will-change: transform, opacity, filter; }
+.headline-blur { will-change: transform, opacity, filter; }
 .headline-blur.in-view {
-  animation: headline-blur-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: headline-blur-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0ms);
 }
 
 /* Card clip-path reveal on scroll */
 @keyframes card-clip-in {
-  from { opacity: 0; clip-path: inset(0 0 100% 0 round var(--radius-lg)); transform: translate3d(0, 12px, 0); }
-  to   { opacity: 1; clip-path: inset(0 0 0% 0 round var(--radius-lg));   transform: translate3d(0, 0, 0); }
+  /* Transform-only: no clip-path or opacity, which would hide card text if the
+     animation stalled at its start frame. */
+  from { transform: translate3d(0, 12px, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
-.card-reveal { opacity: 0; will-change: transform, opacity, clip-path; }
+.card-reveal { will-change: transform, opacity, clip-path; }
 .card-reveal.in-view {
-  animation: card-clip-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: card-clip-in 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0ms);
 }
 
@@ -1196,15 +1200,19 @@
 }
 .stat-scale.in-view .stat-underline::after { transform: scaleX(1); }
 
+/* Visible by default; the entrance runs only when the parent stat gets
+   .in-view. `both` fill applies the hidden from-state during the 900ms delay
+   so the timing matches the stat animation, but if .in-view never fires the
+   caption text stays visible instead of being stranded. */
+@keyframes stat-caption-in {
+  from { transform: translate3d(0, 6px, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
 .stat-caption {
-  opacity: 0;
-  transition: opacity 500ms ease 900ms, transform 700ms cubic-bezier(0.22, 1, 0.36, 1) 900ms;
-  transform: translate3d(0, 6px, 0);
   will-change: opacity, transform;
 }
 .stat-scale.in-view .stat-caption {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+  animation: stat-caption-in 700ms cubic-bezier(0.22, 1, 0.36, 1) 900ms both;
 }
 
 /* Ticker strip */
@@ -1286,16 +1294,15 @@
 
 /* Footer letter reveal */
 @keyframes letter-rise {
-  from { opacity: 0; transform: translate3d(0, 10px, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  from { transform: translate3d(0, 10px, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 .letter-reveal > span {
   display: inline-block;
-  opacity: 0;
   will-change: transform, opacity;
 }
 .letter-reveal.in-view > span {
-  animation: letter-rise 550ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: letter-rise 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: calc(var(--i, 0) * 45ms);
 }
 
