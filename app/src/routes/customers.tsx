@@ -29,10 +29,10 @@ const UNSPLASH = "?auto=format&fit=crop&w=1400&h=800&q=80";
 const customers: Customer[] = [
   {
     icon: Flame,
-    // Same URL pattern as the working Karlo/Kinetix banners, with a verified,
-    // widely-used dark-flames photo ID.
-    image: "https://images.unsplash.com/photo-1475738972911-5b44ce984c42" + UNSPLASH,
-    imageAlt: "Burning flames against a dark background",
+    // Same URL pattern as the working Karlo/Kinetix banners, with a large-scale
+    // wildfire photo (industrial fire suppression energy).
+    image: "https://images.unsplash.com/photo-1523861751938-121b5323b48b" + UNSPLASH,
+    imageAlt: "Raging wildfire against a dark sky",
     name: "HALT Fire",
     badge: "Runs SYN Growth + Workspace",
     desc: "Industrial fire suppression. Syntrex built and runs the full digital operation.",

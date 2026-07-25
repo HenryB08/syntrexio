@@ -196,8 +196,10 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUSTED BY - infinite text-wordmark marquee, directly below the hero */}
-      <section className="group border-b border-hairline bg-surface/20">
+      {/* TRUSTED BY - infinite text-wordmark marquee, directly below the hero.
+          No background fill: shares the base surface with the section below so
+          the page reads continuous, separated only by the hairline divider. */}
+      <section className="group border-b border-hairline">
         <div className="py-10 md:py-12">
           <Reveal>
             <div className="text-eyebrow mb-8 text-center">Trusted by</div>
