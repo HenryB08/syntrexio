@@ -71,8 +71,8 @@ export function SiteFooter() {
         <div className="space-y-4">
           <Logo />
           <p className="max-w-xs text-sm text-muted-foreground">
-            AI automation that answers every inquiry in seconds, so no lead ever
-            falls through the cracks.
+            Syntrex builds SYN. AI that answers your customers today, and runs
+            your business next.
           </p>
           <div className="flex items-center gap-2 pt-1">
             <a
