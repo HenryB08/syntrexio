@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
 import { ArrowRight, Globe, MapPin, Users } from "lucide-react";
@@ -8,10 +9,6 @@ import { Section, SectionHeader } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { MagneticButton } from "@/components/site/MagneticButton";
 
-const TITLE = "About Syntrex";
-const DESC =
-  "Syntrex is an AI automation company headquartered in Windermere, Florida, serving clients worldwide.";
-
 export const Route = createFileRoute("/about")({
   head: () => pageHead("/about"),
   component: About,
@@ -20,13 +17,17 @@ export const Route = createFileRoute("/about")({
 const facts = [
   { icon: MapPin, label: "Headquartered", value: "Windermere, FL, Greater Orlando" },
   { icon: Globe, label: "Clients", value: "Served worldwide" },
-  { icon: Users, label: "Team", value: "Operators, engineers, storytellers" },
+  { icon: Users, label: "Team", value: "Senior leads, full in-house crew" },
 ];
 
-const team: { name: string; role: string; initials: string; photo?: string }[] = [
-  { name: "Henry", role: "Founder & Operator", initials: "H" },
-  { name: "Automation Lead", role: "Systems & AI", initials: "A" },
-  { name: "Brand Lead", role: "Design & Story", initials: "B" },
+type Member = { name: string; role: string; initials: string; photo: string };
+
+const team: Member[] = [
+  { name: "Henry Bello", role: "Founder & CEO", initials: "HB", photo: "/team/henry.png" },
+  { name: "Sofia Weeden", role: "Chief Financial Officer", initials: "SW", photo: "/team/sofia.png" },
+  { name: "Alexander Ohmer", role: "Head of Operations", initials: "AO", photo: "/team/alexander.png" },
+  { name: "Anthony Fallon", role: "Head of Digital", initials: "AF", photo: "/team/anthony.png" },
+  { name: "Ciana Bello", role: "Director of Marketing & Social", initials: "CB", photo: "/team/ciana.png" },
 ];
 
 function About() {
@@ -35,8 +36,8 @@ function About() {
       <PageHero
         variant="worldmap"
         eyebrow="About Syntrex"
-        title="We build the AI layer your business needs to stop losing leads."
-        description="Syntrex is a small team of operators and engineers headquartered in Windermere, Florida, in the greater Orlando area. We build the automation that turns inquiries into revenue, for clients worldwide."
+        title="The team that stops businesses losing customers."
+        description="Syntrex builds, installs, and runs the Growth System for local and service businesses worldwide, from our headquarters in Windermere, Florida, in the greater Orlando area."
       />
 
       <Section>
@@ -60,26 +61,30 @@ function About() {
       <Section className="border-t border-hairline bg-surface/20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <SectionHeader eyebrow="Our story" title="Built by operators, for operators." />
+            <SectionHeader eyebrow="Our story" title="Started on a leak. Built into a system." />
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                Syntrex started with a simple observation: most small businesses
-                lose more revenue in a month to unanswered inquiries than they
-                spend on marketing in a year. The tools exist. Nobody was
-                stitching them into a real system.
+                Syntrex started with one observation: most local businesses lose
+                more revenue to missed calls and slow replies in a month than
+                they spend on marketing all year. The tools to fix it already
+                existed. Nobody was assembling them into a system a business
+                could actually run on.
               </p>
               <p>
-                We built one. The Growth System captures every lead the moment
-                it appears, then works it until it books or dies. The monthly
-                Receipt shows the math, because you shouldn't have to trust
-                us, you should be able to count.
+                So we built one. The Growth System answers every call, chat, and
+                form the moment it arrives, follows up until the customer books,
+                and reports what it recovered each month in the Receipt. What
+                began as a fix for missed calls is now the front door to a full
+                growth stack, extended by the Presence System and the Brand
+                Studio.
               </p>
               <p>
-                We work with a small number of clients at a time, from
-                industrial specialists to creator-founded brands, and we back
-                every engagement with a written guarantee.
+                Today Syntrex runs as a senior team leading every project, with a
+                full in-house team delivering the work, giving the capacity of a
+                large agency with the focus of a boutique one. Every engagement
+                is backed by a written guarantee.
               </p>
             </div>
           </Reveal>
@@ -88,27 +93,13 @@ function About() {
 
       <Section>
         <Reveal>
-          <SectionHeader eyebrow="Team" title="A small, senior team." />
+          <SectionHeader eyebrow="Team" title="A senior team, in-house." />
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 100}>
               <article className="surface-card surface-card-hover group overflow-hidden p-0">
-                <div className="brand-photo aspect-[4/3] w-full">
-                  {m.photo ? (
-                    <img src={m.photo} alt={m.name} loading="lazy" />
-                  ) : (
-                    <div
-                      className="absolute inset-0 grid place-items-center text-4xl font-semibold text-foreground/70"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 35% 35%, oklch(1 0 0 / 10%), transparent 55%), radial-gradient(circle at 70% 75%, oklch(1 0 0 / 5%), transparent 60%)",
-                      }}
-                    >
-                      {m.initials}
-                    </div>
-                  )}
-                </div>
+                <TeamPhoto member={m} />
                 <div className="p-6" data-parallax="text">
                   <div className="text-[15px] font-semibold text-foreground">
                     {m.name}
@@ -140,5 +131,37 @@ function About() {
       </Section>
       <Faq path="/about" />
     </>
+  );
+}
+
+/** Team headshot with a graceful fallback: the photo files live at
+ *  /public/team/[firstname].png and may not be uploaded yet. Until a photo
+ *  loads, or if it 404s, the card shows the member's initials so the page
+ *  always renders cleanly. */
+function TeamPhoto({ member }: { member: Member }) {
+  const [failed, setFailed] = useState(false);
+  return (
+    <div className="brand-photo aspect-[4/3] w-full">
+      {!failed ? (
+        <img
+          src={member.photo}
+          alt={`${member.name}, ${member.role} at Syntrex`}
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div
+          className="absolute inset-0 grid place-items-center text-4xl font-semibold text-foreground/70"
+          role="img"
+          aria-label={`${member.name}, ${member.role} at Syntrex`}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 35% 35%, oklch(1 0 0 / 10%), transparent 55%), radial-gradient(circle at 70% 75%, oklch(1 0 0 / 5%), transparent 60%)",
+          }}
+        >
+          {member.initials}
+        </div>
+      )}
+    </div>
   );
 }

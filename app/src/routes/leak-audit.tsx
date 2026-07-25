@@ -22,9 +22,9 @@ export const Route = createFileRoute("/leak-audit")({
 });
 
 const steps = [
-  { icon: Search, title: "We mystery-shop", desc: "Our team calls and submits your web forms as a prospect would." },
+  { icon: Search, title: "We mystery-shop", desc: "Our team calls and submits your web forms exactly the way a real customer would." },
   { icon: Clock, title: "We time everything", desc: "Every ring, every reply, every drop-off, measured to the second." },
-  { icon: FileText, title: "You get the Receipt", desc: "A one-page report with the dollar cost of your missed inquiries." },
+  { icon: FileText, title: "You get the report", desc: "A one-page leak report with a dollar estimate of what missed calls cost you each year, based on your trade." },
 ];
 
 function FreeLeakAudit() {
@@ -59,8 +59,8 @@ function FreeLeakAudit() {
       <PageHero
         variant="scanline"
         eyebrow="Free · 48-hour turnaround"
-        title="See exactly what missed inquiries are costing you."
-        description="We mystery-shop your phone and web forms, time the responses, and deliver a one-page report showing the dollar cost of missed inquiries per year. Free."
+        title="See exactly what missed calls are costing you."
+        description="62% of calls to small businesses go unanswered and 85% never call back. Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with the dollar cost, per year, of the customers you are losing. Free, within 48 hours."
       />
 
       <Section>
