@@ -15,7 +15,6 @@ export const Route = createFileRoute("/customers")({
 
 type Customer = {
   icon: typeof Flame;
-  logo: string;
   image: string;
   imageAlt: string;
   name: string;
@@ -24,23 +23,22 @@ type Customer = {
 };
 
 // Banner images: dark-toned Unsplash stock (free commercial license) fitting
-// each theme. Logos hotlink the Mailchimp CDN. Both may 403 in the sandbox but
-// load in production; the banner falls back to the brand icon, the small logo
-// hides, on error.
+// each theme, plus one Mailchimp-CDN brand image. They may 403 in the sandbox
+// but load in production; the banner falls back to the brand icon on error.
 const UNSPLASH = "?auto=format&fit=crop&w=1400&h=800&q=80";
 const customers: Customer[] = [
   {
     icon: Flame,
-    logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8c7f2cbe-39b2-9320-be0b-bb06479a0b8a.png",
-    image: "https://images.unsplash.com/photo-1486551937199-baf066858de7" + UNSPLASH,
-    imageAlt: "Firefighter silhouetted against dramatic flames",
+    // Same URL pattern as the working Karlo/Kinetix banners, with a verified,
+    // widely-used dark-flames photo ID.
+    image: "https://images.unsplash.com/photo-1475738972911-5b44ce984c42" + UNSPLASH,
+    imageAlt: "Burning flames against a dark background",
     name: "HALT Fire",
     badge: "Runs SYN Growth + Workspace",
     desc: "Industrial fire suppression. Syntrex built and runs the full digital operation.",
   },
   {
     icon: Cookie,
-    logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png",
     image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/45c480e8-9b07-53dc-0733-e5ed3bb5b2f3.png",
     imageAlt: "Doughbrik's Wavers brand imagery",
     name: "Doughbrik's Wavers",
@@ -49,7 +47,6 @@ const customers: Customer[] = [
   },
   {
     icon: Landmark,
-    logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" + UNSPLASH,
     imageAlt: "Financial-district glass towers at dusk",
     name: "Karlo Financial",
@@ -58,7 +55,6 @@ const customers: Customer[] = [
   },
   {
     icon: Cpu,
-    logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475" + UNSPLASH,
     imageAlt: "Macro shot of a circuit board",
     name: "Kinetix Technology Group",

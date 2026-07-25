@@ -59,18 +59,18 @@ const wlayers = [
   { icon: ShieldCheck, title: "Approval trail", line: "Nothing reaches a customer without your sign-off." },
 ];
 
-// Customer logos are hotlinked from the Mailchimp CDN (same host the hero image
-// already uses). They 403 in the sandbox but load in production.
+// Trusted-by wordmarks — company name as styled text (Linear-style), each
+// linking out to the company's own site in a new tab.
 const trusted = [
-  { name: "HALT Fire", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/8c7f2cbe-39b2-9320-be0b-bb06479a0b8a.png" },
-  { name: "Doughbrik's Wavers", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/734ab3d8-515c-429d-8c2e-e3120f60713c.png" },
-  { name: "Karlo Financial", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c9fb598b-8c07-2c44-3bff-d311dd1b5494.png" },
-  { name: "Kinetix Technology Group", logo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/76765f2c-404c-79a0-7c58-51be09b4dc23.png" },
+  { name: "HALT Fire", href: "https://haltfire.com/" },
+  { name: "Doughbrik's Wavers", href: "https://eatdoughbriks.com/" },
+  { name: "Karlo Financial", href: "https://karlofinancial.com/" },
+  { name: "Kinetix Technology Group", href: "https://kinetixtechnologygroup.com/" },
 ];
 
-// Repeat the four logos so each marquee group is dense enough to fill the track
+// Repeat the four names so each marquee group is dense enough to fill the track
 // at wide viewports (the group is then duplicated once more for the loop).
-const marqueeLogos = [...trusted, ...trusted, ...trusted];
+const marqueeNames = [...trusted, ...trusted, ...trusted];
 
 function Home() {
   const choreoRef = useRef<HTMLDivElement | null>(null);
@@ -196,34 +196,36 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUSTED BY - infinite full-color logo marquee, directly below the hero */}
-      <section className="border-b border-hairline bg-surface/20">
+      {/* TRUSTED BY - infinite text-wordmark marquee, directly below the hero */}
+      <section className="group border-b border-hairline bg-surface/20">
         <div className="py-10 md:py-12">
           <Reveal>
-            <Link to="/customers" className="group block">
-              <div className="text-eyebrow mb-8 text-center">Trusted by</div>
-              {/* CSS-only marquee: two identical tracks translate -50% for a
-                  seamless loop. Pauses on hover; falls back to a static wrapped
-                  row under prefers-reduced-motion (see styles.css). */}
-              <div className="marquee" aria-label="Trusted by HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group">
-                <div className="marquee__track">
-                  {[0, 1].map((dup) => (
-                    <div key={dup} className="marquee__group" aria-hidden={dup === 1}>
-                      {marqueeLogos.map((t, i) => (
-                        <div key={`${dup}-${i}`} className="marquee__item">
-                          <img
-                            src={t.logo}
-                            alt={dup === 0 ? t.name : ""}
-                            loading="lazy"
-                            className="h-full w-auto object-contain"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
+            <div className="text-eyebrow mb-8 text-center">Trusted by</div>
+            {/* CSS-only marquee: two identical tracks translate -50% for a
+                seamless loop. Pauses on hover; falls back to a static wrapped
+                row under prefers-reduced-motion (see styles.css). Each name is
+                an individual link to the company's site. */}
+            <div className="marquee" aria-label="Trusted by HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group">
+              <div className="marquee__track">
+                {[0, 1].map((dup) => (
+                  <div key={dup} className="marquee__group" aria-hidden={dup === 1}>
+                    {marqueeNames.map((t, i) => (
+                      <div key={`${dup}-${i}`} className="marquee__item">
+                        <a
+                          href={t.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          tabIndex={dup === 1 ? -1 : undefined}
+                          className="marquee__wordmark"
+                        >
+                          {t.name}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
-            </Link>
+            </div>
           </Reveal>
         </div>
       </section>
