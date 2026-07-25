@@ -63,8 +63,12 @@ export function ChatBubble() {
       >
         {thinking ? <span className="edge-shimmer" aria-hidden /> : null}
         <div className="flex items-center gap-3 border-b border-hairline bg-surface-2 px-4 py-3">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-accent text-accent-foreground text-xs font-bold">
-            S
+          <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full border border-hairline bg-background">
+            <img
+              src="/logo-mark.png"
+              alt="Syntrex"
+              className="h-5 w-5 object-contain"
+            />
           </span>
           <div className="flex-1">
             <div className="text-sm font-semibold text-foreground">Syntrex</div>
