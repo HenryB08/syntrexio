@@ -78,7 +78,7 @@ const SYN_GROWTH_PRODUCT: LdJson = {
   "name": "SYN Growth",
   "brand": { "@type": "Brand", "name": "SYN" },
   "url": "https://syntrexio.com/pricing/",
-  "description": "The guaranteed SYN product, launching soon. It answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. Launch pricing: one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. The Free Leak Audit is available today as the pre-launch entry point.",
+  "description": "The guaranteed SYN product, launching soon. It answers every call, chat, and form in seconds 24/7, captures every missed call, and follows up until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the dollars recovered and the bookings behind them, formalized each month in the Receipt, and it shares one encoded brain with SYN Workspace so returning callers are recognized. Launch pricing: one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. The Live Leak Audit is the pre-launch entry point.",
   "releaseDate": "2026",
   "offers": [
     {
@@ -118,7 +118,7 @@ const SYN_WORKSPACE_PRODUCT: LdJson = {
   "operatingSystem": "Web",
   "url": "https://syn.syntrexio.com",
   "publisher": { "@id": "https://syntrexio.com/#organization" },
-  "description": "The AI business workspace. Encode your brand once, and SYN runs your calendar, content, brand assets, builds, and automations with an approval trail before anything reaches a customer. In early access.",
+  "description": "The AI business workspace, in early access. Your brand encoded once governs both SYN Workspace and SYN Growth, so what Growth learns from customers feeds the work here. SYN runs your calendar, content, brand assets, builds, and automations with an approval trail before anything reaches a customer, and every approval, rejection, and edit teaches SYN your judgment so it grows more personalized the longer it runs.",
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
@@ -179,7 +179,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is the guarantee?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "If the Receipt does not show SYN Growth captured more value than it cost you, that month is free. The guarantee applies to the first three months, then continues on a rolling quarterly review, and recovered value is measured against your own average job value, agreed at setup."
+              "text": "If the booked value SYN Growth produces in a month comes in under that month's fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced multiplied by the job values you confirm at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. It applies for the first three months, then continues on a rolling quarterly review."
             }
           },
           {
@@ -187,7 +187,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "When does SYN Growth launch and how fast is setup?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth is launching soon. The Free Leak Audit is available today as the pre-launch entry point. At launch, SYN Growth is installed and run for you: setup begins after your audit, and most businesses go live in days, not weeks, once your brand, services, and rules are encoded."
+              "text": "SYN Growth is launching soon. The Live Leak Audit is the pre-launch entry point: request it now and you are first in line. At launch, SYN Growth is installed and run for you: setup begins after your audit, and most businesses go live in days, not weeks, once your brand, services, and rules are encoded."
             }
           },
           {
@@ -303,7 +303,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What does SYN Growth do?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth answers every call, chat, and form in seconds on web chat, SMS, and voice, texts back every missed call, follows up automatically until the customer books, and reports what it recovered each month in the Receipt. It is installed and run for you, launching soon, and backed by a guarantee."
+              "text": "SYN Growth answers every call, chat, and form in seconds on web chat, SMS, and voice, texts back every missed call, and follows up automatically until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the dollars it recovers and the bookings behind them, formalized each month in the Receipt, and it shares one encoded brain with SYN Workspace so returning callers are recognized. It is installed and run for you, launching soon, and backed by a guarantee."
             }
           },
           {
@@ -353,10 +353,10 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
   "/pricing": {
     "title": "Syntrex | SYN Growth Pricing and SYN Workspace Access",
-    "description": "SYN Growth: a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. If the Receipt does not show it captured more than it cost, that month is free. SYN Workspace is in early access by waitlist.",
+    "description": "SYN Growth: a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. If the month's booked value comes in under your fee, that month is free. SYN Workspace is in early access by waitlist.",
     "keywords": "AI receptionist pricing, AI answering service cost, SYN Growth pricing, SYN Workspace access, Syntrex pricing, $497 setup, Growth Core, Growth Pro, business automation platform pricing",
     "ogTitle": "SYN Growth Pricing, Printed and Guaranteed | Syntrex",
-    "ogDescription": "One-time $497 setup, then $349 or $549 a month. If the Receipt does not show it captured more than it cost, that month is free. SYN Workspace: early access by waitlist.",
+    "ogDescription": "One-time $497 setup, then $349 or $549 a month. If the month's booked value comes in under your fee, that month is free. SYN Workspace: early access by waitlist.",
     "canonical": "https://syntrexio.com/pricing/",
     "schema": [
       SYN_GROWTH_PRODUCT,
@@ -402,7 +402,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What happens if SYN Growth does not pay for itself?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "That month is free. If the Receipt does not show SYN Growth captured more value than it cost you, you do not pay for that month. The guarantee applies to the first three months, then a rolling quarterly review, measured against your own average job value agreed at setup."
+              "text": "That month is free. If the booked value SYN Growth produces in the month comes in under that month's fee, you do not pay for that month. Booked value is an estimate, the bookings the system produced multiplied by the job values you confirm at install, not cash collected. The monthly Receipt is the statement the guarantee pays out on. It applies for the first three months, then a rolling quarterly review."
             }
           },
           {
@@ -418,7 +418,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "Is SYN Growth available yet?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SYN Growth is launching soon, and the pricing shown is launch pricing. What is available today is the Free Leak Audit, a no-cost report on what missed calls cost you, which is the pre-launch entry point. Request it now and you are first in line when SYN Growth opens."
+              "text": "SYN Growth is launching soon, and the pricing shown is launch pricing. The pre-launch entry point is the Live Leak Audit, a no-cost test of your phone, live chat, and contact form that shows what missed inquiries cost you. Request it now and you are first in line when SYN Growth opens."
             }
           }
         ]
@@ -525,8 +525,8 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
   },
   "/leak-audit": {
-    "title": "Syntrex | Free Leak Audit, See What Missed Calls Cost You",
-    "description": "The Free Leak Audit is how you start with SYN Growth. Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with the dollar cost, per year, of the customers you are losing. Free, within 48 hours.",
+    "title": "Syntrex | Live Leak Audit, See What Missed Calls Cost You",
+    "description": "The Live Leak Audit is how you start with SYN Growth. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each answers and where inquiries slip away. SYN Growth is launching soon; free.",
     "keywords": "free leak audit, how to stop missing customer calls, missed call text back, AI receptionist, AI answering service for business, missed calls costing my business, 24/7 lead response, SYN Growth",
     "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
     "ogDescription": "The entry point to SYN Growth. See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, within 48 hours.",
@@ -549,7 +549,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         "serviceType": "Lead response and missed call audit",
         "provider": { "@id": "https://syntrexio.com/#organization" },
         "areaServed": "Worldwide",
-        "description": "The entry point to SYN Growth. Syntrex mystery-shops your phone and web forms, times how long each response takes, and delivers a one-page report with a dollar estimate of what missed calls and slow replies cost your business per year. Delivered within 48 hours. Free.",
+        "description": "The front door to SYN Growth. The Live Leak Audit runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away, plus a dollar estimate of what the leak costs you per year. SYN Growth is launching soon; free.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
       },
       {
@@ -585,7 +585,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             "name": "What is included in the Free Leak Audit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Syntrex mystery-shops your phone and web forms the way a real customer would, times how long each response takes, and sends you a one-page report with a dollar estimate of what the leak costs you per year, based on your trade. It is free, delivered within 48 hours, and it is how you start with SYN Growth."
+              "text": "One button runs the Live Leak Audit: a simultaneous test of your phone, live chat, and contact form, with a response timer on screen so you see how fast each one answers and where inquiries slip away, plus a dollar estimate of what the leak costs you per year based on your trade. It is free, and it is how you start with SYN Growth, launching soon."
             }
           },
           {

@@ -36,7 +36,7 @@ function Terms() {
               <ul className="ml-5 list-disc space-y-2 text-base leading-relaxed">
                 <li><strong className="text-foreground">SYN Growth</strong> is a managed system that answers calls, chats, and forms, captures missed calls, follows up, and reports recovered value each month in the Receipt. It is launching soon and provided as a service, run for you.</li>
                 <li><strong className="text-foreground">SYN Workspace</strong> is our AI business workspace, currently in early access. Access is offered by waitlist and may change as the product develops.</li>
-                <li><strong className="text-foreground">The Free Leak Audit</strong> is a no-cost report on where your business is losing customers. It is available today, informational, and creates no obligation on either side.</li>
+                <li><strong className="text-foreground">The Live Leak Audit</strong> is a no-cost audit of where your business is losing customers, the pre-launch entry point to SYN Growth. It is informational and creates no obligation on either side.</li>
               </ul>
             </section>
 
@@ -61,12 +61,15 @@ function Terms() {
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-foreground">The SYN Growth guarantee</h2>
               <p className="text-base leading-relaxed">
-                If the monthly Receipt does not show that SYN Growth captured more
-                value than it cost you, that month is free. The guarantee applies
-                for the first three months, then continues on a rolling quarterly
-                review. Recovered value is measured against your own average job
-                value, agreed in writing at setup. The guarantee covers the monthly
-                SYN Growth fee for the qualifying month and does not cover the
+                If the booked value SYN Growth produces in a month comes in under
+                that month's fee, that month is free. Booked value is an estimate
+                of revenue booked, calculated as the bookings the system produced
+                multiplied by the job values you confirm in writing at install; it
+                is not cash collected and is not based on industry averages. The
+                monthly Receipt, not the live dashboard, is the estimated statement
+                the guarantee pays out on. The guarantee applies for the first
+                three months, then continues on a rolling quarterly review, and it
+                covers the monthly SYN Growth fee for the qualifying month, not the
                 one-time setup or third-party costs.
               </p>
             </section>

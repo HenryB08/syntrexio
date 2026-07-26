@@ -33,9 +33,9 @@ const products: Product[] = [
     available: true,
     name: "SYN Growth",
     tagline: "Answer and capture every customer.",
-    what: "The guaranteed system that answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, follows up until the customer books, and proves what it recovered each month in the Receipt. An AI receptionist that covers every channel, not just the phone.",
+    what: "The guaranteed system that answers every call, chat, and form in seconds across web chat, SMS, and voice, texts back every missed call, and follows up until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the dollars recovered and the bookings behind them, formalized each month in the Receipt. An AI receptionist that covers every channel, not just the phone, sharing one encoded brain with SYN Workspace: returning callers are recognized, and you can search past conversations in plain language.",
     who: "Operators losing customers to missed calls and slow replies: trades, home services, medical and dental, legal, and insurance, from local to multi-location.",
-    outcome: "You stop losing the leads you already paid to earn. If the Receipt does not show it captured more than it cost, that month is free.",
+    outcome: "You stop losing the leads you already paid to earn. If the month's booked value comes in under your fee, that month is free.",
     footnote: "Launch pricing: one-time $497 setup, then $349/mo (Growth Core) or $549/mo (Growth Pro).",
   },
   {
@@ -44,9 +44,9 @@ const products: Product[] = [
     available: false,
     name: "SYN Workspace",
     tagline: "Encode your brand. AI runs the rest.",
-    what: "The AI business workspace. Encode your brand once, and SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer.",
+    what: "The AI business workspace. Your brand encoded once governs both SYN Workspace and SYN Growth, so what Growth learns from your customers feeds the work here. SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer, and every approval, rejection, and edit teaches SYN your judgment.",
     who: "Any business that wants AI running its operations, not just its inbox. Every SYN Growth client is first in line as access opens.",
-    outcome: "Your brand, encoded once, executing everywhere. On standard and on brand by default, with a human approval before anything ships.",
+    outcome: "Your brand, encoded once, executing everywhere. On standard and on brand by default, with a human approval before anything ships, and more personalized the longer it runs.",
     footnote: "In early access. Join the waitlist at syn.syntrexio.com.",
   },
 ];
@@ -150,8 +150,9 @@ function Services() {
             Not sure where to start?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            The Free Leak Audit answers that in 48 hours, with hard numbers on
-            what you are losing today.
+            The Live Leak Audit answers that: a simultaneous test of your phone,
+            live chat, and contact form, with hard numbers on what you are losing
+            today.
           </p>
           <div className="mt-8">
             <Button asChild size="xl" variant="accent">

@@ -1,19 +1,19 @@
 # Syntrex LLC
 
-> Syntrex builds SYN: AI that answers your customers today and runs your whole business next. SYN ships in two products. SYN Growth is the installed, guaranteed system that answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. SYN Workspace, in early access, is the AI business workspace: encode your brand once and SYN runs your calendar, content, brand assets, builds, and automations with an approval trail. The front door to SYN Growth is a Free Leak Audit that shows a business exactly where it is losing customers before any work begins.
+> Syntrex builds SYN: AI that answers your customers today and runs your whole business next. SYN ships in two products. SYN Growth is the installed, guaranteed system that answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. SYN Workspace, in early access, is the AI business workspace: encode your brand once and SYN runs your calendar, content, brand assets, builds, and automations with an approval trail. The front door to SYN Growth is a Live Leak Audit: one button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing where inquiries slip away, before any work begins.
 
 Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. The company is not affiliated with any domain called syntrex.io.
 
 ## Company Details
 
 - Name: Syntrex LLC
-- Type: Software company. Builds SYN, in two products: SYN Growth (launching soon) and SYN Workspace (early access). Both are in development; the Free Leak Audit is available today as the pre-launch entry point.
+- Type: Software company. Builds SYN, in two products: SYN Growth (launching soon) and SYN Workspace (early access). Both are in development; the Live Leak Audit is the pre-launch entry point.
 - Headquarters: 513 Main Street, Windermere, FL 34786, United States
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
 - Founded by: Henry Bello
 - Service area: Worldwide
-- Front door: Free Leak Audit, a one-page report showing where a business is losing customers, delivered within 48 hours at no cost. It is the entry point to SYN Growth.
+- Front door: Live Leak Audit, a one-button simultaneous test of a business's phone, live chat, and contact form with an on-screen response timer, showing where inquiries slip away, at no cost. It is the entry point to SYN Growth.
 - Key differentiators: SYN Growth covers every channel, not just the phone. Its value is measured every month with the Receipt. It is backed by a written guarantee. It is installed and run for the client. SYN Workspace extends the same encoded brand to the rest of the business.
 
 ## FAQ
@@ -34,13 +34,13 @@ Q: How do I get SYN Workspace?
 A: SYN Workspace is in early access and is not sold at a printed price yet. Join the waitlist at https://syn.syntrexio.com. Every SYN Growth client is first in line.
 
 Q: Is there a guarantee?
-A: Yes, on SYN Growth. If the Receipt does not show it captured more value than it cost you, that month is free. It applies for the first three months, then continues on a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at setup.
+A: Yes, on SYN Growth. If the booked value SYN Growth produces in the month comes in under the monthly fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced times the job values you confirm in writing at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. It applies for the first three months, then continues on a rolling quarterly review.
 
 Q: What is the Receipt?
 A: The Receipt is the monthly report SYN Growth sends showing what it captured, what it recovered, and what that was worth to the business, so the value is visible every month rather than assumed.
 
 Q: How do I start?
-A: Request a Free Leak Audit at https://syntrexio.com/leak-audit or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms, times the responses, and sends a one-page report with the yearly dollar cost of the customers you are losing, delivered within 48 hours, at no cost.
+A: Request a Live Leak Audit at https://syntrexio.com/leak-audit or email henry@syntrexio.com. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away, plus the yearly dollar cost of the customers you are losing, at no cost.
 
 Q: What results has Syntrex delivered?
 A: For HALT Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
@@ -48,31 +48,31 @@ A: For HALT Fire, an industrial fire suppression company, Syntrex built a comple
 ## Products
 
 ### SYN Growth (launching soon)
-The guaranteed system that captures every customer you are losing to missed calls, launching soon. It answers every call, chat, and form in seconds 24/7, texts back every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. One-time setup $497, then $349 a month (Growth Core) or $549 a month (Growth Pro, which adds AI voice answering). Guarantee: if the Receipt does not show it captured more value than it cost you, that month is free.
+The guaranteed system that captures every customer you are losing to missed calls, launching soon. It answers every call, chat, and form in seconds 24/7, texts back every missed call, and follows up until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the owner the dollars recovered and the bookings behind them, formalized each month in the Receipt. It shares one encoded brain with SYN Workspace: what Growth learns from customers feeds Workspace, returning callers are recognized, and the owner can search past conversations in plain language. One-time setup $497, then $349 a month (Growth Core) or $549 a month (Growth Pro, which adds AI voice answering). Guarantee: if the booked value in the month comes in under the monthly fee, that month is free.
 
 Five components:
-1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. AI voice answering is available with Growth Pro.
+1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. Returning callers are recognized. AI voice answering is available with Growth Pro.
 2. Never-Miss Capture: every call, form, and message is captured, and an unanswered call gets an instant text back so the lead is not lost.
 3. Automatic Follow-Up: automated email and SMS follow-up continues until the customer answers or books.
-4. Booking: appointments land on the calendar without anyone touching them.
-5. The Receipt: a monthly report showing the value the system captured and recovered.
+4. Booking Integrity: qualified leads self-book onto the calendar, and every booking is validated against real availability so the system never invents one.
+5. Live Dashboard and Receipt: the owner watches recovered value climb live, the bookings the system produced times the job values the client confirms at install, shown with the booking count beside the dollar figure. It is an estimate of revenue booked, never closed cash and never an industry average. The monthly Receipt is its formal statement and the document the guarantee pays out on.
 
 ### SYN Workspace (early access)
-The AI business workspace. Encode your brand once, and SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer. In early access, not sold at a printed price yet. Join the waitlist at https://syn.syntrexio.com. Lives at https://syn.syntrexio.com.
+The AI business workspace, in early access. Encode your brand once, and that same brain governs both SYN Workspace and SYN Growth, so what Growth learns from your customers feeds the work here. SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer. Every approval, rejection, and edit teaches SYN the owner's judgment, so it grows more personalized the longer it runs. Not sold at a printed price yet. Join the waitlist at https://syn.syntrexio.com. Lives at https://syn.syntrexio.com.
 
 ## Pricing
 
 - SYN Growth setup: $497 one-time (charged once, not the total)
 - Growth Core: $349 a month, after setup
 - Growth Pro: $549 a month, after setup (Growth Core plus AI voice answering)
-- Guarantee: if the Receipt does not show SYN Growth captured more value than it cost you, that month is free. First three months, then a rolling quarterly review. Recovered value is measured against your own average job value, agreed in writing at setup.
+- Guarantee: if the booked value SYN Growth produces in the month comes in under the monthly fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced times the job values the client confirms in writing at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. First three months, then a rolling quarterly review.
 - SYN Workspace: early access, no printed price. Join the waitlist at https://syn.syntrexio.com.
 - Value anchor: a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
 - Existing clients: if you already run on SYN, the Syntrex team also builds and runs websites, content, and creative for you. This is not sold as a standalone product.
 
 ## How It Works
 
-1. Free Leak Audit: request it at https://syntrexio.com/leak-audit or email henry@syntrexio.com. Syntrex mystery-shops your phone and web forms and sends a one-page report on where you are losing customers, within 48 hours, at no cost.
+1. Live Leak Audit: request it at https://syntrexio.com/leak-audit or email henry@syntrexio.com. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away. It is the front door to SYN Growth, launching soon, at no cost.
 2. Setup: Syntrex sets up SYN Growth with your brand, your services, and your rules.
 3. It Runs For You: SYN Growth captures, responds, and follows up across every channel, run for you.
 4. The Receipt: every month you see what it captured and recovered, backed by the guarantee.
@@ -110,7 +110,7 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 ## Pages
 
 - Home: https://syntrexio.com/
-- Free Leak Audit: https://syntrexio.com/leak-audit
+- Live Leak Audit: https://syntrexio.com/leak-audit
 - Services: https://syntrexio.com/services
 - Pricing: https://syntrexio.com/pricing
 - SYN Workspace: https://syn.syntrexio.com

@@ -12,9 +12,9 @@ import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { submitForm } from "@/lib/site";
 
-const TITLE = "Free Leak Audit Syntrex";
+const TITLE = "Live Leak Audit Syntrex";
 const DESC =
-  "We mystery-shop your phone and web forms, time the responses, and deliver a one-page report on the dollar cost of missed inquiries. Free. Within 48 hours.";
+  "One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen. The front door to SYN Growth, launching soon. Free.";
 
 export const Route = createFileRoute("/leak-audit")({
   head: () => pageHead("/leak-audit"),
@@ -22,9 +22,9 @@ export const Route = createFileRoute("/leak-audit")({
 });
 
 const steps = [
-  { icon: Search, title: "We mystery-shop", desc: "Our team calls and submits your web forms exactly the way a real customer would." },
-  { icon: Clock, title: "We time everything", desc: "Every ring, every reply, every drop-off, measured to the second." },
-  { icon: FileText, title: "You get the report", desc: "A one-page leak report with a dollar estimate of what missed calls cost you each year, based on your trade." },
+  { icon: Search, title: "One button, three channels", desc: "The Live Leak Audit tests your phone, live chat, and contact form at the same time, the way a real customer would reach you." },
+  { icon: Clock, title: "A response timer on screen", desc: "A live timer runs for each channel, so you watch exactly how long your phone, chat, and form take to answer." },
+  { icon: FileText, title: "See where you leak", desc: "The result shows which channels answered, how fast, and where inquiries are slipping away, with an estimate of what that costs you each year, based on your trade." },
 ];
 
 function FreeLeakAudit() {
@@ -58,9 +58,9 @@ function FreeLeakAudit() {
     <>
       <PageHero
         variant="scanline"
-        eyebrow="Available today · Pre-launch entry to SYN Growth · Free"
+        eyebrow="The front door to SYN Growth · Free"
         title="See exactly what missed calls are costing you."
-        description="62% of calls to small businesses go unanswered and 85% never call back. The Free Leak Audit is how you start with SYN Growth: Syntrex mystery-shops your phone and web forms, times the responses, and delivers a one-page report with the dollar cost, per year, of the customers you are losing. Free, within 48 hours."
+        description="62% of calls to small businesses go unanswered and 85% never call back. The Live Leak Audit is how you start with SYN Growth: one button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen so you see exactly how fast each one answers and where inquiries slip away. SYN Growth is launching soon; request your audit and we walk you through the results within 48 hours."
       />
 
       <Section>
@@ -85,7 +85,7 @@ function FreeLeakAudit() {
             <Reveal delay={300}>
               <div className="flex items-center gap-3 rounded-lg border border-accent/30 bg-accent/5 p-4 text-sm text-foreground">
                 <PhoneCall size={16} className="text-accent" />
-                Delivered within 48 hours. No sales pressure.
+                We walk you through your results within 48 hours. No sales pressure.
               </div>
             </Reveal>
           </div>
