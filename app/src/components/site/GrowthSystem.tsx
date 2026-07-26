@@ -104,16 +104,16 @@ const items: SystemItem[] = [
   },
   {
     icon: CalendarCheck,
-    title: "Booking",
-    line: "Qualified leads self-book straight onto your calendar.",
-    full: "Qualified leads land straight on your calendar with the right service, duration, and reminders, no back-and-forth, no double-booking.",
+    title: "Booking Integrity",
+    line: "Qualified leads self-book, validated so a booking is never invented.",
+    full: "Qualified leads land on your calendar with the right service, duration, and reminders. Every booking is checked against real calendar availability, so the system never invents one, no back-and-forth, no double-booking.",
     Motif: CalendarGrid,
   },
   {
     icon: Receipt,
-    title: "The Receipt",
-    line: "A monthly report showing every dollar Syntrex captured.",
-    full: "The Receipt is a monthly one-pager showing every lead captured, booked, and won, with the exact revenue attributed to the system.",
+    title: "Live Dashboard & Receipt",
+    line: "Watch dollars recovered climb live, formalized each month in the Receipt.",
+    full: "Watch recovered value climb on a live dashboard: the bookings the system produced times the job values you confirm at install, shown with the booking count beside the dollar figure. It is an estimate of revenue booked, never closed cash and never an industry average. The monthly Receipt is its formal statement, and the guarantee pays out on the Receipt.",
     Motif: ReceiptLines,
   },
 ];

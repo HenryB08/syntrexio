@@ -128,14 +128,15 @@ function Pricing() {
               <div className="max-w-3xl">
                 <div className="text-eyebrow mb-2">The SYN Growth Guarantee</div>
                 <p className="text-display text-2xl text-foreground md:text-3xl">
-                  If the Receipt does not show SYN Growth captured more value
-                  than it cost you,{" "}
+                  If the booked value in the month comes in under your fee,{" "}
                   <span className="text-shimmer">that month is free.</span>
                 </p>
                 <p className="mt-5 text-sm text-muted-foreground md:text-base">
-                  Active for the first 3 months, then a rolling quarterly review.
-                  We measure recovered value against your own average job value,
-                  agreed at setup. You see the math on the Receipt every month.
+                  Booked value is the bookings SYN Growth produces times the job
+                  values you confirm at install, an estimate of revenue booked,
+                  not cash collected. Active for the first 3 months, then a
+                  rolling quarterly review. The monthly Receipt, not the live
+                  dashboard, is the statement the guarantee pays out on.
                 </p>
               </div>
             </div>

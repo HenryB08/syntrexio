@@ -52,11 +52,11 @@ const wstats = [
 ];
 
 const wlayers = [
-  { icon: Fingerprint, title: "Brand encoded once", line: "Your brand, voice, and rules, captured one time." },
+  { icon: Fingerprint, title: "One brain, both products", line: "Your brand encoded once governs both Workspace and Growth; what Growth learns feeds the work here." },
   { icon: CalendarCheck, title: "Calendar run by AI", line: "Bookings and scheduling handled automatically." },
   { icon: Boxes, title: "Content & assets", line: "Content and brand assets produced and organized." },
   { icon: Wand2, title: "Builds & automations", line: "Tools, pages, and workflows built with AI." },
-  { icon: ShieldCheck, title: "Approval trail", line: "Nothing reaches a customer without your sign-off." },
+  { icon: ShieldCheck, title: "Approval trail that learns", line: "Nothing reaches a customer without your sign-off, and every approval, rejection, and edit teaches SYN your judgment." },
 ];
 
 // Trusted-by wordmarks — company name as styled text (Linear-style), each
@@ -260,15 +260,19 @@ function Home() {
             <div className="mt-1 text-sm text-foreground/80">Answer and capture every customer.</div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               The guaranteed system that answers every call, chat, and form in
-              seconds, 24/7, texts back every missed call, follows up until the
-              customer books, and proves what it recovered each month in the
+              seconds, 24/7, texts back every missed call, and follows up until
+              the customer books, with deterministic calendar validation so it
+              never invents a booking. A live dashboard shows the dollars it
+              recovers and the bookings behind them, formalized each month in the
               Receipt. It is an AI receptionist that covers every channel, not
-              just the phone.
+              just the phone, and it shares one encoded brain with SYN Workspace:
+              returning callers are recognized, and you can search past
+              conversations in plain language.
             </p>
             <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-foreground">
               <ShieldCheck size={16} className="shrink-0" />
-              If the Receipt does not show it captured more than it cost, that
-              month is free.
+              If the month's booked value comes in under your fee, that month is
+              free.
             </div>
             <div className="mt-4 text-xs text-muted-foreground">
               Launch pricing: one-time $497 setup, then $349/mo or $549/mo.
@@ -299,10 +303,13 @@ function Home() {
             <h3 className="mt-6 text-2xl font-semibold text-foreground">SYN Workspace</h3>
             <div className="mt-1 text-sm text-foreground/80">Encode your brand. AI runs the rest.</div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              The AI business workspace. Encode your brand once, and SYN runs
-              your calendar, content, brand assets, builds, and automations, with
-              an approval trail before anything reaches a customer. One workspace
-              in place of a dozen disconnected tools.
+              The AI business workspace. Encode your brand once, and that same
+              brain governs both SYN Workspace and SYN Growth, so what Growth
+              learns from your customers feeds the work here. SYN runs your
+              calendar, content, brand assets, builds, and automations, with an
+              approval trail before anything reaches a customer. Every approval,
+              rejection, and edit teaches SYN your judgment, so it gets more
+              personalized the longer it runs.
             </p>
             <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-muted-foreground">
               <Sparkles size={16} className="shrink-0 text-foreground" />
@@ -398,13 +405,19 @@ function Home() {
                   <div>
                     <div className="text-eyebrow mb-2">The SYN Growth Guarantee</div>
                     <p className="text-display word-rise max-w-4xl text-2xl text-foreground md:text-3xl lg:text-4xl">
-                      {"If the Receipt does not show the system captured more value than it cost you,".split(" ").map((w, i) => (
+                      {"If the booked value in the month comes in under your fee,".split(" ").map((w, i) => (
                         <span key={`g-${i}`} style={{ ["--i" as never]: i }}>
                           {w}
                           {"\u00A0"}
                         </span>
                       ))}
                       <span className="text-shimmer">that month is free.</span>
+                    </p>
+                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                      Booked value means the bookings SYN Growth produces times the
+                      job values you confirm at install, an estimate of revenue
+                      booked, not cash collected. The monthly Receipt is the
+                      statement the guarantee pays out on.
                     </p>
                   </div>
                 </div>
@@ -527,10 +540,10 @@ function Home() {
                 See exactly what missed leads are costing you.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-                The Free Leak Audit is available today, the pre-launch entry
-                point to SYN Growth. We mystery-shop your phone and web forms,
-                time the responses, and deliver a one-page report in 48 hours.
-                Free.
+                The Live Leak Audit is the pre-launch entry point to SYN Growth:
+                one button runs a simultaneous test of your phone, live chat, and
+                contact form, with a response timer on screen showing where
+                inquiries slip away. Free.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <MagneticButton>
