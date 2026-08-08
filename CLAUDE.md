@@ -2,6 +2,30 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Operating rules (permanent)
+
+These are standing rules set by Henry (the owner). They always apply.
+
+### Workflow
+- **Always work on a new branch, never directly on `main`.**
+- **Never merge without Henry's explicit approval.** An approval covers only the specific merge he approves; it does not carry over to later work.
+- **Run the full-site smoke check before declaring any web work complete.** Do not report web work as done until the whole site has been smoke-checked, not just the page you changed.
+- **If Henry reports a live bug that a test cannot reproduce, Henry's report wins.** Do not close it out as unreproducible. Investigate the gap between the test and reality, because the test is what is wrong or incomplete.
+
+### Copy rules (anything user-facing)
+Applies to all customer-facing surfaces: site copy, the SYN system prompt, SEO/schema, forms, and any generated text.
+- **No em dashes.**
+- **No fabricated statistics.** Only cite figures already approved on the site.
+- **No client counts** and no naming/implying clients beyond those already approved.
+
+### Canonical facts (source of truth)
+- **Pricing:** $497 install, then **$349/mo Core** or **$549/mo Pro**. Use these exact figures.
+- **Company vs. product:** **Syntrex** is the company. **SYN** is the product, shipped in two forms: **SYN Growth** and **SYN Workspace**.
+- **Guarantee = booked value:** measured as bookings times client-confirmed job values.
+- **The Receipt** is the payout document.
+
+> Note: `worker/worker.js` and some site copy may still carry older pricing/wording. When touching those surfaces, reconcile them to the canonical facts above, and keep the Worker `SYSTEM_PROMPT` byte-identical to the site's `SYSTEM_PROMPT` (see below).
+
 ## Repository shape: two sites mid-migration
 
 This repo holds **two versions of syntrexio.com** during a staged migration:
