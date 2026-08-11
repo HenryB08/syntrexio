@@ -319,6 +319,10 @@ function Pricing() {
             </p>
           </div>
         )}
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Published prices reflect a standard engagement. Final pricing is confirmed after the
+          diagnostic.
+        </p>
       </Section>
 
       {/* GUARANTEE */}

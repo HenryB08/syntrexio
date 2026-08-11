@@ -656,9 +656,18 @@ function Home() {
             <SectionHeader
               eyebrow="Pricing"
               title="Published, not quoted."
-              description="Every price is on the site. No discovery call to find out what it costs. You get the output, not the overhead."
+              description="Every price is on the site. No discovery call to find out what it costs."
             />
           </div>
+        </Reveal>
+
+        <Reveal delay={60}>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            The same work, at meaningfully less than agency rate. Delivered faster, because an
+            orchestrated fleet runs the workstreams in parallel, so a build that takes an agency six
+            weeks takes us days. And guaranteed on a metric we name in writing. Agencies charge for
+            the team behind the work. We do not have one. You get the output, not the overhead.
+          </p>
         </Reveal>
 
         <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
