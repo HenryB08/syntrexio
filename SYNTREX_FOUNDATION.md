@@ -1,6 +1,6 @@
 SYNTREX FOUNDATION DOCUMENT
 
-Version 3.1 — August 2026 — Canonical
+Version 3.2, August 2026, Canonical
 
 This document supersedes all prior Syntrex strategy, positioning, pricing, and operating documents. If any chat, file, deck, proposal, or page contradicts this document, this document wins.
 
@@ -223,6 +223,17 @@ A documented baseline captured before work begins.
 A defined window, typically 90 days.
 A single source of truth for measurement, agreed at signing.
 If the metric is not hit, we keep working at no additional cost until it is.
+What the client provides
+
+The labor remedy assumes the client keeps the work moving, so the guarantee carries four conditions. Each is measured by a date, not by judgment.
+
+Approval turnaround: submitted work is approved, or returned with specific requested changes, within five business days of delivery.
+Access: the systems and accounts named at kickoff are granted within five business days of the request.
+Information: facts only the client holds, and that we cannot obtain ourselves, are provided within five business days of the request.
+Point of contact: one named person with authority to approve, reachable through the channel agreed at kickoff.
+
+When a condition is missed, the guarantee window pauses on the dated miss and resumes on the date the item is resolved. A pause never voids the guarantee, it only stops the clock. Every pause is recorded on that month's Receipt with the date it began and the date it ended, so the count is visible to both sides. Nothing here turns on our opinion of the client, only on dated events either side can verify.
+
 Why this is safe
 
 The remedy is time, and for an agent-leveraged operation time is cheap. There is no cash exposure. The qualification is the protection: only offer the guarantee to clients whose situation you have diagnosed and whose baseline you have measured. The diagnostic exists partly for this reason.
@@ -426,6 +437,7 @@ Version    Date    Change
 2.0    Aug 2026    Added proof layer, referral and partner channels, portfolio pricing, retention standard
 3.0    Aug 2026    Full rebuild on six research runs. Added paid diagnostic front door, package architecture, controllable-metric guarantee with labor remedy, sales process, burned-buyer playbook, credibility framework, expansion mechanics, operations systematization, revenue model, sourced statistics throughout
 3.1    Aug 2026    PROOF updated to verified Google Search Console figures, superseding the 280% estimate
+3.2    Aug 2026    Added client-performance conditions to the guarantee (Section 9): approval turnaround, access, information, and a named point of contact, each tied to a date. Missing one pauses the guarantee window rather than voiding it, documented on the Receipt. Reason: the labor remedy was unbounded, so a client who stopped approving work could block delivery and then claim the guarantee
 
 Current version: 3.1
 

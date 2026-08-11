@@ -19,6 +19,8 @@
 
 **Say it plainly when the guarantee was missed.** Section 2 has a yes or a no in it. Never a paragraph that avoids saying which. A Receipt that hides a miss destroys the only thing the Receipt is for.
 
+**Record every guarantee-window pause in Section 1.** When a client misses an agreed condition, approval turnaround, access, information we cannot get ourselves, or a reachable named contact, the window pauses. The `Window pauses` line states each pause with the date it began, the date it ended, and the condition that triggered it, for example "3 days, 4 to 7 August, waiting on ad account access." When there were none, the line reads "None this window." A pause is a dated fact, never a judgment of the client, and it is the only place the paused days are accounted for, so it is never left blank.
+
 ---
 
 ## IMMUTABILITY
@@ -90,7 +92,8 @@ Example: `clients/halt-fire/receipts/2026-07-receipt-r1.md`
 | **Change from baseline** | {{CHANGE_FROM_BASELINE}} |
 | **Change from last period** | {{CHANGE_FROM_LAST_PERIOD}} |
 | **Source** | {{MEASUREMENT_SOURCE}}, pulled {{MEASUREMENT_PULL_DATE}} |
-| **Window** | Day {{DAYS_ELAPSED}} of {{WINDOW_DAYS}} |
+| **Window** | Day {{DAYS_ELAPSED}} of {{WINDOW_DAYS}}, excluding paused days |
+| **Window pauses** | {{WINDOW_PAUSES}} |
 
 **Trend**
 
@@ -208,6 +211,7 @@ Stated so this Receipt can be read on its own in a year.
 | {{METRIC_1}} | {{METRIC_1_DEFINITION}} |
 | Hours returned | {{HOURS_DEFINITION}} |
 | Target queries | The {{TARGET_QUERY_COUNT}} queries agreed on {{QUERY_AGREEMENT_DATE}}, listed at {{QUERY_LIST_LINK}} |
+| Window pauses | Days the guarantee window was paused because an agreed client condition was missed, each with a start and end date. Paused days do not count toward the window |
 
 **This Receipt is final as issued.** If a number in it is later found to be wrong, it is not edited. A superseding Receipt is issued and you receive it with the reason.
 
@@ -247,7 +251,8 @@ The same template, completed. Illustrative of the format and the level of specif
 | **Change from baseline** | Up 689% |
 | **Change from last period** | Up 15% |
 | **Source** | Google Search Console, pulled 2 August 2026 |
-| **Window** | Day 151 of 240 |
+| **Window** | Day 151 of 240, excluding paused days |
+| **Window pauses** | None this window |
 
 **Trend**
 
@@ -351,6 +356,7 @@ The same template, completed. Illustrative of the format and the level of specif
 | Inbound inquiries captured | Form submissions, assistant conversations that produced contact details, and tracked calls, deduplicated by phone and email |
 | Hours returned | Measured time on a task before automation minus measured time after, multiplied by task volume in the period. Method stated per row |
 | Target queries | The 32 queries agreed on 3 July 2026, listed in the hub |
+| Window pauses | Days the guarantee window was paused because an agreed client condition was missed, each with a start and end date. Paused days do not count toward the window |
 
 **This Receipt is final as issued.** If a number in it is later found to be wrong, it is not edited. A superseding Receipt is issued and you receive it with the reason.
 

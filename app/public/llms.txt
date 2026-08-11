@@ -97,6 +97,8 @@ Never guaranteed: revenue, closed deals, or conversion rate. Those depend on the
 
 How it works: one metric named in writing, a documented baseline before work begins, a 90 day window, and one agreed source of truth. If the metric is not hit, we keep working at no additional cost until it is.
 
+The window pauses if the client misses an agreed, dated condition: approving submitted work within five business days, granting the systems and accounts named at kickoff, providing information only the client holds, or keeping one named point of contact. A pause never voids the guarantee, it only stops the clock, and each pause is recorded on that month's Receipt with its start and end dates.
+
 ## Why the market needs this (verified research)
 
 - 95% of enterprise AI pilots produce no measurable profit-and-loss impact, despite $30 to $40 billion spent. Source: MIT Project NANDA, State of AI in Business, July 2025.

@@ -204,6 +204,8 @@ We guarantee what we control. We do not guarantee your sales team. That sentence
 
 **If we miss it:** we keep working at no additional cost until it is hit.
 
+**What we need from you, stated plainly so it is not a surprise later:** the window pauses if you miss an agreed condition, each measured by a date. Approving submitted work within {{CLIENT_APPROVAL_SLA}}. Granting the systems and accounts named at kickoff. Providing information only you hold and that we cannot obtain ourselves. Keeping one named point of contact who can approve. A missed condition pauses the window on the dated miss and resumes it on the date you clear it. It never voids the guarantee, it only stops the clock, and every pause is recorded on that month's Receipt with its start and end dates. This is not a loophole to escape the guarantee. It is there so that time we spend waiting on you does not count against the window we agreed to be judged on, and every pause is visible to you in writing.
+
 **What is never guaranteed, and you should be suspicious of anyone who does guarantee it:** revenue, closed deals, or conversion rate. Those depend on your pricing, your product, your sales team, and your market. Anyone promising you a revenue number is promising you something they cannot control, which is how the last engagement started.
 
 ---

@@ -145,6 +145,8 @@ Anything on this list can be added. See Section 4.
 
 **What we need from you, ongoing.** A decision-maker who can approve in {{CLIENT_APPROVAL_SLA}}, and a heads-up when something changes in your business that we should know about: a new product, a price change, a hire, a campaign, a bad review, a competitor move. The system knows your business only as well as you tell it.
 
+**How this connects to the guarantee.** These four are also the conditions the guarantee window depends on: approving submitted work within {{CLIENT_APPROVAL_SLA}}, granting the systems and accounts named above, providing information only you hold, and keeping one named contact who can approve. If one is missed, the guarantee window pauses on that date and resumes when it is cleared. A pause never voids the guarantee, it only stops the clock, and it is recorded on that month's Receipt with both dates. It exists so that time spent waiting on you does not eat the window we are being measured against.
+
 **What you never need to do.** Chase us for a report. Reports arrive on schedule whether or not anyone asks.
 
 **Human approval.** Nothing client-facing ships without a human at Syntrex reviewing and approving it first. That is permanent policy and it does not change at any scale.
