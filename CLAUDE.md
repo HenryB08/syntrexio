@@ -19,12 +19,16 @@ Applies to all customer-facing surfaces: site copy, the SYN system prompt, SEO/s
 - **No client counts** and no naming/implying clients beyond those already approved.
 
 ### Canonical facts (source of truth)
-- **Pricing:** $497 install, then **$349/mo Core** or **$549/mo Pro**. Use these exact figures.
-- **Company vs. product:** **Syntrex** is the company. **SYN** is the product, shipped in two forms: **SYN Growth** and **SYN Workspace**.
-- **Guarantee = booked value:** measured as bookings times client-confirmed job values.
-- **The Receipt** is the payout document.
+- **Positioning:** Syntrex is the AI infrastructure layer behind operating companies. One team runs a business's entire digital and AI back end across four tracks: Visibility, Conversion, Presence, Operations. **Agent Workforce** is the flagship.
+- **Pricing (published, the only correct figures):**
+  - Front door: **AI Systems Diagnostic $3,500**, fully credited toward any engagement within 60 days.
+  - Retainers per month: **Visibility $2,500, Conversion $2,000, Presence $1,800, Operations $2,500, Full Stack $7,500** (all four, below the $8,800 sum), **Agent Workforce $5,000 to $12,000**, **Full Stack plus Agent Workforce $12,500 and up**.
+  - One-time builds: website up to 5 pages $4,500; 6 to 12 pages $7,500; e-commerce $11,000; brand identity $3,500; AI assistant deployment $4,000; CRM buildout $4,500; automation $6,500 per workflow; custom AI tool from $9,000; Agent Workforce install $35,000 to $95,000.
+  - Terms: builds are 40% deposit, balance on milestones; retainers billed on the 1st; portfolio pricing 10% off the second brand, 15% off beyond.
+- **Guarantee:** we guarantee only what we control (citation presence, ranking movement, content volume, hours removed, agent task volume, delivery against spec). We do **not** guarantee revenue, closed deals, or conversion rate. The remedy is our labor, never a refund.
+- **Dead terms (never reintroduce):** SYN, SYN Growth, SYN Workspace, the Growth System, the Receipt, booked-value guarantee, AI receptionist, missed-call text-back, the Leak Audit, and any of the retired Growth-era install-plus-monthly prices. The pricing block above is the only correct pricing.
 
-> Note: `worker/worker.js` and some site copy may still carry older pricing/wording. When touching those surfaces, reconcile them to the canonical facts above, and keep the Worker `SYSTEM_PROMPT` byte-identical to the site's `SYSTEM_PROMPT` (see below).
+> The TanStack app embeds no system prompt, so `worker/worker.js` is the sole owner of the SYN chat assistant's behavior. Keep its `SYSTEM_PROMPT` in sync with the site copy (positioning, four tracks, pricing, guarantee) in `app/src`. The Worker deploys separately to Cloudflare (wrangler), not via the Pages workflow.
 
 ## Repository shape: two sites mid-migration
 
