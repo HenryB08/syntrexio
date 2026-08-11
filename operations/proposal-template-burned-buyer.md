@@ -1,6 +1,6 @@
 # Proposal Template: Burned Buyer
 
-> **Source of truth:** SYNTREX_FOUNDATION.md v3.0. Section 11, the burned buyer playbook. Every price, guarantee mechanic, and term comes from the Foundation. If this template disagrees with it, the Foundation wins.
+> **Source of truth:** SYNTREX_FOUNDATION.md. Section 11, the burned buyer playbook. Every price, guarantee mechanic, and term comes from the Foundation. If this template disagrees with it, the Foundation wins.
 
 ---
 
@@ -272,7 +272,7 @@ We guarantee what we control. We do not guarantee your sales team. That sentence
 
 ## 10. Proof you can check
 
-**HALT Fire.** Full AI and digital stack. 280% search growth and 10+ hours per week returned to the team, delivered by the same system that would run {{CLIENT_NAME}}.
+**HALT Fire.** Full AI and digital stack. Search clicks up 689% to 505 and impressions up 1,608% to 22.9K over three months, plus 10+ hours per week returned to the team, delivered by the same system that would run {{CLIENT_NAME}}.
 
 **Doughbrik's Wavers.** Ongoing retainer. Consumer brand with national retail distribution.
 

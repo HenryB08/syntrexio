@@ -1,7 +1,7 @@
 # SOP: Website Build
 
 > Track C, Presence. Websites and web applications.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 7.3, 9.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 7.3, 9.
 
 **Guaranteed metric for this service: delivery against agreed spec and timeline.** Not traffic, not conversion rate. We control what we build and when we ship it.
 

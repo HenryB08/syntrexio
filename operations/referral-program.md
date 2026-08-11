@@ -1,7 +1,7 @@
 # Referral Program
 
 > **Internal. The client-facing version is the page at syntrexio.com/referral.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 15.
+> Source of truth: SYNTREX_FOUNDATION.md, Section 15.
 
 ---
 

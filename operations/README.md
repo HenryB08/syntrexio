@@ -2,7 +2,7 @@
 
 The documents that run a Syntrex engagement, from proposal to renewal.
 
-**Source of truth for every document here: `SYNTREX_FOUNDATION.md` v3.0.** Pricing, the sixteen services, the four tracks, the guarantee structure, the sales process, and the onboarding standard all come from it. If anything in this directory contradicts the Foundation, the Foundation wins and the document here gets corrected.
+**Source of truth for every document here: `SYNTREX_FOUNDATION.md`.** Pricing, the sixteen services, the four tracks, the guarantee structure, the sales process, and the onboarding standard all come from it. If anything in this directory contradicts the Foundation, the Foundation wins and the document here gets corrected.
 
 **Copy rules apply to everything customer-facing produced from these templates:** no em dashes, no fabricated statistics, no client counts, and no named client beyond HALT Fire, Doughbrik's Wavers, and Kinetix. Kinetix is a partner, not a client.
 

@@ -2,21 +2,17 @@
 
 Judgment calls made while building `operations/`, and the gaps in the Foundation they surfaced.
 
-Branch: `henrybello/operating-docs`. Source of truth throughout: `SYNTREX_FOUNDATION.md` v3.0.
+Branch: `henrybello/operating-docs`. Source of truth throughout: `SYNTREX_FOUNDATION.md`.
 
 ---
 
-## 1. The Foundation is not on this branch
+## 1. The Foundation was not in the repo (RESOLVED)
 
-**Situation.** The brief names `SYNTREX_FOUNDATION.md` at the repo root. It is not there and it is not on `main`. It exists only on `henrybello/audit-fleet`, added in commit `e29ed9d`.
+**Situation.** The brief named `SYNTREX_FOUNDATION.md` at the repo root. It was not there and not on `main`. It existed only on `henrybello/audit-fleet`, in commit `e29ed9d`.
 
-**Decision.** Read it from that commit and treat it as canonical. Did not copy it into this branch.
+**Decision at the time.** Read it from that commit, treat it as canonical, and do not copy it into this branch, because a canonical document in two places will diverge.
 
-**Why.** A canonical document that exists in two places will diverge, and the version-control section of the Foundation itself requires amendment rather than duplication. It will be at the root once `audit-fleet` merges.
-
-**Action for Henry.** Merge `henrybello/audit-fleet` so the Foundation reaches `main`. Until then, every reference to `SYNTREX_FOUNDATION.md` in `operations/` points at a file this branch does not contain.
-
----
+**Resolved.** It is now at the repo root, added on `henrybello/foundation-doc` and amended there to v3.1. Every reference in `operations/` resolves correctly once that branch lands. References are deliberately unpinned (`SYNTREX_FOUNDATION.md`, no version number) so future amendments do not invalidate 21 files.
 
 ## 2. Karlo Financial is in the brief's approved-proof list but not in the Foundation
 
@@ -30,31 +26,21 @@ Branch: `henrybello/operating-docs`. Source of truth throughout: `SYNTREX_FOUNDA
 
 ---
 
-## 3. The HALT Fire example in the Receipt template contains illustrative line items
+## 3. The HALT Fire example in the Receipt template is partly illustrative
 
-**Situation.** The brief asks for a filled-in HALT Fire example so the Receipt format is obvious. The Foundation publishes exactly two HALT Fire figures: 280% search growth and 10+ hours per week returned. A one-line Receipt does not demonstrate a format.
+**Situation.** The brief asked for a filled-in HALT Fire example so the Receipt format is obvious. The Foundation publishes a small number of HALT Fire figures. A one-line Receipt does not demonstrate a format.
 
-**Decision.** Built the example around the two published figures and used them as the guaranteed metric and the hours-returned total. The remaining line items, the work shipped table, and the citation counts are illustrative, and the example is explicitly labelled as such directly above it.
+**Decision.** Build the example so the guaranteed metric, the search impressions row, and the hours-returned total are the real published proof points, and label everything else as format demonstration. The label sits directly above the example so it cannot be copied without it.
 
-**Why.** Refusing to produce the example would have failed the brief. Producing it without a label would have created quotable numbers. The label is the compromise, and it is placed where nobody can copy the table without also copying the label.
+**Updated after Foundation v3.1.** The example originally used the v3.0 figure of 280% search growth. v3.1 replaced that with the verified Search Console numbers, so the example was rebuilt on search clicks: baseline 64, current 505, which is exactly the published 689%. Search impressions were added as a reported row at 1,341 to 22,900, exactly the published 1,608%. Both check arithmetically rather than being asserted.
 
-**Action for Henry.** Before this template is used with a real prospect, replace the example wholesale with a real Receipt, or delete the example section. It is a formatting aid, not a case study.
+**Action for Henry.** Before this template is used with a real prospect, replace the example with a real Receipt or delete the example section. It is a formatting aid, not a case study.
 
----
+## 4. The site carried dead positioning while the referral page did not (RESOLVED)
 
-## 4. The website carries dead positioning, and the referral page does not
+**Situation.** When this branch was written, `app/src`, the root HTML, and `worker/worker.js` all still carried SYN Growth and SYN Workspace positioning with the retired install-plus-monthly pricing. The new `/referral` page was written to Foundation language, which made it the only page on the site quoting Foundation pricing.
 
-**Situation.** The Foundation v3.0 supersedes the SYN Growth and SYN Workspace positioning that `app/src`, the root HTML, and `worker/worker.js` all still carry, along with the old $497/$349/$549 pricing and the free Leak Audit as the front door. `CLAUDE.md`'s canonical facts section also predates the Foundation and disagrees with it.
-
-**Decision.** Wrote the new `/referral` page entirely to Foundation language: the AI Systems Diagnostic at $3,500, retainers from $1,800 to $12,500, builds from $3,500 to $95,000, and no reference to SYN Growth or SYN Workspace. Changed nothing else on the site.
-
-**Why.** The brief requires Foundation alignment. Migrating the rest of the site is a separate and much larger piece of work that was not in scope, and doing half of it would have left the site in a worse state than either endpoint.
-
-**Consequence to be aware of.** `/referral` is now the only page on the site quoting Foundation pricing. A visitor moving from `/pricing` to `/referral` sees two different price lists. This is a known inconsistency introduced deliberately, not an oversight.
-
-**Action for Henry.** The site-wide migration to Foundation v3.0 is the next piece of work, and it needs to cover `app/src`, the root `*.html` files, `app/public/*.html`, and the `SYSTEM_PROMPT` in `worker/worker.js` and its roughly 20 embedded copies. `CLAUDE.md`'s canonical facts section needs updating in the same pass.
-
----
+**Resolved.** The site was migrated to the Foundation on `main` in `15ef71b` and `7033be6`, before this branch was rebased. `henrybello/pricing-migration` closed the three surfaces those commits missed. The root HTML no longer exists, `app/public/*.html` are redirect stubs with no copy, and there is exactly one `SYSTEM_PROMPT`, in `worker/worker.js`. The inconsistency this entry warned about is gone: `/referral` now matches every other page.
 
 ## 5. Referral form reuses the existing Formspree endpoint
 
@@ -68,17 +54,15 @@ Branch: `henrybello/operating-docs`. Source of truth throughout: `SYNTREX_FOUNDA
 
 ---
 
-## 6. The referral page is registered in the app sitemap only, not the root one
+## 6. The referral page is registered in the app sitemap only
 
-**Situation.** Two sitemaps exist: `app/public/sitemap.xml` for the React app and `sitemap.xml` at the repo root for the current live site, whose URLs are `.html` files.
+**Situation.** Two sitemaps exist: `app/public/sitemap.xml`, which is the one actually published, and `sitemap.xml` at the repo root.
 
 **Decision.** Added `/referral/` to `app/public/sitemap.xml` only.
 
-**Why.** The page exists only in the React app. Listing it in the live site's sitemap would advertise a URL that returns 404 until cutover.
+**Why.** The root `sitemap.xml` is a dead artifact. It lists 23 URLs pointing at `.html` pages that were deleted in `15ef71b`, and the deploy workflow does not reference or publish it. Adding a live URL to a stale sitemap that nobody serves would be worse than leaving it alone.
 
-**Action for Henry.** If the referral page is needed before cutover, it has to be built as a root-level `referral.html` as well. Pre-cutover, `app/` builds but does not deploy.
-
----
+**Action for Henry.** The root `sitemap.xml` should probably be deleted along with the other legacy leftovers. Flagged rather than done, because it is outside what was asked here.
 
 ## 7. Lint was already failing repo-wide, so only the new file was formatted
 
@@ -99,6 +83,24 @@ Branch: `henrybello/operating-docs`. Source of truth throughout: `SYNTREX_FOUNDA
 **Decision.** Installed Bun and ran `bun install --frozen-lockfile`, then built and smoke-checked.
 
 **Why.** `CLAUDE.md` requires a full-site smoke check before declaring web work complete, and that is not possible without a build. Nothing about the repo changed: `bun.lock` is unmodified and `node_modules` is untracked.
+
+---
+
+## 9. Foundation PROOF amended to v3.1 during this work
+
+**Situation.** v3.0's PROOF line said HALT Fire delivered "280% search growth". Seven site surfaces carried the measured Google Search Console figures instead: clicks up 689% to 505, impressions up 1,608% to 22.9K over three months.
+
+**Decision.** Henry ruled to keep the Search Console figures and amend the Foundation. Done on `henrybello/foundation-doc` as v3.1, with a version-control row recording the reason, per the document's own amendment rule.
+
+**Downstream.** Both proposal templates and the Receipt example were updated to the v3.1 figures in the same pass, so no document under `operations/` still quotes the superseded 280%.
+
+---
+
+## 10. Karlo Financial confirmed out
+
+**Situation.** Entry 2 flagged that Karlo Financial appeared in the brief's approved-proof list but nowhere in the Foundation.
+
+**Resolved.** Henry confirmed the omission was correct. Approved proof stays at HALT Fire, Doughbrik's Wavers, and Kinetix, with Kinetix labeled a partner rather than a client.
 
 ---
 

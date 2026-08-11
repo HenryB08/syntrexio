@@ -1,7 +1,7 @@
 # SOP: Client Encoding
 
 > **Layer 1 of the delivery architecture. Everything else depends on this.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 4.
+> Source of truth: SYNTREX_FOUNDATION.md, Section 4.
 
 Every client is encoded once: brand voice, visual system, products, pricing, policies, competitors, goals, constraints. Persistent, stored in shared memory. **Every output passes through it.**
 

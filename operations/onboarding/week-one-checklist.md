@@ -1,7 +1,7 @@
 # Week One Checklist
 
 > **Internal. Never sent to the client.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 13. "Within 7 days: something real and working shipped. Not a plan. Not a discovery deck."
+> Source of truth: SYNTREX_FOUNDATION.md, Section 13. "Within 7 days: something real and working shipped. Not a plan. Not a discovery deck."
 
 ---
 

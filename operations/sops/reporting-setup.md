@@ -1,7 +1,7 @@
 # SOP: Reporting Setup
 
 > Track D, Operations. Reporting, analytics, and dashboards.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 4, 8, 9.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 4, 8, 9.
 
 This SOP produces the machinery behind the Receipt. It is run once per client, early, and everything else depends on it.
 

@@ -1,7 +1,7 @@
 # 30/60/90 Day Plan Template
 
 > **Drafted and sent within 24 hours of signing, alongside the kickoff summary. Agreed with the client within 7 days.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 13.
+> Source of truth: SYNTREX_FOUNDATION.md, Section 13.
 
 ---
 

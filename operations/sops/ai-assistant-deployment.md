@@ -1,7 +1,7 @@
 # SOP: AI Assistant Deployment
 
 > Track B, Conversion. AI assistants and customer-facing chat.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 7.3, 9, 17.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 7.3, 9, 17.
 
 **Pricing: $4,000 for an AI assistant deployment.**
 

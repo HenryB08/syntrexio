@@ -1,7 +1,7 @@
 # SOP: Content Production
 
 > Track A, Visibility. Content production and strategy.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 9.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 9.
 
 **Guaranteed metric for this service: volume and publication schedule delivered.** Not traffic, not rankings, not leads. We control what we publish and when. We do not control what an algorithm does with it, and we do not guarantee it.
 

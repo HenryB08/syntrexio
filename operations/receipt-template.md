@@ -1,7 +1,7 @@
 # The Receipt
 
 > The monthly proof document. One page. What the system did and what it was worth.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 8.
+> Source of truth: SYNTREX_FOUNDATION.md, Section 8.
 
 ---
 
@@ -218,7 +218,7 @@ Henry Bello · Syntrex · henry@syntrexio.com
 
 # FILLED EXAMPLE
 
-The same template, completed. Illustrative of the format and the level of specificity expected. Figures for the guaranteed metric and hours returned are the published HALT Fire proof points; the remaining line items are shown to demonstrate the format.
+The same template, completed. Illustrative of the format and the level of specificity expected. The guaranteed metric, the search impressions row, and the hours-returned total are the published HALT Fire proof points from the Foundation; every other line item is shown only to demonstrate the format and is not a real figure.
 
 ---
 
@@ -240,23 +240,23 @@ The same template, completed. Illustrative of the format and the level of specif
 
 | | |
 |---|---|
-| **Metric** | Organic search growth, sessions from organic search |
-| **Baseline** | 1,240 monthly sessions, measured 1 February 2026 |
-| **Target** | 200% growth, 3,720 sessions, by 30 September 2026 |
-| **This period** | **4,712 sessions** |
-| **Change from baseline** | 280% growth |
-| **Change from last period** | Up 14% |
-| **Source** | Google Analytics 4, organic search channel, pulled 2 August 2026 |
+| **Metric** | Search clicks from organic search |
+| **Baseline** | 64 monthly clicks, measured 1 February 2026 |
+| **Target** | 400% growth, 320 clicks, by 30 September 2026 |
+| **This period** | **505 clicks** |
+| **Change from baseline** | Up 689% |
+| **Change from last period** | Up 15% |
+| **Source** | Google Search Console, pulled 2 August 2026 |
 | **Window** | Day 151 of 240 |
 
 **Trend**
 
 | Period | Value |
 |---|---|
-| Baseline, 1 February 2026 | 1,240 |
-| May 2026 | 3,105 |
-| June 2026 | 4,133 |
-| **July 2026** | **4,712** |
+| Baseline, 1 February 2026 | 64 |
+| May 2026 | 331 |
+| June 2026 | 441 |
+| **July 2026** | **505** |
 
 ---
 
@@ -264,7 +264,7 @@ The same template, completed. Illustrative of the format and the level of specif
 
 > ## MET
 
-**The metric reached target on 12 June 2026 and the guarantee for this window is satisfied.** Organic search sessions are up 280% against a 200% target, with 89 days remaining in the window.
+**The metric reached target on 12 June 2026 and the guarantee for this window is satisfied.** Search clicks are up 689% against a 400% target, with 89 days remaining in the window.
 
 ---
 
@@ -313,7 +313,8 @@ The same template, completed. Illustrative of the format and the level of specif
 
 | Metric | Baseline | Last period | This period | Change |
 |---|---|---|---|---|
-| Organic sessions | 1,240 | 4,133 | 4,712 | Up 280% from baseline |
+| Search clicks | 64 | 441 | 505 | Up 689% from baseline |
+| Search impressions | 1,341 | 19,700 | 22,900 | Up 1,608% from baseline |
 | Inbound inquiries captured | 34/mo | 91 | 108 | Up 218% from baseline |
 | Target queries ranking page 1 | 3 of 20 | 17 of 32 | 21 of 32 | Up 18 |
 | Average first response time | 4 hrs 20 min | 6 min | 4 min | Down from 4 hrs 20 min |
@@ -331,7 +332,7 @@ The same template, completed. Illustrative of the format and the level of specif
 
 ## 6. What changed and what is next
 
-**What moved and why:** The five service area pages went live on 8 July and accounted for most of the session growth in the second half of the month, because they finally match how people search by county rather than by service. Citation presence rose across all four engines, with the largest gain in AI Overviews, tracking the four service pages rebuilt for retrieval.
+**What moved and why:** The five service area pages went live on 8 July and accounted for most of the click growth in the second half of the month, because they finally match how people search by county rather than by service. Citation presence rose across all four engines, with the largest gain in AI Overviews, tracking the four service pages rebuilt for retrieval.
 
 **What did not move and why:** Gemini citation presence gained only 2 queries and remains the weakest engine of the four. It indexes more slowly than the others and the July content is not fully reflected yet. If it has not caught up by the September Receipt it becomes a specific workstream rather than a wait.
 
@@ -345,7 +346,8 @@ The same template, completed. Illustrative of the format and the level of specif
 
 | Term | Definition used in this Receipt |
 |---|---|
-| Organic search growth | Sessions from the organic search channel in GA4, month over month against the February 2026 baseline |
+| Search clicks | Clicks to the site from Google organic search results, per Google Search Console, against the February 2026 baseline |
+| Search impressions | Times a site URL appeared in Google organic search results, per Google Search Console, against the February 2026 baseline |
 | Inbound inquiries captured | Form submissions, assistant conversations that produced contact details, and tracked calls, deduplicated by phone and email |
 | Hours returned | Measured time on a task before automation minus measured time after, multiplied by task volume in the period. Method stated per row |
 | Target queries | The 32 queries agreed on 3 July 2026, listed in the hub |

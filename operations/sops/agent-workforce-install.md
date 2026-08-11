@@ -1,7 +1,7 @@
 # SOP: Agent Workforce Install
 
 > Track D, Operations. The flagship.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 7.3, 9, 17.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 7.3, 9, 17.
 
 **Pricing: $35,000 to $95,000 install, then $5,000 to $12,000 per month to operate.**
 

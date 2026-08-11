@@ -1,7 +1,7 @@
 # Account Health Scorecard
 
 > **Internal. Never shown to the client.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 8, 13, and 14.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 8, 13, and 14.
 
 ---
 

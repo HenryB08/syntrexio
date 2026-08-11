@@ -1,7 +1,7 @@
 # SOP: Workflow Automation
 
 > Track D, Operations. Workflow automation and system integration.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 7.3, 9.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 7.3, 9.
 
 **Pricing: $6,500 per workflow build.**
 

@@ -1,7 +1,7 @@
 # Quarterly Business Review
 
 > **60% of the agenda is the next 90 days, not the last 90.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 13 and 14.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 13 and 14.
 
 ---
 

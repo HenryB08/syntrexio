@@ -1,7 +1,7 @@
 # SOP: CRM Buildout and Migration
 
 > Track B, Conversion. CRM buildout, migration, and management.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 7.3, 17.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 7.3, 17.
 
 **Pricing: $4,500 for a CRM buildout and migration.**
 

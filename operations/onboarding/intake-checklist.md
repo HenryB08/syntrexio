@@ -1,7 +1,7 @@
 # Intake Checklist
 
 > **Due within 48 hours of signing.**
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Section 13.
+> Source of truth: SYNTREX_FOUNDATION.md, Section 13.
 
 ---
 

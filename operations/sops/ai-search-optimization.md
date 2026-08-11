@@ -1,7 +1,7 @@
 # SOP: AI Search Optimization (GEO)
 
 > Track A, Visibility. Being cited by ChatGPT, Gemini, Perplexity, and AI Overviews.
-> Source of truth: SYNTREX_FOUNDATION.md v3.0, Sections 6, 9, 14.
+> Source of truth: SYNTREX_FOUNDATION.md, Sections 6, 9, 14.
 
 Visibility is the entry point on the expansion sequence because GEO has the strongest growth, the strongest pricing power, and the lowest tooling cost. Never lead with a website.
 
