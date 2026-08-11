@@ -22,7 +22,6 @@ import { Icon3D } from "@/components/site/Icon3D";
 import { MagneticButton } from "@/components/site/MagneticButton";
 import { Aurora } from "@/components/site/Aurora";
 import { WorldMap } from "@/components/site/WorldMap";
-import { DataStream } from "@/components/site/DataStream";
 import { useEffect, useRef } from "react";
 import heroOffice from "@/assets/hero-office.png.asset.json";
 import glassLobby from "@/assets/glass-lobby.png.asset.json";
@@ -272,7 +271,7 @@ function Home() {
         />
         <div
           ref={heroRef}
-          className="hero-fade container-page relative pt-24 pb-24 md:pt-32 md:pb-32 w-full"
+          className="hero-fade container-page relative pt-20 pb-16 md:pt-24 md:pb-24 w-full"
         >
           <div className="max-w-4xl">
             <Reveal>
@@ -325,7 +324,7 @@ function Home() {
 
       {/* TRUSTED BY - marquee */}
       <section className="group border-b border-hairline">
-        <div className="py-10 md:py-12">
+        <div className="py-8 md:py-10">
           <Reveal>
             <div className="text-eyebrow mb-8 text-center">Trusted by</div>
             <div
@@ -357,7 +356,7 @@ function Home() {
       </section>
 
       {/* THE PROBLEM */}
-      <Section className="relative">
+      <Section className="relative" pad="compact">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
@@ -372,7 +371,7 @@ function Home() {
 
       {/* PROBLEM STAT STRIP */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
-        <div className="ken-burns">
+        <div className="ken-burns ken-burns--static">
           <img
             src={aerialCity.url}
             alt=""
@@ -397,7 +396,7 @@ function Home() {
               <div
                 key={s.label}
                 data-choreo
-                className="stat-scale px-2 py-10 md:px-10 md:py-14"
+                className="stat-scale px-2 py-8 md:px-10 md:py-10"
                 style={{ ["--d" as never]: `${i * 100}ms` }}
               >
                 <div className="text-display text-5xl text-foreground md:text-6xl">
@@ -419,7 +418,7 @@ function Home() {
       </section>
 
       {/* WHAT WE RUN - four tracks */}
-      <Section className="relative">
+      <Section className="relative" pad="compact">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
@@ -431,7 +430,7 @@ function Home() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-9 grid grid-cols-1 gap-6 md:grid-cols-2">
           {tracks.map((t) => (
             <article
               key={t.name}
@@ -463,11 +462,9 @@ function Home() {
       {/* AGENT WORKFORCE - flagship */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/40">
         <Aurora variant="soft" />
-        <DataStream />
-        <div className="container-page relative py-20 md:py-28">
+        <div className="container-page relative py-12 md:py-16">
           <div data-choreo className="border-draw">
             <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)-1px)] bg-background p-8 md:p-12">
-              <div className="heartbeat" aria-hidden />
               <div className="relative">
                 <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
                   <Icon3D icon={Bot} size={56} iconSize={24} />
@@ -540,7 +537,7 @@ function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <Section className="relative">
+      <Section className="relative" pad="compact">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
@@ -552,7 +549,7 @@ function Home() {
           </div>
         </Reveal>
 
-        <div className="howitworks-grid mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {layers.map((s) => (
             <div key={s.title} className="surface-card surface-card-hover group h-full p-6">
               <Icon3D icon={s.icon} size={44} iconSize={20} />
@@ -565,7 +562,7 @@ function Home() {
 
       {/* PROOF STAT BAND */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
-        <div className="ken-burns ken-burns--bright">
+        <div className="ken-burns ken-burns--bright ken-burns--static">
           <img
             src={glassLobby.url}
             alt=""
@@ -590,7 +587,7 @@ function Home() {
               <div
                 key={s.label}
                 data-choreo
-                className="stat-scale px-2 py-10 md:px-10 md:py-14"
+                className="stat-scale px-2 py-8 md:px-10 md:py-10"
                 style={{ ["--d" as never]: `${i * 100}ms` }}
               >
                 <div className="text-display text-5xl text-foreground md:text-6xl">
@@ -614,11 +611,9 @@ function Home() {
       {/* GUARANTEE BANNER */}
       <section className="relative overflow-hidden border-b border-hairline bg-surface/40">
         <Aurora variant="soft" />
-        <DataStream />
-        <div className="container-page relative py-16 md:py-20">
+        <div className="container-page relative py-12 md:py-16">
           <div data-choreo className="border-draw">
             <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)-1px)] bg-background p-8 md:p-12">
-              <div className="heartbeat" aria-hidden />
               <div
                 className="pointer-events-none absolute inset-0 opacity-40"
                 style={{
@@ -654,7 +649,7 @@ function Home() {
       </section>
 
       {/* PRICING PREVIEW */}
-      <Section className="relative">
+      <Section className="relative" pad="compact">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
@@ -666,7 +661,7 @@ function Home() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pricepoints.map((p) => (
             <div key={p.label} className="surface-card surface-card-hover group h-full p-6">
               <div className="text-eyebrow mb-2">{p.label}</div>
@@ -693,7 +688,7 @@ function Home() {
       {/* WORLDWIDE MAP */}
       <section className="relative overflow-hidden border-t border-hairline">
         <Aurora variant="whisper" />
-        <div className="container-page relative py-20 md:py-28">
+        <div className="container-page relative py-12 md:py-16">
           <Reveal>
             <div data-choreo className="headline-blur mx-auto max-w-2xl text-center">
               <div className="text-eyebrow mb-4">Global reach</div>
@@ -714,7 +709,7 @@ function Home() {
       {/* CLOSING CTA */}
       <section className="relative overflow-hidden border-t border-hairline">
         <Aurora variant="soft" />
-        <div className="container-page relative py-24 md:py-32">
+        <div className="container-page relative py-14 md:py-20">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
               <div className="text-eyebrow mb-5">Start here</div>

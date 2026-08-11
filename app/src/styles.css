@@ -748,7 +748,6 @@
     0 0 0 1px oklch(0 0 0 / 30%);
   color: oklch(0.985 0 0);
   transform-style: preserve-3d;
-  animation: icon-bob 3.6s ease-in-out infinite;
   transition:
     transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 300ms ease;
@@ -885,92 +884,16 @@
     radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.06), transparent 60%),
     radial-gradient(ellipse at 75% 80%, rgba(255, 255, 255, 0.04), transparent 65%), #0a0a0a;
 }
-.aurora-ribbon {
-  filter: blur(70px) saturate(0);
-  opacity: 0;
-  mix-blend-mode: screen;
-  will-change: transform, opacity;
-  border-radius: 40%;
-}
-.aurora-ribbon-1 {
-  background: radial-gradient(
-    ellipse 60% 30% at 30% 40%,
-    rgba(255, 255, 255, 0.22),
-    transparent 70%
-  );
-  animation: aurora-drift-1 26s ease-in-out infinite;
-  opacity: calc(0.14 * var(--aurora-i, 1));
-}
-.aurora-ribbon-2 {
-  background: radial-gradient(
-    ellipse 50% 25% at 70% 55%,
-    rgba(230, 230, 230, 0.2),
-    transparent 72%
-  );
-  animation: aurora-drift-2 34s ease-in-out infinite;
-  opacity: calc(0.11 * var(--aurora-i, 1));
-}
-.aurora-ribbon-3 {
-  background: radial-gradient(
-    ellipse 70% 20% at 50% 20%,
-    rgba(255, 255, 255, 0.16),
-    transparent 75%
-  );
-  animation: aurora-drift-3 42s ease-in-out infinite;
-  opacity: calc(0.1 * var(--aurora-i, 1));
-}
-.aurora-ribbon-4 {
-  background: radial-gradient(
-    ellipse 45% 22% at 60% 75%,
-    rgba(255, 255, 255, 0.18),
-    transparent 72%
-  );
-  animation: aurora-drift-4 30s ease-in-out infinite;
-  opacity: calc(0.09 * var(--aurora-i, 1));
-}
-@keyframes aurora-drift-1 {
-  0% {
-    transform: translate3d(-6%, -4%, 0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translate3d(8%, 6%, 0) rotate(8deg) scale(1.15);
-  }
-  100% {
-    transform: translate3d(-6%, -4%, 0) rotate(0deg) scale(1);
-  }
-}
-@keyframes aurora-drift-2 {
-  0% {
-    transform: translate3d(5%, 4%, 0) rotate(0deg) scale(1.05);
-  }
-  50% {
-    transform: translate3d(-7%, -6%, 0) rotate(-10deg) scale(1.2);
-  }
-  100% {
-    transform: translate3d(5%, 4%, 0) rotate(0deg) scale(1.05);
-  }
-}
-@keyframes aurora-drift-3 {
-  0% {
-    transform: translate3d(-3%, 5%, 0) rotate(-4deg) scale(1);
-  }
-  50% {
-    transform: translate3d(6%, -5%, 0) rotate(6deg) scale(1.18);
-  }
-  100% {
-    transform: translate3d(-3%, 5%, 0) rotate(-4deg) scale(1);
-  }
-}
-@keyframes aurora-drift-4 {
-  0% {
-    transform: translate3d(4%, -6%, 0) rotate(3deg) scale(1.08);
-  }
-  50% {
-    transform: translate3d(-8%, 4%, 0) rotate(-6deg) scale(1.22);
-  }
-  100% {
-    transform: translate3d(4%, -6%, 0) rotate(3deg) scale(1.08);
-  }
+/* Static baked aurora glow. Same colors and positions as the old animated
+   ribbons, softened by large radial falloff instead of a blur(70px) filter,
+   so there is no oversized compositor layer and no continuous animation. The
+   glow layer paints into the section's own layer; intensity scales per variant. */
+.aurora-glow {
+  opacity: var(--aurora-i, 1);
+  background:
+    radial-gradient(ellipse 60% 34% at 30% 40%, rgba(255, 255, 255, 0.1), transparent 70%),
+    radial-gradient(ellipse 52% 28% at 70% 55%, rgba(230, 230, 230, 0.08), transparent 72%),
+    radial-gradient(ellipse 72% 24% at 50% 20%, rgba(255, 255, 255, 0.07), transparent 75%);
 }
 
 /* ==========================================================================
@@ -1024,7 +947,6 @@
     transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 300ms ease;
   transform-style: preserve-3d;
-  animation: icon-float 3.8s ease-in-out infinite;
 }
 .icon-3d::before {
   content: "";
@@ -1033,15 +955,6 @@
   border-radius: inherit;
   background: linear-gradient(180deg, oklch(1 0 0 / 10%), transparent 55%);
   pointer-events: none;
-}
-@keyframes icon-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
 }
 .group:hover .icon-3d,
 .surface-card:hover .icon-3d {
@@ -1072,16 +985,15 @@
     linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%);
-  animation: grid-drift 24s linear infinite;
   opacity: 0.6;
+  animation: none;
 }
 .ambient-depth::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 40%, oklch(1 0 0 / 6%) 50%, transparent 60%);
-  transform: translateX(-30%);
-  animation: diag-sweep 14s ease-in-out infinite;
+  background: linear-gradient(115deg, transparent 42%, oklch(1 0 0 / 5%) 50%, transparent 58%);
+  animation: none;
 }
 @keyframes grid-drift {
   0% {
@@ -1568,6 +1480,12 @@
   100% {
     transform: scale(1.18) translate3d(-2%, -1.5%, 0);
   }
+}
+/* Static photo bands (mid-page stat sections) — hold the filled crop, no motion. */
+.ken-burns--static img {
+  animation: none;
+  transform: scale(1.06);
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2309,26 +2227,4 @@
   ),
 .home .word-rise > span {
   will-change: auto;
-}
-
-/* --------------------------------------------------------------------------
-   "How it works" card grid — bounded compositing (scoped).
-   At >= ~2048 CSS px viewport on DPR 2, the whole document paints into one
-   root layer wider than the 4096px GPU max texture (2360 CSS x 2 = 4720). On
-   real hardware that layer's raster tiles fail past the limit, blanking the
-   non-composited card text and borders while the separately-composited icons
-   survive. The failure is per-tile and deterministic, so the same column is
-   spared every load.
-   Fix: promote the grid itself to its own composited layer, sized to the grid
-   box (~1168 x 213 CSS = 2336 x 426 device px, well under 4096 on both axes).
-   The cards then raster into that bounded layer instead of the full-width root
-   layer, so text and borders paint reliably at any width. `contain: paint` on
-   each card isolates its paint to its own box (paint containment alone does not
-   composite, so it cannot bound the raster on its own; the grid promotion does
-   that). Scoped to this grid on purpose; not applied to every .surface-card. */
-.howitworks-grid {
-  transform: translateZ(0);
-}
-.howitworks-grid > .surface-card {
-  contain: paint;
 }
