@@ -51,7 +51,7 @@ WHO SYNTREX HELPS:
 Operating companies that want one team to run their digital and AI back end across visibility, conversion, presence, and operations, from local operators to multi-location and scaling businesses.
 
 PROOF (the only client results you may cite):
-HALT Fire, an industrial fire suppression company: Syntrex built and runs the full digital and AI back end, producing 280% search growth and returning more than ten hours a week to the team.
+HALT Fire, an industrial fire suppression company: Syntrex built and runs the full digital and AI back end. Over a three month window, search clicks grew 689% to 505 and impressions grew 1,608% to 22.9K, and more than ten hours a week came back to the team.
 Doughbrik's Wavers, the snack brand founded by creator David Dobrik: Syntrex built internal automation and custom tools, and internal workflows run about 3x faster as the brand scales into retail.
 Kinetix is a technology partner Syntrex works alongside on delivery. Do not name or imply any other client.
 

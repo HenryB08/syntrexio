@@ -99,8 +99,9 @@ function About() {
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
                 Syntrex was founded by Henry Bello and started by building the full digital and AI
-                stack for HALT Fire, an industrial fire suppression company. The work produced 280%
-                search growth and returned more than ten hours a week to the team.
+                stack for HALT Fire, an industrial fire suppression company. Over three months the
+                work grew search clicks 689% to 505 and impressions 1,608% to 22.9K, and returned
+                more than ten hours a week to the team.
               </p>
               <p>
                 That engagement proved the model: one partner running the entire back end produces
@@ -205,6 +206,9 @@ function TeamPhoto({ member }: { member: Member }) {
           src={member.photo}
           alt={`${member.name}, ${member.role} at Syntrex`}
           loading="lazy"
+          decoding="async"
+          width={640}
+          height={480}
           onError={() => setFailed(true)}
         />
       ) : (

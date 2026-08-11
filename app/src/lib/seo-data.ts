@@ -362,7 +362,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             name: "Who founded Syntrex?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Syntrex was founded by Henry Bello. It started by building the full digital and AI stack for HALT Fire, an industrial fire suppression company, where the work produced 280% search growth and returned more than ten hours a week to the team.",
+              text: "Syntrex was founded by Henry Bello. It started by building the full digital and AI stack for HALT Fire, an industrial fire suppression company, where over three months the work grew search clicks 689% to 505 and impressions 1,608% to 22.9K, and returned more than ten hours a week to the team.",
             },
           },
           {
@@ -574,12 +574,12 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/customers": {
     title: "Work | Syntrex Client Results",
     description:
-      "Verified results from Syntrex engagements: 280% search growth and 10+ hours a week back for HALT Fire, and 3x faster workflows for Doughbrik's Wavers.",
+      "Verified results from Syntrex engagements: HALT Fire search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, plus 10+ hours a week returned.",
     keywords:
-      "Syntrex work, case studies, HALT Fire, Doughbrik's Wavers, David Dobrik, Kinetix, AI results, client results",
+      "Syntrex work, case studies, HALT Fire, Doughbrik's Wavers, Karlo Financial, Kinetix, AI results, client results",
     ogTitle: "Work | What running the back end end to end produces | Syntrex",
     ogDescription:
-      "HALT Fire: 280% search growth and 10+ hours a week returned. Doughbrik's Wavers: 3x faster internal workflows. Kinetix is a technology partner.",
+      "HALT Fire: search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, plus 10+ hours a week returned. Kinetix is a technology partner.",
     canonical: "https://syntrexio.com/customers/",
     schema: [
       crumb([
@@ -593,7 +593,8 @@ export const PAGE_SEO: Record<string, PageSeo> = {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "HALT Fire" },
           { "@type": "ListItem", position: 2, name: "Doughbrik's Wavers" },
-          { "@type": "ListItem", position: 3, name: "Kinetix" },
+          { "@type": "ListItem", position: 3, name: "Karlo Financial" },
+          { "@type": "ListItem", position: 4, name: "Kinetix" },
         ],
       },
     ],

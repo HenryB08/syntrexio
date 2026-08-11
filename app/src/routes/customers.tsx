@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, Cpu, Flame, Cookie } from "lucide-react";
+import { ArrowRight, ChevronDown, Cookie, Cpu, Flame, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
@@ -13,38 +13,44 @@ export const Route = createFileRoute("/customers")({
   component: Work,
 });
 
-type CaseStudy = {
+type Detail = { challenge: string; solution: string; result: string };
+type Client = {
   icon: typeof Flame;
   image: string;
   imageAlt: string;
   name: string;
   kind: string;
-  challenge: string;
-  solution: string;
-  result: string;
-  metrics: { value: string; label: string }[];
+  tag: string;
+  partner?: boolean;
+  desc: string;
+  result?: string;
+  detail?: Detail;
 };
 
-const UNSPLASH = "?auto=format&fit=crop&w=1400&h=800&q=80";
-
-// Banner images keep the existing treatment (dark stock + one brand image), with
-// the brand icon as an onError fallback (Unsplash may 403 in the sandbox).
-const cases: CaseStudy[] = [
+// Existing client imagery from the repo: themed dark stock (Unsplash, free
+// commercial license) for HALT/Karlo/Kinetix, plus one Mailchimp-CDN brand image
+// for Doughbrik's. They may 403 in the sandbox but load in production; the card
+// falls back to the brand icon on error.
+const UNSPLASH = "?auto=format&fit=crop&w=1200&h=675&q=80";
+const clients: Client[] = [
   {
     icon: Flame,
     image: "https://images.unsplash.com/photo-1523861751938-121b5323b48b" + UNSPLASH,
     imageAlt: "Large-scale fire against a dark sky, evoking industrial fire suppression",
     name: "HALT Fire",
     kind: "Industrial fire suppression",
-    challenge:
-      "HALT Fire had a digital presence that did not match the operation. They were hard to find in search, and the team lost hours every week to manual, repetitive work.",
-    solution:
-      "Syntrex built and now runs the full digital and AI back end: search and content, the website, lead handling, and internal automation, all under one accountable owner.",
-    result: "Search visibility grew 280%, and more than ten hours a week came back to the team.",
-    metrics: [
-      { value: "280%", label: "search growth" },
-      { value: "10+", label: "hours a week returned" },
-    ],
+    tag: "Client",
+    desc: "Full digital and AI back end: search visibility, content, the website, lead handling, and internal automation.",
+    result:
+      "Search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, with 10+ hours a week returned.",
+    detail: {
+      challenge:
+        "HALT Fire was hard to find in search, and the team lost hours every week to manual, repetitive work.",
+      solution:
+        "Syntrex built and now runs the full digital and AI back end: search and content, the website, lead handling, and internal automation, under one accountable owner.",
+      result:
+        "Over a three month window in Google Search Console, search clicks grew 689% to 505 and impressions grew 1,608% to 22.9K, with more than ten hours a week returned to the team.",
+    },
   },
   {
     icon: Cookie,
@@ -53,21 +59,53 @@ const cases: CaseStudy[] = [
     imageAlt: "Doughbrik's Wavers brand imagery",
     name: "Doughbrik's Wavers",
     kind: "Consumer snack brand, founded by creator David Dobrik",
-    challenge:
-      "Doughbrik's Wavers was scaling into retail with internal workflows that could not keep up with the pace.",
-    solution:
-      "Syntrex built internal automation and custom tools around how the brand actually operates, removing manual steps as volume grew.",
-    result: "Internal workflows run about 3x faster as the brand scales into retail.",
-    metrics: [{ value: "3x", label: "faster internal workflows" }],
+    tag: "Client, retainer",
+    desc: "A consumer snack brand with national retail distribution, on an ongoing Syntrex retainer.",
+    detail: {
+      challenge:
+        "Doughbrik's Wavers was scaling into national retail with internal workflows that could not keep up with the pace.",
+      solution:
+        "Syntrex runs an ongoing retainer, building internal automation and custom tools around how the brand actually operates.",
+      result: "Internal workflows run about 3x faster as the brand scales into retail.",
+    },
+  },
+  {
+    icon: Landmark,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" + UNSPLASH,
+    imageAlt: "Financial-district glass towers at dusk",
+    name: "Karlo Financial",
+    kind: "Financial services",
+    tag: "Client",
+    desc: "Syntrex delivers the digital operation: the website, brand presence, and automation of repetitive back-office work.",
+    detail: {
+      challenge:
+        "Karlo Financial needed a credible digital presence and less manual back-office work.",
+      solution:
+        "Syntrex built the website and brand presence and automated the repetitive back-office steps that were slowing the team down.",
+      result:
+        "A professional digital presence backed by automated workflows that give the team time back.",
+    },
+  },
+  {
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475" + UNSPLASH,
+    imageAlt: "Macro shot of a circuit board",
+    name: "Kinetix",
+    kind: "Technology partner",
+    tag: "Partner",
+    partner: true,
+    desc: "Kinetix refers AI and automation work to Syntrex for build and delivery. A partner, not a client.",
   },
 ];
 
-function BannerImage({ c }: { c: CaseStudy }) {
+/** Card banner image with the brand icon as an onError fallback (external images
+ *  may 403 in the sandbox; production renders the photo). */
+function BannerImage({ c }: { c: Client }) {
   const [failed, setFailed] = useState(false);
   if (failed)
     return (
       <div className="grid h-full w-full place-items-center">
-        <Icon3D icon={c.icon} size={56} iconSize={26} />
+        <Icon3D icon={c.icon} size={52} iconSize={24} />
       </div>
     );
   return (
@@ -75,9 +113,83 @@ function BannerImage({ c }: { c: CaseStudy }) {
       src={c.image}
       alt={c.imageAlt}
       loading="lazy"
+      decoding="async"
+      width={1200}
+      height={675}
       onError={() => setFailed(true)}
       className="h-full w-full object-cover"
     />
+  );
+}
+
+function ClientCard({ c }: { c: Client }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <article className="surface-card surface-card-hover group flex h-full flex-col overflow-hidden p-0">
+      <div className="brand-photo aspect-[16/9] w-full overflow-hidden">
+        <BannerImage c={c} />
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="text-eyebrow">{c.kind}</div>
+            <div className="mt-1 text-lg font-semibold text-foreground">{c.name}</div>
+          </div>
+          <span
+            className={`mt-1 inline-flex shrink-0 items-center rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] ${
+              c.partner
+                ? "border-white/40 text-foreground"
+                : "border-hairline bg-background text-muted-foreground"
+            }`}
+          >
+            {c.tag}
+          </span>
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+        {c.result ? (
+          <p className="mt-3 border-t border-hairline pt-3 text-sm font-medium text-foreground">
+            {c.result}
+          </p>
+        ) : null}
+
+        {c.detail ? (
+          <div className="mt-auto pt-4">
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {open ? "Hide details" : "Challenge, solution, result"}
+              <ChevronDown
+                size={14}
+                className={`transition-transform ${open ? "rotate-180" : ""}`}
+              />
+            </button>
+            {open ? (
+              <dl className="mt-4 space-y-3 border-t border-hairline pt-4">
+                <div>
+                  <dt className="text-eyebrow mb-1">Challenge</dt>
+                  <dd className="text-sm leading-relaxed text-muted-foreground">
+                    {c.detail.challenge}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-eyebrow mb-1">Solution</dt>
+                  <dd className="text-sm leading-relaxed text-muted-foreground">
+                    {c.detail.solution}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-eyebrow mb-1">Result</dt>
+                  <dd className="text-sm leading-relaxed text-foreground">{c.detail.result}</dd>
+                </div>
+              </dl>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
@@ -87,8 +199,8 @@ function Work() {
       <PageHero
         variant="mosaic"
         eyebrow="Work"
-        title="The work, and what it produced."
-        description="A look at what running a company's back end end to end actually produces. Every number here is a verified result from a real engagement."
+        title="The companies we run the back end for."
+        description="Operating companies Syntrex runs the digital and AI back end for, plus the partners who bring us the work. Every number here is a verified result from a real engagement."
       >
         <Button asChild size="lg" variant="accent">
           <Link to="/diagnostic">
@@ -98,78 +210,16 @@ function Work() {
         </Button>
       </PageHero>
 
-      {cases.map((c, i) => (
-        <Section key={c.name} className={i > 0 ? "border-t border-hairline" : ""}>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-            <Reveal>
-              <div className="brand-photo aspect-[16/10] w-full overflow-hidden rounded-xl surface-card p-0">
-                <BannerImage c={c} />
-              </div>
+      <Section>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {clients.map((c, i) => (
+            <Reveal key={c.name} delay={i * 90}>
+              <ClientCard c={c} />
             </Reveal>
-            <Reveal delay={100}>
-              <div>
-                <div className="text-eyebrow">{c.kind}</div>
-                <h2 className="mt-2 text-display text-3xl text-foreground md:text-4xl">{c.name}</h2>
-
-                <dl className="mt-6 space-y-5">
-                  <div>
-                    <dt className="text-eyebrow mb-1">Challenge</dt>
-                    <dd className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {c.challenge}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-eyebrow mb-1">Solution</dt>
-                    <dd className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {c.solution}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-eyebrow mb-1">Result</dt>
-                    <dd className="text-sm leading-relaxed text-foreground md:text-base">
-                      {c.result}
-                    </dd>
-                  </div>
-                </dl>
-
-                <div className="mt-6 flex flex-wrap gap-4">
-                  {c.metrics.map((m) => (
-                    <div key={m.label} className="surface-card px-5 py-4">
-                      <div className="text-display text-2xl text-foreground">{m.value}</div>
-                      <div className="mt-1 text-xs text-muted-foreground">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Quote (pending): no approved client quote exists in the repo yet.
-                    Clearly marked placeholder, flagged in DECISIONS.md and the report. */}
-                <div className="mt-6 rounded-lg border border-dashed border-hairline bg-surface/30 p-4">
-                  <div className="text-eyebrow mb-1">Quote (pending)</div>
-                  <p className="text-sm text-muted-foreground/80">
-                    A client quote from {c.name} can slot in here once approved.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </Section>
-      ))}
-
-      {/* PARTNER */}
-      <Section className="border-t border-hairline bg-surface/20">
-        <Reveal>
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-            <Icon3D icon={Cpu} size={48} iconSize={22} />
-            <div className="text-eyebrow">Partner</div>
-            <h2 className="text-display text-2xl text-foreground md:text-3xl">Kinetix</h2>
-            <p className="text-sm text-muted-foreground md:text-base">
-              Kinetix is a technology partner Syntrex works alongside on delivery.
-            </p>
-          </div>
-        </Reveal>
+          ))}
+        </div>
       </Section>
 
-      {/* CTA */}
       <Section className="border-t border-hairline text-center">
         <Reveal>
           <h2 className="text-display mx-auto max-w-2xl text-3xl text-foreground md:text-5xl">

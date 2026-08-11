@@ -73,6 +73,9 @@ function PostVisual({ p }: { p: Post }) {
       src={p.image}
       alt={p.title}
       loading="lazy"
+      decoding="async"
+      width={1200}
+      height={675}
       onError={() => setFailed(true)}
       className="h-full w-full object-cover"
     />

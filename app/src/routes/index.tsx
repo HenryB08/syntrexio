@@ -59,14 +59,22 @@ const problemStats = [
   },
 ];
 
-// Proof: verified engagement results for named clients only.
+// Proof: verified engagement results for named clients only. HALT Fire figures
+// are Google Search Console, trailing three months.
 const proofStats = [
   {
-    to: 280,
-    prefix: "",
+    to: 689,
+    prefix: "+",
     suffix: "%",
     format: "plain" as const,
-    label: "search growth for HALT Fire",
+    label: "search clicks for HALT Fire in three months, to 505 total",
+  },
+  {
+    to: 1608,
+    prefix: "+",
+    suffix: "%",
+    format: "commas" as const,
+    label: "search impressions for HALT Fire in three months, to 22.9K total",
   },
   {
     to: 10,
@@ -74,13 +82,6 @@ const proofStats = [
     suffix: "+",
     format: "plain" as const,
     label: "hours a week returned to the HALT Fire team",
-  },
-  {
-    to: 3,
-    prefix: "",
-    suffix: "x",
-    format: "plain" as const,
-    label: "faster internal workflows for Doughbrik's Wavers",
   },
 ];
 
@@ -252,7 +253,7 @@ function Home() {
       {/* HERO - positioning */}
       <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div className="ken-burns ken-burns--bright">
-          <img src={heroOffice.url} alt="" aria-hidden />
+          <img src={heroOffice.url} alt="" aria-hidden fetchPriority="high" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -364,7 +365,7 @@ function Home() {
       {/* PROBLEM STAT STRIP */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns">
-          <img src={aerialCity.url} alt="" aria-hidden />
+          <img src={aerialCity.url} alt="" aria-hidden loading="lazy" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -549,7 +550,7 @@ function Home() {
       {/* PROOF STAT BAND */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns ken-burns--bright">
-          <img src={glassLobby.url} alt="" aria-hidden />
+          <img src={glassLobby.url} alt="" aria-hidden loading="lazy" decoding="async" />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -580,7 +581,8 @@ function Home() {
             ))}
           </div>
           <p className="pb-6 text-center text-xs text-muted-foreground/80">
-            Verified results from Syntrex engagements. Kinetix is a technology partner.
+            HALT Fire, Google Search Console, trailing three months. Kinetix is a technology
+            partner.
           </p>
         </div>
       </section>

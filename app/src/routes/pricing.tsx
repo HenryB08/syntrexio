@@ -208,16 +208,18 @@ function Pricing() {
               {retainers.map((r, i) => (
                 <Reveal key={r.name} delay={i * 60}>
                   <article
-                    className={`surface-card surface-card-hover relative flex h-full flex-col p-7 ${
-                      r.highlight ? "border-white/50 lg:col-span-1" : ""
+                    className={`surface-card surface-card-hover flex h-full flex-col p-7 ${
+                      r.highlight ? "border-white/50" : ""
                     }`}
                   >
-                    {r.highlight ? (
-                      <div className="absolute right-5 top-5 rounded-full border border-white/40 bg-background px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]">
-                        <span className="badge-shimmer">Best value</span>
-                      </div>
-                    ) : null}
-                    <h3 className="text-lg font-semibold text-foreground">{r.name}</h3>
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-lg font-semibold text-foreground">{r.name}</h3>
+                      {r.highlight ? (
+                        <span className="shrink-0 rounded-full border border-white/40 bg-background px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]">
+                          <span className="badge-shimmer">Best value</span>
+                        </span>
+                      ) : null}
+                    </div>
                     <div className="mt-3 flex items-baseline gap-1">
                       <span className="text-display text-3xl text-foreground">{r.price}</span>
                       <span className="text-sm text-muted-foreground">{r.cadence}</span>
