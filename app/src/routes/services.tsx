@@ -148,8 +148,8 @@ const tracks: Track[] = [
       },
       {
         name: "Agent Workforce",
-        what: "Your internal fleet of AI agents, installed and operated. The flagship.",
-        get: "An operating layer inside your business that runs continuous operational work with a human in control. See the full section above.",
+        what: "Your internal fleet of AI agents, installed and operated.",
+        get: "An operating layer inside your business that runs continuous operational work with a human in control. See the full section below.",
         price: "$35,000 to $95,000 install, then $5,000 to $12,000/mo",
       },
     ],
@@ -173,7 +173,62 @@ function Services() {
         </Button>
       </PageHero>
 
-      {/* AGENT WORKFORCE - flagship, expanded treatment at the top */}
+      {/* VALUE CASE - first pricing encounter. Foundation Section 21 + Section 4 speed. */}
+      <Section className="border-b border-hairline" pad="compact">
+        <Reveal>
+          <div className="max-w-3xl">
+            <div className="text-eyebrow mb-4">Why this costs what it costs</div>
+            <p className="text-lg leading-relaxed text-foreground md:text-xl">
+              The same work, at meaningfully less than agency rate. Delivered faster, because an
+              orchestrated fleet runs the workstreams in parallel, so a build that takes an agency
+              six weeks takes us days. And guaranteed on a metric we name in writing.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Agencies charge for the team behind the work. We do not have one. You get the output,
+              not the overhead. Price alone invites undercutting by offshore shops and self-serve
+              tools. Price plus accountability cannot be matched by either.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* THE FOUR TRACKS */}
+      {tracks.map((track) => (
+        <Section key={track.id} id={track.id} className="border-b border-hairline">
+          <Reveal>
+            <div className="flex items-center gap-4">
+              <Icon3D icon={track.icon} size={48} iconSize={22} />
+              <div>
+                <SectionHeader eyebrow={`Track: ${track.name}`} title={track.tagline} />
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {track.services.map((s, i) => (
+              <Reveal key={s.name} delay={i * 60}>
+                <article className="surface-card surface-card-hover group flex h-full flex-col p-7">
+                  <h3 className="text-lg font-semibold text-foreground">{s.name}</h3>
+                  <p className="mt-2 text-sm text-foreground/80">{s.what}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.get}</p>
+                  <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-4">
+                    <span className="text-xs text-muted-foreground">{s.price}</span>
+                    <Link
+                      to="/pricing"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-foreground"
+                    >
+                      Pricing
+                      <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Section>
+      ))}
+
+      {/* AGENT WORKFORCE - its own section, below the four tracks */}
       <section className="relative overflow-hidden border-b border-hairline bg-surface/40">
         <Aurora variant="soft" />
         <DataStream />
@@ -185,7 +240,7 @@ function Services() {
                 <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
                   <Icon3D icon={Bot} size={56} iconSize={24} />
                   <div>
-                    <div className="text-eyebrow mb-2">The flagship</div>
+                    <div className="text-eyebrow mb-2">Beyond the four tracks</div>
                     <h2 className="text-display max-w-3xl text-2xl text-foreground md:text-4xl">
                       Agent Workforce
                     </h2>
@@ -261,42 +316,6 @@ function Services() {
           </div>
         </div>
       </section>
-
-      {/* THE FOUR TRACKS */}
-      {tracks.map((track) => (
-        <Section key={track.id} id={track.id} className="border-b border-hairline">
-          <Reveal>
-            <div className="flex items-center gap-4">
-              <Icon3D icon={track.icon} size={48} iconSize={22} />
-              <div>
-                <SectionHeader eyebrow={`Track: ${track.name}`} title={track.tagline} />
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {track.services.map((s, i) => (
-              <Reveal key={s.name} delay={i * 60}>
-                <article className="surface-card surface-card-hover group flex h-full flex-col p-7">
-                  <h3 className="text-lg font-semibold text-foreground">{s.name}</h3>
-                  <p className="mt-2 text-sm text-foreground/80">{s.what}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.get}</p>
-                  <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-4">
-                    <span className="text-xs text-muted-foreground">{s.price}</span>
-                    <Link
-                      to="/pricing"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-foreground"
-                    >
-                      Pricing
-                      <ArrowRight size={13} />
-                    </Link>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </Section>
-      ))}
 
       {/* CUSTOM */}
       <Section className="border-b border-hairline bg-surface/20">

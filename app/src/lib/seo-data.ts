@@ -422,12 +422,12 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   "/services": {
     title: "Services | 16 AI and Digital Services by Syntrex",
     description:
-      "Sixteen services across four tracks: visibility, conversion, presence, and operations, plus the Agent Workforce flagship. One team, published pricing.",
+      "Sixteen services across four tracks: visibility, conversion, presence, and operations, plus Agent Workforce. One team, published pricing.",
     keywords:
       "AI services, GEO, AI search optimization, SEO, content, social, AI chat, lead capture, CRM, web design, e-commerce, brand, automation, Agent Workforce, Syntrex",
     ogTitle: "Services | Sixteen services across four tracks | Syntrex",
     ogDescription:
-      "Visibility, conversion, presence, and operations, plus the Agent Workforce flagship. Start with one service or run all four tracks.",
+      "Visibility, conversion, presence, and operations, plus Agent Workforce. Start with one service or run all four tracks.",
     canonical: "https://syntrexio.com/services/",
     schema: [
       VISIBILITY_SERVICE,
@@ -464,7 +464,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             name: "What is the Agent Workforce?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Agent Workforce is the flagship. It installs a company's internal fleet of AI agents to run operational work continuously, with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business.",
+              text: "Agent Workforce installs a company's internal fleet of AI agents to run operational work continuously, with an approval trail and human control. It sits beyond the four tracks as its own engagement. It is not a chatbot. It is an operating layer inside the business.",
             },
           },
           {
