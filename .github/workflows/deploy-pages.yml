@@ -119,9 +119,10 @@ jobs:
           write_redirect services/ecommerce.html              "/services/#presence"
           write_redirect services/brand-digital-presence.html "/services/#presence"
 
-          # NOTE: legal.html and syn.html have no clean 1:1 React equivalent and
-          # are intentionally NOT redirected here yet (pending owner decision).
-          # Until decided, they keep serving their legacy content.
+          # No 1:1 React equivalent; owner-chosen targets: combined legal page ->
+          # Terms, and the retired SYN product page -> Services.
+          write_redirect legal.html /terms/
+          write_redirect syn.html   /services/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
