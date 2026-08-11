@@ -1,97 +1,142 @@
 # Syntrex LLC
 
-> Syntrex builds SYN: AI that answers your customers today and runs your whole business next. SYN ships in two products. SYN Growth is the installed, guaranteed system that answers every call, chat, and form in seconds 24/7, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt. SYN Workspace, in early access, is the AI business workspace: encode your brand once and SYN runs your calendar, content, brand assets, builds, and automations with an approval trail. The front door to SYN Growth is a Live Leak Audit: one button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing where inquiries slip away, before any work begins.
+> Syntrex is the AI infrastructure layer behind operating companies. One team runs a business's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. The old positioning fails because nobody owns the outcome. Syntrex owns it. The flagship, Agent Workforce, installs and operates a company's internal fleet of AI agents. Pricing is published in full, and the guarantee covers only what Syntrex controls.
 
-Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. The company is not affiliated with any domain called syntrex.io.
+Syntrex (legal name Syntrex LLC) operates exclusively at https://syntrexio.com. It is not affiliated with any domain called syntrex.io.
 
-## Company Details
+## Positioning
+
+- Primary: The AI infrastructure layer behind operating companies.
+- Secondary: Nobody owns the outcome. We do.
+- On breadth: One team leading every project end to end. Presence, visibility, conversion, and operations, handled in-house and overseen personally.
+- On price: Agencies charge for the team behind the work. Syntrex does not have one. You get the output, not the overhead.
+- On the guarantee: We guarantee what we control. We do not guarantee your sales team.
+
+## Company details
 
 - Name: Syntrex LLC
-- Type: Software company. Builds SYN, in two products: SYN Growth (launching soon) and SYN Workspace (early access). Both are in development; the Live Leak Audit is the pre-launch entry point.
-- Headquarters: 513 Main Street, Windermere, FL 34786, United States
+- Type: AI infrastructure and services company for operating businesses.
+- Founded by: Henry Bello.
+- Headquarters: 513 Main Street, Windermere, FL 34786, United States.
 - Email: henry@syntrexio.com
 - Website: https://syntrexio.com
-- Founded by: Henry Bello
-- Service area: Worldwide
-- Front door: Live Leak Audit, a one-button simultaneous test of a business's phone, live chat, and contact form with an on-screen response timer, showing where inquiries slip away, at no cost. It is the entry point to SYN Growth.
-- Key differentiators: SYN Growth covers every channel, not just the phone. Its value is measured every month with the Receipt. It is backed by a written guarantee. It is installed and run for the client. SYN Workspace extends the same encoded brand to the rest of the business.
+- Service area: Worldwide.
+- Delivery model: An orchestrated fleet of AI agents produces the work in parallel. Humans direct, review, and own every outcome. Every client is encoded once, and the system gets faster and more accurate with every engagement. There is no headcount agency behind the work.
+
+## The four tracks and sixteen services
+
+### Visibility (get found in search and in AI answers)
+- AI search optimization (GEO): make the business the answer AI models cite.
+- Traditional search optimization (SEO): rank for the terms buyers search.
+- Content production and strategy: a publishing engine on a schedule.
+- Social media systems: consistent, on-brand social, run for you.
+
+### Conversion (turn earned leads into booked work)
+- AI assistants and customer-facing chat: answer, qualify, and book, on brand.
+- Lead capture and follow-up systems: capture every inquiry, follow up until they respond.
+- Email systems and deliverability: email that reaches the inbox and converts.
+- CRM buildout and management: one system of record, built and run.
+
+### Presence (a site and brand that match the business)
+- Websites and web applications.
+- E-commerce builds.
+- Brand identity and design systems.
+- Imagery and campaign assets.
+
+### Operations (the repetitive work, running itself)
+- Workflow automation and system integration.
+- Custom internal AI tools.
+- Reporting and analytics dashboards.
+- Agent Workforce (the flagship, see below).
+
+## Agent Workforce (flagship)
+
+Agent Workforce installs a company's internal fleet of AI agents to handle operational work the company currently pays salaries for: research, drafting, coordination, data entry, monitoring, scheduling, reporting, and first-pass analysis. It runs continuously with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business.
+
+- Enterprise consultancies charge millions and deliver slide decks.
+- Self-serve tools charge under $200 a month and hand you the risk.
+- Syntrex installs it, operates it, and is accountable for it.
+
+## Pricing (published in full)
+
+Front door: AI Systems Diagnostic, $3,500, fully credited toward any engagement started within 60 days. A free self-qualifying diagnostic on the site names where to start in about a minute.
+
+Monthly retainers:
+- Visibility (AI search, SEO, content, social): $2,500/mo
+- Conversion (AI chat, lead capture, email, CRM): $2,000/mo
+- Presence (site, brand, creative): $1,800/mo
+- Operations (automation, dashboards, custom tools): $2,500/mo
+- Full Stack (all four tracks): $7,500/mo, below the $8,800 the tracks cost separately, which is where most companies land
+- Agent Workforce (operation): $5,000 to $12,000/mo
+- Full Stack plus Agent Workforce: $12,500/mo and up
+
+One-time builds, with market comparison:
+- Website up to 5 pages: market $8,000 to $15,000, Syntrex $4,500
+- Website 6 to 12 pages: market $15,000 to $30,000, Syntrex $7,500
+- E-commerce build: market $20,000 to $50,000, Syntrex $11,000
+- Brand identity system: market $5,000 to $15,000, Syntrex $3,500
+- AI assistant deployment: market $5,000 to $15,000, Syntrex $4,000
+- CRM buildout and migration: market $5,000 to $20,000, Syntrex $4,500
+- Automation build per workflow: market $10,000 to $40,000, Syntrex $6,500
+- Custom AI tool: market $15,000 to $50,000, Syntrex $9,000 and up
+- Agent Workforce install: no market benchmark exists, Syntrex $35,000 to $95,000
+
+Terms: builds are a 40% deposit with the balance on milestones. Retainers are billed on the 1st. Portfolio pricing for multiple brands is 10% off the second and 15% off everything beyond.
+
+Why the pricing works: no payroll, no offshore invoice, no account management layer, and no office. An agent fleet produces the work and humans own it. You get the output, not the overhead.
+
+Market-rate sources: web and creative from Clutch (database of 79,000+ agencies) and Clutch 2026; retainer benchmarks from the HubSpot Agency Survey and Databox.
+
+## The guarantee
+
+We guarantee only what we control, and the remedy is our labor, never a refund.
+
+Guaranteed: AI search citation presence for agreed queries; ranking movement for agreed terms; content volume and schedule; hours removed from an agreed workflow; agent task volume per period; delivery against agreed spec and timeline.
+
+Never guaranteed: revenue, closed deals, or conversion rate. Those depend on the client's sales team, pricing, product, and market.
+
+How it works: one metric named in writing, a documented baseline before work begins, a 90 day window, and one agreed source of truth. If the metric is not hit, we keep working at no additional cost until it is.
+
+## Why the market needs this (verified research)
+
+- 95% of enterprise AI pilots produce no measurable profit-and-loss impact, despite $30 to $40 billion spent. Source: MIT Project NANDA, State of AI in Business, July 2025.
+- 42% of companies scrapped most of their AI initiatives in 2025, up from 17% in 2024. The average company abandoned 46% of its AI proofs of concept. Source: S&P Global Market Intelligence, June 2025.
+- More than 40% of agentic AI projects will be canceled by the end of 2027. Source: Gartner, June 2025.
+- Roughly 70% of AI failure is people and process; only 20% is technology. Source: RAND Corporation, 2024.
+- 68% of technology leaders plan to consolidate their vendor landscape. Source: ADAPT CIO Edge.
+- 43% of B2B client churn happens in the first 90 days. Source: Moxo, 2026 State of Churn.
+
+## Proof (verified engagement results)
+
+- HALT Fire (industrial fire suppression): Syntrex built and runs the full digital and AI back end. Result: 280% search growth and more than ten hours a week returned to the team.
+- Doughbrik's Wavers (consumer snack brand founded by creator David Dobrik): Syntrex built internal automation and custom tools. Result: internal workflows run about 3x faster as the brand scales into retail.
+- Kinetix: a technology partner Syntrex works alongside on delivery.
 
 ## FAQ
 
-Q: What is SYN?
-A: SYN is Syntrex's product, in two forms. SYN Growth is the guaranteed system that captures every customer you are losing to missed calls across phone, web, and message; it is launching soon. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, brand assets, builds, and automations from one encoded brand.
+Q: What exactly does Syntrex do?
+A: Syntrex is the AI infrastructure layer behind operating companies. It runs a business's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. One team leads every project end to end and is accountable for the result.
 
-Q: What is the difference between SYN Growth and SYN Workspace?
-A: SYN Growth captures the customers you are losing to missed calls, with the value proven monthly in the Receipt; it is launching soon at printed launch pricing. SYN Workspace is in early access and runs the rest of the business from one encoded brand. Growth is the door; Workspace is where you grow.
+Q: How is this different from hiring an agency?
+A: An agency sells you a team and charges for the payroll behind it. Syntrex does not have that team. An orchestrated fleet of AI agents produces the work, humans direct and own it, and one person stays accountable for the outcome. You get the output, not the overhead.
 
-Q: How much does SYN Growth cost?
-A: A one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro, which adds AI voice answering. The $497 is a one-time setup, not the total. Pricing is printed, not quoted.
+Q: Who actually does the work?
+A: An orchestrated fleet of AI agents produces the work in parallel. Humans at Syntrex direct the fleet, review the output, and own every outcome. Everything a client sees passes a human first.
 
-Q: Is the $497 one-time or monthly?
-A: One-time. It is a setup charged once. After setup, SYN Growth is $349 a month (Growth Core) or $549 a month (Growth Pro).
+Q: What is the Agent Workforce?
+A: The flagship. It installs a company's internal fleet of AI agents to run operational work continuously, with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business.
 
-Q: How do I get SYN Workspace?
-A: SYN Workspace is in early access and is not sold at a printed price yet. Join the waitlist at https://syn.syntrexio.com. Every SYN Growth client is first in line.
+Q: What is the guarantee?
+A: Syntrex guarantees what it controls, such as AI search citation presence, ranking movement, content volume, hours removed from a workflow, agent task volume, and delivery against spec. It does not guarantee revenue, closed deals, or conversion rate, which depend on the client's sales team, pricing, product, and market. The remedy is labor, never a refund.
 
-Q: Is there a guarantee?
-A: Yes, on SYN Growth. If the booked value SYN Growth produces in the month comes in under the monthly fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced times the job values you confirm in writing at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. It applies for the first three months, then continues on a rolling quarterly review.
+Q: What is the diagnostic and is it credited?
+A: The AI Systems Diagnostic is $3,500 and is fully credited toward any engagement started within 60 days. A free self-qualifying diagnostic on the site names where to start in about a minute.
 
-Q: What is the Receipt?
-A: The Receipt is the monthly report SYN Growth sends showing what it captured, what it recovered, and what that was worth to the business, so the value is visible every month rather than assumed.
+Q: Do I own what you build?
+A: Yes. Deliverables such as a website, brand system, or custom tool are yours once paid for in full. Your brand, content, and customer data always belong to you.
 
-Q: How do I start?
-A: Request a Live Leak Audit at https://syntrexio.com/leak-audit or email henry@syntrexio.com. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away, plus the yearly dollar cost of the customers you are losing, at no cost.
-
-Q: What results has Syntrex delivered?
-A: For HALT Fire, an industrial fire suppression company, Syntrex built a complete sales automation system that saves the team 10+ hours of manual work per week and drove 280% search growth. For Doughbrik's Wavers, the snack brand founded by David Dobrik, Syntrex built internal automation tools that made workflows 3x faster as the brand scaled into retail.
-
-## Products
-
-### SYN Growth (launching soon)
-The guaranteed system that captures every customer you are losing to missed calls, launching soon. It answers every call, chat, and form in seconds 24/7, texts back every missed call, and follows up until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the owner the dollars recovered and the bookings behind them, formalized each month in the Receipt. It shares one encoded brain with SYN Workspace: what Growth learns from customers feeds Workspace, returning callers are recognized, and the owner can search past conversations in plain language. One-time setup $497, then $349 a month (Growth Core) or $549 a month (Growth Pro, which adds AI voice answering). Guarantee: if the booked value in the month comes in under the monthly fee, that month is free.
-
-Five components:
-1. Instant Answer: leads get an immediate, on-brand reply the moment they reach out, on web chat and SMS, 24/7. Returning callers are recognized. AI voice answering is available with Growth Pro.
-2. Never-Miss Capture: every call, form, and message is captured, and an unanswered call gets an instant text back so the lead is not lost.
-3. Automatic Follow-Up: automated email and SMS follow-up continues until the customer answers or books.
-4. Booking Integrity: qualified leads self-book onto the calendar, and every booking is validated against real availability so the system never invents one.
-5. Live Dashboard and Receipt: the owner watches recovered value climb live, the bookings the system produced times the job values the client confirms at install, shown with the booking count beside the dollar figure. It is an estimate of revenue booked, never closed cash and never an industry average. The monthly Receipt is its formal statement and the document the guarantee pays out on.
-
-### SYN Workspace (early access)
-The AI business workspace, in early access. Encode your brand once, and that same brain governs both SYN Workspace and SYN Growth, so what Growth learns from your customers feeds the work here. SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer. Every approval, rejection, and edit teaches SYN the owner's judgment, so it grows more personalized the longer it runs. Not sold at a printed price yet. Join the waitlist at https://syn.syntrexio.com. Lives at https://syn.syntrexio.com.
-
-## Pricing
-
-- SYN Growth setup: $497 one-time (charged once, not the total)
-- Growth Core: $349 a month, after setup
-- Growth Pro: $549 a month, after setup (Growth Core plus AI voice answering)
-- Guarantee: if the booked value SYN Growth produces in the month comes in under the monthly fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced times the job values the client confirms in writing at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. First three months, then a rolling quarterly review.
-- SYN Workspace: early access, no printed price. Join the waitlist at https://syn.syntrexio.com.
-- Value anchor: a part-time human doing a fraction of this work costs $2,000 to $3,000 a month.
-- Existing clients: if you already run on SYN, the Syntrex team also builds and runs websites, content, and creative for you. This is not sold as a standalone product.
-
-## How It Works
-
-1. Live Leak Audit: request it at https://syntrexio.com/leak-audit or email henry@syntrexio.com. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away. It is the front door to SYN Growth, launching soon, at no cost.
-2. Setup: Syntrex sets up SYN Growth with your brand, your services, and your rules.
-3. It Runs For You: SYN Growth captures, responds, and follows up across every channel, run for you.
-4. The Receipt: every month you see what it captured and recovered, backed by the guarantee.
-5. Grow into Workspace: join the SYN Workspace waitlist to extend the same encoded brand to your calendar, content, and automations.
-
-## Industries
-
-Syntrex works with operators whose customers reach out by phone, form, and message, including home services, medical and dental practices, law firms, insurance, retail and ecommerce, hospitality, and other appointment-driven and consumer businesses, from local to multi-location.
-
-## Referral Program
-
-Refer someone to Syntrex, and if they become a paying client you earn 10% of their first three months of SYN Growth, as cash or as credit toward your own Syntrex services, paid once the referred client is onboarded and has paid.
-
-## Real Clients & Case Studies
-
-- HALT Fire (industrial fire suppression): built a full sales automation system, saved the team 10+ hours of manual work per week, and drove 280% search growth
-- Doughbrik's Wavers (CPG snack brand founded by David Dobrik): built internal automation tools, 3x faster workflows, as the brand scaled into retail
-- Karlo Financial (financial services): Syntrex builds and runs the digital operation on SYN Growth and SYN Workspace
-- Kinetix Technology Group (technology group): Syntrex builds and runs the digital operation on SYN Growth and SYN Workspace
+Q: How do I get started?
+A: Start with the diagnostic at https://syntrexio.com/diagnostic, or email henry@syntrexio.com.
 
 ## Team
 
@@ -110,13 +155,12 @@ Refer someone to Syntrex, and if they become a paying client you earn 10% of the
 ## Pages
 
 - Home: https://syntrexio.com/
-- Live Leak Audit: https://syntrexio.com/leak-audit
 - Services: https://syntrexio.com/services
 - Pricing: https://syntrexio.com/pricing
-- SYN Workspace: https://syn.syntrexio.com
-- Customers: https://syntrexio.com/customers
-- News: https://syntrexio.com/news
+- Diagnostic: https://syntrexio.com/diagnostic
+- Work: https://syntrexio.com/customers
 - About: https://syntrexio.com/about
+- News: https://syntrexio.com/news
 - Contact: https://syntrexio.com/contact
 - Privacy Policy: https://syntrexio.com/privacy
 - Terms of Use: https://syntrexio.com/terms
