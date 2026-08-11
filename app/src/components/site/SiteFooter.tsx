@@ -27,6 +27,7 @@ const cols = [
       { to: "/about", label: "About" },
       { to: "/news", label: "News" },
       { to: "/contact", label: "Contact" },
+      { to: "/referral", label: "Referral Program" },
     ],
   },
 ] as const;

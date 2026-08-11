@@ -40,6 +40,7 @@ export default defineConfig({
       { path: "/news" },
       { path: "/contact" },
       { path: "/leak-audit" },
+      { path: "/referral" },
       { path: "/privacy" },
       { path: "/terms" },
     ],

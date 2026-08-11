@@ -18,6 +18,7 @@ import { Route as LeakAuditRouteImport } from './routes/leak-audit'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ReferralRouteImport } from './routes/referral'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
 
@@ -66,6 +67,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferralRoute = ReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -100,6 +107,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -114,6 +122,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
 }
@@ -129,6 +138,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/pricing'
     | '/privacy'
+    | '/referral'
     | '/services'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
@@ -142,6 +152,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/pricing'
     | '/privacy'
+    | '/referral'
     | '/services'
     | '/terms'
   id:
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/pricing'
     | '/privacy'
+    | '/referral'
     | '/services'
     | '/terms'
   fileRoutesById: FileRoutesById
@@ -169,6 +181,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
+  ReferralRoute: typeof ReferralRoute
   ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
 }
@@ -238,6 +251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/referral': {
+      id: '/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof ReferralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -265,6 +285,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
+  ReferralRoute: ReferralRoute,
   ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
 }

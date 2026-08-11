@@ -667,6 +667,96 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     ],
     ogImage: COMMON.og_image,
   },
+  "/referral": {
+    "title": "Syntrex | Referral Program, Earn 10%",
+    "description": "Introduce a business to Syntrex. If they become a client you earn 10% of their first project or their first three months of retainer, as cash or as credit against your own work. Credit stacks and never expires. Paid within 15 days of the referred client onboarding and paying.",
+    "keywords": "Syntrex referral program, agency referral program, refer a business, 10% referral fee, referral credit, partner referral, AI infrastructure referral",
+    "ogTitle": "Syntrex Referral Program | Earn 10%, Cash or Credit",
+    "ogDescription": "Introduce a business to Syntrex. If they become a client you earn 10% of their first project or first three months of retainer, as cash or credit against your own work.",
+    "canonical": "https://syntrexio.com/referral/",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Referral Program", "item": "https://syntrexio.com/referral/" }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://syntrexio.com/referral#webpage",
+        "name": "Syntrex Referral Program",
+        "url": "https://syntrexio.com/referral/",
+        "description": "Introduce a business to Syntrex. If they become a client you earn 10% of their first project or their first three months of retainer, as cash or as credit against your own work.",
+        "publisher": { "@id": "https://syntrexio.com/#organization" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does the Syntrex referral program pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "10% of the referred client's first project, or 10% of their first three months of retainer. On a $7,500 website build that is $750. On a Full Stack retainer at $7,500 a month that is $2,250. There is no cap on how many referrals you can make or on how much you can earn."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When do I get paid for a referral?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Within 15 days of the referred client onboarding and paying their first invoice. Not on signature and not on first contact. We tell you what happened either way, including when a referral does not go ahead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I take the referral fee as credit instead of cash?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, and most people do. Credit applies to any Syntrex work, whether that is a retainer, a build, or a diagnostic. It stacks, it never expires, and your balance shows on every invoice. Enough referrals covers a build of your own outright. Once you elect credit it is not convertible back to cash."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to be a Syntrex client to refer someone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Anyone can refer: current clients, past clients, partners, advisors, and people who have never bought anything from us. There is no application and no membership step."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the referred business pay more because of my fee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Syntrex pricing is published and a referred client pays exactly what anyone else pays for the same work. The fee comes out of our side, not theirs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does referral attribution last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "12 months from the introduction. If a business you introduced signs eleven months later, the fee is still owed. Attribution belongs to whoever introduced us first, recorded at the time of the introduction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I run an agency. Is there a better arrangement than referring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Agencies and services firms can white label Syntrex builds under their own brand at their own markup. You keep the client relationship, we own delivery and stay invisible. It is worth considerably more than a one-time 10%. Mention it in the referral form and we will explain how it works."
+            }
+          }
+        ]
+      }
+    ],
+    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+  },
   "/privacy": {
     title: "Privacy Policy | Syntrex",
     description:
