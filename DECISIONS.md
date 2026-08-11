@@ -13,6 +13,9 @@ Reasonable calls made where the brief was ambiguous, so work could continue with
 - **Doughbrik's "3x faster workflows":** already published on the current site (llms.txt) and reused as a pre-approved figure on the Work page. HALT Fire figures (280% search growth, 10+ hours/week) are the brief-verified proof.
 - **Team page:** brief says keep the existing team-page structure and only update copy referencing the old model. The five existing team cards are kept as-is; surrounding narrative rewritten to the new delivery model (human-directed AI agent fleet). No new team members invented; no employee-count claims added.
 
+## Work page
+- **Client quotes pending:** the brief asks for a client quote on each case study if one exists in the repo. None exists. The Work page (`/customers`) therefore shows a clearly marked "Quote (pending)" placeholder card on each case study (HALT Fire, Doughbrik's Wavers), ready to fill once quotes are approved. Flagging here per the brief.
+
 ## Information architecture
 - **Nav:** Home, Services, Pricing, Diagnostic, Work, About, Contact.
   - "Customers" route (`/customers`) is relabeled "Work" in nav and rebuilt as case studies. URL preserved.
