@@ -30,10 +30,17 @@ check the change against its rules, not just generic ones.
    PII, dependency risks.
 3. **CLAUDE.md rule violations**: check the diff against every applicable rule.
    For this repo that includes, at minimum: no em dashes and no fabricated
-   stats / client counts in user-facing copy; canonical pricing and company
-   facts (Syntrex the company, SYN the product in two forms; the guarantee is
-   booked value; the Receipt is the payout document); and the branch/merge
-   workflow rules. Flag any user-facing text or config that contradicts these.
+   stats / client counts in user-facing copy; proof limited to HALT Fire,
+   Doughbrik's Wavers, and Kinetix, with Kinetix labeled a partner rather than
+   a client; canonical pricing and company facts per `SYNTREX_FOUNDATION.md`
+   v3.0 (Syntrex is the AI infrastructure layer behind operating companies;
+   four tracks, Visibility / Conversion / Presence / Operations; Agent
+   Workforce is the flagship; published pricing from the AI Systems Diagnostic
+   at $3,500 through Full Stack plus Agent Workforce at $12,500 and up; the
+   guarantee covers only what we control and the remedy is our labor, never a
+   refund); and the branch/merge workflow rules. Flag any user-facing text or
+   config that contradicts these, and flag any reintroduction of the dead
+   Growth-era terms listed in CLAUDE.md.
 4. **Consistency**: does the change match established patterns, and does it keep
    invariants the code documents (for example, values that must stay in sync
    across files)?

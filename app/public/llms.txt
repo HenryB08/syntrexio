@@ -108,7 +108,7 @@ How it works: one metric named in writing, a documented baseline before work beg
 
 ## Proof (verified engagement results)
 
-- HALT Fire (industrial fire suppression): Syntrex built and runs the full digital and AI back end. Result: 280% search growth and more than ten hours a week returned to the team.
+- HALT Fire (industrial fire suppression): Syntrex built and runs the full digital and AI back end. Result: over a three month window in Google Search Console, search clicks grew 689% to 505 and impressions grew 1,608% to 22.9K, and more than ten hours a week came back to the team.
 - Doughbrik's Wavers (consumer snack brand founded by creator David Dobrik): Syntrex built internal automation and custom tools. Result: internal workflows run about 3x faster as the brand scales into retail.
 - Kinetix: a technology partner Syntrex works alongside on delivery.
 

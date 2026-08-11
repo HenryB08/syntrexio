@@ -25,19 +25,22 @@ Applies to all customer-facing surfaces: site copy, the SYN system prompt, SEO/s
   - Retainers per month: **Visibility $2,500, Conversion $2,000, Presence $1,800, Operations $2,500, Full Stack $7,500** (all four, below the $8,800 sum), **Agent Workforce $5,000 to $12,000**, **Full Stack plus Agent Workforce $12,500 and up**.
   - One-time builds: website up to 5 pages $4,500; 6 to 12 pages $7,500; e-commerce $11,000; brand identity $3,500; AI assistant deployment $4,000; CRM buildout $4,500; automation $6,500 per workflow; custom AI tool from $9,000; Agent Workforce install $35,000 to $95,000.
   - Terms: builds are 40% deposit, balance on milestones; retainers billed on the 1st; portfolio pricing 10% off the second brand, 15% off beyond.
-- **Guarantee:** we guarantee only what we control (citation presence, ranking movement, content volume, hours removed, agent task volume, delivery against spec). We do **not** guarantee revenue, closed deals, or conversion rate. The remedy is our labor, never a refund.
-- **Dead terms (never reintroduce):** SYN, SYN Growth, SYN Workspace, the Growth System, the Receipt, booked-value guarantee, AI receptionist, missed-call text-back, the Leak Audit, and any of the retired Growth-era install-plus-monthly prices. The pricing block above is the only correct pricing.
+- **Guarantee:** we guarantee only what we control (citation presence, ranking movement, content volume, hours removed, agent task volume, delivery against spec). We do **not** guarantee revenue, closed deals, or conversion rate. The remedy is our labor, never a refund. One metric per engagement, named in writing, with a documented baseline before work begins, a defined window (typically 90 days), and one agreed source of truth.
+- **The Receipt (alive, per Foundation Section 8):** every retainer client gets a monthly Receipt, one page showing what the system did and what it was worth. **Receipts are immutable once issued** and a correction is a superseding Receipt, never an edit. Do not confuse this with the retired *booked-value Receipt*, which was the Growth-era payout document and is dead.
+- **Proof (the only approved names):** HALT Fire, Doughbrik's Wavers, and Kinetix. **Kinetix is a partner, not a client.** HALT Fire's published figures are the Google Search Console numbers used across the site: search clicks up 689% to 505 and impressions up 1,608% to 22.9K over three months, plus 10+ hours a week returned. Never add a name, a client count, a headcount, or a revenue figure.
+- **Dead terms (never reintroduce):** SYN, SYN Growth, SYN Workspace, the Growth System, the Presence System, Brand Studio, the booked-value guarantee and its payout Receipt, AI receptionist, missed-call text-back, the Leak Audit, and any of the retired Growth-era install-plus-monthly prices. The pricing block above is the only correct pricing.
 
 > The TanStack app embeds no system prompt, so `worker/worker.js` is the sole owner of the SYN chat assistant's behavior. Keep its `SYSTEM_PROMPT` in sync with the site copy (positioning, four tracks, pricing, guarantee) in `app/src`. The Worker deploys separately to Cloudflare (wrangler), not via the Pages workflow.
 
-## Repository shape: two sites mid-migration
+## Repository shape: one site
 
-This repo holds **two versions of syntrexio.com** during a staged migration:
+The legacy hand-authored site was deleted in `15ef71b`. There is now **one** version of syntrexio.com:
 
-- **Root-level static HTML** (`index.html`, `about.html`, `services.html`, `pricing.html`, `leak-audit.html`, etc. plus `styles.css`, `services/`, `images/`) — the **current live site**, served by GitHub Pages directly from a branch. Hand-authored HTML.
-- **`app/`** — the **migration target**: a TanStack Start React app that prerenders every route to static HTML. It reproduces the live site's pages, SEO, and content, and is the successor once cutover happens.
+- **`app/`** is the site. A TanStack Start React app that prerenders every route to static HTML under `dist/client`. All content, SEO, and copy live here.
+- **`app/public/`** holds static assets plus `llms.txt`, `sitemap.xml`, `robots.txt`, and a set of **redirect stubs** (`about.html`, `pricing.html`, `services.html`, `leak-audit.html`, `projects.html`, and others). Each stub is a ~470 byte canonical plus meta-refresh pointing at its React route, so indexed legacy URLs keep resolving. **They carry no copy and are not a content surface.** Do not add content to them.
+- **Root level** holds only `styles.css`, `sitemap.xml`, `robots.txt`, `security.txt`, favicons, `images/`, and the docs. No pages.
 
-Cutover is manual and gated (see below). Until then, the root HTML is authoritative for what visitors see; `app/` builds but does **not** deploy. When changing site content, know which surface you are editing — a change in `app/` does not affect the live site pre-cutover, and vice versa.
+There is no longer a pre-cutover/post-cutover split in the content: editing `app/src` is editing the site. Deploy is still gated, see **Deployment** below.
 
 ## `app/` — the TanStack Start app
 
@@ -83,13 +86,19 @@ File-based under `app/src/routes/` — see `app/src/routes/README.md` for conven
 
 `worker/worker.js` is the `syntrex-chat` Worker. It proxies the site's chat to the Anthropic Messages API and **owns the system prompt, model, and `max_tokens`** — the browser sends only the `messages` array; anything else it sends is ignored. `ANTHROPIC_API_KEY` comes from the Worker env, never the client.
 
-**Critical invariant:** `SYSTEM_PROMPT` in `worker.js` must stay **byte-identical** to the `SYSTEM_PROMPT` embedded in the site pages. It encodes strict brand rules (pricing, the guarantee wording, "never call it an AI receptionist," approved statistics/clients only, no em dashes/markdown). If you change SYN's behavior or company facts, update both copies together.
+**`worker/worker.js` is the sole owner of `SYSTEM_PROMPT`.** The old byte-identical-across-~20-files invariant is retired: the legacy pages that embedded copies were deleted in `15ef71b`, and the React app embeds none (`ChatBubble.tsx` calls `sendChat()` in `app/src/lib/site.ts`, which posts only `messages`). `grep -rl SYSTEM_PROMPT` returns exactly one file. If it ever returns more, that is a bug.
+
+The prompt encodes strict brand rules: published pricing, the guarantee wording, approved proof names only, never call it an AI receptionist, no em dashes or markdown. **Keep it in sync with `app/src` by meaning, not by byte.** If you change positioning, pricing, the guarantee, or company facts anywhere, update the Worker prompt in the same branch.
+
+There is **no `wrangler.toml`** for this Worker in the repo and it deploys out of band via wrangler, not through the Pages workflow. Editing `worker.js` here does not ship it.
 
 ## Deployment
 
 `.github/workflows/deploy-pages.yml` builds `app/` with Bun and publishes `dist/client` to GitHub Pages (adds `CNAME`, `.nojekyll`, and copies `index.html` → `404.html` for SPA fallback).
 
-The `deploy` job is **double-gated**: it runs only on `main` **and** only when repo variable `PAGES_DEPLOY_ENABLED == 'true'`. Pre-cutover, merges to `main` build green but skip deploy, leaving the branch-served live site untouched. Cutover (one-time, manual UI steps): set Pages source to "GitHub Actions" and set `PAGES_DEPLOY_ENABLED = true`.
+The workflow also **generates the legacy-URL redirect stubs into the built artifact** (`about.html`, `pricing.html`, `services.html`, `leak-audit.html` to `/diagnostic/`, `projects.html` to `/customers/`, the `services/*.html` detail pages, and others), overwriting the copies from `app/public/`. Adding or changing a legacy redirect means editing that step in the workflow, not `app/public/`.
+
+The `deploy` job is **double-gated**: it runs only on `main` **and** only when repo variable `PAGES_DEPLOY_ENABLED == 'true'`. Until both are set, merges to `main` build green but skip deploy. Cutover (one-time, manual UI steps): set Pages source to "GitHub Actions" and set `PAGES_DEPLOY_ENABLED = true`.
 
 ## Working with Lovable (important for git)
 
