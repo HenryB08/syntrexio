@@ -39,7 +39,7 @@ const clients: Client[] = [
     imageAlt: "Large-scale fire against a dark sky, evoking industrial fire suppression",
     name: "HALT Fire",
     kind: "Industrial fire suppression",
-    tag: "Client",
+    tag: "Client, retainer",
     desc: "Full digital and AI back end: search visibility, content, the website, lead handling, and internal automation.",
     result:
       "Search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, with 10+ hours a week returned.",
