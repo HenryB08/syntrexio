@@ -1,6 +1,6 @@
 SYNTREX FOUNDATION DOCUMENT
 
-Version 3.0 — August 2026 — Canonical
+Version 3.1 — August 2026 — Canonical
 
 This document supersedes all prior Syntrex strategy, positioning, pricing, and operating documents. If any chat, file, deck, proposal, or page contradicts this document, this document wins.
 
@@ -412,7 +412,7 @@ To a burned buyer: Ninety-five percent of enterprise AI spending produces zero m
 On the guarantee: We guarantee what we control. We do not guarantee your sales team.
 
 PROOF
-HALT Fire. Full AI and digital stack. 280% search growth, 10+ hours per week returned to the team.
+HALT Fire. Full AI and digital stack. Search clicks up 689% to 505 and impressions up 1,608% to 22.9K over three months, plus 10+ hours per week returned to the team.
 Doughbrik's Wavers. Ongoing retainer. Consumer brand with national retail distribution.
 Kinetix. Partner. Refers AI and automation work to Syntrex for build and delivery.
 VERSION CONTROL
@@ -425,7 +425,8 @@ Version    Date    Change
 1.0    Aug 2026    Initial canonical document
 2.0    Aug 2026    Added proof layer, referral and partner channels, portfolio pricing, retention standard
 3.0    Aug 2026    Full rebuild on six research runs. Added paid diagnostic front door, package architecture, controllable-metric guarantee with labor remedy, sales process, burned-buyer playbook, credibility framework, expansion mechanics, operations systematization, revenue model, sourced statistics throughout
+3.1    Aug 2026    PROOF updated to verified Google Search Console figures, superseding the 280% estimate
 
-Current version: 3.0
+Current version: 3.1
 
 Amend only with a documented reason. Price only with the rule in Section 7.
