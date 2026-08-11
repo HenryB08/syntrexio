@@ -20,6 +20,9 @@ Reasonable calls made where the brief was ambiguous, so work could continue with
 - **Diagnostic:** new route `/diagnostic` (added to `vite.config.ts` pages). It is the free, rules-based self-qualifying tool (lead magnet). This is distinct from the paid **AI Systems Diagnostic ($3,500)** engagement front door described on Pricing.
 - **`/leak-audit`:** old "missed calls" front door, now off-message. Route preserved (indexed URL) but converted to a redirect page (canonical + meta-refresh + client redirect) pointing to `/diagnostic`. No missed-call content remains.
 
+## Tooling
+- **Lint baseline already failing:** on the pristine branch, `bun run lint` reports ~595 `prettier/prettier` formatting errors in files untouched by this work (e.g. `terms.tsx`, `index.tsx`) — the repo was not prettier-clean before the overhaul. Approach: run `prettier --write` on each file this work touches so all changed files are clean, and leave untouched files as-is to avoid large unrelated formatting churn. `bun run build` passes throughout.
+
 ## Out of scope (flagged, not changed)
 - **Cloudflare Worker (`worker/worker.js`) SYSTEM_PROMPT:** still encodes the old SYN positioning and old pricing. The brief scopes this task to `app/src` content and says to leave the chat widget functionality alone, so the worker is NOT edited here. The live SYN chat will describe the old model until the worker prompt is updated in a separate pass. Flagged for follow-up.
 - **Contact form / chat widget / Formspree + Worker endpoints:** unchanged (working functionality).

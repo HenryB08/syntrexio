@@ -1,164 +1,61 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Faq } from "@/components/site/Faq";
-import { pageHead } from "@/lib/seo";
-import { useState } from "react";
-import { toast } from "sonner";
-import { Clock, FileText, PhoneCall, Search, Send } from "lucide-react";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
-import { Reveal } from "@/components/site/Reveal";
-import { submitForm } from "@/lib/site";
+import { PageHero } from "@/components/site/PageHero";
 
-const TITLE = "Live Leak Audit Syntrex";
-const DESC =
-  "One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen. The front door to SYN Growth, launching soon. Free.";
-
+// The old Leak Audit was the pre-launch front door. The self-qualifying
+// diagnostic replaces it. This route is kept so the indexed /leak-audit URL
+// keeps working: it canonicalizes to /diagnostic, refreshes there for anyone
+// (or any crawler) that lands on it, and offers a manual link as a fallback.
 export const Route = createFileRoute("/leak-audit")({
-  head: () => pageHead("/leak-audit"),
-  component: FreeLeakAudit,
+  head: () => ({
+    meta: [
+      { title: "Syntrex | Start With the AI Systems Diagnostic" },
+      {
+        name: "description",
+        content:
+          "The Leak Audit is now the AI Systems Diagnostic: a short self-qualifying tool that maps what is not working across visibility, conversion, presence, and operations, then names where to start.",
+      },
+      { name: "robots", content: "noindex, follow" },
+      { httpEquiv: "refresh", content: "0; url=/diagnostic/" },
+    ],
+    links: [{ rel: "canonical", href: "https://syntrexio.com/diagnostic/" }],
+  }),
+  component: LeakAuditRedirect,
 });
 
-const steps = [
-  { icon: Search, title: "One button, three channels", desc: "The Live Leak Audit tests your phone, live chat, and contact form at the same time, the way a real customer would reach you." },
-  { icon: Clock, title: "A response timer on screen", desc: "A live timer runs for each channel, so you watch exactly how long your phone, chat, and form take to answer." },
-  { icon: FileText, title: "See where you leak", desc: "The result shows which channels answered, how fast, and where inquiries are slipping away, with an estimate of what that costs you each year, based on your trade." },
-];
-
-function FreeLeakAudit() {
-  const [loading, setLoading] = useState(false);
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    // Capture the form element now: React nullifies e.currentTarget after the
-    // await, so reading it later (e.g. to reset) would throw and wrongly trip
-    // the catch, showing an error toast on a successful submit.
-    const formEl = e.currentTarget;
-    setLoading(true);
-    const data = Object.fromEntries(new FormData(formEl).entries());
-    // Website is a lenient text field: accept bare domains like "haltfire.com"
-    // and normalize to a URL by prepending https:// when no scheme is present.
-    if (typeof data.website === "string" && data.website.trim() && !/^https?:\/\//i.test(data.website.trim())) {
-      data.website = "https://" + data.website.trim();
-    }
-    try {
-      await submitForm({ form: "leak-audit", ...data });
-      toast.success("Audit request received. We'll be in touch within 48 hours.");
-      formEl.reset();
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
+function LeakAuditRedirect() {
+  const router = useRouter();
+  useEffect(() => {
+    router.navigate({ to: "/diagnostic", replace: true });
+  }, [router]);
 
   return (
     <>
       <PageHero
         variant="scanline"
-        eyebrow="The front door to SYN Growth · Free"
-        title="See exactly what missed calls are costing you."
-        description="62% of calls to small businesses go unanswered and 85% never call back. The Live Leak Audit is how you start with SYN Growth: one button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen so you see exactly how fast each one answers and where inquiries slip away. SYN Growth is launching soon; request your audit and we walk you through the results within 48 hours."
-      />
-
-      <Section>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {/* Explainer */}
-          <div className="space-y-6">
-            {steps.map((s, i) => (
-              <Reveal key={s.title} delay={i * 100}>
-                <div className="surface-card surface-card-hover flex gap-4 p-6">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-hairline bg-background text-accent">
-                    <s.icon size={18} />
-                  </div>
-                  <div>
-                    <div className="text-[15px] font-semibold text-foreground">
-                      {s.title}
-                    </div>
-                    <p className="mt-1.5 text-sm text-muted-foreground">{s.desc}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-            <Reveal delay={300}>
-              <div className="flex items-center gap-3 rounded-lg border border-accent/30 bg-accent/5 p-4 text-sm text-foreground">
-                <PhoneCall size={16} className="text-accent" />
-                We walk you through your results within 48 hours. No sales pressure.
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Form */}
-          <Reveal delay={120}>
-            <form
-              onSubmit={onSubmit}
-              className="surface-card space-y-5 p-7 md:p-8"
-            >
-              <div>
-                <div className="text-eyebrow mb-1">Request your audit</div>
-                <h3 className="text-2xl font-semibold text-foreground">
-                  Tell us where to find you.
-                </h3>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label="Name" name="name" required />
-                <Field label="Business" name="business" />
-                <Field label="Website" name="website" type="text" placeholder="yourbusiness.com" />
-                <Field label="Phone" name="phone" type="tel" />
-                <Field label="Email" name="email" type="email" required />
-                <Field label="Industry" name="industry" />
-              </div>
-              <Button
-                type="submit"
-                size="lg"
-                variant="accent"
-                disabled={loading}
-                className="w-full"
-              >
-                {loading ? "Submitting…" : "Request my Free Leak Audit"}
-                {!loading && <Send />}
-              </Button>
-              <p className="text-xs text-muted-foreground">
-                By submitting you agree to be contacted about your audit. We
-                don't share your data.
-              </p>
-            </form>
-          </Reveal>
-        </div>
+        eyebrow="Now the AI Systems Diagnostic"
+        title="This page has moved."
+        description="The Leak Audit is now the diagnostic: a short, free self-qualifier that maps what is not working across visibility, conversion, presence, and operations, then tells you exactly where to start."
+      >
+        <Button asChild size="lg" variant="accent">
+          <Link to="/diagnostic">
+            Go to the diagnostic
+            <ArrowRight />
+          </Link>
+        </Button>
+      </PageHero>
+      <Section className="text-center">
+        <p className="text-muted-foreground">
+          Redirecting you now. If nothing happens,{" "}
+          <Link to="/diagnostic" className="text-foreground underline underline-offset-4">
+            open the diagnostic
+          </Link>
+          .
+        </p>
       </Section>
-      <Faq path="/leak-audit" />
     </>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div className="space-y-1.5">
-      <Label htmlFor={name} className="text-xs text-muted-foreground">
-        {label}
-      </Label>
-      <Input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        className="h-11 border-hairline bg-background text-foreground focus-visible:border-accent/60 focus-visible:ring-accent/30"
-      />
-    </div>
   );
 }

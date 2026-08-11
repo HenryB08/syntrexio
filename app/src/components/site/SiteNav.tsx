@@ -9,8 +9,8 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/pricing", label: "Pricing" },
-  { to: "/customers", label: "Customers" },
-  { to: "/news", label: "News" },
+  { to: "/diagnostic", label: "Diagnostic" },
+  { to: "/customers", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -65,8 +65,13 @@ export function SiteNav() {
             </nav>
             <div className="ml-1 pl-1 border-l border-white/10">
               <MagneticButton strength={0.25} radius={90}>
-                <Button asChild size="sm" variant="accent" className="rounded-full h-8 px-4 text-[13px]">
-                  <Link to="/leak-audit">Get Your Free Leak Audit</Link>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="accent"
+                  className="rounded-full h-8 px-4 text-[13px]"
+                >
+                  <Link to="/diagnostic">Start the diagnostic</Link>
                 </Button>
               </MagneticButton>
             </div>
@@ -120,8 +125,8 @@ export function SiteNav() {
           </nav>
           <div className="mt-auto">
             <Button asChild variant="accent" size="lg" className="w-full">
-              <Link to="/leak-audit" onClick={() => setOpen(false)}>
-                Get Your Free Leak Audit
+              <Link to="/diagnostic" onClick={() => setOpen(false)}>
+                Start the diagnostic
               </Link>
             </Button>
           </div>

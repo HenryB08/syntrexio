@@ -35,6 +35,7 @@ export default defineConfig({
       { path: "/about" },
       { path: "/services" },
       { path: "/pricing" },
+      { path: "/diagnostic" },
       { path: "/customers" },
       { path: "/news" },
       { path: "/contact" },

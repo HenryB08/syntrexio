@@ -13,17 +13,19 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 const cols = [
   {
-    title: "Product",
+    title: "What we do",
     links: [
       { to: "/services", label: "Services" },
       { to: "/pricing", label: "Pricing" },
-      { to: "/leak-audit", label: "Free Leak Audit" },
+      { to: "/diagnostic", label: "Diagnostic" },
     ],
   },
   {
     title: "Company",
     links: [
+      { to: "/customers", label: "Work" },
       { to: "/about", label: "About" },
+      { to: "/news", label: "News" },
       { to: "/contact", label: "Contact" },
     ],
   },
@@ -71,8 +73,7 @@ export function SiteFooter() {
         <div className="space-y-4">
           <Logo />
           <p className="max-w-xs text-sm text-muted-foreground">
-            Syntrex builds SYN. AI that answers your customers today, and runs
-            your business next.
+            The AI infrastructure layer behind operating companies. Nobody owns the outcome. We do.
           </p>
           <div className="flex items-center gap-2 pt-1">
             <a
@@ -137,9 +138,7 @@ export function SiteFooter() {
             <br />
             Serving clients worldwide.
           </p>
-          <p className="mt-2 text-xs text-muted-foreground/70">
-            Response within 24 hours.
-          </p>
+          <p className="mt-2 text-xs text-muted-foreground/70">Response within 24 hours.</p>
         </div>
       </div>
 
@@ -147,11 +146,17 @@ export function SiteFooter() {
         <div className="container-page flex flex-col items-start justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Syntrex. All rights reserved.</p>
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="https://syn.syntrexio.com" className="transition-colors hover:text-foreground">SYN</a>
+            <Link to="/diagnostic" className="transition-colors hover:text-foreground">
+              Diagnostic
+            </Link>
             <span aria-hidden>·</span>
-            <Link to="/privacy" className="transition-colors hover:text-foreground">Privacy</Link>
+            <Link to="/privacy" className="transition-colors hover:text-foreground">
+              Privacy
+            </Link>
             <span aria-hidden>·</span>
-            <Link to="/terms" className="transition-colors hover:text-foreground">Terms</Link>
+            <Link to="/terms" className="transition-colors hover:text-foreground">
+              Terms
+            </Link>
           </nav>
         </div>
       </div>
