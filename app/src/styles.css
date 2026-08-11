@@ -1519,7 +1519,7 @@
   will-change: opacity, transform;
 }
 
-/* --- scanline: slow sweep down + faint data noise (Leak Audit) --- */
+/* --- scanline: slow sweep down + faint data noise (diagnostic hero) --- */
 .hb-noise {
   position: absolute; inset: 0;
   background-image:

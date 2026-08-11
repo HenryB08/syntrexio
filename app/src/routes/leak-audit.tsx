@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
 import { PageHero } from "@/components/site/PageHero";
 
-// The old Leak Audit was the pre-launch front door. The self-qualifying
-// diagnostic replaces it. This route is kept so the indexed /leak-audit URL
-// keeps working: it canonicalizes to /diagnostic, refreshes there for anyone
-// (or any crawler) that lands on it, and offers a manual link as a fallback.
+// The old free-audit page is retired. The self-qualifying diagnostic replaces
+// it. This route is kept so the indexed /leak-audit URL keeps working: it
+// canonicalizes to /diagnostic, refreshes there for anyone (or any crawler)
+// that lands on it, and offers a manual link as a fallback.
 export const Route = createFileRoute("/leak-audit")({
   head: () => ({
     meta: [
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/leak-audit")({
       {
         name: "description",
         content:
-          "The Leak Audit is now the AI Systems Diagnostic: a short self-qualifying tool that maps what is not working across visibility, conversion, presence, and operations, then names where to start.",
+          "This page has moved to the AI Systems Diagnostic: a short self-qualifying tool that maps what is not working across visibility, conversion, presence, and operations, then names where to start.",
       },
       { name: "robots", content: "noindex, follow" },
       { httpEquiv: "refresh", content: "0; url=/diagnostic/" },
@@ -38,7 +38,7 @@ function LeakAuditRedirect() {
         variant="scanline"
         eyebrow="Now the AI Systems Diagnostic"
         title="This page has moved."
-        description="The Leak Audit is now the diagnostic: a short, free self-qualifier that maps what is not working across visibility, conversion, presence, and operations, then tells you exactly where to start."
+        description="This page is now the diagnostic: a short, free self-qualifier that maps what is not working across visibility, conversion, presence, and operations, then tells you exactly where to start."
       >
         <Button asChild size="lg" variant="accent">
           <Link to="/diagnostic">

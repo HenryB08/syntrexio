@@ -1,4 +1,4 @@
-// Site integrations: contact/lead forms (Formspree) and the SYN chatbot
+// Site integrations: contact/lead forms (Formspree) and the Syntrex chatbot
 // (Cloudflare Worker). Both endpoints match the pre-cutover site exactly.
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkopyzln";
@@ -23,8 +23,8 @@ export async function submitForm(data: Record<string, unknown>) {
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 
-// Send the conversation to the SYN Worker and return the assistant's reply.
-// The Worker owns the system prompt, model, and max_tokens; the site sends
+// Send the conversation to the Syntrex chat Worker and return the assistant's
+// reply. The Worker owns the system prompt, model, and max_tokens; the site sends
 // ONLY the messages array. Response is the Anthropic Messages shape.
 export async function sendChat(messages: ChatMessage[]): Promise<string> {
   const res = await fetch(CHAT_ENDPOINT, {

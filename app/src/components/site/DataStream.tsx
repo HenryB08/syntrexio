@@ -1,16 +1,16 @@
 const EVENTS = [
-  "Call answered · 2.1s",
-  "SMS reply sent",
-  "Missed-call rescue · +1 lead",
-  "Booked · 3:40 PM",
-  "Follow-up sent · seq 2/4",
-  "Voicemail transcribed",
-  "Lead qualified · high-intent",
-  "Chat handoff · agent",
-  "Appointment confirmed",
-  "Review request sent",
-  "New inquiry · web form",
-  "Reminder sent · 24h out",
+  "Agent · research complete",
+  "GEO citation · +1 query",
+  "Content published · on schedule",
+  "Ranking up · target term",
+  "Workflow automated",
+  "Report generated",
+  "CRM record synced",
+  "Draft ready · human review",
+  "Dashboard updated",
+  "Email deliverability · pass",
+  "Task queued · agent fleet",
+  "Approval logged · human",
 ];
 
 function pillRow(offset = 0) {

@@ -184,7 +184,7 @@ const pricepoints = [
   },
 ];
 
-// Named proof only. Kinetix appears as a partner. Karlo removed per brand rules.
+// Named proof only: HALT Fire, Doughbrik's Wavers, and Kinetix (partner).
 const trusted = [
   { name: "HALT Fire", href: "https://haltfire.com/" },
   { name: "Doughbrik's Wavers", href: "https://eatdoughbriks.com/" },
