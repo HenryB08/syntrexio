@@ -4,13 +4,16 @@ export function Section({
   children,
   className = "",
   id,
+  pad = "default",
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
+  pad?: "default" | "compact";
 }) {
+  const padding = pad === "compact" ? "py-12 md:py-16" : "py-20 md:py-28";
   return (
-    <section id={id} className={`py-20 md:py-28 ${className}`}>
+    <section id={id} className={`${padding} ${className}`}>
       <div className="container-page">{children}</div>
     </section>
   );
