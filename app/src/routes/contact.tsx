@@ -70,7 +70,13 @@ function Contact() {
               <InfoRow
                 icon={<MapPin size={16} />}
                 label="Location"
-                value={<>Windermere, FL · Greater Orlando</>}
+                value={
+                  <>
+                    Windermere, FL (HQ) and Miami, FL
+                    <br />
+                    Serving clients worldwide
+                  </>
+                }
               />
               <InfoRow
                 icon={<Clock size={16} />}

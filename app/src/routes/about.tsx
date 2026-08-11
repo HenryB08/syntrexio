@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const facts = [
-  { icon: MapPin, label: "Headquartered", value: "Windermere, FL, Greater Orlando" },
+  { icon: MapPin, label: "Locations", value: "Windermere, FL (HQ) and Miami, FL" },
   { icon: Globe, label: "Reach", value: "Operating companies worldwide" },
   { icon: Layers, label: "Model", value: "Human-directed AI agent fleet" },
 ];
@@ -71,7 +71,7 @@ function About() {
         variant="worldmap"
         eyebrow="About Syntrex"
         title="The AI infrastructure layer behind operating companies."
-        description="Syntrex runs the full digital and AI back end of a business across visibility, conversion, presence, and operations. One team, leading every project, accountable for the outcome. Headquartered in Windermere, Florida, working with operators worldwide."
+        description="Syntrex runs the full digital and AI back end of a business across visibility, conversion, presence, and operations. One team, leading every project, accountable for the outcome. Headquartered in Windermere, Florida, with a second location in Miami, and working with operators worldwide."
       />
 
       <Section>
