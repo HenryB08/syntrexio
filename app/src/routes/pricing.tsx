@@ -117,17 +117,18 @@ const retainers: Retainer[] = [
   },
 ];
 
-type Build = { name: string; market?: string; replaces?: string; price: string };
+type Build = { name: string; market?: string; replaces?: string; note?: string; price: string };
 
 const builds: Build[] = [
-  { name: "Website, up to 5 pages", market: "$8,000 to $15,000", price: "$4,500" },
-  { name: "Website, 6 to 12 pages", market: "$15,000 to $30,000", price: "$7,500" },
-  { name: "E-commerce build", market: "$20,000 to $50,000", price: "$11,000" },
-  { name: "Brand identity system", market: "$5,000 to $15,000", price: "$3,500" },
-  { name: "AI assistant deployment", market: "$5,000 to $15,000", price: "$4,000" },
-  { name: "CRM buildout and migration", market: "$5,000 to $20,000", price: "$4,500" },
-  { name: "Automation build, per workflow", market: "$10,000 to $40,000", price: "$6,500" },
-  { name: "Custom AI tool", market: "$15,000 to $50,000", price: "$9,000+" },
+  { name: "Single page site", note: "Entry point, one page.", price: "from $1,500" },
+  { name: "Website, up to 5 pages", market: "$8,000 to $15,000", price: "from $4,500" },
+  { name: "Website, 6 to 12 pages", market: "$15,000 to $30,000", price: "from $7,500" },
+  { name: "E-commerce build", market: "$20,000 to $50,000", price: "from $11,000" },
+  { name: "Brand identity system", market: "$5,000 to $15,000", price: "from $3,500" },
+  { name: "AI assistant deployment", market: "$5,000 to $15,000", price: "from $4,000" },
+  { name: "CRM buildout and migration", market: "$5,000 to $20,000", price: "from $4,500" },
+  { name: "Automation build, per workflow", market: "$10,000 to $40,000", price: "from $6,500" },
+  { name: "Custom AI tool", market: "$15,000 to $50,000", price: "from $9,000" },
   {
     name: "Agent Workforce install",
     replaces:
@@ -296,13 +297,15 @@ function Pricing() {
                       <div className="mt-4 text-xs text-muted-foreground">
                         <span className="text-foreground/70">Replaces:</span> {b.replaces}
                       </div>
-                    ) : (
+                    ) : b.market ? (
                       <div className="mt-4 text-xs text-muted-foreground">
                         Market:{" "}
                         <span className="line-through decoration-muted-foreground/50">
                           {b.market}
                         </span>
                       </div>
+                    ) : (
+                      <div className="mt-4 text-xs text-muted-foreground">{b.note}</div>
                     )}
                     <div className="mt-1 flex items-baseline gap-2">
                       <span className="text-eyebrow">Syntrex</span>
@@ -312,7 +315,12 @@ function Pricing() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-6 text-center text-xs text-muted-foreground">
+            <p className="mt-6 text-center text-sm text-foreground/80">
+              These are starting prices that scale with scope. What moves a price within its range:
+              page count, the number of integrations, and whether we build from scratch or on your
+              existing platform.
+            </p>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
               Market ranges: web and creative from Clutch (database of 79,000+ agencies) and Clutch
               2026; retainer benchmarks from the HubSpot Agency Survey and Databox. Builds are a 40%
               deposit with the balance on milestones.
@@ -370,9 +378,9 @@ function Pricing() {
                 <p className="mt-3 text-sm text-muted-foreground md:text-base">
                   The window pauses if you miss an agreed, dated condition: approving submitted work
                   within five business days, granting the systems and accounts named at kickoff,
-                  providing information only you hold, or keeping one named point of contact. A pause
-                  stops the clock rather than voiding the guarantee, and each one is recorded on that
-                  month's Receipt with its start and end dates.
+                  providing information only you hold, or keeping one named point of contact. A
+                  pause stops the clock rather than voiding the guarantee, and each one is recorded
+                  on that month's Receipt with its start and end dates.
                 </p>
               </div>
             </div>
