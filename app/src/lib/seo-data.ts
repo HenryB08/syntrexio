@@ -3,9 +3,10 @@
 // The visible FAQ accordions render from the FAQPage schema here (see seo.ts),
 // so editing an answer updates both the page and its structured data.
 //
-// Company model: Syntrex builds SYN. SYN ships in two products, SYN Growth
-// (launching soon, printed launch pricing) and SYN Workspace (early access, waitlist,
-// no price). Presence/Brand are not sold on these surfaces.
+// Company model: Syntrex is the AI infrastructure layer behind operating
+// companies. One team runs a business's full digital and AI back end across four
+// tracks: visibility, conversion, presence, and operations. Agent Workforce is
+// the flagship. Pricing is published. The guarantee covers what we control.
 
 export const ORIGIN = "https://syntrexio.com";
 
@@ -20,623 +21,683 @@ export const COMMON = {
   og_locale: "en_US",
   og_type: "website",
   tw_card: "summary_large_image",
-  og_image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
+  og_image:
+    "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
 } as const;
 
 export type LdJson = Record<string, unknown>;
+
+const ORG_ID = "https://syntrexio.com/#organization";
+
+// A reusable Service node for one of the four tracks.
+function trackService(name: string, description: string, price: string): LdJson {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: name,
+    serviceType: name,
+    provider: { "@id": ORG_ID },
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    description: description,
+    offers: {
+      "@type": "Offer",
+      price: price,
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: price,
+        priceCurrency: "USD",
+        unitText: "MONTH",
+      },
+    },
+  };
+}
+
+const VISIBILITY_SERVICE = trackService(
+  "Visibility",
+  "AI search optimization (GEO), traditional SEO, content production and strategy, and social media systems, so the right buyers find you in search and in AI answers.",
+  "2500",
+);
+const CONVERSION_SERVICE = trackService(
+  "Conversion",
+  "AI assistants and customer-facing chat, lead capture and follow-up systems, email systems and deliverability, and CRM buildout and management, so the leads you earn convert.",
+  "2000",
+);
+const PRESENCE_SERVICE = trackService(
+  "Presence",
+  "Websites and web applications, e-commerce builds, brand identity and design systems, and imagery and campaign assets, so your site and brand match the business you run.",
+  "1800",
+);
+const OPERATIONS_SERVICE = trackService(
+  "Operations",
+  "Workflow automation and system integration, custom internal AI tools, reporting and analytics dashboards, and the Agent Workforce flagship, so the repetitive work runs itself.",
+  "2500",
+);
+
+// The Agent Workforce flagship, described as a distinct Service.
+const AGENT_WORKFORCE_SERVICE: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://syntrexio.com/#agent-workforce",
+  name: "Agent Workforce",
+  serviceType: "AI agent workforce installation and operation",
+  provider: { "@id": ORG_ID },
+  areaServed: { "@type": "Place", name: "Worldwide" },
+  description:
+    "Agent Workforce installs a company's internal fleet of AI agents to handle operational work it currently pays salaries for, including research, drafting, coordination, data entry, monitoring, scheduling, reporting, and first-pass analysis. It runs continuously with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business. Install runs $35,000 to $95,000, then $5,000 to $12,000 a month to operate.",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "USD",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      minPrice: "5000",
+      maxPrice: "12000",
+      priceCurrency: "USD",
+    },
+  },
+};
+
+// Site-wide ProfessionalService describing the whole offering.
+const PROFESSIONAL_SERVICE: LdJson = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://syntrexio.com/#professionalservice",
+  name: "Syntrex",
+  url: "https://syntrexio.com",
+  image: COMMON.og_image,
+  description:
+    "The AI infrastructure layer behind operating companies. Syntrex runs a business's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. One team leads every project end to end and is accountable for the outcome.",
+  provider: { "@id": ORG_ID },
+  areaServed: { "@type": "Place", name: "Worldwide" },
+  priceRange: "$1,800 to $12,500+ per month",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Syntrex services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Visibility" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conversion" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Presence" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Operations" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agent Workforce" } },
+    ],
+  },
+};
 
 export const SITE_SCHEMA: LdJson[] = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://syntrexio.com/#organization",
-    "name": "Syntrex",
-    "legalName": "Syntrex LLC",
-    "alternateName": "Syntrexio",
-    "url": "https://syntrexio.com",
-    "logo": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
-    "image": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png",
-    "description": "Syntrex builds SYN, one AI platform in two products. SYN Growth answers and books your customers automatically and is launching soon. SYN Workspace, in early access, runs your calendar, content, assets, and automations. Syntrex started as a hands-on digital agency and productized what it learned building for real businesses.",
-    "email": "henry@syntrexio.com",
-    "founder": { "@type": "Person", "name": "Henry Bello" },
-    "address": {
+    "@id": ORG_ID,
+    name: "Syntrex",
+    legalName: "Syntrex LLC",
+    alternateName: "Syntrexio",
+    url: "https://syntrexio.com",
+    logo: COMMON.og_image,
+    image: COMMON.og_image,
+    description:
+      "Syntrex is the AI infrastructure layer behind operating companies. One team runs a business's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. The flagship, Agent Workforce, installs and operates a company's internal fleet of AI agents. Pricing is published, and the guarantee covers what Syntrex controls.",
+    email: "henry@syntrexio.com",
+    founder: { "@type": "Person", name: "Henry Bello" },
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "513 Main Street",
-      "addressLocality": "Windermere",
-      "addressRegion": "FL",
-      "postalCode": "34786",
-      "addressCountry": "US"
+      streetAddress: "513 Main Street",
+      addressLocality: "Windermere",
+      addressRegion: "FL",
+      postalCode: "34786",
+      addressCountry: "US",
     },
-    "areaServed": { "@type": "Place", "name": "Worldwide" },
-    "sameAs": [
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    sameAs: [
       "https://www.instagram.com/syntrexio",
       "https://www.tiktok.com/@syntrexio",
-      "https://www.linkedin.com/company/syntrexco"
-    ]
+      "https://www.linkedin.com/company/syntrexco",
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Syntrex",
-    "url": "https://syntrexio.com",
-    "publisher": { "@id": "https://syntrexio.com/#organization" }
-  }
+    name: "Syntrex",
+    url: "https://syntrexio.com",
+    publisher: { "@id": ORG_ID },
+  },
 ];
 
 export interface PageSeo {
-  title: string; description: string; keywords: string;
-  ogTitle: string; ogDescription: string; ogImage?: string;
-  canonical: string; schema: LdJson[];
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage?: string;
+  canonical: string;
+  schema: LdJson[];
 }
 
-// SYN Growth: launching soon, printed launch pricing. One-time $497 setup, then a
-// monthly plan. Guarantee attached.
-const SYN_GROWTH_PRODUCT: LdJson = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": "https://syntrexio.com/#syn-growth",
-  "name": "SYN Growth",
-  "brand": { "@type": "Brand", "name": "SYN" },
-  "url": "https://syntrexio.com/pricing/",
-  "description": "The guaranteed SYN product, launching soon. It answers every call, chat, and form in seconds 24/7, captures every missed call, and follows up until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the dollars recovered and the bookings behind them, formalized each month in the Receipt, and it shares one encoded brain with SYN Workspace so returning callers are recognized. Launch pricing: one-time setup of $497, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. The Live Leak Audit is the pre-launch entry point.",
-  "releaseDate": "2026",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Setup",
-      "price": "497",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/PreOrder",
-      "description": "One-time setup at launch pricing. Charged once, not monthly."
-    },
-    {
-      "@type": "Offer",
-      "name": "Growth Core",
-      "price": "349",
-      "priceCurrency": "USD",
-      "description": "Per month after the one-time $497 setup. AI web chat, SMS, missed-call text-back, follow-up, booking, and the monthly Receipt.",
-      "availability": "https://schema.org/PreOrder"
-    },
-    {
-      "@type": "Offer",
-      "name": "Growth Pro",
-      "price": "549",
-      "priceCurrency": "USD",
-      "description": "Per month after the one-time $497 setup. Everything in Growth Core plus AI voice answering.",
-      "availability": "https://schema.org/PreOrder"
-    }
-  ]
-};
-
-// SYN Workspace: early access, waitlist, no printed price.
-const SYN_WORKSPACE_PRODUCT: LdJson = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": "https://syntrexio.com/#syn-workspace",
-  "name": "SYN Workspace",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "url": "https://syn.syntrexio.com",
-  "publisher": { "@id": "https://syntrexio.com/#organization" },
-  "description": "The AI business workspace, in early access. Your brand encoded once governs both SYN Workspace and SYN Growth, so what Growth learns from customers feeds the work here. SYN runs your calendar, content, brand assets, builds, and automations with an approval trail before anything reaches a customer, and every approval, rejection, and edit teaches SYN your judgment so it grows more personalized the longer it runs.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/PreOrder",
-    "url": "https://syn.syntrexio.com",
-    "description": "Early access by waitlist."
-  }
-};
+function crumb(items: [string, string][]): LdJson {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map(([name, item], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: name,
+      item: item,
+    })),
+  };
+}
 
 export const PAGE_SEO: Record<string, PageSeo> = {
   "/": {
-    "title": "Syntrex | SYN Growth & SYN Workspace",
-    "description": "Syntrex is building SYN, one AI platform in two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations. Both launching soon. Start today with a free audit of what missed calls cost you.",
-    "keywords": "AI receptionist, missed call text back, AI answering service for business, AI business workspace, business automation platform, SYN Growth, SYN Workspace, Syntrex, lead capture system, AI tools for small business",
-    "ogTitle": "Syntrex is building SYN | AI for your customers and your operations",
-    "ogDescription": "One AI platform, two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations. Both launching soon.",
-    "canonical": "https://syntrexio.com/",
-    "schema": [
-      SYN_GROWTH_PRODUCT,
-      SYN_WORKSPACE_PRODUCT,
+    title: "Syntrex | The AI Infrastructure Layer for Companies",
+    description:
+      "Syntrex is the AI infrastructure layer behind operating companies. One team runs your visibility, conversion, presence, and operations. Published pricing.",
+    keywords:
+      "AI infrastructure, AI agency alternative, agentic AI, AI agents for business, AI search optimization, GEO, done-for-you AI, Agent Workforce, Syntrex",
+    ogTitle: "Syntrex | The AI infrastructure layer behind operating companies",
+    ogDescription:
+      "One team runs your entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. Nobody owns the outcome. We do.",
+    canonical: "https://syntrexio.com/",
+    schema: [
+      PROFESSIONAL_SERVICE,
+      AGENT_WORKFORCE_SERVICE,
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "What is SYN?",
-            "acceptedAnswer": {
+            name: "What exactly does Syntrex do?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN is the product Syntrex builds. It ships in two forms: SYN Growth, the installed and guaranteed system that answers every call, chat, and form in seconds, captures every missed call, follows up until the customer books, and proves recovered value each month in the Receipt; and SYN Workspace, the AI business workspace in early access that runs your calendar, content, brand assets, builds, and automations from one encoded brand."
-            }
+              text: "Syntrex is the AI infrastructure layer behind operating companies. We run a business's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. One team leads every project end to end and is accountable for the result.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is the difference between SYN Growth and SYN Workspace?",
-            "acceptedAnswer": {
+            name: "Do I have to buy everything, or can I start with one thing?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Growth captures the customers you are losing: calls, chats, and forms answered in seconds, missed calls recovered, follow-up until booked, with the value proven monthly in the Receipt. SYN Workspace runs the rest of the business: encode your brand once and SYN handles your calendar, content, assets, builds, and automations. Both are in development; Growth is launching soon and Workspace is in early access. Growth is the door, Workspace is where you grow."
-            }
+              text: "You can start with one track or a single build. Retainers cover visibility, conversion, presence, or operations on their own, and one-time builds are priced individually. Most companies grow into Full Stack, which runs all four tracks for less than they cost separately.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is an AI receptionist?",
-            "acceptedAnswer": {
+            name: "How is this different from hiring an agency?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "An AI receptionist answers your calls, chats, and forms automatically, around the clock, so no customer reaches a voicemail or an empty inbox. SYN Growth is more than a phone AI receptionist: it covers every channel, texts back missed calls, follows up until the customer books, and reports the value it recovered each month. It is launching soon."
-            }
+              text: "An agency sells you a team and charges for the payroll behind it. Syntrex does not have that team. An orchestrated fleet of AI agents produces the work, humans direct and own it, and one person stays accountable for the outcome. You get the output, not the overhead.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How much does an AI answering service cost?",
-            "acceptedAnswer": {
+            name: "How can you be cheaper than an agency?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Growth launch pricing is a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro, which adds AI voice answering. The $497 is a one-time setup, not the total. For comparison, a part-time human answering a fraction of this work runs $2,000 to $3,000 a month."
-            }
+              text: "Agencies charge for the team behind the work, and we do not have one. There is no payroll, no offshore invoice, no account management layer, and no office to fund. The price reflects the output, not the overhead.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is the guarantee?",
-            "acceptedAnswer": {
+            name: "Who actually does the work?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "If the booked value SYN Growth produces in a month comes in under that month's fee, that month is free. Booked value is an estimate of revenue booked, the bookings the system produced multiplied by the job values you confirm at install, not cash collected and not an industry average. The monthly Receipt, not the live dashboard, is the statement the guarantee pays out on. It applies for the first three months, then continues on a rolling quarterly review."
-            }
+              text: "An orchestrated fleet of AI agents produces the work in parallel across all four tracks. Humans at Syntrex direct the fleet, review the output, and own every outcome. Every client is encoded once, and the system gets faster and more accurate with each engagement.",
+            },
           },
           {
             "@type": "Question",
-            "name": "When does SYN Growth launch and how fast is setup?",
-            "acceptedAnswer": {
+            name: "Do humans review the work?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Growth is launching soon. The Live Leak Audit is the pre-launch entry point: request it now and you are first in line. At launch, SYN Growth is installed and run for you: setup begins after your audit, and most businesses go live in days, not weeks, once your brand, services, and rules are encoded."
-            }
+              text: "Yes. Everything a client sees passes a human first. The agent fleet produces the work, and a person directs, reviews, and signs off before anything ships.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How do I get SYN Workspace?",
-            "acceptedAnswer": {
+            name: "What is the Agent Workforce?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Workspace is in early access. Join the waitlist at syn.syntrexio.com and you will be invited as access opens. Every SYN Growth client is first in line."
-            }
-          }
-        ]
+              text: "Agent Workforce is our flagship. It installs a company's internal fleet of AI agents to handle operational work it pays salaries for, such as research, drafting, coordination, data entry, monitoring, scheduling, reporting, and first-pass analysis. It runs continuously with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is the guarantee and what does it cover?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We guarantee what we control: AI search citation presence for agreed queries, ranking movement for agreed terms, content volume and schedule, hours removed from an agreed workflow, agent task volume per period, and delivery against agreed spec. Each guarantee names one metric in writing, a documented baseline, a 90 day window, and one source of truth. If the metric is not hit, we keep working at no additional cost until it is.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is not covered by the guarantee?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We do not guarantee revenue, closed deals, or conversion rate. Those depend on your sales team, pricing, product, and market, which we do not control. The remedy for a missed guarantee is our labor, never a refund.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is the diagnostic, and is it really credited?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The AI Systems Diagnostic is a $3,500 engagement that reviews your systems and delivers a build plan you own. It is fully credited toward any engagement you start within 60 days, so if you move forward it costs you nothing on top. There is also a free self-qualifying diagnostic on the site that maps where to start in about a minute.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How fast do you start?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most engagements begin within days of the diagnostic. Once your company is encoded, meaning brand, offer, and rules, the agent fleet can produce work across all four tracks in parallel.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What happens in the first week?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We encode your company once, set the baseline for whatever metric we are guaranteeing, and put the first work into production. You see output in the first week, not a discovery deck.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do I own what you build?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Deliverables we build and hand off, such as a website, brand system, or custom tool, are yours once paid for in full. Your brand, content, and customer data always belong to you.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What if I need something not on the list?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "If you need something not listed, we build it. The agent fleet makes custom work economically viable in a way it never was for a headcount agency, so a one-off tool or system is no longer a budget line you have to justify.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I get started?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Start with the diagnostic. It maps what is not working across the four tracks and names the services and starting point that fit, in about a minute. Or email henry@syntrexio.com.",
+            },
+          },
+        ],
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" }
-        ]
-      }
+      crumb([["Home", "https://syntrexio.com/"]]),
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
   },
   "/about": {
-    "title": "Syntrex | The Company Building SYN",
-    "description": "Syntrex builds SYN. Founded on the revenue businesses lose to missed calls and slow replies, we shipped SYN Growth, the guaranteed system that captures every customer, and are building SYN Workspace, the AI business workspace, in early access. A senior team, headquartered in Windermere, Florida.",
-    "keywords": "about Syntrex, SYN, SYN Growth, SYN Workspace, Henry Bello, AI software company, digital agency origin, HALT Fire, Doughbrik's Wavers, Windermere Florida",
-    "ogTitle": "About Syntrex | The Company Building SYN",
-    "ogDescription": "We build SYN, one AI platform in two products: SYN Growth (launching soon) and SYN Workspace (early access). A senior team with a full in-house crew, born from a hands-on digital agency.",
-    "canonical": "https://syntrexio.com/about/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://syntrexio.com/about/" }
-        ]
-      },
+    title: "About Syntrex | One Team, Four Tracks, One Owner",
+    description:
+      "Syntrex runs the full digital and AI back end for operating companies. Founded by Henry Bello, proven with HALT Fire. One team, accountable for the outcome.",
+    keywords:
+      "about Syntrex, Henry Bello, AI infrastructure company, HALT Fire, Doughbrik's Wavers, AI agent fleet, Windermere Florida",
+    ogTitle: "About Syntrex | The AI infrastructure layer behind operating companies",
+    ogDescription:
+      "Founded by Henry Bello and proven with HALT Fire. An orchestrated fleet of AI agents produces the work; humans direct, review, and own every outcome.",
+    canonical: "https://syntrexio.com/about/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["About", "https://syntrexio.com/about/"],
+      ]),
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "What is Syntrex?",
-            "acceptedAnswer": {
+            name: "What is Syntrex?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Syntrex is the company that builds SYN. SYN Growth, launching soon, is the guaranteed system that captures every customer you are losing to missed calls and slow replies. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, builds, and automations. Syntrex is headquartered in Windermere, Florida and works with operators worldwide."
-            }
+              text: "Syntrex is the AI infrastructure layer behind operating companies. It runs a business's full digital and AI back end across four tracks, visibility, conversion, presence, and operations, with one team accountable for the outcome.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is SYN?",
-            "acceptedAnswer": {
+            name: "Who founded Syntrex?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN is Syntrex's product, in two forms: SYN Growth, the guaranteed system that answers and captures every customer, launching soon, and SYN Workspace, the AI business workspace in early access that runs the rest of the business from one encoded brand."
-            }
+              text: "Syntrex was founded by Henry Bello. It started by building the full digital and AI stack for HALT Fire, an industrial fire suppression company, where the work produced 280% search growth and returned more than ten hours a week to the team.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Who does the work?",
-            "acceptedAnswer": {
+            name: "Who does the work?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "A senior team leads every project and stays your single point of contact, with a full in-house team delivering the design, engineering, and AI work. SYN does the ongoing running; the team builds, installs, and stands behind it with a written guarantee."
-            }
+              text: "An orchestrated fleet of AI agents produces the work in parallel. Humans direct, review, and own every outcome. Every client is encoded once, and the system gets faster and more accurate with each engagement.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Where is Syntrex located?",
-            "acceptedAnswer": {
+            name: "Where is Syntrex located?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Syntrex is headquartered in Windermere, Florida, in the greater Orlando area, and works with operators worldwide. Everything starts with an email to henry@syntrexio.com or a Free Leak Audit."
-            }
-          }
-        ]
+              text: "Syntrex is headquartered in Windermere, Florida, in the greater Orlando area, and works with operating companies worldwide. Everything starts with the diagnostic or an email to henry@syntrexio.com.",
+            },
+          },
+        ],
       },
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "@id": "https://syntrexio.com/about#henry-bello",
-        "name": "Henry Bello",
-        "jobTitle": "Founder & CEO",
-        "worksFor": { "@id": "https://syntrexio.com/#organization" },
-        "url": "https://syntrexio.com/about/"
-      }
+        name: "Henry Bello",
+        jobTitle: "Founder & CEO",
+        worksFor: { "@id": ORG_ID },
+        url: "https://syntrexio.com/about/",
+      },
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
   },
   "/services": {
-    "title": "Syntrex | SYN Growth and SYN Workspace",
-    "description": "Two products, one company. SYN Growth is the guaranteed system that captures every customer you are losing to missed calls, launching soon. SYN Workspace, in early access, is the AI business workspace that runs your calendar, content, assets, and automations. Start with a Free Leak Audit.",
-    "keywords": "AI receptionist, AI answering service for business, AI business workspace, AI tools for small business operations, business automation platform, missed call text back, SYN Growth, SYN Workspace, Syntrex products",
-    "ogTitle": "Two Products, One Company | Syntrex",
-    "ogDescription": "SYN Growth captures every customer you are losing. SYN Workspace runs the rest of the business. Both are SYN, both launching, built by Syntrex.",
-    "canonical": "https://syntrexio.com/services/",
-    "schema": [
-      SYN_GROWTH_PRODUCT,
-      SYN_WORKSPACE_PRODUCT,
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://syntrexio.com/services/" }
-        ]
-      },
+    title: "Services | 16 AI and Digital Services by Syntrex",
+    description:
+      "Sixteen services across four tracks: visibility, conversion, presence, and operations, plus the Agent Workforce flagship. One team, published pricing.",
+    keywords:
+      "AI services, GEO, AI search optimization, SEO, content, social, AI chat, lead capture, CRM, web design, e-commerce, brand, automation, Agent Workforce, Syntrex",
+    ogTitle: "Services | Sixteen services across four tracks | Syntrex",
+    ogDescription:
+      "Visibility, conversion, presence, and operations, plus the Agent Workforce flagship. Start with one service or run all four tracks.",
+    canonical: "https://syntrexio.com/services/",
+    schema: [
+      VISIBILITY_SERVICE,
+      CONVERSION_SERVICE,
+      PRESENCE_SERVICE,
+      OPERATIONS_SERVICE,
+      AGENT_WORKFORCE_SERVICE,
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Services", "https://syntrexio.com/services/"],
+      ]),
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "What does SYN Growth do?",
-            "acceptedAnswer": {
+            name: "What are the four tracks?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Growth answers every call, chat, and form in seconds on web chat, SMS, and voice, texts back every missed call, and follows up automatically until the customer books, with deterministic calendar validation so it never invents a booking. A live dashboard shows the dollars it recovers and the bookings behind them, formalized each month in the Receipt, and it shares one encoded brain with SYN Workspace so returning callers are recognized. It is installed and run for you, launching soon, and backed by a guarantee."
-            }
+              text: "Syntrex runs four tracks: visibility (AI search, SEO, content, social), conversion (AI chat, lead capture, email, CRM), presence (websites, e-commerce, brand, creative), and operations (automation, custom tools, dashboards, and Agent Workforce).",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is SYN Workspace?",
-            "acceptedAnswer": {
+            name: "Can I buy one service, or do I need the whole stack?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "SYN Workspace is the AI business workspace, in early access. Encode your brand once and SYN runs your calendar, content, brand assets, builds, and automations, with an approval trail before anything reaches a customer. Join the waitlist at syn.syntrexio.com."
-            }
+              text: "You can start with a single service, a single track retainer, or a one-time build. Full Stack runs all four tracks for $7,500 a month, less than the $8,800 they cost separately.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is an AI business workspace?",
-            "acceptedAnswer": {
+            name: "What is the Agent Workforce?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "An AI business workspace is one place where AI runs the operational work of a business instead of you juggling a dozen disconnected apps. SYN Workspace encodes your brand once, then handles your calendar, content, brand assets, builds, and automations, with an approval trail so nothing goes out off-brand. It is in early access; join the waitlist at syn.syntrexio.com."
-            }
+              text: "Agent Workforce is the flagship. It installs a company's internal fleet of AI agents to run operational work continuously, with an approval trail and human control. It is not a chatbot. It is an operating layer inside the business.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What AI tools does SYN include for small business operations?",
-            "acceptedAnswer": {
+            name: "Do you build custom work?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Across the two products, SYN covers customer-facing and operational work: AI web chat, SMS, and voice answering, missed-call text-back, follow-up, and booking in SYN Growth; and calendar management, content and asset production, AI builds, and workflow automation in SYN Workspace. Everything runs from one encoded brand with a human approval step."
-            }
+              text: "Yes. If you need something not listed, we build it. The agent fleet makes custom work economically viable in a way it never was for a headcount agency.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Who is SYN for?",
-            "acceptedAnswer": {
+            name: "How much does each service cost?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Operators who lose customers to missed calls and slow replies start with SYN Growth: trades, home services, medical and dental, legal, insurance, and other appointment-driven businesses, from local to multi-location. SYN Workspace extends to any business that wants AI running its calendar, content, and operations."
-            }
+              text: "Every price is published on the pricing page. Track retainers run from $1,800 to $2,500 a month, Full Stack is $7,500 a month, and one-time builds start at $3,500.",
+            },
           },
-          {
-            "@type": "Question",
-            "name": "Do you still build websites, content, and creative?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, for existing clients. If you are already running on SYN, our team also builds and runs websites, content, and creative for you. New customers start with SYN Growth."
-            }
-          }
-        ]
-      }
+        ],
+      },
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
   },
   "/pricing": {
-    "title": "Syntrex | SYN Growth Pricing and SYN Workspace Access",
-    "description": "SYN Growth: a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro with AI voice answering. If the month's booked value comes in under your fee, that month is free. SYN Workspace is in early access by waitlist.",
-    "keywords": "AI receptionist pricing, AI answering service cost, SYN Growth pricing, SYN Workspace access, Syntrex pricing, $497 setup, Growth Core, Growth Pro, business automation platform pricing",
-    "ogTitle": "SYN Growth Pricing, Printed and Guaranteed | Syntrex",
-    "ogDescription": "One-time $497 setup, then $349 or $549 a month. If the month's booked value comes in under your fee, that month is free. SYN Workspace: early access by waitlist.",
-    "canonical": "https://syntrexio.com/pricing/",
-    "schema": [
-      SYN_GROWTH_PRODUCT,
-      SYN_WORKSPACE_PRODUCT,
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://syntrexio.com/pricing/" }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much is SYN Growth?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SYN Growth is a one-time $497 setup, then $349 a month for Growth Core or $549 a month for Growth Pro, which adds AI voice answering. Pricing is printed, not quoted, and every plan carries the guarantee."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is the $497 the total?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. The $497 is a one-time setup, charged once. The ongoing price is $349 a month for Growth Core or $549 a month for Growth Pro. Setup plus your first month of Growth Core is $846; after that it is the monthly rate."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between Growth Core and Growth Pro?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Growth Core is $349 a month and includes AI web chat, SMS, missed-call text-back, follow-up, booking, and the monthly Receipt. Growth Pro is $549 a month and adds AI voice answering, so missed and after-hours calls are answered instead of going to voicemail. Both sit on top of the one-time $497 setup."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens if SYN Growth does not pay for itself?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "That month is free. If the booked value SYN Growth produces in the month comes in under that month's fee, you do not pay for that month. Booked value is an estimate, the bookings the system produced multiplied by the job values you confirm at install, not cash collected. The monthly Receipt is the statement the guarantee pays out on. It applies for the first three months, then a rolling quarterly review."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How much is SYN Workspace?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SYN Workspace is in early access and is not sold at a printed price yet. Join the waitlist at syn.syntrexio.com. Every SYN Growth client is first in line as access opens."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is SYN Growth available yet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SYN Growth is launching soon, and the pricing shown is launch pricing. The pre-launch entry point is the Live Leak Audit, a no-cost test of your phone, live chat, and contact form that shows what missed inquiries cost you. Request it now and you are first in line when SYN Growth opens."
-            }
-          }
-        ]
-      }
-    ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
-  },
-  "/customers": {
-    "title": "Syntrex | Customers",
-    "description": "The businesses running on SYN. Syntrex builds and runs the full digital operation for HALT Fire, for Doughbrik's Wavers, the consumer brand from David Dobrik, and for Karlo Financial and Kinetix Technology Group, all on SYN Growth and SYN Workspace.",
-    "keywords": "Syntrex customers, SYN customers, HALT Fire, Doughbrik's Wavers, David Dobrik, Karlo Financial, Kinetix Technology Group, AI automation customers",
-    "ogTitle": "Customers | Syntrex",
-    "ogDescription": "Businesses running on SYN: HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group, all built and run by Syntrex.",
-    "canonical": "https://syntrexio.com/customers/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://syntrexio.com/customers/" }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Syntrex customers",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "HALT Fire" },
-          { "@type": "ListItem", "position": 2, "name": "Doughbrik's Wavers" },
-          { "@type": "ListItem", "position": 3, "name": "Karlo Financial" },
-          { "@type": "ListItem", "position": 4, "name": "Kinetix Technology Group" }
-        ]
-      }
-    ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
-  },
-  "/news": {
-    "title": "Syntrex | News",
-    "description": "Product launches, releases, and company updates from Syntrex as we build SYN. Introducing SYN Growth, SYN Workspace enters early access, and the new syntrexio.com.",
-    "keywords": "Syntrex news, SYN Growth launch, SYN Workspace early access, AI product updates, Syntrex announcements",
-    "ogTitle": "News | Syntrex",
-    "ogDescription": "Launches, releases, and updates as Syntrex builds SYN. SYN Growth is launching soon; SYN Workspace is in early access.",
-    "canonical": "https://syntrexio.com/news/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "News", "item": "https://syntrexio.com/news/" }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "The new syntrexio.com",
-        "datePublished": "2026-07-24",
-        "author": { "@id": "https://syntrexio.com/#organization" },
-        "publisher": { "@id": "https://syntrexio.com/#organization" },
-        "description": "One platform, two products, one new identity. Where Syntrex is headed as a software company: SYN Growth for your customers, SYN Workspace for your operations.",
-        "url": "https://syntrexio.com/news/"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "SYN Workspace enters early access",
-        "datePublished": "2026-07-18",
-        "author": { "@id": "https://syntrexio.com/#organization" },
-        "publisher": { "@id": "https://syntrexio.com/#organization" },
-        "description": "The AI business workspace that runs your calendar, content, assets, and automations from one encoded brand is now in early access. The waitlist is open.",
-        "url": "https://syntrexio.com/news/"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Introducing SYN Growth",
-        "datePublished": "2026-07-14",
-        "author": { "@id": "https://syntrexio.com/#organization" },
-        "publisher": { "@id": "https://syntrexio.com/#organization" },
-        "description": "The guaranteed system that answers every call, chat, and form in seconds, captures every missed call, and follows up until the customer books. Launching soon at printed pricing.",
-        "url": "https://syntrexio.com/news/"
-      }
-    ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
-  },
-  "/contact": {
-    "title": "Syntrex | Contact",
-    "description": "Tell Syntrex about your business and we reply within 24 hours. The fastest way to start with SYN Growth is a Free Leak Audit that shows exactly where you are losing customers, delivered within 48 hours. Or email henry@syntrexio.com.",
-    "keywords": "contact Syntrex, Syntrex email, SYN Growth, Free Leak Audit, SYN Workspace waitlist, get started with SYN",
-    "ogTitle": "Contact Syntrex | Start With a Free Leak Audit",
-    "ogDescription": "Tell us about your business and we reply within 24 hours. The fastest way to start with SYN Growth is a Free Leak Audit showing exactly where you are losing customers.",
-    "canonical": "https://syntrexio.com/contact/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://syntrexio.com/contact/" }
-        ]
-      }
-    ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
-  },
-  "/leak-audit": {
-    "title": "Syntrex | Live Leak Audit, See What Missed Calls Cost You",
-    "description": "The Live Leak Audit is how you start with SYN Growth. One button runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each answers and where inquiries slip away. SYN Growth is launching soon; free.",
-    "keywords": "free leak audit, how to stop missing customer calls, missed call text back, AI receptionist, AI answering service for business, missed calls costing my business, 24/7 lead response, SYN Growth",
-    "ogTitle": "Free Leak Audit | See What Missed Calls Cost You | Syntrex",
-    "ogDescription": "The entry point to SYN Growth. See exactly how many customers you are losing to missed calls and slow replies. Free one-page report with a dollar estimate, within 48 hours.",
-    "canonical": "https://syntrexio.com/leak-audit/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Free Leak Audit", "item": "https://syntrexio.com/leak-audit/" }
-        ]
-      },
+    title: "Pricing | Published Rates for Every Service | Syntrex",
+    description:
+      "Every price published. Retainers from $1,800/mo, Full Stack $7,500/mo, Agent Workforce from $5,000/mo, and one-time builds from $3,500. Diagnostic is $3,500, credited.",
+    keywords:
+      "Syntrex pricing, AI services pricing, retainer pricing, Full Stack, Agent Workforce pricing, website build cost, AI Systems Diagnostic, published pricing",
+    ogTitle: "Pricing | Published, not quoted | Syntrex",
+    ogDescription:
+      "Retainers from $1,800/mo, Full Stack $7,500/mo, Agent Workforce from $5,000/mo, builds from $3,500. The $3,500 diagnostic is fully credited.",
+    canonical: "https://syntrexio.com/pricing/",
+    schema: [
+      PROFESSIONAL_SERVICE,
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "@id": "https://syntrexio.com/leak-audit#service",
-        "name": "Free Leak Audit",
-        "url": "https://syntrexio.com/leak-audit/",
-        "serviceType": "Lead response and missed call audit",
-        "provider": { "@id": "https://syntrexio.com/#organization" },
-        "areaServed": "Worldwide",
-        "description": "The front door to SYN Growth. The Live Leak Audit runs a simultaneous test of your phone, live chat, and contact form, with a response timer on screen showing how fast each one answers and where inquiries slip away, plus a dollar estimate of what the leak costs you per year. SYN Growth is launching soon; free.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        name: "AI Systems Diagnostic",
+        serviceType: "AI systems review and build plan",
+        provider: { "@id": ORG_ID },
+        areaServed: { "@type": "Place", name: "Worldwide" },
+        description:
+          "A full read of your systems and a build plan you own, fully credited toward any engagement started within 60 days.",
+        offers: { "@type": "Offer", price: "3500", priceCurrency: "USD" },
       },
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Pricing", "https://syntrexio.com/pricing/"],
+      ]),
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "How many calls do small businesses actually miss?",
-            "acceptedAnswer": {
+            name: "How much does Syntrex cost?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "62% of calls to small businesses go unanswered, according to a 58-industry study by 411 Locals, and 85% of those missed callers never call back, according to Aircall. On top of that, 78% of customers buy from whoever responds first, so a slow reply loses the sale even when you eventually call back."
-            }
+              text: "Retainers are $2,500 for visibility, $2,000 for conversion, $1,800 for presence, and $2,500 for operations a month. Full Stack is $7,500 a month, below the $8,800 the four tracks cost separately. Agent Workforce is $5,000 to $12,000 a month to operate. Every price is published.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is missed call text back?",
-            "acceptedAnswer": {
+            name: "What is the AI Systems Diagnostic, and is it credited?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Missed call text back means that when a call is not answered, the caller instantly receives a text acknowledging them and keeping the conversation open. It is included in SYN Growth, so an unanswered call does not become a lost customer."
-            }
+              text: "The AI Systems Diagnostic is $3,500 and is fully credited toward any engagement you start within 60 days, so if you move forward it costs you nothing on top.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How much revenue do missed calls cost a business?",
-            "acceptedAnswer": {
+            name: "Why is Full Stack the best value?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "The average small business loses roughly $126,000 a year to missed calls. Phone leads also convert 10 to 15 times better than web forms, according to BIA/Kelsey, so the calls you miss are the leads most likely to buy."
-            }
+              text: "Full Stack is $7,500 a month and includes all four tracks, which cost $8,800 when bought separately. That is where most companies land.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What is included in the Free Leak Audit?",
-            "acceptedAnswer": {
+            name: "What do one-time builds cost?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "One button runs the Live Leak Audit: a simultaneous test of your phone, live chat, and contact form, with a response timer on screen so you see how fast each one answers and where inquiries slip away, plus a dollar estimate of what the leak costs you per year based on your trade. It is free, and it is how you start with SYN Growth, launching soon."
-            }
+              text: "Websites start at $4,500, six to twelve page sites at $7,500, e-commerce at $11,000, brand identity at $3,500, AI assistant deployment at $4,000, CRM buildout at $4,500, automation at $6,500 per workflow, and custom AI tools at $9,000. Each is shown against its market rate.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How do I stop missing customer calls?",
-            "acceptedAnswer": {
+            name: "What are the payment terms?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Cover every channel and respond instantly. Missed-call text-back replies to an unanswered call with a text in seconds, AI web chat and voice answer the rest, and automated follow-up keeps the conversation going until the customer books. That is exactly what SYN Growth does, and the Free Leak Audit shows you where the gaps are first."
-            }
-          }
-        ]
-      }
+              text: "Builds are a 40% deposit with the balance on milestones. Retainers are billed on the 1st of the month. Operators running multiple brands get 10% off the second brand and 15% off everything beyond.",
+            },
+          },
+        ],
+      },
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
+  },
+  "/diagnostic": {
+    title: "AI Systems Diagnostic | Find Where to Start | Syntrex",
+    description:
+      "Answer six questions and see which services fit, what they cost, and where to start. Free, no gate. The full AI Systems Diagnostic is $3,500, fully credited.",
+    keywords:
+      "AI systems diagnostic, business AI assessment, where to start with AI, AI readiness, self-qualifying tool, Syntrex diagnostic",
+    ogTitle: "AI Systems Diagnostic | Find out exactly where to start | Syntrex",
+    ogDescription:
+      "Six questions, about a minute. It maps what is not working across the four tracks and names the services and starting point that fit. See the result before you give us anything.",
+    canonical: "https://syntrexio.com/diagnostic/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Diagnostic", "https://syntrexio.com/diagnostic/"],
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://syntrexio.com/diagnostic#service",
+        name: "AI Systems Diagnostic",
+        url: "https://syntrexio.com/diagnostic/",
+        serviceType: "AI systems review and build plan",
+        provider: { "@id": ORG_ID },
+        areaServed: { "@type": "Place", name: "Worldwide" },
+        description:
+          "A full read of your systems and a build plan you own. Fully credited toward any engagement started within 60 days. A free self-qualifying version on the site names where to start in about a minute.",
+        offers: { "@type": "Offer", price: "3500", priceCurrency: "USD" },
+      },
+    ],
+    ogImage: COMMON.og_image,
+  },
+  "/customers": {
+    title: "Work | Syntrex Client Results",
+    description:
+      "Verified results from Syntrex engagements: 280% search growth and 10+ hours a week back for HALT Fire, and 3x faster workflows for Doughbrik's Wavers.",
+    keywords:
+      "Syntrex work, case studies, HALT Fire, Doughbrik's Wavers, David Dobrik, Kinetix, AI results, client results",
+    ogTitle: "Work | What running the back end end to end produces | Syntrex",
+    ogDescription:
+      "HALT Fire: 280% search growth and 10+ hours a week returned. Doughbrik's Wavers: 3x faster internal workflows. Kinetix is a technology partner.",
+    canonical: "https://syntrexio.com/customers/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Work", "https://syntrexio.com/customers/"],
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Syntrex work",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "HALT Fire" },
+          { "@type": "ListItem", position: 2, name: "Doughbrik's Wavers" },
+          { "@type": "ListItem", position: 3, name: "Kinetix" },
+        ],
+      },
+    ],
+    ogImage: COMMON.og_image,
+  },
+  "/news": {
+    title: "News | Syntrex",
+    description:
+      "Announcements and updates from Syntrex, the AI infrastructure layer behind operating companies.",
+    keywords: "Syntrex news, Agent Workforce, AI infrastructure, company updates",
+    ogTitle: "News | Syntrex",
+    ogDescription:
+      "Announcements and updates from the team running the back end for operating companies.",
+    canonical: "https://syntrexio.com/news/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["News", "https://syntrexio.com/news/"],
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: "Syntrex, the AI infrastructure layer behind operating companies",
+        datePublished: "2026-08-04",
+        author: { "@id": ORG_ID },
+        publisher: { "@id": ORG_ID },
+        description:
+          "One team runs a company's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations.",
+        url: "https://syntrexio.com/news/",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: "Introducing Agent Workforce",
+        datePublished: "2026-08-04",
+        author: { "@id": ORG_ID },
+        publisher: { "@id": ORG_ID },
+        description:
+          "The flagship: an installed fleet of AI agents that runs the operational work a company pays salaries for, continuously, with a human in control.",
+        url: "https://syntrexio.com/news/",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: "Every price, published",
+        datePublished: "2026-08-04",
+        author: { "@id": ORG_ID },
+        publisher: { "@id": ORG_ID },
+        description:
+          "Retainers, builds, and Agent Workforce, all on the site. No discovery call to find out what it costs.",
+        url: "https://syntrexio.com/news/",
+      },
+    ],
+    ogImage: COMMON.og_image,
+  },
+  "/contact": {
+    title: "Contact Syntrex",
+    description:
+      "Tell Syntrex about your business and what you want to fix. We reply within 24 hours. Or run the free diagnostic to see where to start.",
+    keywords: "contact Syntrex, Syntrex email, get started, AI infrastructure, diagnostic",
+    ogTitle: "Contact Syntrex | Tell us what you need",
+    ogDescription:
+      "Send a message about your business and what you want to fix. We reply within 24 hours. Or run the free diagnostic to see where to start.",
+    canonical: "https://syntrexio.com/contact/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Contact", "https://syntrexio.com/contact/"],
+      ]),
+    ],
+    ogImage: COMMON.og_image,
   },
   "/privacy": {
-    "title": "Syntrex | Privacy Policy",
-    "description": "How Syntrex collects, uses, and protects your information across syntrexio.com, the SYN chatbot, contact and Free Leak Audit forms, analytics, and the SYN products. Includes AI processing, no sale of data, sub-processors, retention, security, and your GDPR and CCPA rights.",
-    "keywords": "Syntrex privacy policy, data protection, GDPR, CCPA, AI processing, cookies, SYN privacy",
-    "ogTitle": "Syntrex | Privacy Policy",
-    "ogDescription": "How Syntrex collects, uses, and protects your information. SYN products, chatbot, forms, analytics, cookies, and your privacy rights.",
-    "canonical": "https://syntrexio.com/privacy/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://syntrexio.com/privacy/" }
-        ]
-      }
+    title: "Privacy Policy | Syntrex",
+    description:
+      "How Syntrex collects, uses, and protects your information across the site, chatbot, forms, analytics, and our services, including your GDPR and CCPA rights.",
+    keywords: "Syntrex privacy policy, data protection, GDPR, CCPA, AI processing, cookies",
+    ogTitle: "Privacy Policy | Syntrex",
+    ogDescription:
+      "How Syntrex collects, uses, and protects your information. Services, chatbot, forms, analytics, cookies, and your privacy rights.",
+    canonical: "https://syntrexio.com/privacy/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Privacy Policy", "https://syntrexio.com/privacy/"],
+      ]),
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
   },
   "/terms": {
-    "title": "Syntrex | Terms of Use",
-    "description": "The terms that govern your use of syntrexio.com and the SYN products, SYN Growth and SYN Workspace: the products, fees and launch pricing, the guarantee, acceptable use, intellectual property, disclaimers, liability, and Florida governing law.",
-    "keywords": "Syntrex terms of use, terms and conditions, SYN Growth terms, SYN Workspace terms, guarantee, governing law",
-    "ogTitle": "Syntrex | Terms of Use",
-    "ogDescription": "The terms that govern your use of syntrexio.com and the SYN products, SYN Growth and SYN Workspace.",
-    "canonical": "https://syntrexio.com/terms/",
-    "schema": [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://syntrexio.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://syntrexio.com/terms/" }
-        ]
-      }
+    title: "Terms of Use | Syntrex",
+    description:
+      "The terms that govern your use of syntrexio.com and Syntrex services: retainers, builds, Agent Workforce, the diagnostic, the guarantee, and governing law.",
+    keywords: "Syntrex terms of use, terms and conditions, guarantee, governing law",
+    ogTitle: "Terms of Use | Syntrex",
+    ogDescription:
+      "The terms that govern your use of syntrexio.com and Syntrex services across visibility, conversion, presence, and operations.",
+    canonical: "https://syntrexio.com/terms/",
+    schema: [
+      crumb([
+        ["Home", "https://syntrexio.com/"],
+        ["Terms of Use", "https://syntrexio.com/terms/"],
+      ]),
     ],
-    "ogImage": "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/001e76aa-2164-4473-bd50-d0a084913417.png"
+    ogImage: COMMON.og_image,
   },
 };
