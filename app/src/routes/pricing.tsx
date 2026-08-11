@@ -23,7 +23,13 @@ type Retainer = {
   includes: string[];
   highlight?: boolean;
   math?: string;
+  market?: string;
+  replaces?: string;
 };
+
+const AGENCY_MARKET = "agencies charge $1,500 to $5,000 (SMB) and $8,000 to $25,000 (mid-market).";
+const LABOR_ANCHOR =
+  "operational roles at $50,000 to $120,000 a year each. Enterprise vendors charge $95,000 to $590,000 a year for one function.";
 
 const retainers: Retainer[] = [
   {
@@ -32,6 +38,7 @@ const retainers: Retainer[] = [
     cadence: "/mo",
     blurb: "Get found in search and in AI answers.",
     includes: ["AI search optimization (GEO)", "SEO", "Content production", "Social media systems"],
+    market: "GEO retainers run $2,000 to $8,000 at mid-market.",
   },
   {
     name: "Conversion",
@@ -44,6 +51,7 @@ const retainers: Retainer[] = [
       "Email systems",
       "CRM management",
     ],
+    market: AGENCY_MARKET,
   },
   {
     name: "Presence",
@@ -56,6 +64,7 @@ const retainers: Retainer[] = [
       "Creative and imagery",
       "Campaign assets",
     ],
+    market: AGENCY_MARKET,
   },
   {
     name: "Operations",
@@ -68,6 +77,7 @@ const retainers: Retainer[] = [
       "Reporting dashboards",
       "System integration",
     ],
+    market: AGENCY_MARKET,
   },
   {
     name: "Full Stack",
@@ -77,6 +87,7 @@ const retainers: Retainer[] = [
     includes: ["Visibility", "Conversion", "Presence", "Operations"],
     highlight: true,
     math: "$2,500 + $2,000 + $1,800 + $2,500 = $8,800 separately. Full Stack is $7,500.",
+    market: AGENCY_MARKET,
   },
   {
     name: "Agent Workforce",
@@ -89,6 +100,7 @@ const retainers: Retainer[] = [
       "Human control",
       "Install priced separately",
     ],
+    replaces: LABOR_ANCHOR,
   },
   {
     name: "Full Stack plus Agent Workforce",
@@ -101,10 +113,11 @@ const retainers: Retainer[] = [
       "One accountable owner",
       "Best for scaling operators",
     ],
+    market: AGENCY_MARKET,
   },
 ];
 
-type Build = { name: string; market: string; price: string };
+type Build = { name: string; market?: string; replaces?: string; price: string };
 
 const builds: Build[] = [
   { name: "Website, up to 5 pages", market: "$8,000 to $15,000", price: "$4,500" },
@@ -117,7 +130,8 @@ const builds: Build[] = [
   { name: "Custom AI tool", market: "$15,000 to $50,000", price: "$9,000+" },
   {
     name: "Agent Workforce install",
-    market: "No market benchmark exists",
+    replaces:
+      "a single operational role at $50,000 to $120,000 a year. Enterprise vendors charge $95,000 to $590,000 a year for one function.",
     price: "$35,000 to $95,000",
   },
 ];
@@ -225,6 +239,16 @@ function Pricing() {
                       <span className="text-sm text-muted-foreground">{r.cadence}</span>
                     </div>
                     <p className="mt-2 text-sm text-foreground/80">{r.blurb}</p>
+                    {r.market ? (
+                      <p className="mt-3 text-xs text-muted-foreground">
+                        <span className="text-foreground/70">Market:</span> {r.market}
+                      </p>
+                    ) : null}
+                    {r.replaces ? (
+                      <p className="mt-3 text-xs text-muted-foreground">
+                        <span className="text-foreground/70">Replaces:</span> {r.replaces}
+                      </p>
+                    ) : null}
                     {r.math ? (
                       <p className="mt-3 rounded-md border border-hairline bg-surface/50 px-3 py-2 text-xs text-muted-foreground">
                         {r.math}
@@ -256,7 +280,8 @@ function Pricing() {
             </div>
             <p className="mt-6 text-center text-xs text-muted-foreground">
               Retainers are billed on the 1st. Full Stack is priced below the $8,800 its tracks cost
-              separately, which is where most companies land.
+              separately, which is where most companies land. Agency retainer and GEO benchmarks
+              from the HubSpot Agency Survey and Databox.
             </p>
           </div>
         ) : (
@@ -267,12 +292,18 @@ function Pricing() {
                 <Reveal key={b.name} delay={i * 50}>
                   <article className="surface-card surface-card-hover flex h-full flex-col p-7">
                     <h3 className="text-base font-semibold text-foreground">{b.name}</h3>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      Market:{" "}
-                      <span className="line-through decoration-muted-foreground/50">
-                        {b.market}
-                      </span>
-                    </div>
+                    {b.replaces ? (
+                      <div className="mt-4 text-xs text-muted-foreground">
+                        <span className="text-foreground/70">Replaces:</span> {b.replaces}
+                      </div>
+                    ) : (
+                      <div className="mt-4 text-xs text-muted-foreground">
+                        Market:{" "}
+                        <span className="line-through decoration-muted-foreground/50">
+                          {b.market}
+                        </span>
+                      </div>
+                    )}
                     <div className="mt-1 flex items-baseline gap-2">
                       <span className="text-eyebrow">Syntrex</span>
                       <span className="text-display text-2xl text-foreground">{b.price}</span>
