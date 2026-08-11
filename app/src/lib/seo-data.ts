@@ -241,7 +241,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             name: "Do I have to buy everything, or can I start with one thing?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "You can start with one track or a single build. Retainers cover visibility, conversion, presence, or operations on their own, and one-time builds are priced individually. Most companies grow into Full Stack, which runs all four tracks for less than they cost separately.",
+              text: "You can start with one track or a single build. Retainers cover visibility, conversion, presence, or operations on their own, and one-time builds are starting prices that scale with scope, from a single page site at $1,500. Most companies grow into Full Stack, which runs all four tracks for less than they cost separately.",
             },
           },
           {

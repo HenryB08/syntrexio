@@ -1,6 +1,6 @@
 SYNTREX FOUNDATION DOCUMENT
 
-Version 3.2, August 2026, Canonical
+Version 3.3, August 2026, Canonical
 
 This document supersedes all prior Syntrex strategy, positioning, pricing, and operating documents. If any chat, file, deck, proposal, or page contradicts this document, this document wins.
 
@@ -148,16 +148,22 @@ Full Stack is priced below the sum of its parts ($8,800) by design. Most clients
 Market comparison: SMB agency retainers run $1,500 to $5,000 and mid-market $8,000 to $25,000. (HubSpot Agency Survey, Databox.) GEO retainers specifically run $2,000 to $8,000 at mid-market and command a 50 to 100% premium over traditional SEO.
 
 7.3 ONE-TIME BUILDS
-Build    Market Rate    Syntrex
-Website, up to 5 pages    $8,000-15,000    $4,500
-Website, 6-12 pages    $15,000-30,000    $7,500
-E-commerce build    $20,000-50,000    $11,000
-Brand identity system    $5,000-15,000    $3,500
-AI assistant deployment    $5,000-15,000    $4,000
-CRM buildout and migration    $5,000-20,000    $4,500
-Automation build (per workflow)    $10,000-40,000    $6,500
-Custom AI tool    $15,000-50,000    $9,000+
+
+Published build prices are starting points that scale with scope. Each figure is the floor of a range, never a ceiling, and never quoted below (see Section 7.6). What moves a price within its range: page count, the number of integrations, and whether we build from scratch or on an existing platform. Final pricing is confirmed after the diagnostic.
+
+Build    Market Rate    Syntrex (starting at)
+Single page site    entry tier    from $1,500
+Website, up to 5 pages    $8,000-15,000    from $4,500
+Website, 6-12 pages    $15,000-30,000    from $7,500
+E-commerce build    $20,000-50,000    from $11,000
+Brand identity system    $5,000-15,000    from $3,500
+AI assistant deployment    $5,000-15,000    from $4,000
+CRM buildout and migration    $5,000-20,000    from $4,500
+Automation build (per workflow)    $10,000-40,000    from $6,500
+Custom AI tool    $15,000-50,000    from $9,000
 Agent Workforce install    no benchmark    $35,000-$95,000
+
+The single page site at $1,500 is the honest floor under the $350 per human hour pricing rule in Section 7. It is the entry point for smaller projects, below the up-to-5-page tier, and is never quoted lower.
 
 Market rates sourced from Clutch (database of 79,000+ agencies; average web design project $5,279.79; boutique small-business builds $8,000-$15,000) and 2026 automation build benchmarks ($20,000-$100,000).
 
@@ -438,6 +444,7 @@ Version    Date    Change
 3.0    Aug 2026    Full rebuild on six research runs. Added paid diagnostic front door, package architecture, controllable-metric guarantee with labor remedy, sales process, burned-buyer playbook, credibility framework, expansion mechanics, operations systematization, revenue model, sourced statistics throughout
 3.1    Aug 2026    PROOF updated to verified Google Search Console figures, superseding the 280% estimate
 3.2    Aug 2026    Added client-performance conditions to the guarantee (Section 9): approval turnaround, access, information, and a named point of contact, each tied to a date. Missing one pauses the guarantee window rather than voiding it, documented on the Receipt. Reason: the labor remedy was unbounded, so a client who stopped approving work could block delivery and then claim the guarantee
+3.3    Aug 2026    Added a single page site entry build at $1,500 (the floor under the $350 per human hour rule) to Section 7.3, and reframed one-time build prices as starting-at figures that scale with scope. Reason: the fixed website floor filtered out smaller projects before they saw an entry point, and a fixed number read as a toll rather than a starting price
 
 Current version: 3.1
 

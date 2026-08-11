@@ -316,16 +316,20 @@ Pull every number in the proposal from this table. Never quote below these numbe
 Full Stack is priced below the sum of its parts, which is $8,800. Most clients should land there. It is the anchor, so build the three options around it.
 
 ### One-time builds
-| Build | Syntrex |
+
+Starting prices that scale with scope. Each figure is the floor of its range, never quoted below. What moves a price within its range: page count, the number of integrations, and whether we build from scratch or on an existing platform.
+
+| Build | Syntrex (starting at) |
 |---|---|
-| Website, up to 5 pages | $4,500 |
-| Website, 6 to 12 pages | $7,500 |
-| E-commerce build | $11,000 |
-| Brand identity system | $3,500 |
-| AI assistant deployment | $4,000 |
-| CRM buildout and migration | $4,500 |
-| Automation build, per workflow | $6,500 |
-| Custom AI tool | $9,000 and up |
+| Single page site | from $1,500 |
+| Website, up to 5 pages | from $4,500 |
+| Website, 6 to 12 pages | from $7,500 |
+| E-commerce build | from $11,000 |
+| Brand identity system | from $3,500 |
+| AI assistant deployment | from $4,000 |
+| CRM buildout and migration | from $4,500 |
+| Automation build, per workflow | from $6,500 |
+| Custom AI tool | from $9,000 |
 | Agent Workforce install | $35,000 to $95,000 |
 
 Agent Workforce is priced against labor displaced, not against agencies. Never discount it to look reasonable next to a website.
