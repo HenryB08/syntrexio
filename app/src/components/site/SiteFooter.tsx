@@ -135,9 +135,9 @@ export function SiteFooter() {
             henry@syntrexio.com
           </a>
           <p className="mt-3 text-sm text-muted-foreground">
-            Windermere, FL · Greater Orlando
+            Miami and Windermere, Florida
             <br />
-            Serving clients worldwide.
+            Headquartered in Windermere. Serving clients worldwide.
           </p>
           <p className="mt-2 text-xs text-muted-foreground/70">Response within 24 hours.</p>
         </div>

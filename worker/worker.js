@@ -43,7 +43,7 @@ If a client needs something not listed, Syntrex builds it. The agent fleet makes
 COMPANY FACTS:
 Name: Syntrex LLC, a registered Florida limited liability company.
 Founder: Henry Bello, in Windermere, Florida.
-Office: 513 Main Street, Windermere, FL 34786.
+Headquarters: 513 Main Street, Windermere, FL 34786. Syntrex also has a second location in Miami, Florida, in the Edgewater neighborhood. Refer to Miami as a second location or as operations, never as a staffed office. When a short form is needed, say Miami and Windermere, Florida, and name Windermere as the headquarters.
 Email: henry@syntrexio.com. Website: syntrexio.com.
 Contact: email and site forms only, no phone number. Response within 24 hours. Service area: worldwide.
 
