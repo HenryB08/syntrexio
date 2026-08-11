@@ -155,9 +155,20 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    /* Safety net against accidental horizontal scroll on mobile. Vertical
-       scroll and the fixed nav are unaffected. */
-    overflow-x: clip;
+  }
+  /* Horizontal-scroll guard for mobile ONLY. `overflow-x: clip` on the root
+     promotes body to a single full-viewport-width self-painting layer; on
+     high-DPI displays a wide viewport (>= ~2048 CSS px at DPR 2 = 4096 device
+     px) pushes that layer past the GPU max texture size, so it fails to
+     rasterize and every non-composited element in it (card headings, body text,
+     borders) blanks while separately-composited layers (icons, marquee, aurora)
+     survive. Scope the clip to narrow viewports, where the device width stays
+     well under 4096 and where a horizontal-scroll guard actually matters;
+     desktop layouts are centered under a max-width and never need it. */
+  @media (max-width: 1024px) {
+    body {
+      overflow-x: clip;
+    }
   }
   html {
     scroll-behavior: smooth;
