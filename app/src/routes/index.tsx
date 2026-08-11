@@ -5,12 +5,14 @@ import {
   ArrowRight,
   ShieldCheck,
   Sparkles,
-  Layers,
-  LayoutGrid,
+  Search,
+  MessageSquare,
+  LayoutTemplate,
+  Cog,
   Fingerprint,
-  CalendarCheck,
-  Boxes,
-  Wand2,
+  Bot,
+  Infinity as InfinityIcon,
+  UserCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
@@ -21,56 +23,174 @@ import { MagneticButton } from "@/components/site/MagneticButton";
 import { Aurora } from "@/components/site/Aurora";
 import { WorldMap } from "@/components/site/WorldMap";
 import { DataStream } from "@/components/site/DataStream";
-import { GrowthSystem } from "@/components/site/GrowthSystem";
 import { useEffect, useRef } from "react";
 import heroOffice from "@/assets/hero-office.png.asset.json";
 import glassLobby from "@/assets/glass-lobby.png.asset.json";
 import aerialCity from "@/assets/aerial-city.png.asset.json";
-
-const TITLE = "Syntrex | SYN Growth & SYN Workspace";
-const DESC =
-  "Syntrex is building SYN, one AI platform in two products. SYN Growth answers and books your customers automatically. SYN Workspace runs your calendar, content, and operations.";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("/"),
   component: Home,
 });
 
-// SYN Growth's proof: the cost of missing customers. Sources cited below the band.
-const stats = [
-  { to: 62, suffix: "%", prefix: "", format: "plain" as const, label: "of calls to small businesses go unanswered" },
-  { to: 85, suffix: "%", prefix: "", format: "plain" as const, label: "of missed callers never call back" },
-  { to: 126000, prefix: "$", suffix: "", format: "commas" as const, label: "the average small business loses each year to missed calls" },
+// The problem: money spent on AI, results not arriving. Sources cited below the
+// band. Every figure traces to the verified research list.
+const problemStats = [
+  {
+    to: 95,
+    prefix: "",
+    suffix: "%",
+    format: "plain" as const,
+    label: "of enterprise AI pilots produce no measurable profit-and-loss impact",
+  },
+  {
+    to: 42,
+    prefix: "",
+    suffix: "%",
+    format: "plain" as const,
+    label: "of companies scrapped most of their AI initiatives in 2025, up from 17% in 2024",
+  },
+  {
+    to: 70,
+    prefix: "~",
+    suffix: "%",
+    format: "plain" as const,
+    label: "of AI failure is people and process, not technology",
+  },
 ];
 
-// SYN Workspace's proof: the cost of scattered operations. Every figure is a
-// published research finding with its source named in the caption.
-const wstats = [
-  { to: 1200, prefix: "~", suffix: "", format: "commas" as const, label: "app switches a day for the average knowledge worker (Harvard Business Review)" },
-  { to: 9, suffix: "%", prefix: "", format: "plain" as const, label: "of the work year lost reorienting after those switches (Harvard Business Review)" },
-  { to: 58, suffix: "%", prefix: "", format: "plain" as const, label: "of the workday spent on work about work, not real work (Asana)" },
+// Proof: verified engagement results for named clients only.
+const proofStats = [
+  {
+    to: 280,
+    prefix: "",
+    suffix: "%",
+    format: "plain" as const,
+    label: "search growth for HALT Fire",
+  },
+  {
+    to: 10,
+    prefix: "",
+    suffix: "+",
+    format: "plain" as const,
+    label: "hours a week returned to the HALT Fire team",
+  },
+  {
+    to: 3,
+    prefix: "",
+    suffix: "x",
+    format: "plain" as const,
+    label: "faster internal workflows for Doughbrik's Wavers",
+  },
 ];
 
-const wlayers = [
-  { icon: Fingerprint, title: "One brain, both products", line: "Your brand encoded once governs both Workspace and Growth; what Growth learns feeds the work here." },
-  { icon: CalendarCheck, title: "Calendar run by AI", line: "Bookings and scheduling handled automatically." },
-  { icon: Boxes, title: "Content & assets", line: "Content and brand assets produced and organized." },
-  { icon: Wand2, title: "Builds & automations", line: "Tools, pages, and workflows built with AI." },
-  { icon: ShieldCheck, title: "Approval trail that learns", line: "Nothing reaches a customer without your sign-off, and every approval, rejection, and edit teaches SYN your judgment." },
+// The four tracks. Each names its four services and links to the services page.
+const tracks = [
+  {
+    icon: Search,
+    name: "Visibility",
+    line: "Get found in search and in AI answers.",
+    services: [
+      "AI search optimization (GEO)",
+      "Traditional search optimization (SEO)",
+      "Content production and strategy",
+      "Social media systems",
+    ],
+  },
+  {
+    icon: MessageSquare,
+    name: "Conversion",
+    line: "Turn the leads you earn into booked work.",
+    services: [
+      "AI assistants and customer-facing chat",
+      "Lead capture and follow-up systems",
+      "Email systems and deliverability",
+      "CRM buildout and management",
+    ],
+  },
+  {
+    icon: LayoutTemplate,
+    name: "Presence",
+    line: "A site and brand that match the business you run.",
+    services: [
+      "Websites and web applications",
+      "E-commerce builds",
+      "Brand identity and design systems",
+      "Imagery and campaign assets",
+    ],
+  },
+  {
+    icon: Cog,
+    name: "Operations",
+    line: "The repetitive work, running itself.",
+    services: [
+      "Workflow automation and system integration",
+      "Custom internal AI tools",
+      "Reporting and analytics dashboards",
+      "Agent Workforce",
+    ],
+  },
 ];
 
-// Trusted-by wordmarks — company name as styled text (Linear-style), each
-// linking out to the company's own site in a new tab.
+// What Agent Workforce takes over: operational work companies pay salaries for.
+const agentWork = [
+  "Research",
+  "Drafting",
+  "Coordination",
+  "Data entry",
+  "Monitoring",
+  "Scheduling",
+  "Reporting",
+  "First-pass analysis",
+];
+
+// How the delivery model works, in four short layers.
+const layers = [
+  {
+    icon: Fingerprint,
+    title: "The client encoding",
+    line: "We encode your company once: brand, offer, rules, tone, and the way you work.",
+  },
+  {
+    icon: Bot,
+    title: "The agent fleet",
+    line: "An orchestrated fleet of AI agents produces the work in parallel across all four tracks.",
+  },
+  {
+    icon: InfinityIcon,
+    title: "Always-on infrastructure",
+    line: "It runs continuously, with a full approval trail and logging behind every action.",
+  },
+  {
+    icon: UserCheck,
+    title: "Human judgment",
+    line: "A human directs, reviews, and signs off on everything a client sees. We own the outcome.",
+  },
+];
+
+// Pricing preview. Full figures live on /pricing.
+const pricepoints = [
+  { label: "AI Systems Diagnostic", value: "$3,500", note: "credited toward any engagement" },
+  {
+    label: "Single track retainer",
+    value: "from $1,800/mo",
+    note: "visibility, conversion, presence, or operations",
+  },
+  { label: "Full Stack", value: "$7,500/mo", note: "all four tracks, best value" },
+  {
+    label: "Agent Workforce",
+    value: "$5,000 to $12,000/mo",
+    note: "your internal fleet, operated",
+  },
+];
+
+// Named proof only. Kinetix appears as a partner. Karlo removed per brand rules.
 const trusted = [
   { name: "HALT Fire", href: "https://haltfire.com/" },
   { name: "Doughbrik's Wavers", href: "https://eatdoughbriks.com/" },
-  { name: "Karlo Financial", href: "https://karlofinancial.com/" },
-  { name: "Kinetix Technology Group", href: "https://kinetixtechnologygroup.com/" },
+  { name: "Kinetix", href: "https://kinetixtechnologygroup.com/" },
 ];
-
-// Repeat the four names so each marquee group is dense enough to fill the track
-// at wide viewports (the group is then duplicated once more for the loop).
-const marqueeNames = [...trusted, ...trusted, ...trusted];
+const marqueeNames = [...trusted, ...trusted, ...trusted, ...trusted];
 
 function Home() {
   const choreoRef = useRef<HTMLDivElement | null>(null);
@@ -123,13 +243,13 @@ function Home() {
   const cardTilt = (e: React.PointerEvent<HTMLElement>) => {
     const el = e.currentTarget;
     const r = el.getBoundingClientRect();
-    el.style.setProperty("--tx", (((e.clientX - r.left) / r.width) - 0.5).toFixed(3));
-    el.style.setProperty("--ty", (((e.clientY - r.top) / r.height) - 0.5).toFixed(3));
+    el.style.setProperty("--tx", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+    el.style.setProperty("--ty", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
   };
 
   return (
     <div ref={choreoRef}>
-      {/* HERO - company intro */}
+      {/* HERO - positioning */}
       <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div className="ken-burns ken-burns--bright">
           <img src={heroOffice.url} alt="" aria-hidden />
@@ -141,73 +261,68 @@ function Home() {
               "linear-gradient(90deg, oklch(0.10 0 0 / 68%) 0%, oklch(0.10 0 0 / 45%) 55%, oklch(0.10 0 0 / 22%) 100%), linear-gradient(180deg, oklch(0.10 0 0 / 18%) 0%, transparent 40%, oklch(0.10 0 0 / 40%) 100%)",
           }}
         />
-        <div ref={heroRef} className="hero-fade container-page relative pt-24 pb-24 md:pt-32 md:pb-32 w-full">
+        <div
+          ref={heroRef}
+          className="hero-fade container-page relative pt-24 pb-24 md:pt-32 md:pb-32 w-full"
+        >
           <div className="max-w-4xl">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
-              <Sparkles size={12} className="text-foreground" />
-              AI systems for businesses that can't afford to miss a customer
-            </div>
-          </Reveal>
-          <h1 className="text-display word-rise mt-6 text-5xl text-foreground md:text-7xl">
-            {"Answer every customer.".split(" ").map((w, i) => (
-              <span key={`a-${i}`} style={{ ["--i" as never]: i }}>
-                {w}
-                {"\u00A0"}
-              </span>
-            ))}
-            {"Automate the rest.".split(" ").map((w, i) => (
-              <span
-                key={`b-${i}`}
-                className="text-shimmer"
-                style={{ ["--i" as never]: i + 3 }}
-              >
-                {w}
-                {"\u00A0"}
-              </span>
-            ))}
-          </h1>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Syntrex is building SYN, one AI platform in two products. SYN
-              Growth answers and books your customers automatically. SYN
-              Workspace runs your calendar, content, and operations. Start today
-              with a free audit of what missed calls are costing you.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <MagneticButton>
-                <Button asChild size="xl" variant="accent" className="animate-glow-pulse">
-                  <Link to="/leak-audit">
-                    Get Your Free Leak Audit
-                    <ArrowRight />
-                  </Link>
-                </Button>
-              </MagneticButton>
-              <MagneticButton>
-                <Button asChild size="xl" variant="outline">
-                  <a href="https://syn.syntrexio.com">Join the Workspace waitlist</a>
-                </Button>
-              </MagneticButton>
-            </div>
-          </Reveal>
+            <Reveal>
+              <div className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
+                <Sparkles size={12} className="text-foreground" />
+                Nobody owns the outcome. We do.
+              </div>
+            </Reveal>
+            <h1 className="text-display word-rise mt-6 text-5xl text-foreground md:text-7xl">
+              {"The AI infrastructure layer".split(" ").map((w, i) => (
+                <span key={`a-${i}`} style={{ ["--i" as never]: i }}>
+                  {w}
+                  {" "}
+                </span>
+              ))}
+              {"behind operating companies.".split(" ").map((w, i) => (
+                <span key={`b-${i}`} className="text-shimmer" style={{ ["--i" as never]: i + 3 }}>
+                  {w}
+                  {" "}
+                </span>
+              ))}
+            </h1>
+            <Reveal delay={160}>
+              <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                Syntrex runs a company's entire digital and AI back end across four tracks:
+                visibility, conversion, presence, and operations. One team, leading every project
+                end to end, accountable for the result.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-9 flex flex-wrap items-center gap-3">
+                <MagneticButton>
+                  <Button asChild size="xl" variant="accent" className="animate-glow-pulse">
+                    <Link to="/diagnostic">
+                      Start the diagnostic
+                      <ArrowRight />
+                    </Link>
+                  </Button>
+                </MagneticButton>
+                <MagneticButton>
+                  <Button asChild size="xl" variant="outline">
+                    <Link to="/pricing">See pricing</Link>
+                  </Button>
+                </MagneticButton>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* TRUSTED BY - infinite text-wordmark marquee, directly below the hero.
-          No background fill: shares the base surface with the section below so
-          the page reads continuous, separated only by the hairline divider. */}
+      {/* TRUSTED BY - marquee */}
       <section className="group border-b border-hairline">
         <div className="py-10 md:py-12">
           <Reveal>
             <div className="text-eyebrow mb-8 text-center">Trusted by</div>
-            {/* CSS-only marquee: two identical tracks translate -50% for a
-                seamless loop. Pauses on hover; falls back to a static wrapped
-                row under prefers-reduced-motion (see styles.css). Each name is
-                an individual link to the company's site. */}
-            <div className="marquee" aria-label="Trusted by HALT Fire, Doughbrik's Wavers, Karlo Financial, and Kinetix Technology Group">
+            <div
+              className="marquee"
+              aria-label="Trusted by HALT Fire, Doughbrik's Wavers, and Kinetix"
+            >
               <div className="marquee__track">
                 {[0, 1].map((dup) => (
                   <div key={dup} className="marquee__group" aria-hidden={dup === 1}>
@@ -232,121 +347,21 @@ function Home() {
         </div>
       </section>
 
-      {/* THE TWO PRODUCTS */}
+      {/* THE PROBLEM */}
       <Section className="relative">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
             <SectionHeader
-              eyebrow="One platform, two products"
-              title="SYN Growth first. SYN Workspace next."
-              description="Growth is the door: it captures the revenue you are losing to missed calls. Workspace is the house: AI that runs your whole business. Both are in development. Start with the free audit."
+              eyebrow="The problem"
+              title="The money is being spent. The results are not arriving."
+              description="Enterprises poured $30 to $40 billion into AI pilots and almost none of it moved the bottom line. The reason is not the technology. It is structural: fragmented vendors, no single owner, and nobody accountable for the outcome. Gartner expects more than 40% of agentic AI projects to be canceled by the end of 2027."
             />
           </div>
         </Reveal>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* SYN GROWTH */}
-          <article
-            data-choreo
-            onPointerMove={cardTilt}
-            className="side-in-left card-reveal surface-card surface-card-hover group flex h-full flex-col p-8"
-          >
-            <div className="mb-4 inline-flex w-fit items-center rounded-full border border-white/40 bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
-              <span className="badge-shimmer">Launching soon</span>
-            </div>
-            <Icon3D icon={Layers} size={48} iconSize={22} />
-            <h3 className="mt-6 text-2xl font-semibold text-foreground">SYN Growth</h3>
-            <div className="mt-1 text-sm text-foreground/80">Answer and capture every customer.</div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              The guaranteed system that answers every call, chat, and form in
-              seconds, 24/7, texts back every missed call, and follows up until
-              the customer books, with deterministic calendar validation so it
-              never invents a booking. A live dashboard shows the dollars it
-              recovers and the bookings behind them, formalized each month in the
-              Receipt. It is an AI receptionist that covers every channel, not
-              just the phone, and it shares one encoded brain with SYN Workspace:
-              returning callers are recognized, and you can search past
-              conversations in plain language.
-            </p>
-            <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-foreground">
-              <ShieldCheck size={16} className="shrink-0" />
-              If the month's booked value comes in under your fee, that month is
-              free.
-            </div>
-            <div className="mt-4 text-xs text-muted-foreground">
-              Launch pricing: one-time $497 setup, then $349/mo or $549/mo.
-            </div>
-            <div className="mt-auto flex flex-wrap gap-3 pt-6">
-              <Button asChild variant="accent">
-                <Link to="/leak-audit">
-                  Get Your Free Leak Audit
-                  <ArrowRight />
-                </Link>
-              </Button>
-              <Button asChild variant="outline">
-                <Link to="/pricing">See pricing</Link>
-              </Button>
-            </div>
-          </article>
-
-          {/* SYN WORKSPACE */}
-          <article
-            data-choreo
-            onPointerMove={cardTilt}
-            className="side-in-right card-reveal surface-card surface-card-hover group flex h-full flex-col p-8"
-          >
-            <div className="mb-4 inline-flex w-fit items-center rounded-full border border-hairline bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              Early access
-            </div>
-            <Icon3D icon={LayoutGrid} size={48} iconSize={22} />
-            <h3 className="mt-6 text-2xl font-semibold text-foreground">SYN Workspace</h3>
-            <div className="mt-1 text-sm text-foreground/80">Encode your brand. AI runs the rest.</div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              The AI business workspace. Encode your brand once, and that same
-              brain governs both SYN Workspace and SYN Growth, so what Growth
-              learns from your customers feeds the work here. SYN runs your
-              calendar, content, brand assets, builds, and automations, with an
-              approval trail before anything reaches a customer. Every approval,
-              rejection, and edit teaches SYN your judgment, so it gets more
-              personalized the longer it runs.
-            </p>
-            <div className="mt-6 flex items-center gap-2 border-t border-hairline pt-5 text-sm text-muted-foreground">
-              <Sparkles size={16} className="shrink-0 text-foreground" />
-              In early access. Every SYN Growth client is first in line.
-            </div>
-            <div className="mt-4 text-xs text-muted-foreground">
-              Joining the waitlist reserves early access and shapes what we build.
-            </div>
-            <div className="mt-auto flex flex-wrap gap-3 pt-6">
-              <Button asChild variant="outline">
-                <a href="https://syn.syntrexio.com">
-                  Join the waitlist
-                  <ArrowRight />
-                </a>
-              </Button>
-            </div>
-          </article>
-        </div>
       </Section>
 
-      {/* INSIDE SYN GROWTH */}
-      <Section className="relative">
-        <Aurora variant="whisper" />
-        <Reveal>
-          <div data-choreo className="headline-blur">
-            <SectionHeader
-              eyebrow="Inside SYN Growth"
-              title="Five layers. One outcome: nothing gets missed."
-              description="Every part is engineered to convert an inquiry into revenue, automatically."
-            />
-          </div>
-        </Reveal>
-
-        <GrowthSystem />
-      </Section>
-
-      {/* SYN GROWTH STAT STRIP */}
+      {/* PROBLEM STAT STRIP */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns">
           <img src={aerialCity.url} alt="" aria-hidden />
@@ -361,7 +376,7 @@ function Home() {
         <div className="ambient-depth" />
         <div className="container-page relative">
           <div className="grid grid-cols-1 divide-y divide-hairline md:grid-cols-3 md:divide-x md:divide-y-0">
-            {stats.map((s, i) => (
+            {problemStats.map((s, i) => (
               <div
                 key={s.label}
                 data-choreo
@@ -380,73 +395,148 @@ function Home() {
             ))}
           </div>
           <p className="pb-6 text-center text-xs text-muted-foreground/80">
-            Sources: 411 Locals (58-industry study); Aircall.
+            Sources: MIT Project NANDA, State of AI in Business, July 2025; S&amp;P Global Market
+            Intelligence, June 2025; RAND Corporation, 2024.
           </p>
         </div>
       </section>
 
-      {/* GUARANTEE BANNER */}
-      <section className="relative overflow-hidden border-b border-hairline bg-surface/40">
-        <Aurora variant="soft" />
-        <DataStream />
-        <div className="container-page relative py-16 md:py-20">
-          <div data-choreo className="border-draw">
-              <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)-1px)] bg-background p-8 md:p-12">
-                <div className="heartbeat" aria-hidden />
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-40"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 50%, oklch(1 0 0 / 10%), transparent 60%)",
-                  }}
-                />
-                <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center">
-                  <Icon3D icon={ShieldCheck} size={56} iconSize={24} />
-                  <div>
-                    <div className="text-eyebrow mb-2">The SYN Growth Guarantee</div>
-                    <p className="text-display word-rise max-w-4xl text-2xl text-foreground md:text-3xl lg:text-4xl">
-                      {"If the booked value in the month comes in under your fee,".split(" ").map((w, i) => (
-                        <span key={`g-${i}`} style={{ ["--i" as never]: i }}>
-                          {w}
-                          {"\u00A0"}
-                        </span>
-                      ))}
-                      <span className="text-shimmer">that month is free.</span>
-                    </p>
-                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                      Booked value means the bookings SYN Growth produces times the
-                      job values you confirm at install, an estimate of revenue
-                      booked, not cash collected. The monthly Receipt is the
-                      statement the guarantee pays out on.
-                    </p>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INSIDE SYN WORKSPACE */}
+      {/* WHAT WE RUN - four tracks */}
       <Section className="relative">
         <Aurora variant="whisper" />
         <Reveal>
           <div data-choreo className="headline-blur">
             <SectionHeader
-              eyebrow="Inside SYN Workspace"
-              title="Five layers. One outcome: the business runs itself."
-              description="Encode your brand once, and AI does the operational work, always inside your rules, always with your sign-off."
+              eyebrow="What we run"
+              title="Four tracks. One team. One accountable owner."
+              description="The full digital and AI back end of a company, handled in-house and overseen personally. Start with one track or run all four."
             />
           </div>
         </Reveal>
 
-        {/* Cards render statically visible. Do NOT gate them behind an entrance
-            animation (.reveal/.spread-in): those set the final visible state via
-            a keyframe `to`, so if the animation fails to advance (e.g. when the
-            element jumps from far offscreen into view, or a late font reflow
-            moves it in), the card is left stuck at its opacity:0 base and shows
-            as an empty box. Static visibility cannot get stuck. */}
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {wlayers.map((s) => (
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {tracks.map((t) => (
+            <article
+              key={t.name}
+              onPointerMove={cardTilt}
+              className="surface-card surface-card-hover group flex h-full flex-col p-8"
+            >
+              <Icon3D icon={t.icon} size={48} iconSize={22} />
+              <h3 className="mt-6 text-2xl font-semibold text-foreground">{t.name}</h3>
+              <div className="mt-1 text-sm text-foreground/80">{t.line}</div>
+              <ul className="mt-5 space-y-2 border-t border-hairline pt-5 text-sm text-muted-foreground">
+                {t.services.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+              <div className="mt-auto pt-6">
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground"
+                >
+                  Explore {t.name}
+                  <ArrowRight size={15} />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* AGENT WORKFORCE - flagship */}
+      <section className="relative overflow-hidden border-y border-hairline bg-surface/40">
+        <Aurora variant="soft" />
+        <DataStream />
+        <div className="container-page relative py-20 md:py-28">
+          <div data-choreo className="border-draw">
+            <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)-1px)] bg-background p-8 md:p-12">
+              <div className="heartbeat" aria-hidden />
+              <div className="relative">
+                <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
+                  <Icon3D icon={Bot} size={56} iconSize={24} />
+                  <div>
+                    <div className="text-eyebrow mb-2">The flagship: Agent Workforce</div>
+                    <h2 className="text-display max-w-3xl text-2xl text-foreground md:text-4xl">
+                      An internal fleet of AI agents, installed inside your business and operated by
+                      us.
+                    </h2>
+                  </div>
+                </div>
+                <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Agent Workforce takes over the operational work you currently pay salaries for. It
+                  runs continuously, with an approval trail and human control on everything that
+                  matters. It is not a chatbot. It is an operating layer inside the company.
+                </p>
+
+                <div className="mt-8">
+                  <div className="text-eyebrow mb-4">Work it takes over</div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {agentWork.map((w) => (
+                      <span
+                        key={w}
+                        className="inline-flex items-center rounded-full border border-hairline bg-surface/60 px-3.5 py-1.5 text-sm text-foreground"
+                      >
+                        {w}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+                  <div className="surface-card p-6">
+                    <div className="text-sm font-semibold text-foreground">
+                      Enterprise consultancies
+                    </div>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Charge millions and deliver slide decks.
+                    </p>
+                  </div>
+                  <div className="surface-card p-6">
+                    <div className="text-sm font-semibold text-foreground">Self-serve tools</div>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Charge under $200 a month and hand you the risk.
+                    </p>
+                  </div>
+                  <div className="surface-card surface-card-hover border-white/40 p-6">
+                    <div className="text-sm font-semibold text-foreground">Syntrex</div>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Installs it, operates it, and is accountable for it.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button asChild variant="accent">
+                    <Link to="/services">
+                      See how Agent Workforce works
+                      <ArrowRight />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/pricing">Agent Workforce pricing</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <Section className="relative">
+        <Aurora variant="whisper" />
+        <Reveal>
+          <div data-choreo className="headline-blur">
+            <SectionHeader
+              eyebrow="How it works"
+              title="How one team runs four tracks."
+              description="An orchestrated fleet of AI agents produces the work in parallel. Humans direct, review, and own every outcome."
+            />
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {layers.map((s) => (
             <div key={s.title} className="surface-card surface-card-hover group h-full p-6">
               <Icon3D icon={s.icon} size={44} iconSize={20} />
               <div className="mt-5 text-[15px] font-semibold text-foreground">{s.title}</div>
@@ -454,22 +544,9 @@ function Home() {
             </div>
           ))}
         </div>
-
-        <Reveal delay={120}>
-          <div className="mt-10 text-center">
-            <MagneticButton>
-              <Button asChild size="lg" variant="outline">
-                <a href="https://syn.syntrexio.com">
-                  Join the Workspace waitlist
-                  <ArrowRight />
-                </a>
-              </Button>
-            </MagneticButton>
-          </div>
-        </Reveal>
       </Section>
 
-      {/* SYN WORKSPACE STAT BAND */}
+      {/* PROOF STAT BAND */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns ken-burns--bright">
           <img src={glassLobby.url} alt="" aria-hidden />
@@ -484,7 +561,7 @@ function Home() {
         <div className="ambient-depth" />
         <div className="container-page relative">
           <div className="grid grid-cols-1 divide-y divide-hairline md:grid-cols-3 md:divide-x md:divide-y-0">
-            {wstats.map((s, i) => (
+            {proofStats.map((s, i) => (
               <div
                 key={s.label}
                 data-choreo
@@ -503,10 +580,89 @@ function Home() {
             ))}
           </div>
           <p className="pb-6 text-center text-xs text-muted-foreground/80">
-            The cost of scattered operations. SYN Workspace is built to erase it.
+            Verified results from Syntrex engagements. Kinetix is a technology partner.
           </p>
         </div>
       </section>
+
+      {/* GUARANTEE BANNER */}
+      <section className="relative overflow-hidden border-b border-hairline bg-surface/40">
+        <Aurora variant="soft" />
+        <DataStream />
+        <div className="container-page relative py-16 md:py-20">
+          <div data-choreo className="border-draw">
+            <div className="relative overflow-hidden rounded-[calc(var(--radius-lg)-1px)] bg-background p-8 md:p-12">
+              <div className="heartbeat" aria-hidden />
+              <div
+                className="pointer-events-none absolute inset-0 opacity-40"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 50%, oklch(1 0 0 / 10%), transparent 60%)",
+                }}
+              />
+              <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center">
+                <Icon3D icon={ShieldCheck} size={56} iconSize={24} />
+                <div>
+                  <div className="text-eyebrow mb-2">The guarantee</div>
+                  <p className="text-display word-rise max-w-4xl text-2xl text-foreground md:text-3xl lg:text-4xl">
+                    {"We guarantee what we control.".split(" ").map((w, i) => (
+                      <span key={`g-${i}`} style={{ ["--i" as never]: i }}>
+                        {w}
+                        {" "}
+                      </span>
+                    ))}
+                    <span className="text-shimmer">We do not guarantee your sales team.</span>
+                  </p>
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                    We guarantee citation presence, ranking movement, content volume, hours removed
+                    from a workflow, agent task volume, and delivery against spec. We do not
+                    guarantee revenue, closed deals, or conversion rate, because those depend on
+                    your pricing, product, and market. If the metric we named is not hit, we keep
+                    working at no additional cost until it is.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING PREVIEW */}
+      <Section className="relative">
+        <Aurora variant="whisper" />
+        <Reveal>
+          <div data-choreo className="headline-blur">
+            <SectionHeader
+              eyebrow="Pricing"
+              title="Published, not quoted."
+              description="Every price is on the site. No discovery call to find out what it costs. You get the output, not the overhead."
+            />
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {pricepoints.map((p) => (
+            <div key={p.label} className="surface-card surface-card-hover group h-full p-6">
+              <div className="text-eyebrow mb-2">{p.label}</div>
+              <div className="text-display text-2xl text-foreground">{p.value}</div>
+              <p className="mt-2 text-sm text-muted-foreground">{p.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <Reveal delay={120}>
+          <div className="mt-10 text-center">
+            <MagneticButton>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/pricing">
+                  See full pricing
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </MagneticButton>
+          </div>
+        </Reveal>
+      </Section>
 
       {/* WORLDWIDE MAP */}
       <section className="relative overflow-hidden border-t border-hairline">
@@ -519,7 +675,7 @@ function Home() {
                 Built in Florida. <span className="text-shimmer">Running everywhere.</span>
               </h2>
               <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                SYN is built to run for operators worldwide, 24/7.
+                One team, running the back end for operating companies wherever they are.
               </p>
             </div>
           </Reveal>
@@ -535,21 +691,19 @@ function Home() {
         <div className="container-page relative py-24 md:py-32">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <div className="text-eyebrow mb-5">Start with the audit</div>
+              <div className="text-eyebrow mb-5">Start here</div>
               <h2 className="text-display text-4xl text-foreground md:text-6xl">
-                See exactly what missed leads are costing you.
+                Find out exactly where to start.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-                The Live Leak Audit is the pre-launch entry point to SYN Growth:
-                one button runs a simultaneous test of your phone, live chat, and
-                contact form, with a response timer on screen showing where
-                inquiries slip away. Free.
+                Six questions, about a minute. It maps what is not working across the four tracks
+                and names the services and the starting point that fit.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <MagneticButton>
                   <Button asChild size="xl" variant="accent">
-                    <Link to="/leak-audit">
-                      Get Your Free Leak Audit
+                    <Link to="/diagnostic">
+                      Start the diagnostic
                       <ArrowRight />
                     </Link>
                   </Button>

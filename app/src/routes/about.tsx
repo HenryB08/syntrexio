@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Faq } from "@/components/site/Faq";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, Globe, MapPin, Users } from "lucide-react";
+import { ArrowRight, Globe, MapPin, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section, SectionHeader } from "@/components/site/Section";
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/about")({
 
 const facts = [
   { icon: MapPin, label: "Headquartered", value: "Windermere, FL, Greater Orlando" },
-  { icon: Globe, label: "Clients", value: "Served worldwide" },
-  { icon: Users, label: "Team", value: "Senior leads, full in-house crew" },
+  { icon: Globe, label: "Reach", value: "Operating companies worldwide" },
+  { icon: Layers, label: "Model", value: "Human-directed AI agent fleet" },
 ];
 
 type Member = { name: string; role: string; initials: string; photo: string; email?: string };
@@ -25,11 +25,43 @@ type Member = { name: string; role: string; initials: string; photo: string; ema
 // Photos hotlink the Mailchimp CDN (same host as the hero image). They 403 in
 // the sandbox but load in production; initials are the onError fallback.
 const team: Member[] = [
-  { name: "Henry Bello", role: "Founder & CEO", initials: "HB", email: "henry@syntrexio.com", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/3cc9cc48-ba3c-9ebd-464d-0df28c4cc939.png" },
-  { name: "Sofia Weeden", role: "Chief Financial Officer", initials: "SW", email: "sofia@syntrexio.com", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/eb1cf569-580c-9d7e-a642-0f9458c4cf05.png" },
-  { name: "Alexander Ohmer", role: "Head of Operations", initials: "AO", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/9dfeaa13-67cf-4655-f0fa-09489017922c.png" },
-  { name: "Anthony Fallon", role: "Head of Digital", initials: "AF", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efcf170e-3d5b-743c-35eb-d66e2e79fb9a.png" },
-  { name: "Ciana Bello", role: "Director of Marketing & Social", initials: "CB", photo: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6a2a7c2-55d3-dbff-b92a-567152be1a15.png" },
+  {
+    name: "Henry Bello",
+    role: "Founder & CEO",
+    initials: "HB",
+    email: "henry@syntrexio.com",
+    photo:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/3cc9cc48-ba3c-9ebd-464d-0df28c4cc939.png",
+  },
+  {
+    name: "Sofia Weeden",
+    role: "Chief Financial Officer",
+    initials: "SW",
+    email: "sofia@syntrexio.com",
+    photo:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/eb1cf569-580c-9d7e-a642-0f9458c4cf05.png",
+  },
+  {
+    name: "Alexander Ohmer",
+    role: "Head of Operations",
+    initials: "AO",
+    photo:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/9dfeaa13-67cf-4655-f0fa-09489017922c.png",
+  },
+  {
+    name: "Anthony Fallon",
+    role: "Head of Digital",
+    initials: "AF",
+    photo:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efcf170e-3d5b-743c-35eb-d66e2e79fb9a.png",
+  },
+  {
+    name: "Ciana Bello",
+    role: "Director of Marketing & Social",
+    initials: "CB",
+    photo:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6a2a7c2-55d3-dbff-b92a-567152be1a15.png",
+  },
 ];
 
 function About() {
@@ -38,8 +70,8 @@ function About() {
       <PageHero
         variant="worldmap"
         eyebrow="About Syntrex"
-        title="From agency to software company."
-        description="Syntrex builds SYN, one AI platform in two products, both in development. We started as a hands-on digital agency, saw the same problems in every business we built for, and productized the fixes. Headquartered in Windermere, Florida, serving operators worldwide."
+        title="The AI infrastructure layer behind operating companies."
+        description="Syntrex runs the full digital and AI back end of a business across visibility, conversion, presence, and operations. One team, leading every project, accountable for the outcome. Headquartered in Windermere, Florida, working with operators worldwide."
       />
 
       <Section>
@@ -51,9 +83,7 @@ function About() {
                   <f.icon size={16} />
                 </div>
                 <div className="text-eyebrow mt-5">{f.label}</div>
-                <div className="mt-1.5 text-lg font-semibold text-foreground">
-                  {f.value}
-                </div>
+                <div className="mt-1.5 text-lg font-semibold text-foreground">{f.value}</div>
               </div>
             </Reveal>
           ))}
@@ -63,29 +93,48 @@ function About() {
       <Section className="border-t border-hairline bg-surface/20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <SectionHeader eyebrow="Our story" title="It started as client work." />
+            <SectionHeader eyebrow="Our story" title="It started with one company's back end." />
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                Syntrex began as a hands-on digital agency: building websites,
-                e-commerce, content systems, and AI automations for real
-                businesses, including industrial brand HALT Fire and consumer
-                brand Doughbrik's Wavers.
+                Syntrex was founded by Henry Bello and started by building the full digital and AI
+                stack for HALT Fire, an industrial fire suppression company. The work produced 280%
+                search growth and returned more than ten hours a week to the team.
               </p>
               <p>
-                Running that client work exposed the same two problems
-                everywhere. Businesses lose customers the moment they can't
-                answer. And their operations live scattered across a dozen
-                disconnected tools. So we productized the fixes.
+                That engagement proved the model: one partner running the entire back end produces
+                results that fragmented vendors cannot. Nobody else owned the outcome. Syntrex did.
               </p>
               <p>
-                The client work became SYN Growth, the system that answers and
-                books customers automatically. The operations problem is becoming
-                SYN Workspace, one AI workspace that runs the business. Today
-                Syntrex is a software company, and the agency roots are why the
-                products work in the real world. A senior team leads every
-                project, with a full in-house team delivering the work.
+                Today Syntrex runs that same model across four tracks, for operating companies
+                worldwide. It is the reason AI spend so often fails: the money is spent, but no one
+                owns the result. Syntrex is the layer that does.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section className="border-t border-hairline">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <Reveal>
+            <SectionHeader eyebrow="How we deliver" title="One team. A fleet that scales." />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p>
+                An orchestrated fleet of AI agents produces the work in parallel. Humans direct,
+                review, and own every outcome, and everything a client sees passes a human first.
+              </p>
+              <p>
+                Every client is encoded once: brand, offer, rules, and the way they work. The system
+                gets faster and more accurate with every engagement. That is how one team leads
+                every project end to end without a headcount agency behind it.
+              </p>
+              <p>
+                It is also why the pricing works. Agencies charge for the team behind the work. We
+                do not have one. You get the output, not the overhead.
               </p>
             </div>
           </Reveal>
@@ -96,8 +145,8 @@ function About() {
         <Reveal>
           <SectionHeader
             eyebrow="Team"
-            title="The core team."
-            description="The leadership that runs every engagement. A broader in-house team of developers and specialists delivers the work alongside them."
+            title="The people who own the outcome."
+            description="Leadership directs, reviews, and stands behind every engagement. The production itself runs on an orchestrated fleet of AI agents."
           />
         </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -106,9 +155,7 @@ function About() {
               <article className="surface-card surface-card-hover group overflow-hidden p-0">
                 <TeamPhoto member={m} />
                 <div className="p-6" data-parallax="text">
-                  <div className="text-[15px] font-semibold text-foreground">
-                    {m.name}
-                  </div>
+                  <div className="text-[15px] font-semibold text-foreground">{m.name}</div>
                   <div className="text-sm text-muted-foreground">{m.role}</div>
                   {m.email ? (
                     <a
@@ -128,13 +175,13 @@ function About() {
       <Section className="border-t border-hairline text-center">
         <Reveal>
           <h2 className="text-display mx-auto max-w-2xl text-3xl text-foreground md:text-5xl">
-            Ready to see what you're leaving on the table?
+            Ready to see where to start?
           </h2>
           <div className="mt-8">
             <MagneticButton>
               <Button asChild size="xl" variant="accent">
-                <Link to="/leak-audit">
-                  Get Your Free Leak Audit
+                <Link to="/diagnostic">
+                  Start the diagnostic
                   <ArrowRight />
                 </Link>
               </Button>
@@ -147,10 +194,8 @@ function About() {
   );
 }
 
-/** Team headshot with a graceful fallback: the photo files live at
- *  /public/team/[firstname].png and may not be uploaded yet. Until a photo
- *  loads, or if it 404s, the card shows the member's initials so the page
- *  always renders cleanly. */
+/** Team headshot with a graceful fallback to the member's initials until the
+ *  photo loads, or if it 404s, so the page always renders cleanly. */
 function TeamPhoto({ member }: { member: Member }) {
   const [failed, setFailed] = useState(false);
   return (

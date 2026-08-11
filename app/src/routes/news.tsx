@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, Globe, LayoutGrid, Rocket } from "lucide-react";
+import { ArrowRight, Bot, DollarSign, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
@@ -14,13 +14,12 @@ export const Route = createFileRoute("/news")({
 });
 
 type Post = {
-  icon: typeof Rocket;
+  icon: typeof Layers;
   image: string;
   title: string;
-  date: string; // display date
+  date: string;
   excerpt: string;
   href?: string;
-  external?: boolean;
 };
 
 // Newest first. To add a post, prepend an entry here and add a matching
@@ -28,31 +27,33 @@ type Post = {
 // CDN (403 in the sandbox, load in production; the icon is the onError fallback).
 const posts: Post[] = [
   {
-    icon: Globe,
-    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6f0cef5-488a-df51-14d1-da05ce42c51b.png",
-    title: "The new syntrexio.com",
-    date: "July 24, 2026",
+    icon: Layers,
+    image:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/c6f0cef5-488a-df51-14d1-da05ce42c51b.png",
+    title: "Syntrex, the AI infrastructure layer behind operating companies",
+    date: "August 2026",
     excerpt:
-      "One platform, two products, one new identity. A look at where Syntrex is headed as a software company: SYN Growth for your customers, SYN Workspace for your operations.",
+      "One team runs a company's entire digital and AI back end across four tracks: visibility, conversion, presence, and operations. Nobody owns the outcome. We do.",
     href: "/about",
   },
   {
-    icon: LayoutGrid,
-    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efd26a69-39e0-70b7-5ab1-9f27517231b7.png",
-    title: "SYN Workspace enters early access",
-    date: "July 18, 2026",
+    icon: Bot,
+    image:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/efd26a69-39e0-70b7-5ab1-9f27517231b7.png",
+    title: "Introducing Agent Workforce",
+    date: "August 2026",
     excerpt:
-      "The AI business workspace that runs your calendar, content, assets, and automations from one encoded brand is now in early access. The waitlist is open.",
-    href: "https://syn.syntrexio.com",
-    external: true,
+      "The flagship: an installed fleet of AI agents that runs the operational work a company pays salaries for, continuously, with a human in control. It is not a chatbot.",
+    href: "/services",
   },
   {
-    icon: Rocket,
-    image: "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/263a40e9-7220-0431-5618-6f118ac0053b.png",
-    title: "Introducing SYN Growth",
-    date: "July 14, 2026",
+    icon: DollarSign,
+    image:
+      "https://mcusercontent.com/d9f0645acdcd85eb1ee1a8067/images/263a40e9-7220-0431-5618-6f118ac0053b.png",
+    title: "Every price, published",
+    date: "August 2026",
     excerpt:
-      "The guaranteed system that answers every call, chat, and form in seconds, captures every missed call, and follows up until the customer books. Launching soon at printed pricing.",
+      "Retainers, builds, and Agent Workforce, all on the site. No discovery call to find out what it costs. You get the output, not the overhead.",
     href: "/pricing",
   },
 ];
@@ -85,7 +86,7 @@ function News() {
         variant="grid"
         eyebrow="News"
         title="What's new at Syntrex."
-        description="Product launches, releases, and company updates as we build SYN."
+        description="Announcements and updates from the team running the back end for operating companies."
       />
 
       <Section>
@@ -98,29 +99,31 @@ function News() {
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="text-eyebrow">{p.date}</div>
-                  <h2 className="mt-2 text-lg font-semibold text-foreground">
-                    {p.title}
-                  </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {p.excerpt}
-                  </p>
+                  <h2 className="mt-2 text-lg font-semibold text-foreground">{p.title}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
                   {p.href ? (
                     <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-foreground">
                       Read more
-                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-0.5"
+                      />
                     </div>
                   ) : null}
                 </div>
               </article>
             );
-            if (!p.href) return <Reveal key={p.title} delay={i * 90}>{body}</Reveal>;
+            if (!p.href)
+              return (
+                <Reveal key={p.title} delay={i * 90}>
+                  {body}
+                </Reveal>
+              );
             return (
               <Reveal key={p.title} delay={i * 90}>
-                {p.external ? (
-                  <a href={p.href} className="block h-full">{body}</a>
-                ) : (
-                  <Link to={p.href} className="block h-full">{body}</Link>
-                )}
+                <Link to={p.href} className="block h-full">
+                  {body}
+                </Link>
               </Reveal>
             );
           })}
@@ -130,15 +133,15 @@ function News() {
       <Section className="border-t border-hairline text-center">
         <Reveal>
           <h2 className="text-display mx-auto max-w-2xl text-3xl text-foreground md:text-5xl">
-            Be first when SYN Growth launches.
+            See where to start.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Start with a Free Leak Audit, the pre-launch entry point.
+            The diagnostic maps what is not working and names the services that fit.
           </p>
           <div className="mt-8">
             <Button asChild size="xl" variant="accent">
-              <Link to="/leak-audit">
-                Get Your Free Leak Audit
+              <Link to="/diagnostic">
+                Start the diagnostic
                 <ArrowRight />
               </Link>
             </Button>

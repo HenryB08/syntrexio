@@ -48,7 +48,7 @@ function Contact() {
         variant="converge"
         eyebrow="Contact"
         title="Tell us what you need."
-        description="Send a message about your business and what you want to fix. We reply within 24 hours. For the fastest start with SYN Growth, request a Free Leak Audit and see exactly where you are losing customers. For SYN Workspace, join the waitlist at syn.syntrexio.com."
+        description="Send a message about your business and what you want to fix. We reply within 24 hours. For the fastest read on where to start, run the diagnostic and see which of the four tracks to prioritize."
       />
 
       <Section>

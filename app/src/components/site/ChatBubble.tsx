@@ -64,11 +64,7 @@ export function ChatBubble() {
         {thinking ? <span className="edge-shimmer" aria-hidden /> : null}
         <div className="flex items-center gap-3 border-b border-hairline bg-surface-2 px-4 py-3">
           <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-full border border-hairline bg-background">
-            <img
-              src="/logo-mark.png"
-              alt="Syntrex"
-              className="h-5 w-5 object-contain"
-            />
+            <img src="/logo-mark.png" alt="Syntrex" className="h-5 w-5 object-contain" />
           </span>
           <div className="flex-1">
             <div className="text-sm font-semibold text-foreground">Syntrex</div>
@@ -88,8 +84,7 @@ export function ChatBubble() {
 
         <div ref={scrollRef} className="max-h-80 space-y-3 overflow-y-auto px-4 py-4">
           <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-background px-3.5 py-2.5 text-sm text-foreground">
-            Hey! I'm the Syntrex assistant. Ask about the Growth System or book
-            a Free Leak Audit.
+            Hey! I'm the Syntrex assistant. Ask about our services, pricing, or the diagnostic.
           </div>
           {messages.map((m, i) => (
             <div
