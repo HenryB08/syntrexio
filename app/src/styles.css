@@ -2310,3 +2310,25 @@
 .home .word-rise > span {
   will-change: auto;
 }
+
+/* --------------------------------------------------------------------------
+   "How it works" card grid — bounded compositing (scoped).
+   At >= ~2048 CSS px viewport on DPR 2, the whole document paints into one
+   root layer wider than the 4096px GPU max texture (2360 CSS x 2 = 4720). On
+   real hardware that layer's raster tiles fail past the limit, blanking the
+   non-composited card text and borders while the separately-composited icons
+   survive. The failure is per-tile and deterministic, so the same column is
+   spared every load.
+   Fix: promote the grid itself to its own composited layer, sized to the grid
+   box (~1168 x 213 CSS = 2336 x 426 device px, well under 4096 on both axes).
+   The cards then raster into that bounded layer instead of the full-width root
+   layer, so text and borders paint reliably at any width. `contain: paint` on
+   each card isolates its paint to its own box (paint containment alone does not
+   composite, so it cannot bound the raster on its own; the grid promotion does
+   that). Scoped to this grid on purpose; not applied to every .surface-card. */
+.howitworks-grid {
+  transform: translateZ(0);
+}
+.howitworks-grid > .surface-card {
+  contain: paint;
+}
