@@ -249,11 +249,19 @@ function Home() {
   };
 
   return (
-    <div ref={choreoRef}>
+    <div ref={choreoRef} className="home">
       {/* HERO - positioning */}
       <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div className="ken-burns ken-burns--bright">
-          <img src={heroOffice.url} alt="" aria-hidden fetchPriority="high" decoding="async" />
+          <img
+            src={heroOffice.url}
+            alt=""
+            aria-hidden
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -365,7 +373,15 @@ function Home() {
       {/* PROBLEM STAT STRIP */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns">
-          <img src={aerialCity.url} alt="" aria-hidden loading="lazy" decoding="async" />
+          <img
+            src={aerialCity.url}
+            alt=""
+            aria-hidden
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div
           className="pointer-events-none absolute inset-0"
@@ -550,7 +566,15 @@ function Home() {
       {/* PROOF STAT BAND */}
       <section className="relative overflow-hidden border-y border-hairline bg-surface/30">
         <div className="ken-burns ken-burns--bright">
-          <img src={glassLobby.url} alt="" aria-hidden loading="lazy" decoding="async" />
+          <img
+            src={glassLobby.url}
+            alt=""
+            aria-hidden
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div
           className="pointer-events-none absolute inset-0"

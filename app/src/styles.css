@@ -2260,3 +2260,42 @@
     opacity: 0.25 !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Homepage rendering hardening (scoped to the home route via .home).
+   Doctrine: content is base-state visible. One-shot reveals never hide
+   content; they enhance only via transform/filter, animating FROM a visible
+   state (opacity stays 1). They are also not permanently promoted to
+   compositor layers, which was exhausting the GPU layer budget (dropped
+   frames, and some cards failing to paint their text). Continuous background
+   animations (aurora, marquee, data stream, shimmer) are untouched and keep
+   their layer hints.
+   -------------------------------------------------------------------------- */
+.home
+  :is(
+    .reveal,
+    .headline-blur,
+    .stat-scale,
+    .stat-caption,
+    .card-reveal,
+    .spread-in,
+    .side-in-left,
+    .side-in-right
+  ) {
+  opacity: 1 !important;
+}
+.home
+  :is(
+    .reveal,
+    .headline-blur,
+    .stat-scale,
+    .stat-caption,
+    .card-reveal,
+    .spread-in,
+    .side-in-left,
+    .side-in-right,
+    [data-choreo]
+  ),
+.home .word-rise > span {
+  will-change: auto;
+}
