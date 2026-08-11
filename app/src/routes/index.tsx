@@ -552,7 +552,7 @@ function Home() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="howitworks-grid mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {layers.map((s) => (
             <div key={s.title} className="surface-card surface-card-hover group h-full p-6">
               <Icon3D icon={s.icon} size={44} iconSize={20} />
