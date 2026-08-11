@@ -1,0 +1,25 @@
+# Decisions log — content-overhaul (branch: claude/syntrexio-content-overhaul-medh38)
+
+Reasonable calls made where the brief was ambiguous, so work could continue without stopping.
+
+## Scope / guardrails
+- **Branch:** brief named `content-overhaul-v3`; per follow-up instruction, work stays on the pre-created `claude/syntrexio-content-overhaul-medh38`. Same content, different branch name.
+- **app/public guardrail:** per follow-up instruction, the "do not touch app/public" guardrail applies only to the legacy `.html` files there. `sitemap.xml`, `robots.txt`, and `llms.txt` live in `app/public/` and ARE in scope for Phase 5. No `.html` file in `app/public/` is edited.
+- **Phase 1 approval gate:** skipped per instruction. Audit still produced (`AUDIT.md`) and committed for the record.
+
+## Positioning / proof
+- **Named proof restricted to three:** brief says only HALT Fire, Doughbrik's Wavers, and Kinetix. `Karlo Financial` is therefore REMOVED everywhere (marquee, Work page, customers schema, llms.txt). Kinetix kept and treated as a partner. Company name normalized to "Kinetix" (was "Kinetix Technology Group").
+- **David Dobrik:** kept as one-line founder context for Doughbrik's Wavers (already approved on the current site), not used as a standalone client claim.
+- **Doughbrik's "3x faster workflows":** already published on the current site (llms.txt) and reused as a pre-approved figure on the Work page. HALT Fire figures (280% search growth, 10+ hours/week) are the brief-verified proof.
+- **Team page:** brief says keep the existing team-page structure and only update copy referencing the old model. The five existing team cards are kept as-is; surrounding narrative rewritten to the new delivery model (human-directed AI agent fleet). No new team members invented; no employee-count claims added.
+
+## Information architecture
+- **Nav:** Home, Services, Pricing, Diagnostic, Work, About, Contact.
+  - "Customers" route (`/customers`) is relabeled "Work" in nav and rebuilt as case studies. URL preserved.
+  - "News" replaced by "Diagnostic" in primary nav. `/news` route kept alive (URL preserved), content rewritten on-brand, linked from the footer.
+- **Diagnostic:** new route `/diagnostic` (added to `vite.config.ts` pages). It is the free, rules-based self-qualifying tool (lead magnet). This is distinct from the paid **AI Systems Diagnostic ($3,500)** engagement front door described on Pricing.
+- **`/leak-audit`:** old "missed calls" front door, now off-message. Route preserved (indexed URL) but converted to a redirect page (canonical + meta-refresh + client redirect) pointing to `/diagnostic`. No missed-call content remains.
+
+## Out of scope (flagged, not changed)
+- **Cloudflare Worker (`worker/worker.js`) SYSTEM_PROMPT:** still encodes the old SYN positioning and old pricing. The brief scopes this task to `app/src` content and says to leave the chat widget functionality alone, so the worker is NOT edited here. The live SYN chat will describe the old model until the worker prompt is updated in a separate pass. Flagged for follow-up.
+- **Contact form / chat widget / Formspree + Worker endpoints:** unchanged (working functionality).
