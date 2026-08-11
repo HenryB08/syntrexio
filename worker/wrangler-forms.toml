@@ -1,0 +1,11 @@
+# Deploy config for the syntrex-forms Worker (form follow-up via Resend).
+# The chat Worker (worker.js) is deployed separately.
+#
+#   cd worker
+#   npx wrangler secret put RESEND_API_KEY --config wrangler-forms.toml
+#   npx wrangler deploy --config wrangler-forms.toml
+#
+# RESEND_API_KEY is a secret; it is never stored in this file or the repo.
+name = "syntrex-forms"
+main = "forms-worker.js"
+compatibility_date = "2024-11-01"

@@ -1,13 +1,19 @@
-// Site integrations: contact/lead forms (Formspree) and the Syntrex chatbot
-// (Cloudflare Worker). Both endpoints match the pre-cutover site exactly.
+// Site integrations: form follow-up and the Syntrex chatbot, both Cloudflare
+// Workers on the same account as the chat Worker.
+//
+// Forms POST to the syntrex-forms Worker, which stores the submission durably in
+// Formspree and then sends instant follow-up through Resend (a confirmation to
+// the submitter and a notification to henry@syntrexio.com). The Formspree
+// endpoint and email keys live in the Worker, not the browser.
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkopyzln";
+const FORMS_ENDPOINT = "https://syntrex-forms.henrybello.workers.dev";
 const CHAT_ENDPOINT = "https://syntrex-chat.henrybello.workers.dev";
 
-// Submit a form to Formspree. Sends the given fields as JSON and resolves only
-// on a 2xx response; the caller shows success/error UI.
+// Submit a form to the syntrex-forms Worker. Resolves only on a 2xx response
+// (the Worker returns 2xx once the lead is stored); the caller shows success or
+// error UI. Deploy the Worker before shipping a build that points here.
 export async function submitForm(data: Record<string, unknown>) {
-  const res = await fetch(FORMSPREE_ENDPOINT, {
+  const res = await fetch(FORMS_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
