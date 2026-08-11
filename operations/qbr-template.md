@@ -93,6 +93,7 @@ Three Receipts, one table. Full documents are in the hub if anyone wants to reop
 | **Change from baseline** | {{TOTAL_CHANGE}} |
 | **Change this quarter** | {{QUARTER_CHANGE}} |
 | **Window status** | {{WINDOW_STATUS}} |
+| **Window pauses this quarter** | {{WINDOW_PAUSES_QUARTER}} |
 
 **Full trend since engagement start**
 

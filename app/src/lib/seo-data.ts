@@ -289,7 +289,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
             name: "What is the guarantee and what does it cover?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "We guarantee what we control: AI search citation presence for agreed queries, ranking movement for agreed terms, content volume and schedule, hours removed from an agreed workflow, agent task volume per period, and delivery against agreed spec. Each guarantee names one metric in writing, a documented baseline, a 90 day window, and one source of truth. If the metric is not hit, we keep working at no additional cost until it is.",
+              text: "We guarantee what we control: AI search citation presence for agreed queries, ranking movement for agreed terms, content volume and schedule, hours removed from an agreed workflow, agent task volume per period, and delivery against agreed spec. Each guarantee names one metric in writing, a documented baseline, a 90 day window, and one source of truth. If the metric is not hit, we keep working at no additional cost until it is. The window pauses if you miss an agreed, dated condition, such as approving submitted work within five business days, granting the systems and accounts named at kickoff, providing information only you hold, or keeping one named point of contact. A pause stops the clock rather than voiding the guarantee, and it is recorded on that month's Receipt with its start and end dates.",
             },
           },
           {

@@ -367,6 +367,13 @@ function Pricing() {
                   we keep working at no additional cost until it is. The remedy is our labor, never
                   a refund.
                 </p>
+                <p className="mt-3 text-sm text-muted-foreground md:text-base">
+                  The window pauses if you miss an agreed, dated condition: approving submitted work
+                  within five business days, granting the systems and accounts named at kickoff,
+                  providing information only you hold, or keeping one named point of contact. A pause
+                  stops the clock rather than voiding the guarantee, and each one is recorded on that
+                  month's Receipt with its start and end dates.
+                </p>
               </div>
             </div>
           </Reveal>

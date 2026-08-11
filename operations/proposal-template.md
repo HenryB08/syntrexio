@@ -181,6 +181,8 @@ We guarantee what we control. We do not guarantee your sales team.
 
 **If we miss it:** we keep working at no additional cost until the metric is hit. The remedy is our labor. There is no refund clause because a refund pays you to have wasted three months, and that is not what you want.
 
+**What we need from you, and what happens if it is late:** the window pauses if you miss an agreed condition, each measured by a date. Approving submitted work within {{CLIENT_APPROVAL_SLA}}. Granting the systems and accounts named at kickoff. Providing information only you hold and that we cannot obtain ourselves. Keeping one named point of contact who can approve. A missed condition pauses the window on the dated miss and resumes it on the date you clear it. A pause never voids the guarantee, it only stops the clock, and each pause is recorded on that month's Receipt with its start and end dates. This exists so that work waiting on you cannot burn the window we are being measured against.
+
 **What is never guaranteed:** revenue, closed deals, or conversion rate. Those depend on your pricing, your product, your sales team, and your market. We do not control them and will not pretend otherwise.
 
 *One metric per engagement. If you are tempted to guarantee two, guarantee the one you would defend in a room and put the other in the Receipt as a reported number.*

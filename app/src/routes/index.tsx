@@ -639,7 +639,9 @@ function Home() {
                     from a workflow, agent task volume, and delivery against spec. We do not
                     guarantee revenue, closed deals, or conversion rate, because those depend on
                     your pricing, product, and market. If the metric we named is not hit, we keep
-                    working at no additional cost until it is.
+                    working at no additional cost until it is. The window pauses, rather than voids,
+                    if you miss an agreed condition like approval turnaround, and it resumes on the
+                    date you clear it, documented on your Receipt.
                   </p>
                 </div>
               </div>

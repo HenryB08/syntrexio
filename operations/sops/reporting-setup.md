@@ -57,12 +57,14 @@ Automated pulls from every source on a schedule. Stored, not just displayed, so 
 For the client, live, with the guaranteed metric against its baseline and target at the top. Reported metrics below. Definitions visible on the page, not in a separate document nobody opens.
 
 ### 7. Build Receipt generation (fleet)
-Assembles the Receipt from stored data on the agreed day: guaranteed metric against baseline, work shipped by track, hours returned with method, and the reported metrics. See `operations/receipt-template.md`.
+Assembles the Receipt from stored data on the agreed day: guaranteed metric against baseline, work shipped by track, hours returned with method, the reported metrics, and the window-pause log. See `operations/receipt-template.md`.
 
 **Generated on schedule, unattended.** Late Receipts are signal 3 on the account health scorecard and they are a delivery failure on our side.
 
 ### 8. Build the guarantee tracker (fleet)
 Position against target, days remaining, and required rate. **Alerts when the metric falls behind the pace needed with more than 30 days left,** so a miss is caught while it is still recoverable rather than reported when the window closes.
+
+**Track window pauses.** The window pauses when a client misses an agreed condition from the kickoff summary: approval turnaround, access to the systems and accounts named at kickoff, information only the client holds, or a reachable named contact. Log each pause with the date it began, the date it resolved, and the condition that triggered it. Days remaining and the window end date are computed on unpaused days only, and every pause carries onto that month's Receipt. A pause is a dated event on the account record, never a judgment call, so the trigger and both dates are recorded when it happens and not reconstructed later.
 
 ### 9. Build alerting (fleet)
 Any metric dropping materially, any collection failure, and any source going silent. **A dashboard reading zero because a connector broke is worse than no dashboard,** because it produces a panicked client call about a problem that does not exist, or worse, a calm client while a real one goes unnoticed.
