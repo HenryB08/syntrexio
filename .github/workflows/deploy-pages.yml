@@ -63,6 +63,66 @@ jobs:
           cp "$OUT/index.html" "$OUT/404.html"
           echo "Artifact contents:" && ls -a "$OUT"
 
+      - name: Redirect indexed legacy HTML URLs to their React equivalents
+        run: |
+          set -eu
+          OUT=app/dist/client
+          # The pre-cutover site lived in hand-authored .html files, which Vite
+          # copies from app/public into the build. After cutover those URLs must
+          # 301-equivalent to the new React routes so no ranking is lost. We
+          # overwrite the copied files IN THE ARTIFACT ONLY; app/public source is
+          # left frozen. Canonical drops any #anchor; the refresh keeps it.
+          write_redirect() {
+            out="$1"; url="$2"; canon="${url%%#*}"
+            mkdir -p "$OUT/$(dirname "$out")"
+            cat > "$OUT/$out" <<HTML
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <title>Redirecting to https://syntrexio.com$canon</title>
+          <link rel="canonical" href="https://syntrexio.com$canon">
+          <meta name="robots" content="noindex, follow">
+          <meta http-equiv="refresh" content="0; url=https://syntrexio.com$url">
+          <script>location.replace("https://syntrexio.com$url")</script>
+          </head>
+          <body>This page has moved to <a href="https://syntrexio.com$url">https://syntrexio.com$url</a>.</body>
+          </html>
+          HTML
+            echo "redirect $out -> $url"
+          }
+
+          # Top-level legacy pages
+          write_redirect about.html            /about/
+          write_redirect contact.html          /contact/
+          write_redirect pricing.html          /pricing/
+          write_redirect privacy.html          /privacy/
+          write_redirect terms.html            /terms/
+          write_redirect services.html         /services/
+          write_redirect leak-audit.html       /diagnostic/
+          write_redirect projects.html         /customers/
+          write_redirect projects/index.html   /customers/
+          write_redirect free-leak-audit/index.html /diagnostic/
+
+          # Legacy per-service pages consolidate into the single /services/ page,
+          # landing on the relevant track anchor (canonical stays /services/).
+          write_redirect services/ai-business-planning.html   "/services/#operations"
+          write_redirect services/ai-strategy.html            "/services/#operations"
+          write_redirect services/custom-ai-tools.html        "/services/#operations"
+          write_redirect services/reporting-analytics.html    "/services/#operations"
+          write_redirect services/system-integration.html     "/services/#operations"
+          write_redirect services/workflow-automation.html    "/services/#operations"
+          write_redirect services/ai-chatbots.html            "/services/#conversion"
+          write_redirect services/lead-generation.html        "/services/#conversion"
+          write_redirect services/ai-content.html             "/services/#visibility"
+          write_redirect services/website-design.html         "/services/#presence"
+          write_redirect services/ecommerce.html              "/services/#presence"
+          write_redirect services/brand-digital-presence.html "/services/#presence"
+
+          # NOTE: legal.html and syn.html have no clean 1:1 React equivalent and
+          # are intentionally NOT redirected here yet (pending owner decision).
+          # Until decided, they keep serving their legacy content.
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
