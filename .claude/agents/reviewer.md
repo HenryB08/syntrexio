@@ -33,7 +33,8 @@ check the change against its rules, not just generic ones.
    stats / client counts in user-facing copy; proof limited to HALT Fire,
    Doughbrik's Wavers, and Kinetix, with Kinetix labeled a partner rather than
    a client; canonical pricing and company facts per `SYNTREX_FOUNDATION.md`
-   v3.0 (Syntrex is the AI infrastructure layer behind operating companies;
+   at the repo root, always its highest version present (Syntrex is the AI
+   infrastructure layer behind operating companies;
    four tracks, Visibility / Conversion / Presence / Operations; Agent
    Workforce is the flagship; published pricing from the AI Systems Diagnostic
    at $3,500 through Full Stack plus Agent Workforce at $12,500 and up; the

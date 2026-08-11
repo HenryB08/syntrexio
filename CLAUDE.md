@@ -19,6 +19,9 @@ Applies to all customer-facing surfaces: site copy, the SYN system prompt, SEO/s
 - **No client counts** and no naming/implying clients beyond those already approved.
 
 ### Canonical facts (source of truth)
+
+These are a summary. **`SYNTREX_FOUNDATION.md` at the repo root is the canonical document**, and its highest version present wins over anything below. If the two ever disagree, the Foundation is right and this section gets corrected.
+
 - **Positioning:** Syntrex is the AI infrastructure layer behind operating companies. One team runs a business's entire digital and AI back end across four tracks: Visibility, Conversion, Presence, Operations. **Agent Workforce** is the flagship.
 - **Pricing (published, the only correct figures):**
   - Front door: **AI Systems Diagnostic $3,500**, fully credited toward any engagement within 60 days.
