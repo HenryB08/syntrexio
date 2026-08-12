@@ -16,8 +16,8 @@ export const Route = createFileRoute("/customers")({
 type Detail = { challenge: string; solution: string; result: string };
 type Client = {
   icon: typeof Flame;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   name: string;
   kind: string;
   tag: string;
@@ -88,10 +88,10 @@ const clients: Client[] = [
   },
   {
     icon: Truck,
-    // Placeholder banner image, themed commercial trailer stock. Swap for the
-    // client-approved photo. The card falls back to the brand icon on error.
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7" + UNSPLASH,
-    imageAlt: "Commercial semi-truck and trailer on a highway",
+    // No banner photo yet, so the card renders the Truck brand-icon banner,
+    // the same fallback the other cards use when their image is unavailable.
+    // To add a real photo, host it the way Doughbrik's is (a mcusercontent.com
+    // CDN URL) or add a local asset, then set `image` and `imageAlt` here.
     name: "The Decal Dudes",
     kind: "Commercial trailer services",
     tag: "Client, website build",
@@ -121,7 +121,7 @@ const clients: Client[] = [
  *  may 403 in the sandbox; production renders the photo). */
 function BannerImage({ c }: { c: Client }) {
   const [failed, setFailed] = useState(false);
-  if (failed)
+  if (failed || !c.image)
     return (
       <div className="grid h-full w-full place-items-center">
         <Icon3D icon={c.icon} size={52} iconSize={24} />
@@ -130,7 +130,7 @@ function BannerImage({ c }: { c: Client }) {
   return (
     <img
       src={c.image}
-      alt={c.imageAlt}
+      alt={c.imageAlt || c.name}
       loading="lazy"
       decoding="async"
       width={1200}
