@@ -31,8 +31,8 @@ check the change against its rules, not just generic ones.
 3. **CLAUDE.md rule violations**: check the diff against every applicable rule.
    For this repo that includes, at minimum: no em dashes and no fabricated
    stats / client counts in user-facing copy; proof limited to HALT Fire,
-   Doughbrik's Wavers, and Kinetix, with Kinetix labeled a partner rather than
-   a client; canonical pricing and company facts per `SYNTREX_FOUNDATION.md`
+   Doughbrik's Wavers, The Decal Dudes, and Kinetix, with Kinetix labeled a
+   partner rather than a client; canonical pricing and company facts per `SYNTREX_FOUNDATION.md`
    at the repo root, always its highest version present (Syntrex is the AI
    infrastructure layer behind operating companies;
    four tracks, Visibility / Conversion / Presence / Operations; Agent

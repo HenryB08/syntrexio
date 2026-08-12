@@ -1,6 +1,6 @@
 SYNTREX FOUNDATION DOCUMENT
 
-Version 3.3, August 2026, Canonical
+Version 3.4, August 2026, Canonical
 
 This document supersedes all prior Syntrex strategy, positioning, pricing, and operating documents. If any chat, file, deck, proposal, or page contradicts this document, this document wins.
 
@@ -431,6 +431,7 @@ On the guarantee: We guarantee what we control. We do not guarantee your sales t
 PROOF
 HALT Fire. Full AI and digital stack. Search clicks up 689% to 505 and impressions up 1,608% to 22.9K over three months, plus 10+ hours per week returned to the team.
 Doughbrik's Wavers. Ongoing retainer. Consumer brand with national retail distribution.
+The Decal Dudes. Website build. Commercial trailer services company; full website redesign and digital foundation. No published metrics yet, so its copy stays qualitative.
 Kinetix. Partner. Refers AI and automation work to Syntrex for build and delivery.
 VERSION CONTROL
 
@@ -445,6 +446,7 @@ Version    Date    Change
 3.1    Aug 2026    PROOF updated to verified Google Search Console figures, superseding the 280% estimate
 3.2    Aug 2026    Added client-performance conditions to the guarantee (Section 9): approval turnaround, access, information, and a named point of contact, each tied to a date. Missing one pauses the guarantee window rather than voiding it, documented on the Receipt. Reason: the labor remedy was unbounded, so a client who stopped approving work could block delivery and then claim the guarantee
 3.3    Aug 2026    Added a single page site entry build at $1,500 (the floor under the $350 per human hour rule) to Section 7.3, and reframed one-time build prices as starting-at figures that scale with scope. Reason: the fixed website floor filtered out smaller projects before they saw an entry point, and a fixed number read as a toll rather than a starting price
+3.4    Aug 2026    Added The Decal Dudes (commercial trailer services, website build) as an approved proof point in the PROOF section, and propagated it to the CLAUDE.md canonical facts and the reviewer agent's approved-proof list. Reason: a new named client was added to the customers page, and the approved-proof list is enforced in three places, so it must be added to all of them to survive review. No metrics yet, copy stays qualitative
 
 Current version: 3.1
 
