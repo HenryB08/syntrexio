@@ -75,15 +75,15 @@ const clients: Client[] = [
     imageAlt: "Financial-district glass towers at dusk",
     name: "Karlo Financial",
     kind: "Financial services",
-    tag: "Client",
-    desc: "Syntrex delivers the digital operation: the website, brand presence, and automation of repetitive back-office work.",
+    tag: "Client, website build",
+    desc: "A full digital overhaul in progress: a new website, search optimization, and AI search visibility, building a more credible and findable presence for the firm.",
     detail: {
       challenge:
-        "Karlo Financial needed a credible digital presence and less manual back-office work.",
+        "Karlo Financial needed a more credible and more findable digital presence to match the firm it is.",
       solution:
-        "Syntrex built the website and brand presence and automated the repetitive back-office steps that were slowing the team down.",
+        "Syntrex is rebuilding the website from the ground up and running search and AI-search optimization so the firm is easy to find and easy to trust online.",
       result:
-        "A professional digital presence backed by automated workflows that give the team time back.",
+        "In progress. The overhaul is giving Karlo Financial a cleaner, more credible digital presence and a foundation built to be found in both search and AI answers.",
     },
   },
   {
