@@ -75,7 +75,7 @@ const clients: Client[] = [
     imageAlt: "Financial-district glass towers at dusk",
     name: "Karlo Financial",
     kind: "Financial services",
-    tag: "Client, website build",
+    tag: "Client",
     desc: "A full digital overhaul in progress: a new website, search optimization, and AI search visibility, building a more credible and findable presence for the firm.",
     detail: {
       challenge:
@@ -88,13 +88,11 @@ const clients: Client[] = [
   },
   {
     icon: Truck,
-    // No banner photo yet, so the card renders the Truck brand-icon banner,
-    // the same fallback the other cards use when their image is unavailable.
-    // To add a real photo, host it the way Doughbrik's is (a mcusercontent.com
-    // CDN URL) or add a local asset, then set `image` and `imageAlt` here.
+    image: "https://images.unsplash.com/photo-1492168732976-2676c584c675" + UNSPLASH,
+    imageAlt: "Aerial view of a commercial truck and trailer lot",
     name: "The Decal Dudes",
     kind: "Commercial trailer services",
-    tag: "Client, website build",
+    tag: "Client",
     desc: "Full website redesign and digital foundation for a nationwide commercial trailer services company, including conversion-focused UX, quote intake, project galleries, and search optimization. Repositioned the brand around commercial decal removal, trailer de-identification, washing, and aluminum brightening with a cleaner enterprise-level customer experience.",
     detail: {
       challenge:
