@@ -596,19 +596,19 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     ogImage: COMMON.og_image,
   },
   "/customers": {
-    title: "Work | Syntrex Client Results",
+    title: "Customers | Syntrex Client Results",
     description:
-      "Verified results from Syntrex engagements: HALT Fire search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, plus 10+ hours a week returned.",
+      "The companies Syntrex runs the digital and AI back end for. HALT Fire search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, plus 10+ hours a week returned, alongside Doughbrik's Wavers, The Decal Dudes, and partner Kinetix.",
     keywords:
-      "Syntrex work, case studies, HALT Fire, Doughbrik's Wavers, Karlo Financial, Kinetix, AI results, client results",
-    ogTitle: "Work | What running the back end end to end produces | Syntrex",
+      "Syntrex customers, case studies, HALT Fire, Doughbrik's Wavers, The Decal Dudes, Karlo Financial, Kinetix, AI results, client results",
+    ogTitle: "Customers | What running the back end end to end produces | Syntrex",
     ogDescription:
       "HALT Fire: search clicks up 689% to 505 and impressions up 1,608% to 22.9K in three months, plus 10+ hours a week returned. Kinetix is a technology partner.",
     canonical: "https://syntrexio.com/customers/",
     schema: [
       crumb([
         ["Home", "https://syntrexio.com/"],
-        ["Work", "https://syntrexio.com/customers/"],
+        ["Customers", "https://syntrexio.com/customers/"],
       ]),
       {
         "@context": "https://schema.org",
@@ -618,7 +618,8 @@ export const PAGE_SEO: Record<string, PageSeo> = {
           { "@type": "ListItem", position: 1, name: "HALT Fire" },
           { "@type": "ListItem", position: 2, name: "Doughbrik's Wavers" },
           { "@type": "ListItem", position: 3, name: "Karlo Financial" },
-          { "@type": "ListItem", position: 4, name: "Kinetix" },
+          { "@type": "ListItem", position: 4, name: "The Decal Dudes" },
+          { "@type": "ListItem", position: 5, name: "Kinetix" },
         ],
       },
     ],

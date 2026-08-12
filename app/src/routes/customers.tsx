@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { pageHead } from "@/lib/seo";
-import { ArrowRight, ChevronDown, Cookie, Cpu, Flame, Landmark } from "lucide-react";
+import { ArrowRight, ChevronDown, Cookie, Cpu, Flame, Landmark, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Section } from "@/components/site/Section";
@@ -84,6 +84,25 @@ const clients: Client[] = [
         "Syntrex built the website and brand presence and automated the repetitive back-office steps that were slowing the team down.",
       result:
         "A professional digital presence backed by automated workflows that give the team time back.",
+    },
+  },
+  {
+    icon: Truck,
+    // Placeholder banner image, themed commercial trailer stock. Swap for the
+    // client-approved photo. The card falls back to the brand icon on error.
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7" + UNSPLASH,
+    imageAlt: "Commercial semi-truck and trailer on a highway",
+    name: "The Decal Dudes",
+    kind: "Commercial trailer services",
+    tag: "Client, website build",
+    desc: "Full website redesign and digital foundation for a nationwide commercial trailer services company, including conversion-focused UX, quote intake, project galleries, and search optimization. Repositioned the brand around commercial decal removal, trailer de-identification, washing, and aluminum brightening with a cleaner enterprise-level customer experience.",
+    detail: {
+      challenge:
+        "The Decal Dudes needed a more professional digital presence that could appeal to large leasing companies, fleet operators, and commercial clients while making their services and results easier to understand.",
+      solution:
+        "Syntrex redesigned the website from the ground up with a streamlined commercial layout, real before-and-after project photography, interactive service comparisons, nationwide positioning, improved quote intake, and an SEO and AI-search-ready site structure.",
+      result:
+        "The new site gives The Decal Dudes a significantly more polished and credible digital presence, with clearer service positioning, stronger visual proof of work, and a conversion path built around commercial quote requests.",
     },
   },
   {
@@ -198,7 +217,7 @@ function Work() {
     <>
       <PageHero
         variant="mosaic"
-        eyebrow="Work"
+        eyebrow="Customers"
         title="The companies we run the back end for."
         description="Operating companies Syntrex runs the digital and AI back end for, plus the partners who bring us the work. Every number here is a verified result from a real engagement."
       >
