@@ -184,10 +184,14 @@ const pricepoints = [
   },
 ];
 
-// Named proof only: HALT Fire, Doughbrik's Wavers, and Kinetix (partner).
-const trusted = [
+// Named proof only: HALT Fire, Doughbrik's Wavers, The Decal Dudes, Karlo
+// Financial, and Kinetix (partner). Karlo has no public site URL yet, so it
+// renders as a plain wordmark rather than a link.
+const trusted: { name: string; href?: string }[] = [
   { name: "HALT Fire", href: "https://haltfire.com/" },
   { name: "Doughbrik's Wavers", href: "https://eatdoughbriks.com/" },
+  { name: "The Decal Dudes", href: "https://thedecaldudes.com/" },
+  { name: "Karlo Financial" },
   { name: "Kinetix", href: "https://kinetixtechnologygroup.com/" },
 ];
 const marqueeNames = [...trusted, ...trusted, ...trusted, ...trusted];
@@ -329,22 +333,26 @@ function Home() {
             <div className="text-eyebrow mb-8 text-center">Trusted by</div>
             <div
               className="marquee"
-              aria-label="Trusted by HALT Fire, Doughbrik's Wavers, and Kinetix"
+              aria-label="Trusted by HALT Fire, Doughbrik's Wavers, The Decal Dudes, Karlo Financial, and Kinetix"
             >
               <div className="marquee__track">
                 {[0, 1].map((dup) => (
                   <div key={dup} className="marquee__group" aria-hidden={dup === 1}>
                     {marqueeNames.map((t, i) => (
                       <div key={`${dup}-${i}`} className="marquee__item">
-                        <a
-                          href={t.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          tabIndex={dup === 1 ? -1 : undefined}
-                          className="marquee__wordmark"
-                        >
-                          {t.name}
-                        </a>
+                        {t.href ? (
+                          <a
+                            href={t.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            tabIndex={dup === 1 ? -1 : undefined}
+                            className="marquee__wordmark"
+                          >
+                            {t.name}
+                          </a>
+                        ) : (
+                          <span className="marquee__wordmark">{t.name}</span>
+                        )}
                       </div>
                     ))}
                   </div>
